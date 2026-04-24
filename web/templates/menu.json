@@ -226,7 +226,7 @@
     "templates": {
       "TEST": {
         "name": "test",
-        "display": true
+        "display": false
       }
     }
   },
@@ -237,7 +237,7 @@
     "templates": {
       "isrp_test": {
         "name": "isrp_test",
-        "display": true
+        "display": false
       }
     }
   }
