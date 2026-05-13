@@ -1,0 +1,999 @@
+{
+  "name": "ISRP_GSEA",
+  "description": "Field name and descriptions are taken from Section 4.3 of https://liulab-dfci.github.io/RIMA/Differential.html#gene-set-enrichment-analysis-gsea. ",
+  "id": "https://example.org/isrp/gsea",
+  "version": "0.2.0",
+  "prefixes": {
+    "GO": {
+      "prefix_prefix": "GO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GO"
+    },
+    "GENEPIO": {
+      "prefix_prefix": "GENEPIO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GENEPIO"
+    },
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    "nmdc": {
+      "prefix_prefix": "nmdc",
+      "prefix_reference": "https://w3id.org/nmdc/"
+    },
+    "kegg": {
+      "prefix_prefix": "kegg",
+      "prefix_reference": "https://www.kegg.jp/entry/"
+    },
+    "schema": {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    },
+    "this": {
+      "prefix_prefix": "this",
+      "prefix_reference": "https://example.org/marbles/kegg/enrichment/"
+    },
+    "GSEA": {
+      "prefix_prefix": "GSEA",
+      "prefix_reference": "https://liulab-dfci.github.io/RIMA/Differential.html#gene-set-enrichment-analysis-gsea"
+    },
+    "xsd": {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "shex": {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
+    }
+  },
+  "default_prefix": "this",
+  "default_range": "string",
+  "types": {
+    "WhitespaceMinimizedString": {
+      "name": "WhitespaceMinimizedString",
+      "description": "A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).",
+      "from_schema": "https://example.org/isrp/gsea",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "Provenance": {
+      "name": "Provenance",
+      "description": "A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.",
+      "from_schema": "https://example.org/isrp/gsea",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "string": {
+      "name": "string",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "xsd:string"
+    },
+    "integer": {
+      "name": "integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "xsd:integer"
+    },
+    "boolean": {
+      "name": "boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "xsd:boolean",
+      "repr": "bool"
+    },
+    "float": {
+      "name": "float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:float"
+    },
+    "double": {
+      "name": "double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:double"
+    },
+    "decimal": {
+      "name": "decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "xsd:decimal"
+    },
+    "time": {
+      "name": "time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "xsd:time",
+      "repr": "str"
+    },
+    "date": {
+      "name": "date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "xsd:date",
+      "repr": "str"
+    },
+    "datetime": {
+      "name": "datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date_or_datetime": {
+      "name": "date_or_datetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "str",
+      "uri": "linkml:DateOrDatetime",
+      "repr": "str"
+    },
+    "uriorcurie": {
+      "name": "uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "URIorCURIE",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "curie": {
+      "name": "curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "Curie",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "uri": {
+      "name": "uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "ncname": {
+      "name": "ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "NCName",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "objectidentifier": {
+      "name": "objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "ElementIdentifier",
+      "uri": "shex:iri",
+      "repr": "str"
+    },
+    "nodeidentifier": {
+      "name": "nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "NodeIdentifier",
+      "uri": "shex:nonLiteral",
+      "repr": "str"
+    },
+    "jsonpointer": {
+      "name": "jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "jsonpath": {
+      "name": "jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "sparqlpath": {
+      "name": "sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    }
+  },
+  "enums": {
+    "NullValueMenu": {
+      "name": "NullValueMenu",
+      "title": "null value menu",
+      "from_schema": "https://example.org/isrp/gsea",
+      "permissible_values": {
+        "Not Applicable": {
+          "text": "Not Applicable",
+          "meaning": "GENEPIO:0001619"
+        },
+        "Not Collected": {
+          "text": "Not Collected",
+          "meaning": "GENEPIO:0001620"
+        },
+        "Not Provided": {
+          "text": "Not Provided",
+          "meaning": "GENEPIO:0001668"
+        },
+        "Missing": {
+          "text": "Missing",
+          "meaning": "GENEPIO:0001618"
+        },
+        "Restricted Access": {
+          "text": "Restricted Access",
+          "meaning": "GENEPIO:0001810"
+        }
+      }
+    }
+  },
+  "slots": {
+    "ID": {
+      "name": "ID",
+      "description": "ID of the get set, e.g., KEGG pathway identifier, including any KEGG entry (pathway, gene, compound, disease, module, etc.)",
+      "title": "ID",
+      "examples": [
+        {
+          "value": "hsa04930",
+          "description": "KEGG pathway ID (organism-specific)"
+        },
+        {
+          "value": "map00010",
+          "description": "KEGG reference pathway ID"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:ID",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "string",
+      "required": true,
+      "pattern": "^[A-Za-z]{1,5}[:A-Za-z0-9_]*[0-9]{3,}$"
+    },
+    "Description": {
+      "name": "Description",
+      "description": "description of the gene set",
+      "title": "Description",
+      "examples": [
+        {
+          "value": "Insulin signaling pathway"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:Description",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "setSize": {
+      "name": "setSize",
+      "description": "number of genes in the gene set after filtering out genes not in the expression data.",
+      "title": "setSize",
+      "examples": [
+        {
+          "value": "87"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:setSize",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "integer",
+      "required": true,
+      "minimum_value": 1
+    },
+    "enrichmentScore": {
+      "name": "enrichmentScore",
+      "description": "the degree to which the gene set is enriched in the top or bottom of the ranked set of genes.",
+      "title": "enrichmentScore",
+      "examples": [
+        {
+          "value": "0.52"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:enrichmentScore",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": -1.0,
+      "maximum_value": 1.0
+    },
+    "NES": {
+      "name": "NES",
+      "description": "normalized gene enrichment score.",
+      "title": "NES",
+      "examples": [
+        {
+          "value": "1.9"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:NES",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": -5.0,
+      "maximum_value": 5.0
+    },
+    "pvalue": {
+      "name": "pvalue",
+      "description": "nominal p value",
+      "title": "pvalue",
+      "examples": [
+        {
+          "value": "0.003"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "exact_mappings": [
+        "EDAM:data_1669"
+      ],
+      "slot_uri": "GSEA:pvalue",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": 0.0,
+      "maximum_value": 1.0
+    },
+    "p.adjust": {
+      "name": "p.adjust",
+      "description": "adjusted p value. The default adjustment method is `BH' (Bejamini Hochberg), which is used by the underlying R package clusterProfiler.",
+      "title": "p.adjust",
+      "examples": [
+        {
+          "value": "0.012"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:p.adjust",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": 0.0,
+      "maximum_value": 1.0
+    },
+    "qvalue": {
+      "name": "qvalue",
+      "description": "q value (FDR as implemented by GSEA)",
+      "title": "qvalue",
+      "examples": [
+        {
+          "value": "0.015"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:qvalue",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": 0.0,
+      "maximum_value": 1.0
+    },
+    "rank": {
+      "name": "rank",
+      "description": "the position in the ranked list at which the maximal enrichment score was achieved.",
+      "title": "rank",
+      "examples": [
+        {
+          "value": "7"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "close_mappings": [
+        "SIO:000367"
+      ],
+      "slot_uri": "GSEA:rank",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "integer",
+      "required": true,
+      "minimum_value": 1
+    },
+    "leading_edge": {
+      "name": "leading_edge",
+      "description": "three statistics (tags, list and signal) on the subset of genes that most influence the enrichment score",
+      "title": "leading_edge",
+      "examples": [
+        {
+          "value": "tags (80%), list (50%), signal (65%)"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:leading_edge",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "core_enrichment": {
+      "name": "core_enrichment",
+      "description": "the subset of genes that contribute most to the enrichment score.",
+      "title": "core_enrichment",
+      "examples": [
+        {
+          "value": "AKT1; IRS1; PIK3CA; PDPK1; FOXO3"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GSEA:core_enrichment",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "authors": {
+      "name": "authors",
+      "description": "Names of individuals contributing to the processes of sample collection, sequence generation, analysis, and data submission.",
+      "title": "authors",
+      "comments": [
+        "Include the first and last names of all individuals that should be attributed, separated by a comma."
+      ],
+      "examples": [
+        {
+          "value": "William Smith, Sandra Johnson"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GENEPIO:0001517",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "recommended": true
+    },
+    "dataharmonizer_provenance": {
+      "name": "dataharmonizer_provenance",
+      "description": "The DataHarmonizer software and template version provenance.",
+      "title": "DataHarmonizer Provenance",
+      "comments": [
+        "The current software and template version information will be automatically generated in this field after the user utilizes the \"validate\" function. This information will be generated regardless as to whether the row is valid of not."
+      ],
+      "examples": [
+        {
+          "value": "DataHarmonizer v1.9.7, ISRP_GSEA v0.2.0"
+        }
+      ],
+      "from_schema": "https://example.org/isrp/gsea",
+      "slot_uri": "GENEPIO:0001518",
+      "domain_of": [
+        "ISRP_GSEA"
+      ],
+      "range": "Provenance"
+    }
+  },
+  "classes": {
+    "dh_interface": {
+      "name": "dh_interface",
+      "description": "DataHarmonizer interface for gene set enrichment analysis (GSEA) result",
+      "from_schema": "https://example.org/isrp/gsea"
+    },
+    "ISRP_GSEA": {
+      "name": "ISRP_GSEA",
+      "description": "Field names and descriptions are taken from Section 4.3 of the tutorial on RIMA (RNA-seq immune analysis) https://github.com/liulab-dfci/RIMA_pipeline. RIMA uses the clusterProfiler R package to look for enriched gene sets in KEGG, GO, and MSigDB.",
+      "from_schema": "https://example.org/isrp/gsea",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "ID": {
+          "name": "ID",
+          "rank": 1,
+          "slot_group": "Database Identifier"
+        },
+        "Description": {
+          "name": "Description",
+          "rank": 2,
+          "slot_group": "Database Identifier"
+        },
+        "setSize": {
+          "name": "setSize",
+          "rank": 3,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "enrichmentScore": {
+          "name": "enrichmentScore",
+          "rank": 4,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "NES": {
+          "name": "NES",
+          "rank": 5,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "pvalue": {
+          "name": "pvalue",
+          "rank": 6,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "p.adjust": {
+          "name": "p.adjust",
+          "rank": 7,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "qvalue": {
+          "name": "qvalue",
+          "rank": 8,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "rank": {
+          "name": "rank",
+          "rank": 9,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "leading_edge": {
+          "name": "leading_edge",
+          "rank": 10,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "core_enrichment": {
+          "name": "core_enrichment",
+          "rank": 11,
+          "slot_group": "GSEA Output (RIMA pipeline)"
+        },
+        "authors": {
+          "name": "authors",
+          "rank": 12,
+          "slot_group": "Contributor Acknowledgement"
+        },
+        "dataharmonizer_provenance": {
+          "name": "dataharmonizer_provenance",
+          "rank": 13,
+          "slot_group": "Contributor Acknowledgement"
+        }
+      },
+      "attributes": {
+        "ID": {
+          "name": "ID",
+          "description": "ID of the get set, e.g., KEGG pathway identifier, including any KEGG entry (pathway, gene, compound, disease, module, etc.)",
+          "title": "ID",
+          "examples": [
+            {
+              "value": "hsa04930",
+              "description": "KEGG pathway ID (organism-specific)"
+            },
+            {
+              "value": "map00010",
+              "description": "KEGG reference pathway ID"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 1,
+          "slot_uri": "GSEA:ID",
+          "alias": "ID",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "Database Identifier",
+          "range": "string",
+          "required": true,
+          "pattern": "^[A-Za-z]{1,5}[:A-Za-z0-9_]*[0-9]{3,}$"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "description of the gene set",
+          "title": "Description",
+          "examples": [
+            {
+              "value": "Insulin signaling pathway"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 2,
+          "slot_uri": "GSEA:Description",
+          "alias": "Description",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "Database Identifier",
+          "range": "string",
+          "required": true
+        },
+        "setSize": {
+          "name": "setSize",
+          "description": "number of genes in the gene set after filtering out genes not in the expression data.",
+          "title": "setSize",
+          "examples": [
+            {
+              "value": "87"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 3,
+          "slot_uri": "GSEA:setSize",
+          "alias": "setSize",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "integer",
+          "required": true,
+          "minimum_value": 1
+        },
+        "enrichmentScore": {
+          "name": "enrichmentScore",
+          "description": "the degree to which the gene set is enriched in the top or bottom of the ranked set of genes.",
+          "title": "enrichmentScore",
+          "examples": [
+            {
+              "value": "0.52"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 4,
+          "slot_uri": "GSEA:enrichmentScore",
+          "alias": "enrichmentScore",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "float",
+          "required": true,
+          "minimum_value": -1.0,
+          "maximum_value": 1.0
+        },
+        "NES": {
+          "name": "NES",
+          "description": "normalized gene enrichment score.",
+          "title": "NES",
+          "examples": [
+            {
+              "value": "1.9"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 5,
+          "slot_uri": "GSEA:NES",
+          "alias": "NES",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "float",
+          "required": true,
+          "minimum_value": -5.0,
+          "maximum_value": 5.0
+        },
+        "pvalue": {
+          "name": "pvalue",
+          "description": "nominal p value",
+          "title": "pvalue",
+          "examples": [
+            {
+              "value": "0.003"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "exact_mappings": [
+            "EDAM:data_1669"
+          ],
+          "rank": 6,
+          "slot_uri": "GSEA:pvalue",
+          "alias": "pvalue",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "float",
+          "required": true,
+          "minimum_value": 0.0,
+          "maximum_value": 1.0
+        },
+        "p.adjust": {
+          "name": "p.adjust",
+          "description": "adjusted p value. The default adjustment method is `BH' (Bejamini Hochberg), which is used by the underlying R package clusterProfiler.",
+          "title": "p.adjust",
+          "examples": [
+            {
+              "value": "0.012"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 7,
+          "slot_uri": "GSEA:p.adjust",
+          "alias": "p.adjust",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "float",
+          "required": true,
+          "minimum_value": 0.0,
+          "maximum_value": 1.0
+        },
+        "qvalue": {
+          "name": "qvalue",
+          "description": "q value (FDR as implemented by GSEA)",
+          "title": "qvalue",
+          "examples": [
+            {
+              "value": "0.015"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 8,
+          "slot_uri": "GSEA:qvalue",
+          "alias": "qvalue",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "float",
+          "required": true,
+          "minimum_value": 0.0,
+          "maximum_value": 1.0
+        },
+        "rank": {
+          "name": "rank",
+          "description": "the position in the ranked list at which the maximal enrichment score was achieved.",
+          "title": "rank",
+          "examples": [
+            {
+              "value": "7"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "close_mappings": [
+            "SIO:000367"
+          ],
+          "rank": 9,
+          "slot_uri": "GSEA:rank",
+          "alias": "rank",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "integer",
+          "required": true,
+          "minimum_value": 1
+        },
+        "leading_edge": {
+          "name": "leading_edge",
+          "description": "three statistics (tags, list and signal) on the subset of genes that most influence the enrichment score",
+          "title": "leading_edge",
+          "examples": [
+            {
+              "value": "tags (80%), list (50%), signal (65%)"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 10,
+          "slot_uri": "GSEA:leading_edge",
+          "alias": "leading_edge",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "string",
+          "required": true
+        },
+        "core_enrichment": {
+          "name": "core_enrichment",
+          "description": "the subset of genes that contribute most to the enrichment score.",
+          "title": "core_enrichment",
+          "examples": [
+            {
+              "value": "AKT1; IRS1; PIK3CA; PDPK1; FOXO3"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 11,
+          "slot_uri": "GSEA:core_enrichment",
+          "alias": "core_enrichment",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "GSEA Output (RIMA pipeline)",
+          "range": "string",
+          "required": true
+        },
+        "authors": {
+          "name": "authors",
+          "description": "Names of individuals contributing to the processes of sample collection, sequence generation, analysis, and data submission.",
+          "title": "authors",
+          "comments": [
+            "Include the first and last names of all individuals that should be attributed, separated by a comma."
+          ],
+          "examples": [
+            {
+              "value": "William Smith, Sandra Johnson"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 12,
+          "slot_uri": "GENEPIO:0001517",
+          "alias": "authors",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "Contributor Acknowledgement",
+          "range": "WhitespaceMinimizedString",
+          "recommended": true
+        },
+        "dataharmonizer_provenance": {
+          "name": "dataharmonizer_provenance",
+          "description": "The DataHarmonizer software and template version provenance.",
+          "title": "DataHarmonizer Provenance",
+          "comments": [
+            "The current software and template version information will be automatically generated in this field after the user utilizes the \"validate\" function. This information will be generated regardless as to whether the row is valid of not."
+          ],
+          "examples": [
+            {
+              "value": "DataHarmonizer v1.9.7, ISRP_GSEA v0.2.0"
+            }
+          ],
+          "from_schema": "https://example.org/isrp/gsea",
+          "rank": 13,
+          "slot_uri": "GENEPIO:0001518",
+          "alias": "dataharmonizer_provenance",
+          "owner": "ISRP_GSEA",
+          "domain_of": [
+            "ISRP_GSEA"
+          ],
+          "slot_group": "Contributor Acknowledgement",
+          "range": "Provenance"
+        }
+      }
+    }
+  },
+  "settings": {
+    "Title_Case": {
+      "setting_key": "Title_Case",
+      "setting_value": "(((?<=\\b)[^a-z\\W]\\w*?|[\\W])+)"
+    },
+    "UPPER_CASE": {
+      "setting_key": "UPPER_CASE",
+      "setting_value": "[A-Z\\W\\d_]*"
+    },
+    "lower_case": {
+      "setting_key": "lower_case",
+      "setting_value": "[a-z\\W\\d_]*"
+    }
+  },
+  "@type": "SchemaDefinition"
+}

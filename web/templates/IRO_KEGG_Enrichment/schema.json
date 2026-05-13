@@ -1,0 +1,986 @@
+{
+  "name": "IRO_kegg_enrichment",
+  "description": "",
+  "id": "https://example.org/marbles/kegg/enrichment",
+  "version": "0.2.0",
+  "prefixes": {
+    "GO": {
+      "prefix_prefix": "GO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GO"
+    },
+    "GENEPIO": {
+      "prefix_prefix": "GENEPIO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/GENEPIO"
+    },
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    "nmdc": {
+      "prefix_prefix": "nmdc",
+      "prefix_reference": "https://w3id.org/nmdc/"
+    },
+    "kegg": {
+      "prefix_prefix": "kegg",
+      "prefix_reference": "https://www.kegg.jp/entry/"
+    },
+    "schema": {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    },
+    "this": {
+      "prefix_prefix": "this",
+      "prefix_reference": "https://example.org/marbles/kegg/enrichment/"
+    },
+    "xsd": {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "shex": {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
+    }
+  },
+  "default_prefix": "this",
+  "default_range": "string",
+  "types": {
+    "WhitespaceMinimizedString": {
+      "name": "WhitespaceMinimizedString",
+      "description": "A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).",
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "Provenance": {
+      "name": "Provenance",
+      "description": "A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.",
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "string": {
+      "name": "string",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "xsd:string"
+    },
+    "integer": {
+      "name": "integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "xsd:integer"
+    },
+    "boolean": {
+      "name": "boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "xsd:boolean",
+      "repr": "bool"
+    },
+    "float": {
+      "name": "float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:float"
+    },
+    "double": {
+      "name": "double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:double"
+    },
+    "decimal": {
+      "name": "decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "xsd:decimal"
+    },
+    "time": {
+      "name": "time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "xsd:time",
+      "repr": "str"
+    },
+    "date": {
+      "name": "date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "xsd:date",
+      "repr": "str"
+    },
+    "datetime": {
+      "name": "datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date_or_datetime": {
+      "name": "date_or_datetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "str",
+      "uri": "linkml:DateOrDatetime",
+      "repr": "str"
+    },
+    "uriorcurie": {
+      "name": "uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "URIorCURIE",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "curie": {
+      "name": "curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "Curie",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "uri": {
+      "name": "uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "ncname": {
+      "name": "ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "NCName",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "objectidentifier": {
+      "name": "objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "ElementIdentifier",
+      "uri": "shex:iri",
+      "repr": "str"
+    },
+    "nodeidentifier": {
+      "name": "nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "NodeIdentifier",
+      "uri": "shex:nonLiteral",
+      "repr": "str"
+    },
+    "jsonpointer": {
+      "name": "jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "jsonpath": {
+      "name": "jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "sparqlpath": {
+      "name": "sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    }
+  },
+  "enums": {
+    "NullValueMenu": {
+      "name": "NullValueMenu",
+      "title": "null value menu",
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "permissible_values": {
+        "Not Applicable": {
+          "text": "Not Applicable",
+          "meaning": "GENEPIO:0001619"
+        },
+        "Not Collected": {
+          "text": "Not Collected",
+          "meaning": "GENEPIO:0001620"
+        },
+        "Not Provided": {
+          "text": "Not Provided",
+          "meaning": "GENEPIO:0001668"
+        },
+        "Missing": {
+          "text": "Missing",
+          "meaning": "GENEPIO:0001618"
+        },
+        "Restricted Access": {
+          "text": "Restricted Access",
+          "meaning": "GENEPIO:0001810"
+        }
+      }
+    }
+  },
+  "slots": {
+    "ID": {
+      "name": "ID",
+      "description": "KEGG pathway identifier. Any KEGG entry (pathway, gene, compound, disease, module, etc.)",
+      "title": "ID",
+      "examples": [
+        {
+          "value": "hsa04930",
+          "description": "KEGG pathway ID (organism-specific)"
+        },
+        {
+          "value": "map00010",
+          "description": "KEGG reference pathway ID"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "string",
+      "required": true,
+      "pattern": "^[A-Za-z]{1,5}[:A-Za-z0-9_]*[0-9]{3,}$"
+    },
+    "Description": {
+      "name": "Description",
+      "description": "KEGG pathway full name",
+      "title": "Description",
+      "examples": [
+        {
+          "value": "Insulin signaling pathway"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "slot_uri": "schema:name",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "setSize": {
+      "name": "setSize",
+      "description": "number of genes or metabolites in pathway",
+      "title": "setSize",
+      "examples": [
+        {
+          "value": "87"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "integer",
+      "required": true,
+      "minimum_value": 1,
+      "maximum_value": 1000
+    },
+    "enrichmentScore": {
+      "name": "enrichmentScore",
+      "description": "measure of represented gene presence",
+      "title": "enrichmentScore",
+      "examples": [
+        {
+          "value": "0.52"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": -1.0,
+      "maximum_value": 1.0
+    },
+    "NES": {
+      "name": "NES",
+      "description": "distribution score of genes",
+      "title": "NES",
+      "examples": [
+        {
+          "value": "1.9"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": -5.0,
+      "maximum_value": 5.0
+    },
+    "pvalue": {
+      "name": "pvalue",
+      "description": "statistical significance of KEGG pathway",
+      "title": "pvalue",
+      "examples": [
+        {
+          "value": "0.003"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "EDAM:data_1669"
+      ],
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": 0.0,
+      "maximum_value": 0.05
+    },
+    "p.adjust": {
+      "name": "p.adjust",
+      "description": "statistical significance of KEGG pathway",
+      "title": "p.adjust",
+      "examples": [
+        {
+          "value": "0.012"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": 0.0,
+      "maximum_value": 0.05
+    },
+    "qvalue": {
+      "name": "qvalue",
+      "description": "statistical significance of KEGG pathway",
+      "title": "qvalue",
+      "examples": [
+        {
+          "value": "0.015"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "exact_mappings": [
+        "EDAM:data_3932"
+      ],
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "float",
+      "required": true,
+      "minimum_value": 0.0,
+      "maximum_value": 0.1
+    },
+    "rank": {
+      "name": "rank",
+      "description": "based on how significantly enriched they are given the set of genes",
+      "title": "rank",
+      "examples": [
+        {
+          "value": "7"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "close_mappings": [
+        "SIO:000367"
+      ],
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "integer",
+      "required": true,
+      "minimum_value": 1
+    },
+    "leading_edge": {
+      "name": "leading_edge",
+      "description": "refers to the core genes in a gene set that contribute most to the enrichment score",
+      "title": "leading_edge",
+      "examples": [
+        {
+          "value": "tags (80%), list (50%), signal (65%)"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "core_enrichment": {
+      "name": "core_enrichment",
+      "description": "genes that are present in pathway",
+      "title": "core_enrichment",
+      "examples": [
+        {
+          "value": "AKT1; IRS1; PIK3CA; PDPK1; FOXO3"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "authors": {
+      "name": "authors",
+      "description": "Names of individuals contributing to the processes of sample collection, sequence generation, analysis, and data submission.",
+      "title": "authors",
+      "comments": [
+        "Include the first and last names of all individuals that should be attributed, separated by a comma."
+      ],
+      "examples": [
+        {
+          "value": "William Smith, Sandra Johnson"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "slot_uri": "GENEPIO:0001517",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "recommended": true
+    },
+    "dataharmonizer_provenance": {
+      "name": "dataharmonizer_provenance",
+      "description": "The DataHarmonizer software and template version provenance.",
+      "title": "DataHarmonizer Provenance",
+      "comments": [
+        "The current software and template version information will be automatically generated in this field after the user utilizes the \"validate\" function. This information will be generated regardless as to whether the row is valid of not."
+      ],
+      "examples": [
+        {
+          "value": "DataHarmonizer v1.4.3, KEGG_Enrichment v0.1.0"
+        }
+      ],
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "slot_uri": "GENEPIO:0001518",
+      "domain_of": [
+        "IRO_KEGG_Enrichment"
+      ],
+      "range": "Provenance"
+    }
+  },
+  "classes": {
+    "dh_interface": {
+      "name": "dh_interface",
+      "description": "DataHarmonizer interface for KEGG enrichment results",
+      "from_schema": "https://example.org/marbles/kegg/enrichment"
+    },
+    "IRO_KEGG_Enrichment": {
+      "name": "IRO_KEGG_Enrichment",
+      "description": "Iowa Research Online version",
+      "from_schema": "https://example.org/marbles/kegg/enrichment",
+      "see_also": [
+        "templates/canada_covid19/SOP.pdf"
+      ],
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "ID": {
+          "name": "ID",
+          "rank": 1,
+          "slot_group": "Database Identifier"
+        },
+        "Description": {
+          "name": "Description",
+          "rank": 2,
+          "slot_group": "Database Identifier"
+        },
+        "setSize": {
+          "name": "setSize",
+          "rank": 3,
+          "slot_group": "GSEA Output"
+        },
+        "enrichmentScore": {
+          "name": "enrichmentScore",
+          "rank": 4,
+          "slot_group": "GSEA Output"
+        },
+        "NES": {
+          "name": "NES",
+          "rank": 5,
+          "slot_group": "GSEA Output"
+        },
+        "pvalue": {
+          "name": "pvalue",
+          "rank": 6,
+          "slot_group": "GSEA Output"
+        },
+        "p.adjust": {
+          "name": "p.adjust",
+          "rank": 7,
+          "slot_group": "GSEA Output"
+        },
+        "qvalue": {
+          "name": "qvalue",
+          "rank": 8,
+          "slot_group": "GSEA Output"
+        },
+        "rank": {
+          "name": "rank",
+          "rank": 9,
+          "slot_group": "GSEA Output"
+        },
+        "leading_edge": {
+          "name": "leading_edge",
+          "rank": 10,
+          "slot_group": "GSEA Output"
+        },
+        "core_enrichment": {
+          "name": "core_enrichment",
+          "rank": 11,
+          "slot_group": "GSEA Output"
+        },
+        "authors": {
+          "name": "authors",
+          "rank": 12,
+          "slot_group": "Contributor Acknowledgement"
+        },
+        "dataharmonizer_provenance": {
+          "name": "dataharmonizer_provenance",
+          "rank": 13,
+          "slot_group": "Contributor Acknowledgement"
+        }
+      },
+      "attributes": {
+        "ID": {
+          "name": "ID",
+          "description": "KEGG pathway identifier. Any KEGG entry (pathway, gene, compound, disease, module, etc.)",
+          "title": "ID",
+          "examples": [
+            {
+              "value": "hsa04930",
+              "description": "KEGG pathway ID (organism-specific)"
+            },
+            {
+              "value": "map00010",
+              "description": "KEGG reference pathway ID"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 1,
+          "alias": "ID",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "Database Identifier",
+          "range": "string",
+          "required": true,
+          "pattern": "^[A-Za-z]{1,5}[:A-Za-z0-9_]*[0-9]{3,}$"
+        },
+        "Description": {
+          "name": "Description",
+          "description": "KEGG pathway full name",
+          "title": "Description",
+          "examples": [
+            {
+              "value": "Insulin signaling pathway"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 2,
+          "slot_uri": "schema:name",
+          "alias": "Description",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "Database Identifier",
+          "range": "string",
+          "required": true
+        },
+        "setSize": {
+          "name": "setSize",
+          "description": "number of genes or metabolites in pathway",
+          "title": "setSize",
+          "examples": [
+            {
+              "value": "87"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 3,
+          "alias": "setSize",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "integer",
+          "required": true,
+          "minimum_value": 1,
+          "maximum_value": 1000
+        },
+        "enrichmentScore": {
+          "name": "enrichmentScore",
+          "description": "measure of represented gene presence",
+          "title": "enrichmentScore",
+          "examples": [
+            {
+              "value": "0.52"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 4,
+          "alias": "enrichmentScore",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "float",
+          "required": true,
+          "minimum_value": -1.0,
+          "maximum_value": 1.0
+        },
+        "NES": {
+          "name": "NES",
+          "description": "distribution score of genes",
+          "title": "NES",
+          "examples": [
+            {
+              "value": "1.9"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 5,
+          "alias": "NES",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "float",
+          "required": true,
+          "minimum_value": -5.0,
+          "maximum_value": 5.0
+        },
+        "pvalue": {
+          "name": "pvalue",
+          "description": "statistical significance of KEGG pathway",
+          "title": "pvalue",
+          "examples": [
+            {
+              "value": "0.003"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "exact_mappings": [
+            "EDAM:data_1669"
+          ],
+          "rank": 6,
+          "alias": "pvalue",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "float",
+          "required": true,
+          "minimum_value": 0.0,
+          "maximum_value": 0.05
+        },
+        "p.adjust": {
+          "name": "p.adjust",
+          "description": "statistical significance of KEGG pathway",
+          "title": "p.adjust",
+          "examples": [
+            {
+              "value": "0.012"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 7,
+          "alias": "p.adjust",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "float",
+          "required": true,
+          "minimum_value": 0.0,
+          "maximum_value": 0.05
+        },
+        "qvalue": {
+          "name": "qvalue",
+          "description": "statistical significance of KEGG pathway",
+          "title": "qvalue",
+          "examples": [
+            {
+              "value": "0.015"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "exact_mappings": [
+            "EDAM:data_3932"
+          ],
+          "rank": 8,
+          "alias": "qvalue",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "float",
+          "required": true,
+          "minimum_value": 0.0,
+          "maximum_value": 0.1
+        },
+        "rank": {
+          "name": "rank",
+          "description": "based on how significantly enriched they are given the set of genes",
+          "title": "rank",
+          "examples": [
+            {
+              "value": "7"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "close_mappings": [
+            "SIO:000367"
+          ],
+          "rank": 9,
+          "alias": "rank",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "integer",
+          "required": true,
+          "minimum_value": 1
+        },
+        "leading_edge": {
+          "name": "leading_edge",
+          "description": "refers to the core genes in a gene set that contribute most to the enrichment score",
+          "title": "leading_edge",
+          "examples": [
+            {
+              "value": "tags (80%), list (50%), signal (65%)"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 10,
+          "alias": "leading_edge",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "string",
+          "required": true
+        },
+        "core_enrichment": {
+          "name": "core_enrichment",
+          "description": "genes that are present in pathway",
+          "title": "core_enrichment",
+          "examples": [
+            {
+              "value": "AKT1; IRS1; PIK3CA; PDPK1; FOXO3"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 11,
+          "alias": "core_enrichment",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "GSEA Output",
+          "range": "string",
+          "required": true
+        },
+        "authors": {
+          "name": "authors",
+          "description": "Names of individuals contributing to the processes of sample collection, sequence generation, analysis, and data submission.",
+          "title": "authors",
+          "comments": [
+            "Include the first and last names of all individuals that should be attributed, separated by a comma."
+          ],
+          "examples": [
+            {
+              "value": "William Smith, Sandra Johnson"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 12,
+          "slot_uri": "GENEPIO:0001517",
+          "alias": "authors",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "Contributor Acknowledgement",
+          "range": "WhitespaceMinimizedString",
+          "recommended": true
+        },
+        "dataharmonizer_provenance": {
+          "name": "dataharmonizer_provenance",
+          "description": "The DataHarmonizer software and template version provenance.",
+          "title": "DataHarmonizer Provenance",
+          "comments": [
+            "The current software and template version information will be automatically generated in this field after the user utilizes the \"validate\" function. This information will be generated regardless as to whether the row is valid of not."
+          ],
+          "examples": [
+            {
+              "value": "DataHarmonizer v1.4.3, KEGG_Enrichment v0.1.0"
+            }
+          ],
+          "from_schema": "https://example.org/marbles/kegg/enrichment",
+          "rank": 13,
+          "slot_uri": "GENEPIO:0001518",
+          "alias": "dataharmonizer_provenance",
+          "owner": "IRO_KEGG_Enrichment",
+          "domain_of": [
+            "IRO_KEGG_Enrichment"
+          ],
+          "slot_group": "Contributor Acknowledgement",
+          "range": "Provenance"
+        }
+      }
+    }
+  },
+  "settings": {
+    "Title_Case": {
+      "setting_key": "Title_Case",
+      "setting_value": "(((?<=\\b)[^a-z\\W]\\w*?|[\\W])+)"
+    },
+    "UPPER_CASE": {
+      "setting_key": "UPPER_CASE",
+      "setting_value": "[A-Z\\W\\d_]*"
+    },
+    "lower_case": {
+      "setting_key": "lower_case",
+      "setting_value": "[a-z\\W\\d_]*"
+    }
+  },
+  "@type": "SchemaDefinition"
+}

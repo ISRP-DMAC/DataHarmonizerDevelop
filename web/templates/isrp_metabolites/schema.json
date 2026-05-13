@@ -1,0 +1,1378 @@
+{
+  "name": "PCB_Metabolites",
+  "description": "",
+  "id": "https://example.org/ISRP_Metabolites",
+  "version": "0.1.3",
+  "prefixes": {
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    "schema": {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    },
+    "UBERON": {
+      "prefix_prefix": "UBERON",
+      "prefix_reference": "http://purl.obolibrary.org/obo/UBERON_"
+    },
+    "xsd": {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "shex": {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
+    }
+  },
+  "default_prefix": "https://example.org/ISRP_Metabolites/",
+  "types": {
+    "WhitespaceMinimizedString": {
+      "name": "WhitespaceMinimizedString",
+      "description": "A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "Provenance": {
+      "name": "Provenance",
+      "description": "A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "string": {
+      "name": "string",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:string"
+    },
+    "float": {
+      "name": "float",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "float",
+      "uri": "xsd:float"
+    },
+    "date": {
+      "name": "date",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "str",
+      "uri": "xsd:date"
+    },
+    "integer": {
+      "name": "integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "xsd:integer"
+    },
+    "boolean": {
+      "name": "boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "xsd:boolean",
+      "repr": "bool"
+    },
+    "double": {
+      "name": "double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:double"
+    },
+    "decimal": {
+      "name": "decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "xsd:decimal"
+    },
+    "time": {
+      "name": "time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "xsd:time",
+      "repr": "str"
+    },
+    "datetime": {
+      "name": "datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date_or_datetime": {
+      "name": "date_or_datetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "str",
+      "uri": "linkml:DateOrDatetime",
+      "repr": "str"
+    },
+    "uriorcurie": {
+      "name": "uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "URIorCURIE",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "curie": {
+      "name": "curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "Curie",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "uri": {
+      "name": "uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "ncname": {
+      "name": "ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "NCName",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "objectidentifier": {
+      "name": "objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "ElementIdentifier",
+      "uri": "shex:iri",
+      "repr": "str"
+    },
+    "nodeidentifier": {
+      "name": "nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "NodeIdentifier",
+      "uri": "shex:nonLiteral",
+      "repr": "str"
+    },
+    "jsonpointer": {
+      "name": "jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "jsonpath": {
+      "name": "jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "sparqlpath": {
+      "name": "sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    }
+  },
+  "enums": {
+    "BodySiteMenu": {
+      "name": "BodySiteMenu",
+      "description": "Controlled anatomical sites from Uberon",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "permissible_values": {
+        "jejunum": {
+          "text": "jejunum",
+          "meaning": "UBERON:0002115"
+        },
+        "ileum": {
+          "text": "ileum",
+          "meaning": "UBERON:0002116"
+        },
+        "colon": {
+          "text": "colon",
+          "meaning": "UBERON:0001155"
+        }
+      }
+    },
+    "TreatmentMenu": {
+      "name": "TreatmentMenu",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "permissible_values": {
+        "Sham": {
+          "text": "Sham"
+        },
+        "Low": {
+          "text": "Low"
+        },
+        "Medium": {
+          "text": "Medium"
+        },
+        "High": {
+          "text": "High"
+        }
+      }
+    },
+    "OmicsTypeMenu": {
+      "name": "OmicsTypeMenu",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "permissible_values": {
+        "metabolomics": {
+          "text": "metabolomics"
+        }
+      }
+    },
+    "AbundanceUnitMenu": {
+      "name": "AbundanceUnitMenu",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "permissible_values": {
+        "relative_abundance_PFOS_normalized": {
+          "text": "relative_abundance_PFOS_normalized"
+        }
+      }
+    },
+    "AnalyteCategoryMenu": {
+      "name": "AnalyteCategoryMenu",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "permissible_values": {
+        "metabolite": {
+          "text": "metabolite"
+        }
+      }
+    }
+  },
+  "slots": {
+    "study_id": {
+      "name": "study_id",
+      "description": "Local study identifier (string you control; can be replaced with resolvable IDs later)",
+      "title": "Study ID",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study",
+        "Biosample"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "biosample_local_id": {
+      "name": "biosample_local_id",
+      "description": "Local biosample identifier (string you control)",
+      "title": "Biosample Local ID",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Biosample",
+        "OmicsProcessing",
+        "MetaboliteAbundance"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "omics_processing_local_id": {
+      "name": "omics_processing_local_id",
+      "description": "Local identifier for the omics processing record",
+      "title": "Omics Processing Local ID",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "OmicsProcessing"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "description": {
+      "name": "description",
+      "title": "Description",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "principal_investigator": {
+      "name": "principal_investigator",
+      "title": "Principal Investigator",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "institution": {
+      "name": "institution",
+      "title": "Institution",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem": {
+      "name": "ecosystem",
+      "title": "Ecosystem",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem_category": {
+      "name": "ecosystem_category",
+      "title": "Ecosystem Category",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem_type": {
+      "name": "ecosystem_type",
+      "title": "Ecosystem Type",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem_subtype": {
+      "name": "ecosystem_subtype",
+      "title": "Ecosystem Subtype",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "specific_ecosystem": {
+      "name": "specific_ecosystem",
+      "title": "Specific Ecosystem",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "body_site": {
+      "name": "body_site",
+      "description": "Anatomical region for sample origin (validated against Uberon terms)",
+      "title": "Body Site",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "BodySiteEnum",
+      "required": true
+    },
+    "sample_id": {
+      "name": "sample_id",
+      "description": "Sample label (normalized: remove a single leading 0 after the treatment letter; e.g., S03â†’S3)",
+      "title": "Sample ID",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Biosample",
+        "MetaboliteAbundance"
+      ],
+      "range": "string",
+      "required": true,
+      "pattern": "^[SLMH][1-9][0-9]*$"
+    },
+    "treatment": {
+      "name": "treatment",
+      "title": "Treatment",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Biosample",
+        "MetaboliteAbundance"
+      ],
+      "range": "TreatmentEnum",
+      "required": true
+    },
+    "collection_date": {
+      "name": "collection_date",
+      "title": "Collection Date",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "date"
+    },
+    "geo_location": {
+      "name": "geo_location",
+      "description": "Free-text geographic description or coordinates",
+      "title": "Geographic Location",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "string"
+    },
+    "host": {
+      "name": "host",
+      "title": "Host",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "string"
+    },
+    "omics_type": {
+      "name": "omics_type",
+      "title": "Omics Type",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "ifabsent": "default",
+      "domain_of": [
+        "OmicsProcessing"
+      ],
+      "range": "OmicsTypeEnum",
+      "equals_string": "metabolomics"
+    },
+    "instrument": {
+      "name": "instrument",
+      "title": "Instrument",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "OmicsProcessing"
+      ],
+      "range": "string"
+    },
+    "processing_institution": {
+      "name": "processing_institution",
+      "title": "Processing Institution",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "OmicsProcessing"
+      ],
+      "range": "string"
+    },
+    "protocol_link": {
+      "name": "protocol_link",
+      "title": "Protocol Link (URL)",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "OmicsProcessing"
+      ],
+      "range": "string",
+      "pattern": "^https?://.+$"
+    },
+    "data_file_name": {
+      "name": "data_file_name",
+      "title": "Data File Name",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "OmicsProcessing"
+      ],
+      "range": "string"
+    },
+    "metabolite_identified": {
+      "name": "metabolite_identified",
+      "title": "Metabolite Identified",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "MetaboliteAbundance"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "chemical_formula": {
+      "name": "chemical_formula",
+      "title": "Chemical Formula",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "MetaboliteAbundance"
+      ],
+      "range": "string"
+    },
+    "mass_to_charge": {
+      "name": "mass_to_charge",
+      "title": "m/z (Mass-to-Charge)",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "MetaboliteAbundance"
+      ],
+      "range": "float"
+    },
+    "retention_time_min": {
+      "name": "retention_time_min",
+      "title": "Retention Time (min)",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "MetaboliteAbundance"
+      ],
+      "range": "float"
+    },
+    "abundance": {
+      "name": "abundance",
+      "title": "Abundance",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "domain_of": [
+        "MetaboliteAbundance"
+      ],
+      "range": "float"
+    },
+    "abundance_unit": {
+      "name": "abundance_unit",
+      "title": "Abundance Unit",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "ifabsent": "default",
+      "domain_of": [
+        "MetaboliteAbundance"
+      ],
+      "range": "AbundanceUnitEnum",
+      "equals_string": "relative_abundance_PFOS_normalized"
+    },
+    "analyte_category": {
+      "name": "analyte_category",
+      "title": "Analyte Category",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "ifabsent": "default",
+      "domain_of": [
+        "MetaboliteAbundance"
+      ],
+      "range": "AnalyteCategoryEnum",
+      "equals_string": "metabolite"
+    }
+  },
+  "classes": {
+    "dh_interface": {
+      "name": "dh_interface",
+      "description": "A DataHarmonizer interface",
+      "from_schema": "https://example.org/ISRP_Metabolites"
+    },
+    "Study": {
+      "name": "Study",
+      "description": "DataHarmonizer interface for Study-level metadata",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "study_id": {
+          "name": "study_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "title": {
+          "name": "title",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "description": {
+          "name": "description",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "principal_investigator": {
+          "name": "principal_investigator",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "institution": {
+          "name": "institution",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "ecosystem": {
+          "name": "ecosystem",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "ecosystem_category": {
+          "name": "ecosystem_category",
+          "rank": 7,
+          "slot_group": ""
+        },
+        "ecosystem_type": {
+          "name": "ecosystem_type",
+          "rank": 8,
+          "slot_group": ""
+        },
+        "ecosystem_subtype": {
+          "name": "ecosystem_subtype",
+          "rank": 9,
+          "slot_group": ""
+        },
+        "specific_ecosystem": {
+          "name": "specific_ecosystem",
+          "rank": 10,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "study_id": {
+          "name": "study_id",
+          "description": "Local study identifier (string you control; can be replaced with resolvable IDs later)",
+          "title": "Study ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 1,
+          "alias": "study_id",
+          "owner": "Study",
+          "domain_of": [
+            "Study",
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "title": {
+          "name": "title",
+          "title": "Title",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 2,
+          "alias": "title",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "description": {
+          "name": "description",
+          "title": "Description",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 3,
+          "alias": "description",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "principal_investigator": {
+          "name": "principal_investigator",
+          "title": "Principal Investigator",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 4,
+          "alias": "principal_investigator",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "institution": {
+          "name": "institution",
+          "title": "Institution",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 5,
+          "alias": "institution",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem": {
+          "name": "ecosystem",
+          "title": "Ecosystem",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 6,
+          "alias": "ecosystem",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem_category": {
+          "name": "ecosystem_category",
+          "title": "Ecosystem Category",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 7,
+          "alias": "ecosystem_category",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem_type": {
+          "name": "ecosystem_type",
+          "title": "Ecosystem Type",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 8,
+          "alias": "ecosystem_type",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem_subtype": {
+          "name": "ecosystem_subtype",
+          "title": "Ecosystem Subtype",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 9,
+          "alias": "ecosystem_subtype",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "specific_ecosystem": {
+          "name": "specific_ecosystem",
+          "title": "Specific Ecosystem",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 10,
+          "alias": "specific_ecosystem",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        }
+      }
+    },
+    "Biosample": {
+      "name": "Biosample",
+      "description": "DataHarmonizer interface for Biosample metadata",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "study_id": {
+          "name": "study_id",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "body_site": {
+          "name": "body_site",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "treatment": {
+          "name": "treatment",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "collection_date": {
+          "name": "collection_date",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "geo_location": {
+          "name": "geo_location",
+          "rank": 7,
+          "slot_group": ""
+        },
+        "host": {
+          "name": "host",
+          "rank": 8,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "description": "Local biosample identifier (string you control)",
+          "title": "Biosample Local ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 1,
+          "alias": "biosample_local_id",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample",
+            "OmicsProcessing",
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "study_id": {
+          "name": "study_id",
+          "description": "Local study identifier (string you control; can be replaced with resolvable IDs later)",
+          "title": "Study ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 2,
+          "alias": "study_id",
+          "owner": "Biosample",
+          "domain_of": [
+            "Study",
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "body_site": {
+          "name": "body_site",
+          "description": "Anatomical region for sample origin (validated against Uberon terms)",
+          "title": "Body Site",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 3,
+          "alias": "body_site",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "BodySiteEnum",
+          "required": true
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "description": "Sample label (normalized: remove a single leading 0 after the treatment letter; e.g., S03â†’S3)",
+          "title": "Sample ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 4,
+          "alias": "sample_id",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample",
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true,
+          "pattern": "^[SLMH][1-9][0-9]*$"
+        },
+        "treatment": {
+          "name": "treatment",
+          "title": "Treatment",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 5,
+          "alias": "treatment",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample",
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "TreatmentEnum",
+          "required": true
+        },
+        "collection_date": {
+          "name": "collection_date",
+          "title": "Collection Date",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 6,
+          "alias": "collection_date",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "date"
+        },
+        "geo_location": {
+          "name": "geo_location",
+          "description": "Free-text geographic description or coordinates",
+          "title": "Geographic Location",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 7,
+          "alias": "geo_location",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "host": {
+          "name": "host",
+          "title": "Host",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 8,
+          "alias": "host",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string"
+        }
+      }
+    },
+    "OmicsProcessing": {
+      "name": "OmicsProcessing",
+      "description": "DataHarmonizer interface for OmicsProcessing (metabolomics)",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "omics_processing_local_id": {
+          "name": "omics_processing_local_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "omics_type": {
+          "name": "omics_type",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "instrument": {
+          "name": "instrument",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "processing_institution": {
+          "name": "processing_institution",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "protocol_link": {
+          "name": "protocol_link",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "data_file_name": {
+          "name": "data_file_name",
+          "rank": 7,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "omics_processing_local_id": {
+          "name": "omics_processing_local_id",
+          "description": "Local identifier for the omics processing record",
+          "title": "Omics Processing Local ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 1,
+          "alias": "omics_processing_local_id",
+          "owner": "OmicsProcessing",
+          "domain_of": [
+            "OmicsProcessing"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "description": "Local biosample identifier (string you control)",
+          "title": "Biosample Local ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 2,
+          "alias": "biosample_local_id",
+          "owner": "OmicsProcessing",
+          "domain_of": [
+            "Biosample",
+            "OmicsProcessing",
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "omics_type": {
+          "name": "omics_type",
+          "title": "Omics Type",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 3,
+          "ifabsent": "default",
+          "alias": "omics_type",
+          "owner": "OmicsProcessing",
+          "domain_of": [
+            "OmicsProcessing"
+          ],
+          "slot_group": "",
+          "range": "OmicsTypeEnum",
+          "equals_string": "metabolomics"
+        },
+        "instrument": {
+          "name": "instrument",
+          "title": "Instrument",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 4,
+          "alias": "instrument",
+          "owner": "OmicsProcessing",
+          "domain_of": [
+            "OmicsProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "processing_institution": {
+          "name": "processing_institution",
+          "title": "Processing Institution",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 5,
+          "alias": "processing_institution",
+          "owner": "OmicsProcessing",
+          "domain_of": [
+            "OmicsProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "protocol_link": {
+          "name": "protocol_link",
+          "title": "Protocol Link (URL)",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 6,
+          "alias": "protocol_link",
+          "owner": "OmicsProcessing",
+          "domain_of": [
+            "OmicsProcessing"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "pattern": "^https?://.+$"
+        },
+        "data_file_name": {
+          "name": "data_file_name",
+          "title": "Data File Name",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 7,
+          "alias": "data_file_name",
+          "owner": "OmicsProcessing",
+          "domain_of": [
+            "OmicsProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        }
+      }
+    },
+    "MetaboliteAbundance": {
+      "name": "MetaboliteAbundance",
+      "description": "DataHarmonizer interface for PCB metabolite abundance table",
+      "from_schema": "https://example.org/ISRP_Metabolites",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "treatment": {
+          "name": "treatment",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "metabolite_identified": {
+          "name": "metabolite_identified",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "chemical_formula": {
+          "name": "chemical_formula",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "mass_to_charge": {
+          "name": "mass_to_charge",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "retention_time_min": {
+          "name": "retention_time_min",
+          "rank": 7,
+          "slot_group": ""
+        },
+        "abundance": {
+          "name": "abundance",
+          "rank": 8,
+          "slot_group": ""
+        },
+        "abundance_unit": {
+          "name": "abundance_unit",
+          "rank": 9,
+          "slot_group": ""
+        },
+        "analyte_category": {
+          "name": "analyte_category",
+          "rank": 10,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "description": "Local biosample identifier (string you control)",
+          "title": "Biosample Local ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 1,
+          "alias": "biosample_local_id",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "Biosample",
+            "OmicsProcessing",
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "description": "Sample label (normalized: remove a single leading 0 after the treatment letter; e.g., S03â†’S3)",
+          "title": "Sample ID",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 2,
+          "alias": "sample_id",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "Biosample",
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true,
+          "pattern": "^[SLMH][1-9][0-9]*$"
+        },
+        "treatment": {
+          "name": "treatment",
+          "title": "Treatment",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 3,
+          "alias": "treatment",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "Biosample",
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "TreatmentEnum",
+          "required": true
+        },
+        "metabolite_identified": {
+          "name": "metabolite_identified",
+          "title": "Metabolite Identified",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 4,
+          "alias": "metabolite_identified",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "chemical_formula": {
+          "name": "chemical_formula",
+          "title": "Chemical Formula",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 5,
+          "alias": "chemical_formula",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "mass_to_charge": {
+          "name": "mass_to_charge",
+          "title": "m/z (Mass-to-Charge)",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 6,
+          "alias": "mass_to_charge",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "float"
+        },
+        "retention_time_min": {
+          "name": "retention_time_min",
+          "title": "Retention Time (min)",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 7,
+          "alias": "retention_time_min",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "float"
+        },
+        "abundance": {
+          "name": "abundance",
+          "title": "Abundance",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 8,
+          "alias": "abundance",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "float"
+        },
+        "abundance_unit": {
+          "name": "abundance_unit",
+          "title": "Abundance Unit",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 9,
+          "ifabsent": "default",
+          "alias": "abundance_unit",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "AbundanceUnitEnum",
+          "equals_string": "relative_abundance_PFOS_normalized"
+        },
+        "analyte_category": {
+          "name": "analyte_category",
+          "title": "Analyte Category",
+          "from_schema": "https://example.org/ISRP_Metabolites",
+          "rank": 10,
+          "ifabsent": "default",
+          "alias": "analyte_category",
+          "owner": "MetaboliteAbundance",
+          "domain_of": [
+            "MetaboliteAbundance"
+          ],
+          "slot_group": "",
+          "range": "AnalyteCategoryEnum",
+          "equals_string": "metabolite"
+        }
+      },
+      "tree_root": true
+    }
+  },
+  "settings": {
+    "Title_Case": {
+      "setting_key": "Title_Case",
+      "setting_value": "(((?<=\\b)[^a-z\\W]\\w*?|[\\W])+)"
+    },
+    "UPPER_CASE": {
+      "setting_key": "UPPER_CASE",
+      "setting_value": "[A-Z\\W\\d_]*"
+    },
+    "lower_case": {
+      "setting_key": "lower_case",
+      "setting_value": "[a-z\\W\\d_]*"
+    }
+  },
+  "@type": "SchemaDefinition"
+}

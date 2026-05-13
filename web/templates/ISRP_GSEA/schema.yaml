@@ -1,0 +1,265 @@
+id: https://example.org/isrp/gsea
+name: ISRP_GSEA
+description: 'Field name and descriptions are taken from Section 4.3 of https://liulab-dfci.github.io/RIMA/Differential.html#gene-set-enrichment-analysis-gsea. '
+version: 0.2.0
+imports:
+- linkml:types
+prefixes:
+  GO: http://purl.obolibrary.org/obo/GO
+  GENEPIO: http://purl.obolibrary.org/obo/GENEPIO
+  linkml: "https://w3id.org/linkml/"
+  nmdc: "https://w3id.org/nmdc/"
+  kegg: "https://www.kegg.jp/entry/"
+  schema: http://schema.org/
+  this: https://example.org/marbles/kegg/enrichment/
+  GSEA: "https://liulab-dfci.github.io/RIMA/Differential.html#gene-set-enrichment-analysis-gsea"
+default_prefix: this
+default_range: string
+classes:
+  dh_interface:
+    name: dh_interface
+    description: DataHarmonizer interface for gene set enrichment analysis (GSEA) result
+  ISRP_GSEA:
+    name: ISRP_GSEA
+    description: 'Field names and descriptions are taken from Section 4.3 of the tutorial on RIMA 
+    (RNA-seq immune analysis) https://github.com/liulab-dfci/RIMA_pipeline. RIMA uses the clusterProfiler 
+    R package to look for enriched gene sets in KEGG, GO, and MSigDB.'
+    is_a: dh_interface
+    see_also: 
+    slots:
+    - ID
+    - Description
+    - setSize
+    - enrichmentScore
+    - NES
+    - pvalue
+    - p.adjust
+    - qvalue
+    - rank
+    - leading_edge
+    - core_enrichment
+    - authors
+    - dataharmonizer_provenance
+    slot_usage:
+      ID:
+        rank: 1
+        slot_group: Database Identifier
+      Description:
+        rank: 2
+        slot_group: Database Identifier
+      setSize:
+        rank: 3
+        slot_group: GSEA Output (RIMA pipeline)
+      enrichmentScore:
+        rank: 4
+        slot_group: GSEA Output (RIMA pipeline)
+      NES:
+        rank: 5
+        slot_group: GSEA Output (RIMA pipeline)
+      pvalue:
+        rank: 6
+        slot_group: GSEA Output (RIMA pipeline)
+      p.adjust:
+        rank: 7
+        slot_group: GSEA Output (RIMA pipeline)
+      qvalue: 
+        rank: 8
+        slot_group: GSEA Output (RIMA pipeline)
+      rank:
+        rank: 9
+        slot_group: GSEA Output (RIMA pipeline)
+      leading_edge:
+        rank: 10
+        slot_group: GSEA Output (RIMA pipeline)
+      core_enrichment:
+        rank: 11
+        slot_group: GSEA Output (RIMA pipeline)
+      authors:
+        rank: 12
+        slot_group: Contributor Acknowledgement
+      dataharmonizer_provenance:
+        rank: 13
+        slot_group: Contributor Acknowledgement
+slots:
+  ID:
+    name: ID
+    title: ID
+    description: ID of the get set, e.g., KEGG pathway identifier, including any KEGG entry (pathway, gene, compound, disease, module, etc.)
+    range: string
+    pattern: "^[A-Za-z]{1,5}[:A-Za-z0-9_]*[0-9]{3,}$"
+    required: true
+    slot_uri: GSEA:ID
+    examples:
+    - value: hsa04930
+      description: KEGG pathway ID (organism-specific)
+    - value: map00010
+      description: KEGG reference pathway ID
+  Description:
+    name: Description
+    title: Description
+    description: description of the gene set
+    range: string
+    required: true
+    slot_uri: GSEA:Description
+    examples:
+    - value: Insulin signaling pathway
+  setSize:
+    name: setSize
+    title: setSize
+    description: number of genes in the gene set after filtering out genes not in the expression data.
+    range: integer
+    required: true
+    minimum_value: 1
+    slot_uri: GSEA:setSize
+    examples:
+    - value: 87
+  enrichmentScore:
+    name: enrichmentScore
+    title: enrichmentScore
+    description: the degree to which the gene set is enriched in the top or bottom of the ranked set of genes.
+    range: float
+    required: true
+    minimum_value: -1.0
+    maximum_value: 1.0
+    slot_uri: GSEA:enrichmentScore
+    examples:
+    - value: 0.52
+  NES:
+    name: NES
+    title: NES
+    description: normalized gene enrichment score.
+    range: float
+    required: true
+    minimum_value: -5.0
+    maximum_value: 5.0
+    slot_uri: GSEA:NES
+    examples:
+    - value: 1.9
+  pvalue:
+    name: pvalue
+    title: pvalue
+    description: nominal p value
+    range: float
+    required: true
+    minimum_value: 0.0
+    maximum_value: 1.0
+    slot_uri: GSEA:pvalue
+    exact_mappings:
+    - EDAM:data_1669
+    examples:
+    - value: 0.003
+  p.adjust:
+    name: p.adjust
+    title: p.adjust
+    description: adjusted p value. The default adjustment method is `BH' (Bejamini Hochberg), which is used by the underlying R package clusterProfiler. 
+    range: float
+    required: true
+    minimum_value: 0.0
+    maximum_value: 1.0
+    slot_uri: GSEA:p.adjust
+    examples:
+    - value: 0.012
+  qvalue:
+    name: qvalue
+    title: qvalue
+    description: q value (FDR as implemented by GSEA)
+    range: float
+    required: true
+    minimum_value: 0.0
+    maximum_value: 1.0
+    slot_uri: GSEA:qvalue
+    examples:
+    - value: 0.015
+  rank:
+    name: rank
+    title: rank
+    description: the position in the ranked list at which the maximal enrichment score was achieved.
+    range: integer
+    required: true
+    minimum_value: 1
+    slot_uri: GSEA:rank
+    examples:
+    - value: 7
+    close_mappings:
+    - SIO:000367
+  leading_edge:
+    name: leading_edge
+    title: leading_edge
+    description: three statistics (tags, list and signal) on the subset of genes that most influence the enrichment score
+    range: string
+    required: true
+    slot_uri: GSEA:leading_edge
+    examples:
+    - value: tags (80%), list (50%), signal (65%)
+  core_enrichment:
+    name: core_enrichment
+    title: core_enrichment
+    description: the subset of genes that contribute most to the enrichment score.
+    range: string
+    required: true
+    slot_uri: GSEA:core_enrichment
+    examples:
+    - value: AKT1; IRS1; PIK3CA; PDPK1; FOXO3
+  authors:
+    name: authors
+    title: authors
+    description: Names of individuals contributing to the processes of sample collection,
+      sequence generation, analysis, and data submission.
+    comments: Include the first and last names of all individuals that should be attributed,
+      separated by a comma.
+    slot_uri: GENEPIO:0001517
+    recommended: true
+    range: WhitespaceMinimizedString
+    examples:
+    - value: William Smith, Sandra Johnson
+  dataharmonizer_provenance:
+    name: dataharmonizer_provenance
+    title: DataHarmonizer Provenance
+    description: The DataHarmonizer software and template version provenance.
+    comments: The current software and template version information will be automatically
+      generated in this field after the user utilizes the "validate" function. This
+      information will be generated regardless as to whether the row is valid of not.
+    slot_uri: GENEPIO:0001518
+    range: Provenance
+    examples:
+    - value: DataHarmonizer v1.9.7, ISRP_GSEA v0.2.0
+enums:
+  NullValueMenu:
+    name: NullValueMenu
+    title: null value menu
+    permissible_values:
+      Not Applicable:
+        text: Not Applicable
+        meaning: GENEPIO:0001619
+      Not Collected:
+        text: Not Collected
+        meaning: GENEPIO:0001620
+      Not Provided:
+        text: Not Provided
+        meaning: GENEPIO:0001668
+      Missing:
+        text: Missing
+        meaning: GENEPIO:0001618
+      Restricted Access:
+        text: Restricted Access
+        meaning: GENEPIO:0001810
+types:
+  WhitespaceMinimizedString:
+    name: WhitespaceMinimizedString
+    typeof: string
+    description: 'A string that has all whitespace trimmed off of beginning and end,
+      and all internal whitespace segments reduced to single spaces. Whitespace includes
+      #x9 (tab), #xA (linefeed), and #xD (carriage return).'
+    base: str
+    uri: xsd:token
+  Provenance:
+    name: Provenance
+    typeof: string
+    description: A field containing a DataHarmonizer versioning marker. It is issued
+      by DataHarmonizer when validation is applied to a given row of data.
+    base: str
+    uri: xsd:token
+settings:
+  Title_Case: (((?<=\b)[^a-z\W]\w*?|[\W])+)
+  UPPER_CASE: '[A-Z\W\d_]*'
+  lower_case: '[a-z\W\d_]*'

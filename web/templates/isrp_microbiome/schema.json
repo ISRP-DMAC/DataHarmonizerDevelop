@@ -1,0 +1,1724 @@
+{
+  "name": "ISRP_Microbiome",
+  "description": "DataHarmonizer multi-interface template for microbiome 16S amplicon studies",
+  "id": "https://example.org/ISRP_Microbiome",
+  "version": "0.1.0",
+  "prefixes": {
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    "schema": {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    },
+    "UBERON": {
+      "prefix_prefix": "UBERON",
+      "prefix_reference": "http://purl.obolibrary.org/obo/UBERON_"
+    },
+    "xsd": {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "shex": {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
+    }
+  },
+  "default_prefix": "https://example.org/ISRP_Microbiome/",
+  "types": {
+    "WhitespaceMinimizedString": {
+      "name": "WhitespaceMinimizedString",
+      "description": "A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "Provenance": {
+      "name": "Provenance",
+      "description": "A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "string": {
+      "name": "string",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:string"
+    },
+    "float": {
+      "name": "float",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "float",
+      "uri": "xsd:float"
+    },
+    "date": {
+      "name": "date",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "str",
+      "uri": "xsd:date"
+    },
+    "integer": {
+      "name": "integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "xsd:integer"
+    },
+    "boolean": {
+      "name": "boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "xsd:boolean",
+      "repr": "bool"
+    },
+    "double": {
+      "name": "double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:double"
+    },
+    "decimal": {
+      "name": "decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "xsd:decimal"
+    },
+    "time": {
+      "name": "time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "xsd:time",
+      "repr": "str"
+    },
+    "datetime": {
+      "name": "datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date_or_datetime": {
+      "name": "date_or_datetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "str",
+      "uri": "linkml:DateOrDatetime",
+      "repr": "str"
+    },
+    "uriorcurie": {
+      "name": "uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "URIorCURIE",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "curie": {
+      "name": "curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "Curie",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "uri": {
+      "name": "uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "ncname": {
+      "name": "ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "NCName",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "objectidentifier": {
+      "name": "objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "ElementIdentifier",
+      "uri": "shex:iri",
+      "repr": "str"
+    },
+    "nodeidentifier": {
+      "name": "nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "NodeIdentifier",
+      "uri": "shex:nonLiteral",
+      "repr": "str"
+    },
+    "jsonpointer": {
+      "name": "jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "jsonpath": {
+      "name": "jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "sparqlpath": {
+      "name": "sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    }
+  },
+  "enums": {
+    "BodySiteMenu": {
+      "name": "BodySiteMenu",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "permissible_values": {
+        "jejunum": {
+          "text": "jejunum",
+          "meaning": "UBERON:0002115"
+        },
+        "ileum": {
+          "text": "ileum",
+          "meaning": "UBERON:0002116"
+        },
+        "colon": {
+          "text": "colon",
+          "meaning": "UBERON:0001155"
+        }
+      }
+    },
+    "GutSectionMenu": {
+      "name": "GutSectionMenu",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "permissible_values": {
+        "colon": {
+          "text": "colon"
+        },
+        "ileum": {
+          "text": "ileum"
+        },
+        "jejunum": {
+          "text": "jejunum"
+        }
+      }
+    },
+    "ExposureGroupMenu": {
+      "name": "ExposureGroupMenu",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "permissible_values": {
+        "H": {
+          "text": "H"
+        },
+        "L": {
+          "text": "L"
+        },
+        "M": {
+          "text": "M"
+        },
+        "S": {
+          "text": "S"
+        }
+      }
+    },
+    "OmicsTypeMenu": {
+      "name": "OmicsTypeMenu",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "permissible_values": {
+        "amplicon": {
+          "text": "amplicon"
+        }
+      }
+    },
+    "TargetGeneMenu": {
+      "name": "TargetGeneMenu",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "permissible_values": {
+        "16S rRNA": {
+          "text": "16S rRNA"
+        },
+        "18S rRNA": {
+          "text": "18S rRNA"
+        },
+        "ITS": {
+          "text": "ITS"
+        },
+        "other": {
+          "text": "other"
+        }
+      }
+    },
+    "SequencingInstrumentMenu": {
+      "name": "SequencingInstrumentMenu",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "permissible_values": {
+        "Illumina MiSeq": {
+          "text": "Illumina MiSeq"
+        },
+        "Illumina NovaSeq": {
+          "text": "Illumina NovaSeq"
+        },
+        "Illumina NextSeq": {
+          "text": "Illumina NextSeq"
+        },
+        "Other": {
+          "text": "Other"
+        }
+      }
+    },
+    "CountUnitMenu": {
+      "name": "CountUnitMenu",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "permissible_values": {
+        "reads": {
+          "text": "reads"
+        },
+        "relative_abundance": {
+          "text": "relative_abundance"
+        }
+      }
+    }
+  },
+  "slots": {
+    "study_id": {
+      "name": "study_id",
+      "title": "Study ID",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study",
+        "Biosample"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "description": {
+      "name": "description",
+      "title": "Description",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "principal_investigator": {
+      "name": "principal_investigator",
+      "title": "Principal Investigator",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "institution": {
+      "name": "institution",
+      "title": "Institution",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem": {
+      "name": "ecosystem",
+      "title": "Ecosystem",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem_category": {
+      "name": "ecosystem_category",
+      "title": "Ecosystem Category",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem_type": {
+      "name": "ecosystem_type",
+      "title": "Ecosystem Type",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "ecosystem_subtype": {
+      "name": "ecosystem_subtype",
+      "title": "Ecosystem Subtype",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "specific_ecosystem": {
+      "name": "specific_ecosystem",
+      "title": "Specific Ecosystem",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string"
+    },
+    "biosample_local_id": {
+      "name": "biosample_local_id",
+      "title": "Biosample Local ID",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample",
+        "AmpliconProcessing",
+        "ASVAbundance"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "body_site": {
+      "name": "body_site",
+      "description": "Anatomical region (UBERON)",
+      "title": "Body Site",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "BodySiteEnum",
+      "required": true
+    },
+    "sample_id": {
+      "name": "sample_id",
+      "description": "Label matching ASV table sample name",
+      "title": "Sample ID",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample",
+        "ASVAbundance"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "gut_section": {
+      "name": "gut_section",
+      "title": "Gut Section",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "GutSectionEnum"
+    },
+    "exposure_group": {
+      "name": "exposure_group",
+      "title": "Exposure Group",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample",
+        "ASVAbundance"
+      ],
+      "range": "ExposureGroupEnum"
+    },
+    "section_exposure": {
+      "name": "section_exposure",
+      "title": "Section + Exposure (e.g., colon S)",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "string"
+    },
+    "collection_date": {
+      "name": "collection_date",
+      "title": "Collection Date",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "date"
+    },
+    "geo_location": {
+      "name": "geo_location",
+      "title": "Geographic Location",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "string"
+    },
+    "host": {
+      "name": "host",
+      "title": "Host",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "Biosample"
+      ],
+      "range": "string"
+    },
+    "omics_processing_local_id": {
+      "name": "omics_processing_local_id",
+      "title": "Omics Processing Local ID",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "omics_type": {
+      "name": "omics_type",
+      "title": "Omics Type",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "ifabsent": "default",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "OmicsTypeEnum",
+      "equals_string": "amplicon"
+    },
+    "target_gene": {
+      "name": "target_gene",
+      "title": "Target Gene",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "TargetGeneEnum"
+    },
+    "target_subfragment": {
+      "name": "target_subfragment",
+      "title": "Target Subfragment (e.g., V4)",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "pcr_primer_forward_name": {
+      "name": "pcr_primer_forward_name",
+      "title": "PCR Primer F Name",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "pcr_primer_forward_seq": {
+      "name": "pcr_primer_forward_seq",
+      "title": "PCR Primer F Seq",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "pcr_primer_reverse_name": {
+      "name": "pcr_primer_reverse_name",
+      "title": "PCR Primer R Name",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "pcr_primer_reverse_seq": {
+      "name": "pcr_primer_reverse_seq",
+      "title": "PCR Primer R Seq",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "sequencing_instrument": {
+      "name": "sequencing_instrument",
+      "title": "Sequencing Instrument",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "SequencingInstrumentEnum"
+    },
+    "library_preparation_kit": {
+      "name": "library_preparation_kit",
+      "title": "Library Preparation Kit",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "read_length": {
+      "name": "read_length",
+      "title": "Read Length (e.g., 2x250)",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "protocol_link": {
+      "name": "protocol_link",
+      "title": "Protocol Link (URL)",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string",
+      "pattern": "^https?://.+$"
+    },
+    "data_file_name": {
+      "name": "data_file_name",
+      "title": "Data File Name",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "AmpliconProcessing"
+      ],
+      "range": "string"
+    },
+    "taxon": {
+      "name": "taxon",
+      "title": "Taxon (concatenated ranks or ASV ID)",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string",
+      "required": true
+    },
+    "kingdom": {
+      "name": "kingdom",
+      "title": "Kingdom",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string"
+    },
+    "phylum": {
+      "name": "phylum",
+      "title": "Phylum",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string"
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string"
+    },
+    "order": {
+      "name": "order",
+      "title": "Order",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string"
+    },
+    "family": {
+      "name": "family",
+      "title": "Family",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string"
+    },
+    "genus": {
+      "name": "genus",
+      "title": "Genus",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string"
+    },
+    "species": {
+      "name": "species",
+      "title": "Species",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "string"
+    },
+    "count": {
+      "name": "count",
+      "title": "Count",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "float"
+    },
+    "count_unit": {
+      "name": "count_unit",
+      "title": "Count Unit",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "ifabsent": "default",
+      "domain_of": [
+        "ASVAbundance"
+      ],
+      "range": "CountUnitEnum",
+      "equals_string": "reads"
+    }
+  },
+  "classes": {
+    "dh_interface": {
+      "name": "dh_interface",
+      "description": "A DataHarmonizer interface",
+      "from_schema": "https://example.org/ISRP_Microbiome"
+    },
+    "Study": {
+      "name": "Study",
+      "description": "Study-level metadata",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "study_id": {
+          "name": "study_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "title": {
+          "name": "title",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "description": {
+          "name": "description",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "principal_investigator": {
+          "name": "principal_investigator",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "institution": {
+          "name": "institution",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "ecosystem": {
+          "name": "ecosystem",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "ecosystem_category": {
+          "name": "ecosystem_category",
+          "rank": 7,
+          "slot_group": ""
+        },
+        "ecosystem_type": {
+          "name": "ecosystem_type",
+          "rank": 8,
+          "slot_group": ""
+        },
+        "ecosystem_subtype": {
+          "name": "ecosystem_subtype",
+          "rank": 9,
+          "slot_group": ""
+        },
+        "specific_ecosystem": {
+          "name": "specific_ecosystem",
+          "rank": 10,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "study_id": {
+          "name": "study_id",
+          "title": "Study ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 1,
+          "alias": "study_id",
+          "owner": "Study",
+          "domain_of": [
+            "Study",
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "title": {
+          "name": "title",
+          "title": "Title",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 2,
+          "alias": "title",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "description": {
+          "name": "description",
+          "title": "Description",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 3,
+          "alias": "description",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "principal_investigator": {
+          "name": "principal_investigator",
+          "title": "Principal Investigator",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 4,
+          "alias": "principal_investigator",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "institution": {
+          "name": "institution",
+          "title": "Institution",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 5,
+          "alias": "institution",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem": {
+          "name": "ecosystem",
+          "title": "Ecosystem",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 6,
+          "alias": "ecosystem",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem_category": {
+          "name": "ecosystem_category",
+          "title": "Ecosystem Category",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 7,
+          "alias": "ecosystem_category",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem_type": {
+          "name": "ecosystem_type",
+          "title": "Ecosystem Type",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 8,
+          "alias": "ecosystem_type",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "ecosystem_subtype": {
+          "name": "ecosystem_subtype",
+          "title": "Ecosystem Subtype",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 9,
+          "alias": "ecosystem_subtype",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "specific_ecosystem": {
+          "name": "specific_ecosystem",
+          "title": "Specific Ecosystem",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 10,
+          "alias": "specific_ecosystem",
+          "owner": "Study",
+          "domain_of": [
+            "Study"
+          ],
+          "slot_group": "",
+          "range": "string"
+        }
+      }
+    },
+    "Biosample": {
+      "name": "Biosample",
+      "description": "Biosample metadata",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "study_id": {
+          "name": "study_id",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "body_site": {
+          "name": "body_site",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "gut_section": {
+          "name": "gut_section",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "exposure_group": {
+          "name": "exposure_group",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "section_exposure": {
+          "name": "section_exposure",
+          "rank": 7,
+          "slot_group": ""
+        },
+        "collection_date": {
+          "name": "collection_date",
+          "rank": 8,
+          "slot_group": ""
+        },
+        "geo_location": {
+          "name": "geo_location",
+          "rank": 9,
+          "slot_group": ""
+        },
+        "host": {
+          "name": "host",
+          "rank": 10,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "title": "Biosample Local ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 1,
+          "alias": "biosample_local_id",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample",
+            "AmpliconProcessing",
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "study_id": {
+          "name": "study_id",
+          "title": "Study ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 2,
+          "alias": "study_id",
+          "owner": "Biosample",
+          "domain_of": [
+            "Study",
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "body_site": {
+          "name": "body_site",
+          "description": "Anatomical region (UBERON)",
+          "title": "Body Site",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 3,
+          "alias": "body_site",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "BodySiteEnum",
+          "required": true
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "description": "Label matching ASV table sample name",
+          "title": "Sample ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 4,
+          "alias": "sample_id",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample",
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "gut_section": {
+          "name": "gut_section",
+          "title": "Gut Section",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 5,
+          "alias": "gut_section",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "GutSectionEnum"
+        },
+        "exposure_group": {
+          "name": "exposure_group",
+          "title": "Exposure Group",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 6,
+          "alias": "exposure_group",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample",
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "ExposureGroupEnum"
+        },
+        "section_exposure": {
+          "name": "section_exposure",
+          "title": "Section + Exposure (e.g., colon S)",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 7,
+          "alias": "section_exposure",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "collection_date": {
+          "name": "collection_date",
+          "title": "Collection Date",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 8,
+          "alias": "collection_date",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "date"
+        },
+        "geo_location": {
+          "name": "geo_location",
+          "title": "Geographic Location",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 9,
+          "alias": "geo_location",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "host": {
+          "name": "host",
+          "title": "Host",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 10,
+          "alias": "host",
+          "owner": "Biosample",
+          "domain_of": [
+            "Biosample"
+          ],
+          "slot_group": "",
+          "range": "string"
+        }
+      }
+    },
+    "AmpliconProcessing": {
+      "name": "AmpliconProcessing",
+      "description": "Omics processing metadata for 16S rRNA amplicon libraries",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "omics_processing_local_id": {
+          "name": "omics_processing_local_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "omics_type": {
+          "name": "omics_type",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "target_gene": {
+          "name": "target_gene",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "target_subfragment": {
+          "name": "target_subfragment",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "pcr_primer_forward_name": {
+          "name": "pcr_primer_forward_name",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "pcr_primer_forward_seq": {
+          "name": "pcr_primer_forward_seq",
+          "rank": 7,
+          "slot_group": ""
+        },
+        "pcr_primer_reverse_name": {
+          "name": "pcr_primer_reverse_name",
+          "rank": 8,
+          "slot_group": ""
+        },
+        "pcr_primer_reverse_seq": {
+          "name": "pcr_primer_reverse_seq",
+          "rank": 9,
+          "slot_group": ""
+        },
+        "sequencing_instrument": {
+          "name": "sequencing_instrument",
+          "rank": 10,
+          "slot_group": ""
+        },
+        "library_preparation_kit": {
+          "name": "library_preparation_kit",
+          "rank": 11,
+          "slot_group": ""
+        },
+        "read_length": {
+          "name": "read_length",
+          "rank": 12,
+          "slot_group": ""
+        },
+        "protocol_link": {
+          "name": "protocol_link",
+          "rank": 13,
+          "slot_group": ""
+        },
+        "data_file_name": {
+          "name": "data_file_name",
+          "rank": 14,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "omics_processing_local_id": {
+          "name": "omics_processing_local_id",
+          "title": "Omics Processing Local ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 1,
+          "alias": "omics_processing_local_id",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "title": "Biosample Local ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 2,
+          "alias": "biosample_local_id",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "Biosample",
+            "AmpliconProcessing",
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "omics_type": {
+          "name": "omics_type",
+          "title": "Omics Type",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 3,
+          "ifabsent": "default",
+          "alias": "omics_type",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "OmicsTypeEnum",
+          "equals_string": "amplicon"
+        },
+        "target_gene": {
+          "name": "target_gene",
+          "title": "Target Gene",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 4,
+          "alias": "target_gene",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "TargetGeneEnum"
+        },
+        "target_subfragment": {
+          "name": "target_subfragment",
+          "title": "Target Subfragment (e.g., V4)",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 5,
+          "alias": "target_subfragment",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "pcr_primer_forward_name": {
+          "name": "pcr_primer_forward_name",
+          "title": "PCR Primer F Name",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 6,
+          "alias": "pcr_primer_forward_name",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "pcr_primer_forward_seq": {
+          "name": "pcr_primer_forward_seq",
+          "title": "PCR Primer F Seq",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 7,
+          "alias": "pcr_primer_forward_seq",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "pcr_primer_reverse_name": {
+          "name": "pcr_primer_reverse_name",
+          "title": "PCR Primer R Name",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 8,
+          "alias": "pcr_primer_reverse_name",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "pcr_primer_reverse_seq": {
+          "name": "pcr_primer_reverse_seq",
+          "title": "PCR Primer R Seq",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 9,
+          "alias": "pcr_primer_reverse_seq",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "sequencing_instrument": {
+          "name": "sequencing_instrument",
+          "title": "Sequencing Instrument",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 10,
+          "alias": "sequencing_instrument",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "SequencingInstrumentEnum"
+        },
+        "library_preparation_kit": {
+          "name": "library_preparation_kit",
+          "title": "Library Preparation Kit",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 11,
+          "alias": "library_preparation_kit",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "read_length": {
+          "name": "read_length",
+          "title": "Read Length (e.g., 2x250)",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 12,
+          "alias": "read_length",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "protocol_link": {
+          "name": "protocol_link",
+          "title": "Protocol Link (URL)",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 13,
+          "alias": "protocol_link",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "pattern": "^https?://.+$"
+        },
+        "data_file_name": {
+          "name": "data_file_name",
+          "title": "Data File Name",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 14,
+          "alias": "data_file_name",
+          "owner": "AmpliconProcessing",
+          "domain_of": [
+            "AmpliconProcessing"
+          ],
+          "slot_group": "",
+          "range": "string"
+        }
+      }
+    },
+    "ASVAbundance": {
+      "name": "ASVAbundance",
+      "description": "Long-format amplicon sequence variant abundance table",
+      "from_schema": "https://example.org/ISRP_Microbiome",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "rank": 1,
+          "slot_group": ""
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "rank": 2,
+          "slot_group": ""
+        },
+        "exposure_group": {
+          "name": "exposure_group",
+          "rank": 3,
+          "slot_group": ""
+        },
+        "taxon": {
+          "name": "taxon",
+          "rank": 4,
+          "slot_group": ""
+        },
+        "kingdom": {
+          "name": "kingdom",
+          "rank": 5,
+          "slot_group": ""
+        },
+        "phylum": {
+          "name": "phylum",
+          "rank": 6,
+          "slot_group": ""
+        },
+        "class": {
+          "name": "class",
+          "rank": 7,
+          "slot_group": ""
+        },
+        "order": {
+          "name": "order",
+          "rank": 8,
+          "slot_group": ""
+        },
+        "family": {
+          "name": "family",
+          "rank": 9,
+          "slot_group": ""
+        },
+        "genus": {
+          "name": "genus",
+          "rank": 10,
+          "slot_group": ""
+        },
+        "species": {
+          "name": "species",
+          "rank": 11,
+          "slot_group": ""
+        },
+        "count": {
+          "name": "count",
+          "rank": 12,
+          "slot_group": ""
+        },
+        "count_unit": {
+          "name": "count_unit",
+          "rank": 13,
+          "slot_group": ""
+        }
+      },
+      "attributes": {
+        "biosample_local_id": {
+          "name": "biosample_local_id",
+          "title": "Biosample Local ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 1,
+          "alias": "biosample_local_id",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "Biosample",
+            "AmpliconProcessing",
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "sample_id": {
+          "name": "sample_id",
+          "description": "Label matching ASV table sample name",
+          "title": "Sample ID",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 2,
+          "alias": "sample_id",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "Biosample",
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "exposure_group": {
+          "name": "exposure_group",
+          "title": "Exposure Group",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 3,
+          "alias": "exposure_group",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "Biosample",
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "ExposureGroupEnum"
+        },
+        "taxon": {
+          "name": "taxon",
+          "title": "Taxon (concatenated ranks or ASV ID)",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 4,
+          "alias": "taxon",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string",
+          "required": true
+        },
+        "kingdom": {
+          "name": "kingdom",
+          "title": "Kingdom",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 5,
+          "alias": "kingdom",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "phylum": {
+          "name": "phylum",
+          "title": "Phylum",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 6,
+          "alias": "phylum",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "class": {
+          "name": "class",
+          "title": "Class",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 7,
+          "alias": "class",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "order": {
+          "name": "order",
+          "title": "Order",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 8,
+          "alias": "order",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "family": {
+          "name": "family",
+          "title": "Family",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 9,
+          "alias": "family",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "genus": {
+          "name": "genus",
+          "title": "Genus",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 10,
+          "alias": "genus",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "species": {
+          "name": "species",
+          "title": "Species",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 11,
+          "alias": "species",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "string"
+        },
+        "count": {
+          "name": "count",
+          "title": "Count",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 12,
+          "alias": "count",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "float"
+        },
+        "count_unit": {
+          "name": "count_unit",
+          "title": "Count Unit",
+          "from_schema": "https://example.org/ISRP_Microbiome",
+          "rank": 13,
+          "ifabsent": "default",
+          "alias": "count_unit",
+          "owner": "ASVAbundance",
+          "domain_of": [
+            "ASVAbundance"
+          ],
+          "slot_group": "",
+          "range": "CountUnitEnum",
+          "equals_string": "reads"
+        }
+      }
+    }
+  },
+  "settings": {
+    "Title_Case": {
+      "setting_key": "Title_Case",
+      "setting_value": "(((?<=\\b)[^a-z\\W]\\w*?|[\\W])+)"
+    },
+    "UPPER_CASE": {
+      "setting_key": "UPPER_CASE",
+      "setting_value": "[A-Z\\W\\d_]*"
+    },
+    "lower_case": {
+      "setting_key": "lower_case",
+      "setting_value": "[a-z\\W\\d_]*"
+    }
+  },
+  "@type": "SchemaDefinition"
+}

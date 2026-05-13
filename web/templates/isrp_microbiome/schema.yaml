@@ -1,0 +1,443 @@
+id: https://example.org/ISRP_Microbiome
+name: ISRP_Microbiome
+description: DataHarmonizer multi-interface template for microbiome 16S amplicon studies
+version: 0.1.0
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  xsd: http://www.w3.org/2001/XMLSchema#
+classes:
+  dh_interface:
+    name: dh_interface
+    description: A DataHarmonizer interface
+  Study:
+    name: Study
+    description: Study-level metadata
+    is_a: dh_interface
+    slots:
+    - study_id
+    - title
+    - description
+    - principal_investigator
+    - institution
+    - ecosystem
+    - ecosystem_category
+    - ecosystem_type
+    - ecosystem_subtype
+    - specific_ecosystem
+    slot_usage:
+      study_id:
+        rank: 1
+        slot_group: ''
+      title:
+        rank: 2
+        slot_group: ''
+      description:
+        rank: 3
+        slot_group: ''
+      principal_investigator:
+        rank: 4
+        slot_group: ''
+      institution:
+        rank: 5
+        slot_group: ''
+      ecosystem:
+        rank: 6
+        slot_group: ''
+      ecosystem_category:
+        rank: 7
+        slot_group: ''
+      ecosystem_type:
+        rank: 8
+        slot_group: ''
+      ecosystem_subtype:
+        rank: 9
+        slot_group: ''
+      specific_ecosystem:
+        rank: 10
+        slot_group: ''
+  Biosample:
+    name: Biosample
+    description: Biosample metadata
+    is_a: dh_interface
+    slots:
+    - biosample_local_id
+    - study_id
+    - body_site
+    - sample_id
+    - gut_section
+    - exposure_group
+    - section_exposure
+    - collection_date
+    - geo_location
+    - host
+    slot_usage:
+      biosample_local_id:
+        rank: 1
+        slot_group: ''
+      study_id:
+        rank: 2
+        slot_group: ''
+      body_site:
+        rank: 3
+        slot_group: ''
+      sample_id:
+        rank: 4
+        slot_group: ''
+      gut_section:
+        rank: 5
+        slot_group: ''
+      exposure_group:
+        rank: 6
+        slot_group: ''
+      section_exposure:
+        rank: 7
+        slot_group: ''
+      collection_date:
+        rank: 8
+        slot_group: ''
+      geo_location:
+        rank: 9
+        slot_group: ''
+      host:
+        rank: 10
+        slot_group: ''
+  AmpliconProcessing:
+    name: AmpliconProcessing
+    description: Omics processing metadata for 16S rRNA amplicon libraries
+    is_a: dh_interface
+    slots:
+    - omics_processing_local_id
+    - biosample_local_id
+    - omics_type
+    - target_gene
+    - target_subfragment
+    - pcr_primer_forward_name
+    - pcr_primer_forward_seq
+    - pcr_primer_reverse_name
+    - pcr_primer_reverse_seq
+    - sequencing_instrument
+    - library_preparation_kit
+    - read_length
+    - protocol_link
+    - data_file_name
+    slot_usage:
+      omics_processing_local_id:
+        rank: 1
+        slot_group: ''
+      biosample_local_id:
+        rank: 2
+        slot_group: ''
+      omics_type:
+        rank: 3
+        slot_group: ''
+      target_gene:
+        rank: 4
+        slot_group: ''
+      target_subfragment:
+        rank: 5
+        slot_group: ''
+      pcr_primer_forward_name:
+        rank: 6
+        slot_group: ''
+      pcr_primer_forward_seq:
+        rank: 7
+        slot_group: ''
+      pcr_primer_reverse_name:
+        rank: 8
+        slot_group: ''
+      pcr_primer_reverse_seq:
+        rank: 9
+        slot_group: ''
+      sequencing_instrument:
+        rank: 10
+        slot_group: ''
+      library_preparation_kit:
+        rank: 11
+        slot_group: ''
+      read_length:
+        rank: 12
+        slot_group: ''
+      protocol_link:
+        rank: 13
+        slot_group: ''
+      data_file_name:
+        rank: 14
+        slot_group: ''
+  ASVAbundance:
+    name: ASVAbundance
+    description: Long-format amplicon sequence variant abundance table
+    is_a: dh_interface
+    slots:
+    - biosample_local_id
+    - sample_id
+    - exposure_group
+    - taxon
+    - kingdom
+    - phylum
+    - class
+    - order
+    - family
+    - genus
+    - species
+    - count
+    - count_unit
+    slot_usage:
+      biosample_local_id:
+        rank: 1
+        slot_group: ''
+      sample_id:
+        rank: 2
+        slot_group: ''
+      exposure_group:
+        rank: 3
+        slot_group: ''
+      taxon:
+        rank: 4
+        slot_group: ''
+      kingdom:
+        rank: 5
+        slot_group: ''
+      phylum:
+        rank: 6
+        slot_group: ''
+      class:
+        rank: 7
+        slot_group: ''
+      order:
+        rank: 8
+        slot_group: ''
+      family:
+        rank: 9
+        slot_group: ''
+      genus:
+        rank: 10
+        slot_group: ''
+      species:
+        rank: 11
+        slot_group: ''
+      count:
+        rank: 12
+        slot_group: ''
+      count_unit:
+        rank: 13
+        slot_group: ''
+slots:
+  study_id:
+    range: string
+    required: true
+    title: Study ID
+  title:
+    range: string
+    required: true
+    title: Title
+  description:
+    range: string
+    title: Description
+  principal_investigator:
+    range: string
+    title: Principal Investigator
+  institution:
+    range: string
+    title: Institution
+  ecosystem:
+    range: string
+    title: Ecosystem
+  ecosystem_category:
+    range: string
+    title: Ecosystem Category
+  ecosystem_type:
+    range: string
+    title: Ecosystem Type
+  ecosystem_subtype:
+    range: string
+    title: Ecosystem Subtype
+  specific_ecosystem:
+    range: string
+    title: Specific Ecosystem
+  biosample_local_id:
+    range: string
+    required: true
+    title: Biosample Local ID
+  body_site:
+    range: BodySiteEnum
+    required: true
+    title: Body Site
+    description: Anatomical region (UBERON)
+  sample_id:
+    range: string
+    required: true
+    title: Sample ID
+    description: Label matching ASV table sample name
+  gut_section:
+    range: GutSectionEnum
+    title: Gut Section
+  exposure_group:
+    range: ExposureGroupEnum
+    title: Exposure Group
+  section_exposure:
+    range: string
+    title: Section + Exposure (e.g., colon S)
+  collection_date:
+    range: date
+    title: Collection Date
+  geo_location:
+    range: string
+    title: Geographic Location
+  host:
+    range: string
+    title: Host
+  omics_processing_local_id:
+    range: string
+    required: true
+    title: Omics Processing Local ID
+  omics_type:
+    range: OmicsTypeEnum
+    title: Omics Type
+    ifabsent: default
+    equals_string: amplicon
+  target_gene:
+    range: TargetGeneEnum
+    title: Target Gene
+  target_subfragment:
+    range: string
+    title: Target Subfragment (e.g., V4)
+  pcr_primer_forward_name:
+    range: string
+    title: PCR Primer F Name
+  pcr_primer_forward_seq:
+    range: string
+    title: PCR Primer F Seq
+  pcr_primer_reverse_name:
+    range: string
+    title: PCR Primer R Name
+  pcr_primer_reverse_seq:
+    range: string
+    title: PCR Primer R Seq
+  sequencing_instrument:
+    range: SequencingInstrumentEnum
+    title: Sequencing Instrument
+  library_preparation_kit:
+    range: string
+    title: Library Preparation Kit
+  read_length:
+    range: string
+    title: Read Length (e.g., 2x250)
+  protocol_link:
+    range: string
+    pattern: ^https?://.+$
+    title: Protocol Link (URL)
+  data_file_name:
+    range: string
+    title: Data File Name
+  taxon:
+    range: string
+    required: true
+    title: Taxon (concatenated ranks or ASV ID)
+  kingdom:
+    range: string
+    title: Kingdom
+  phylum:
+    range: string
+    title: Phylum
+  class:
+    range: string
+    title: Class
+  order:
+    range: string
+    title: Order
+  family:
+    range: string
+    title: Family
+  genus:
+    range: string
+    title: Genus
+  species:
+    range: string
+    title: Species
+  count:
+    range: float
+    title: Count
+  count_unit:
+    range: CountUnitEnum
+    title: Count Unit
+    ifabsent: default
+    equals_string: reads
+enums:
+  BodySiteMenu:
+    permissible_values:
+      jejunum:
+        meaning: UBERON:0002115
+      ileum:
+        meaning: UBERON:0002116
+      colon:
+        meaning: UBERON:0001155
+  GutSectionMenu:
+    permissible_values:
+      colon: {}
+      ileum: {}
+      jejunum: {}
+  ExposureGroupMenu:
+    permissible_values:
+      H: {}
+      L: {}
+      M: {}
+      S: {}
+  OmicsTypeMenu:
+    permissible_values:
+      amplicon: {}
+  TargetGeneMenu:
+    permissible_values:
+      16S rRNA: {}
+      18S rRNA: {}
+      ITS: {}
+      other: {}
+  SequencingInstrumentMenu:
+    permissible_values:
+      Illumina MiSeq: {}
+      Illumina NovaSeq: {}
+      Illumina NextSeq: {}
+      Other: {}
+  CountUnitMenu:
+    permissible_values:
+      reads: {}
+      relative_abundance: {}
+types:
+  WhitespaceMinimizedString:
+    name: WhitespaceMinimizedString
+    typeof: string
+    description: 'A string that has all whitespace trimmed off of beginning and end,
+      and all internal whitespace segments reduced to single spaces. Whitespace includes
+      #x9 (tab), #xA (linefeed), and #xD (carriage return).'
+    base: str
+    uri: xsd:token
+  Provenance:
+    name: Provenance
+    typeof: string
+    description: A field containing a DataHarmonizer versioning marker. It is issued
+      by DataHarmonizer when validation is applied to a given row of data.
+    base: str
+    uri: xsd:token
+  string:
+    name: string
+    typeof: string
+    base: str
+    uri: xsd:string
+    description:
+  float:
+    name: float
+    base: float
+    uri: xsd:float
+  date:
+    name: date
+    base: str
+    uri: xsd:date
+
+settings:
+  Title_Case: (((?<=\b)[^a-z\W]\w*?|[\W])+)
+  UPPER_CASE: '[A-Z\W\d_]*'
+  lower_case: '[a-z\W\d_]*'
+

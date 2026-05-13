@@ -1,0 +1,46 @@
+{
+ "ISRP_GSEA": {
+    "folder": "ISRP_GSEA",
+    "id": "https://example.org/gsea",
+    "version": "0.2.0",
+    "templates": {
+      "ISRP_GSEA": {
+        "name": "ISRP_GSEA",
+        "display": true
+      }
+    }
+  },
+"ISRP_Project3": {
+    "folder": "ISRP_Project3",
+    "id": "https://example.com/ISRP_Project3",
+    "version": "0.1.0",
+    "templates": {
+      "ISRP_Project3": {
+        "name": "ISRP_Project3",
+        "display": true
+      }
+    }
+  },
+  "ISRP_Project4": {
+    "folder": "ISRP_Project4",
+    "id": "https://example.com/ISRP_Project4",
+    "version": "0.1.0",
+    "templates": {
+      "ISRP_Project4": {
+        "name": "ISRP_Project4",
+        "display": true
+      }
+    }
+  },
+  "ISRP_Project5": {
+    "folder": "ISRP_Project5",
+    "id": "https://example.com/ISRP_Project5",
+    "version": "0.1.0",
+    "templates": {
+      "ISRP_Project5": {
+        "name": "ISRP_Project5",
+        "display": true
+      }
+    }
+  }
+}

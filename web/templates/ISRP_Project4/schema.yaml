@@ -1,0 +1,175 @@
+
+id: https://example.org/isrp-project4
+name: ISRP_Project4_DH_Schema
+version: 0.1.3
+description: >-
+  DataHarmonizer schema for ISRP Project 4 with PCB_1 ... PCB_6 fields added.
+prefixes:
+  linkml: https://w3id.org/linkml/
+  xsd: http://www.w3.org/2001/XMLSchema#
+default_curi_maps:
+  - semweb_context
+default_prefix: isrp4
+imports:
+  - linkml:types
+
+types:
+  WhitespaceMinimizedString:
+    name: WhitespaceMinimizedString
+    typeof: string
+    base: str
+    uri: xsd:token
+    description: >-
+      A string that has all whitespace trimmed off of beginning and end,
+      and internal whitespace collapsed to single spaces.
+
+classes:
+  dh_interface:
+    name: dh_interface
+    description: A DataHarmonizer interface (sheet)
+
+  ISRP_Project4:
+    name: ISRP_Project4
+    description: One row per sample
+    is_a: dh_interface
+    tree_root: true
+    slots:
+      - sid
+      - study
+      - experiment
+      - flow
+      - time
+      - PCB_1
+      - PCB_2
+      - PCB_3
+      - PCB_4
+      - PCB_5
+      - PCB_6
+    unique_keys:
+      sid_unique:
+        unique_key_name: sid_unique
+        unique_key_slots: [sid]
+
+slots:
+  sid:
+    name: sid
+    title: sample identifier
+    description: >-
+      Sample identifier; format Sxx_y where xx denotes the sample number within
+      each study, and y denotes whether the sample is a duplicate.
+    range: WhitespaceMinimizedString
+    required: true
+    pattern: ^S\d{2}_[A-Za-z0-9]$
+
+  study:
+    name: study
+    title: study number
+    description: Study number described in the paper
+    range: StudyMenu
+    required: true
+
+  experiment:
+    name: experiment
+    title: experiment type
+    description: Description of the type of experiment
+    range: ExperimentMenu
+    required: true
+
+  flow:
+    name: flow
+    title: flow rate
+    description: Air flow of the active low-sampler (L/min)
+    range: FlowMenu
+    required: true
+    annotations:
+      unit:
+        tag: unit
+        value: L/min
+
+  time:
+    name: time
+    title: deployment time
+    description: Deployment time (hr); expected around 24 hr.
+    range: float
+    required: true
+    minimum_value: 0
+    maximum_value: 72
+    annotations:
+      unit:
+        tag: unit
+        value: hr
+
+  PCB_1:
+    name: PCB_1
+    title: PCB_1 concentration
+    description: PCB_1 measurement; non-negative float. Units not specified.
+    range: float
+    required: false
+    minimum_value: 0
+
+  PCB_2:
+    name: PCB_2
+    title: PCB_2 concentration
+    description: PCB_2 measurement; non-negative float. Units not specified.
+    range: float
+    required: false
+    minimum_value: 0
+
+  PCB_3:
+    name: PCB_3
+    title: PCB_3 concentration
+    description: PCB_3 measurement; non-negative float. Units not specified.
+    range: float
+    required: false
+    minimum_value: 0
+
+  PCB_4:
+    name: PCB_4
+    title: PCB_4 concentration
+    description: PCB_4 measurement; non-negative float. Units not specified.
+    range: float
+    required: false
+    minimum_value: 0
+
+  PCB_5:
+    name: PCB_5
+    title: PCB_5 concentration
+    description: PCB_5 measurement; non-negative float. Units not specified.
+    range: float
+    required: false
+    minimum_value: 0
+
+  PCB_6:
+    name: PCB_6
+    title: PCB_6 concentration
+    description: PCB_6 measurement; non-negative float. Units not specified.
+    range: float
+    required: false
+    minimum_value: 0
+
+# picklists
+enums:
+  StudyMenu:
+    name: StudyMenu
+    description: Allowed study numbers
+    permissible_values:
+      "1": {}
+      "2": {}
+      "3": {}
+      "4": {}
+      "5": {}
+
+  ExperimentMenu:
+    name: ExperimentMenu
+    description: Allowed experiment types
+    permissible_values:
+      static: {}
+      static/rot: {}
+      personal: {}
+
+  FlowMenu:
+    name: FlowMenu
+    description: Allowed flow rates (L/min)
+    permissible_values:
+      "2": {}
+      "2.5": {}

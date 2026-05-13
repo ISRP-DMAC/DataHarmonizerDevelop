@@ -1,0 +1,5909 @@
+{
+  "name": "ISRP_Project3_DH_Schema",
+  "description": "DataHarmonizer schema generated from ISRP Project 3 data dictionary with batch/sample metadata and 209 PCB congener columns (wide form).",
+  "id": "https://example.org/isrp-project3",
+  "version": "0.1.0",
+  "prefixes": {
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    "xsd": {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "shex": {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
+    },
+    "schema": {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    }
+  },
+  "default_curi_maps": [
+    "semweb_context"
+  ],
+  "default_prefix": "isrp3",
+  "types": {
+    "WhitespaceMinimizedString": {
+      "name": "WhitespaceMinimizedString",
+      "description": "A string that has all whitespace trimmed off of beginning and end, and internal whitespace collapsed to single spaces.",
+      "from_schema": "https://example.org/isrp-project3",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "string": {
+      "name": "string",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "xsd:string"
+    },
+    "integer": {
+      "name": "integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "xsd:integer"
+    },
+    "boolean": {
+      "name": "boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "xsd:boolean",
+      "repr": "bool"
+    },
+    "float": {
+      "name": "float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:float"
+    },
+    "double": {
+      "name": "double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:double"
+    },
+    "decimal": {
+      "name": "decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "xsd:decimal"
+    },
+    "time": {
+      "name": "time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "xsd:time",
+      "repr": "str"
+    },
+    "date": {
+      "name": "date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "xsd:date",
+      "repr": "str"
+    },
+    "datetime": {
+      "name": "datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date_or_datetime": {
+      "name": "date_or_datetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "str",
+      "uri": "linkml:DateOrDatetime",
+      "repr": "str"
+    },
+    "uriorcurie": {
+      "name": "uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "URIorCURIE",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "curie": {
+      "name": "curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "Curie",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "uri": {
+      "name": "uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "ncname": {
+      "name": "ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "NCName",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "objectidentifier": {
+      "name": "objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "ElementIdentifier",
+      "uri": "shex:iri",
+      "repr": "str"
+    },
+    "nodeidentifier": {
+      "name": "nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "NodeIdentifier",
+      "uri": "shex:nonLiteral",
+      "repr": "str"
+    },
+    "jsonpointer": {
+      "name": "jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "jsonpath": {
+      "name": "jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "sparqlpath": {
+      "name": "sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://example.org/isrp-project3",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    }
+  },
+  "enums": {
+    "SampleTypeMenu": {
+      "name": "SampleTypeMenu",
+      "description": "Allowed sample types",
+      "from_schema": "https://example.org/isrp-project3",
+      "permissible_values": {
+        "air": {
+          "text": "air"
+        },
+        "emission sampler": {
+          "text": "emission sampler"
+        }
+      }
+    }
+  },
+  "slots": {
+    "bid": {
+      "name": "bid",
+      "description": "unique batch ID",
+      "title": "batch ID",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "required": true
+    },
+    "sid": {
+      "name": "sid",
+      "description": "unique sample ID",
+      "title": "sample ID",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "required": true
+    },
+    "sampletype": {
+      "name": "sampletype",
+      "description": "air or emission sampler",
+      "title": "sample type",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "SampleTypeMenu",
+      "required": false
+    },
+    "room": {
+      "name": "room",
+      "description": "room name or number",
+      "title": "room",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "required": false
+    },
+    "materials": {
+      "name": "materials",
+      "description": "specific material or surface sampled",
+      "title": "materials",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "required": false
+    },
+    "school": {
+      "name": "school",
+      "description": "school name",
+      "title": "school",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "required": false
+    },
+    "PCB_1": {
+      "name": "PCB_1",
+      "description": "pcb congener 1",
+      "title": "1",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_2": {
+      "name": "PCB_2",
+      "description": "pcb congener 2",
+      "title": "2",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_3": {
+      "name": "PCB_3",
+      "description": "pcb congener 3",
+      "title": "3",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_4": {
+      "name": "PCB_4",
+      "description": "pcb congener 4",
+      "title": "4",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_5": {
+      "name": "PCB_5",
+      "description": "pcb congener 5",
+      "title": "5",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_6": {
+      "name": "PCB_6",
+      "description": "pcb congener 6",
+      "title": "6",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_7": {
+      "name": "PCB_7",
+      "description": "pcb congener 7",
+      "title": "7",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_8": {
+      "name": "PCB_8",
+      "description": "pcb congener 8",
+      "title": "8",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_9": {
+      "name": "PCB_9",
+      "description": "pcb congener 9",
+      "title": "9",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_10": {
+      "name": "PCB_10",
+      "description": "pcb congener 10",
+      "title": "10",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_11": {
+      "name": "PCB_11",
+      "description": "pcb congener 11",
+      "title": "11",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_12": {
+      "name": "PCB_12",
+      "description": "pcb congener 12",
+      "title": "12",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_13": {
+      "name": "PCB_13",
+      "description": "pcb congener 13",
+      "title": "13",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_14": {
+      "name": "PCB_14",
+      "description": "pcb congener 14",
+      "title": "14",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_15": {
+      "name": "PCB_15",
+      "description": "pcb congener 15",
+      "title": "15",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_16": {
+      "name": "PCB_16",
+      "description": "pcb congener 16",
+      "title": "16",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_17": {
+      "name": "PCB_17",
+      "description": "pcb congener 17",
+      "title": "17",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_18": {
+      "name": "PCB_18",
+      "description": "pcb congener 18",
+      "title": "18",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_19": {
+      "name": "PCB_19",
+      "description": "pcb congener 19",
+      "title": "19",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_20": {
+      "name": "PCB_20",
+      "description": "pcb congener 20",
+      "title": "20",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_21": {
+      "name": "PCB_21",
+      "description": "pcb congener 21",
+      "title": "21",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_22": {
+      "name": "PCB_22",
+      "description": "pcb congener 22",
+      "title": "22",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_23": {
+      "name": "PCB_23",
+      "description": "pcb congener 23",
+      "title": "23",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_24": {
+      "name": "PCB_24",
+      "description": "pcb congener 24",
+      "title": "24",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_25": {
+      "name": "PCB_25",
+      "description": "pcb congener 25",
+      "title": "25",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_26": {
+      "name": "PCB_26",
+      "description": "pcb congener 26",
+      "title": "26",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_27": {
+      "name": "PCB_27",
+      "description": "pcb congener 27",
+      "title": "27",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_28": {
+      "name": "PCB_28",
+      "description": "pcb congener 28",
+      "title": "28",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_29": {
+      "name": "PCB_29",
+      "description": "pcb congener 29",
+      "title": "29",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_30": {
+      "name": "PCB_30",
+      "description": "pcb congener 30",
+      "title": "30",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_31": {
+      "name": "PCB_31",
+      "description": "pcb congener 31",
+      "title": "31",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_32": {
+      "name": "PCB_32",
+      "description": "pcb congener 32",
+      "title": "32",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_33": {
+      "name": "PCB_33",
+      "description": "pcb congener 33",
+      "title": "33",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_34": {
+      "name": "PCB_34",
+      "description": "pcb congener 34",
+      "title": "34",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_35": {
+      "name": "PCB_35",
+      "description": "pcb congener 35",
+      "title": "35",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_36": {
+      "name": "PCB_36",
+      "description": "pcb congener 36",
+      "title": "36",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_37": {
+      "name": "PCB_37",
+      "description": "pcb congener 37",
+      "title": "37",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_38": {
+      "name": "PCB_38",
+      "description": "pcb congener 38",
+      "title": "38",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_39": {
+      "name": "PCB_39",
+      "description": "pcb congener 39",
+      "title": "39",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_40": {
+      "name": "PCB_40",
+      "description": "pcb congener 40",
+      "title": "40",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_41": {
+      "name": "PCB_41",
+      "description": "pcb congener 41",
+      "title": "41",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_42": {
+      "name": "PCB_42",
+      "description": "pcb congener 42",
+      "title": "42",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_43": {
+      "name": "PCB_43",
+      "description": "pcb congener 43",
+      "title": "43",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_44": {
+      "name": "PCB_44",
+      "description": "pcb congener 44",
+      "title": "44",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_45": {
+      "name": "PCB_45",
+      "description": "pcb congener 45",
+      "title": "45",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_46": {
+      "name": "PCB_46",
+      "description": "pcb congener 46",
+      "title": "46",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_47": {
+      "name": "PCB_47",
+      "description": "pcb congener 47",
+      "title": "47",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_48": {
+      "name": "PCB_48",
+      "description": "pcb congener 48",
+      "title": "48",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_49": {
+      "name": "PCB_49",
+      "description": "pcb congener 49",
+      "title": "49",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_50": {
+      "name": "PCB_50",
+      "description": "pcb congener 50",
+      "title": "50",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_51": {
+      "name": "PCB_51",
+      "description": "pcb congener 51",
+      "title": "51",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_52": {
+      "name": "PCB_52",
+      "description": "pcb congener 52",
+      "title": "52",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_53": {
+      "name": "PCB_53",
+      "description": "pcb congener 53",
+      "title": "53",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_54": {
+      "name": "PCB_54",
+      "description": "pcb congener 54",
+      "title": "54",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_55": {
+      "name": "PCB_55",
+      "description": "pcb congener 55",
+      "title": "55",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_56": {
+      "name": "PCB_56",
+      "description": "pcb congener 56",
+      "title": "56",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_57": {
+      "name": "PCB_57",
+      "description": "pcb congener 57",
+      "title": "57",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_58": {
+      "name": "PCB_58",
+      "description": "pcb congener 58",
+      "title": "58",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_59": {
+      "name": "PCB_59",
+      "description": "pcb congener 59",
+      "title": "59",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_60": {
+      "name": "PCB_60",
+      "description": "pcb congener 60",
+      "title": "60",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_61": {
+      "name": "PCB_61",
+      "description": "pcb congener 61",
+      "title": "61",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_62": {
+      "name": "PCB_62",
+      "description": "pcb congener 62",
+      "title": "62",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_63": {
+      "name": "PCB_63",
+      "description": "pcb congener 63",
+      "title": "63",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_64": {
+      "name": "PCB_64",
+      "description": "pcb congener 64",
+      "title": "64",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_65": {
+      "name": "PCB_65",
+      "description": "pcb congener 65",
+      "title": "65",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_66": {
+      "name": "PCB_66",
+      "description": "pcb congener 66",
+      "title": "66",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_67": {
+      "name": "PCB_67",
+      "description": "pcb congener 67",
+      "title": "67",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_68": {
+      "name": "PCB_68",
+      "description": "pcb congener 68",
+      "title": "68",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_69": {
+      "name": "PCB_69",
+      "description": "pcb congener 69",
+      "title": "69",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_70": {
+      "name": "PCB_70",
+      "description": "pcb congener 70",
+      "title": "70",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_71": {
+      "name": "PCB_71",
+      "description": "pcb congener 71",
+      "title": "71",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_72": {
+      "name": "PCB_72",
+      "description": "pcb congener 72",
+      "title": "72",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_73": {
+      "name": "PCB_73",
+      "description": "pcb congener 73",
+      "title": "73",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_74": {
+      "name": "PCB_74",
+      "description": "pcb congener 74",
+      "title": "74",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_75": {
+      "name": "PCB_75",
+      "description": "pcb congener 75",
+      "title": "75",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_76": {
+      "name": "PCB_76",
+      "description": "pcb congener 76",
+      "title": "76",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_77": {
+      "name": "PCB_77",
+      "description": "pcb congener 77",
+      "title": "77",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_78": {
+      "name": "PCB_78",
+      "description": "pcb congener 78",
+      "title": "78",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_79": {
+      "name": "PCB_79",
+      "description": "pcb congener 79",
+      "title": "79",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_80": {
+      "name": "PCB_80",
+      "description": "pcb congener 80",
+      "title": "80",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_81": {
+      "name": "PCB_81",
+      "description": "pcb congener 81",
+      "title": "81",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_82": {
+      "name": "PCB_82",
+      "description": "pcb congener 82",
+      "title": "82",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_83": {
+      "name": "PCB_83",
+      "description": "pcb congener 83",
+      "title": "83",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_84": {
+      "name": "PCB_84",
+      "description": "pcb congener 84",
+      "title": "84",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_85": {
+      "name": "PCB_85",
+      "description": "pcb congener 85",
+      "title": "85",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_86": {
+      "name": "PCB_86",
+      "description": "pcb congener 86",
+      "title": "86",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_87": {
+      "name": "PCB_87",
+      "description": "pcb congener 87",
+      "title": "87",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_88": {
+      "name": "PCB_88",
+      "description": "pcb congener 88",
+      "title": "88",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_89": {
+      "name": "PCB_89",
+      "description": "pcb congener 89",
+      "title": "89",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_90": {
+      "name": "PCB_90",
+      "description": "pcb congener 90",
+      "title": "90",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_91": {
+      "name": "PCB_91",
+      "description": "pcb congener 91",
+      "title": "91",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_92": {
+      "name": "PCB_92",
+      "description": "pcb congener 92",
+      "title": "92",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_93": {
+      "name": "PCB_93",
+      "description": "pcb congener 93",
+      "title": "93",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_94": {
+      "name": "PCB_94",
+      "description": "pcb congener 94",
+      "title": "94",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_95": {
+      "name": "PCB_95",
+      "description": "pcb congener 95",
+      "title": "95",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_96": {
+      "name": "PCB_96",
+      "description": "pcb congener 96",
+      "title": "96",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_97": {
+      "name": "PCB_97",
+      "description": "pcb congener 97",
+      "title": "97",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_98": {
+      "name": "PCB_98",
+      "description": "pcb congener 98",
+      "title": "98",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_99": {
+      "name": "PCB_99",
+      "description": "pcb congener 99",
+      "title": "99",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_100": {
+      "name": "PCB_100",
+      "description": "pcb congener 100",
+      "title": "100",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_101": {
+      "name": "PCB_101",
+      "description": "pcb congener 101",
+      "title": "101",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_102": {
+      "name": "PCB_102",
+      "description": "pcb congener 102",
+      "title": "102",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_103": {
+      "name": "PCB_103",
+      "description": "pcb congener 103",
+      "title": "103",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_104": {
+      "name": "PCB_104",
+      "description": "pcb congener 104",
+      "title": "104",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_105": {
+      "name": "PCB_105",
+      "description": "pcb congener 105",
+      "title": "105",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_106": {
+      "name": "PCB_106",
+      "description": "pcb congener 106",
+      "title": "106",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_107": {
+      "name": "PCB_107",
+      "description": "pcb congener 107",
+      "title": "107",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_108": {
+      "name": "PCB_108",
+      "description": "pcb congener 108",
+      "title": "108",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_109": {
+      "name": "PCB_109",
+      "description": "pcb congener 109",
+      "title": "109",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_110": {
+      "name": "PCB_110",
+      "description": "pcb congener 110",
+      "title": "110",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_111": {
+      "name": "PCB_111",
+      "description": "pcb congener 111",
+      "title": "111",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_112": {
+      "name": "PCB_112",
+      "description": "pcb congener 112",
+      "title": "112",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_113": {
+      "name": "PCB_113",
+      "description": "pcb congener 113",
+      "title": "113",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_114": {
+      "name": "PCB_114",
+      "description": "pcb congener 114",
+      "title": "114",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_115": {
+      "name": "PCB_115",
+      "description": "pcb congener 115",
+      "title": "115",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_116": {
+      "name": "PCB_116",
+      "description": "pcb congener 116",
+      "title": "116",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_117": {
+      "name": "PCB_117",
+      "description": "pcb congener 117",
+      "title": "117",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_118": {
+      "name": "PCB_118",
+      "description": "pcb congener 118",
+      "title": "118",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_119": {
+      "name": "PCB_119",
+      "description": "pcb congener 119",
+      "title": "119",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_120": {
+      "name": "PCB_120",
+      "description": "pcb congener 120",
+      "title": "120",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_121": {
+      "name": "PCB_121",
+      "description": "pcb congener 121",
+      "title": "121",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_122": {
+      "name": "PCB_122",
+      "description": "pcb congener 122",
+      "title": "122",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_123": {
+      "name": "PCB_123",
+      "description": "pcb congener 123",
+      "title": "123",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_124": {
+      "name": "PCB_124",
+      "description": "pcb congener 124",
+      "title": "124",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_125": {
+      "name": "PCB_125",
+      "description": "pcb congener 125",
+      "title": "125",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_126": {
+      "name": "PCB_126",
+      "description": "pcb congener 126",
+      "title": "126",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_127": {
+      "name": "PCB_127",
+      "description": "pcb congener 127",
+      "title": "127",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_128": {
+      "name": "PCB_128",
+      "description": "pcb congener 128",
+      "title": "128",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_129": {
+      "name": "PCB_129",
+      "description": "pcb congener 129",
+      "title": "129",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_130": {
+      "name": "PCB_130",
+      "description": "pcb congener 130",
+      "title": "130",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_131": {
+      "name": "PCB_131",
+      "description": "pcb congener 131",
+      "title": "131",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_132": {
+      "name": "PCB_132",
+      "description": "pcb congener 132",
+      "title": "132",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_133": {
+      "name": "PCB_133",
+      "description": "pcb congener 133",
+      "title": "133",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_134": {
+      "name": "PCB_134",
+      "description": "pcb congener 134",
+      "title": "134",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_135": {
+      "name": "PCB_135",
+      "description": "pcb congener 135",
+      "title": "135",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_136": {
+      "name": "PCB_136",
+      "description": "pcb congener 136",
+      "title": "136",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_137": {
+      "name": "PCB_137",
+      "description": "pcb congener 137",
+      "title": "137",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_138": {
+      "name": "PCB_138",
+      "description": "pcb congener 138",
+      "title": "138",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_139": {
+      "name": "PCB_139",
+      "description": "pcb congener 139",
+      "title": "139",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_140": {
+      "name": "PCB_140",
+      "description": "pcb congener 140",
+      "title": "140",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_141": {
+      "name": "PCB_141",
+      "description": "pcb congener 141",
+      "title": "141",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_142": {
+      "name": "PCB_142",
+      "description": "pcb congener 142",
+      "title": "142",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_143": {
+      "name": "PCB_143",
+      "description": "pcb congener 143",
+      "title": "143",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_144": {
+      "name": "PCB_144",
+      "description": "pcb congener 144",
+      "title": "144",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_145": {
+      "name": "PCB_145",
+      "description": "pcb congener 145",
+      "title": "145",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_146": {
+      "name": "PCB_146",
+      "description": "pcb congener 146",
+      "title": "146",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_147": {
+      "name": "PCB_147",
+      "description": "pcb congener 147",
+      "title": "147",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_148": {
+      "name": "PCB_148",
+      "description": "pcb congener 148",
+      "title": "148",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_149": {
+      "name": "PCB_149",
+      "description": "pcb congener 149",
+      "title": "149",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_150": {
+      "name": "PCB_150",
+      "description": "pcb congener 150",
+      "title": "150",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_151": {
+      "name": "PCB_151",
+      "description": "pcb congener 151",
+      "title": "151",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_152": {
+      "name": "PCB_152",
+      "description": "pcb congener 152",
+      "title": "152",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_153": {
+      "name": "PCB_153",
+      "description": "pcb congener 153",
+      "title": "153",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_154": {
+      "name": "PCB_154",
+      "description": "pcb congener 154",
+      "title": "154",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_155": {
+      "name": "PCB_155",
+      "description": "pcb congener 155",
+      "title": "155",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_156": {
+      "name": "PCB_156",
+      "description": "pcb congener 156",
+      "title": "156",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_157": {
+      "name": "PCB_157",
+      "description": "pcb congener 157",
+      "title": "157",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_158": {
+      "name": "PCB_158",
+      "description": "pcb congener 158",
+      "title": "158",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_159": {
+      "name": "PCB_159",
+      "description": "pcb congener 159",
+      "title": "159",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_160": {
+      "name": "PCB_160",
+      "description": "pcb congener 160",
+      "title": "160",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_161": {
+      "name": "PCB_161",
+      "description": "pcb congener 161",
+      "title": "161",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_162": {
+      "name": "PCB_162",
+      "description": "pcb congener 162",
+      "title": "162",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_163": {
+      "name": "PCB_163",
+      "description": "pcb congener 163",
+      "title": "163",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_164": {
+      "name": "PCB_164",
+      "description": "pcb congener 164",
+      "title": "164",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_165": {
+      "name": "PCB_165",
+      "description": "pcb congener 165",
+      "title": "165",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_166": {
+      "name": "PCB_166",
+      "description": "pcb congener 166",
+      "title": "166",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_167": {
+      "name": "PCB_167",
+      "description": "pcb congener 167",
+      "title": "167",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_168": {
+      "name": "PCB_168",
+      "description": "pcb congener 168",
+      "title": "168",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_169": {
+      "name": "PCB_169",
+      "description": "pcb congener 169",
+      "title": "169",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_170": {
+      "name": "PCB_170",
+      "description": "pcb congener 170",
+      "title": "170",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_171": {
+      "name": "PCB_171",
+      "description": "pcb congener 171",
+      "title": "171",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_172": {
+      "name": "PCB_172",
+      "description": "pcb congener 172",
+      "title": "172",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_173": {
+      "name": "PCB_173",
+      "description": "pcb congener 173",
+      "title": "173",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_174": {
+      "name": "PCB_174",
+      "description": "pcb congener 174",
+      "title": "174",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_175": {
+      "name": "PCB_175",
+      "description": "pcb congener 175",
+      "title": "175",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_176": {
+      "name": "PCB_176",
+      "description": "pcb congener 176",
+      "title": "176",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_177": {
+      "name": "PCB_177",
+      "description": "pcb congener 177",
+      "title": "177",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_178": {
+      "name": "PCB_178",
+      "description": "pcb congener 178",
+      "title": "178",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_179": {
+      "name": "PCB_179",
+      "description": "pcb congener 179",
+      "title": "179",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_180": {
+      "name": "PCB_180",
+      "description": "pcb congener 180",
+      "title": "180",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_181": {
+      "name": "PCB_181",
+      "description": "pcb congener 181",
+      "title": "181",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_182": {
+      "name": "PCB_182",
+      "description": "pcb congener 182",
+      "title": "182",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_183": {
+      "name": "PCB_183",
+      "description": "pcb congener 183",
+      "title": "183",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_184": {
+      "name": "PCB_184",
+      "description": "pcb congener 184",
+      "title": "184",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_185": {
+      "name": "PCB_185",
+      "description": "pcb congener 185",
+      "title": "185",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_186": {
+      "name": "PCB_186",
+      "description": "pcb congener 186",
+      "title": "186",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_187": {
+      "name": "PCB_187",
+      "description": "pcb congener 187",
+      "title": "187",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_188": {
+      "name": "PCB_188",
+      "description": "pcb congener 188",
+      "title": "188",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_189": {
+      "name": "PCB_189",
+      "description": "pcb congener 189",
+      "title": "189",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_190": {
+      "name": "PCB_190",
+      "description": "pcb congener 190",
+      "title": "190",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_191": {
+      "name": "PCB_191",
+      "description": "pcb congener 191",
+      "title": "191",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_192": {
+      "name": "PCB_192",
+      "description": "pcb congener 192",
+      "title": "192",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_193": {
+      "name": "PCB_193",
+      "description": "pcb congener 193",
+      "title": "193",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_194": {
+      "name": "PCB_194",
+      "description": "pcb congener 194",
+      "title": "194",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_195": {
+      "name": "PCB_195",
+      "description": "pcb congener 195",
+      "title": "195",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_196": {
+      "name": "PCB_196",
+      "description": "pcb congener 196",
+      "title": "196",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_197": {
+      "name": "PCB_197",
+      "description": "pcb congener 197",
+      "title": "197",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_198": {
+      "name": "PCB_198",
+      "description": "pcb congener 198",
+      "title": "198",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_199": {
+      "name": "PCB_199",
+      "description": "pcb congener 199",
+      "title": "199",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_200": {
+      "name": "PCB_200",
+      "description": "pcb congener 200",
+      "title": "200",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_201": {
+      "name": "PCB_201",
+      "description": "pcb congener 201",
+      "title": "201",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_202": {
+      "name": "PCB_202",
+      "description": "pcb congener 202",
+      "title": "202",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_203": {
+      "name": "PCB_203",
+      "description": "pcb congener 203",
+      "title": "203",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_204": {
+      "name": "PCB_204",
+      "description": "pcb congener 204",
+      "title": "204",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_205": {
+      "name": "PCB_205",
+      "description": "pcb congener 205",
+      "title": "205",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_206": {
+      "name": "PCB_206",
+      "description": "pcb congener 206",
+      "title": "206",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_207": {
+      "name": "PCB_207",
+      "description": "pcb congener 207",
+      "title": "207",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_208": {
+      "name": "PCB_208",
+      "description": "pcb congener 208",
+      "title": "208",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "PCB_209": {
+      "name": "PCB_209",
+      "description": "pcb congener 209",
+      "title": "209",
+      "from_schema": "https://example.org/isrp-project3",
+      "domain_of": [
+        "ISRP_Project3"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    }
+  },
+  "classes": {
+    "dh_interface": {
+      "name": "dh_interface",
+      "description": "A DataHarmonizer interface (sheet)",
+      "from_schema": "https://example.org/isrp-project3"
+    },
+    "ISRP_Project3": {
+      "name": "ISRP_Project3",
+      "description": "One row per sample; includes PCB congener columns 1..209 (wide form)",
+      "from_schema": "https://example.org/isrp-project3",
+      "is_a": "dh_interface",
+      "attributes": {
+        "bid": {
+          "name": "bid",
+          "description": "unique batch ID",
+          "title": "batch ID",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "bid",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "WhitespaceMinimizedString",
+          "required": true
+        },
+        "sid": {
+          "name": "sid",
+          "description": "unique sample ID",
+          "title": "sample ID",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "sid",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "WhitespaceMinimizedString",
+          "required": true
+        },
+        "sampletype": {
+          "name": "sampletype",
+          "description": "air or emission sampler",
+          "title": "sample type",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "sampletype",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "SampleTypeMenu",
+          "required": false
+        },
+        "room": {
+          "name": "room",
+          "description": "room name or number",
+          "title": "room",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "room",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "WhitespaceMinimizedString",
+          "required": false
+        },
+        "materials": {
+          "name": "materials",
+          "description": "specific material or surface sampled",
+          "title": "materials",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "materials",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "WhitespaceMinimizedString",
+          "required": false
+        },
+        "school": {
+          "name": "school",
+          "description": "school name",
+          "title": "school",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "school",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "WhitespaceMinimizedString",
+          "required": false
+        },
+        "PCB_1": {
+          "name": "PCB_1",
+          "description": "pcb congener 1",
+          "title": "1",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_1",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_2": {
+          "name": "PCB_2",
+          "description": "pcb congener 2",
+          "title": "2",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_2",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_3": {
+          "name": "PCB_3",
+          "description": "pcb congener 3",
+          "title": "3",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_3",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_4": {
+          "name": "PCB_4",
+          "description": "pcb congener 4",
+          "title": "4",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_4",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_5": {
+          "name": "PCB_5",
+          "description": "pcb congener 5",
+          "title": "5",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_5",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_6": {
+          "name": "PCB_6",
+          "description": "pcb congener 6",
+          "title": "6",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_6",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_7": {
+          "name": "PCB_7",
+          "description": "pcb congener 7",
+          "title": "7",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_7",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_8": {
+          "name": "PCB_8",
+          "description": "pcb congener 8",
+          "title": "8",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_8",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_9": {
+          "name": "PCB_9",
+          "description": "pcb congener 9",
+          "title": "9",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_9",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_10": {
+          "name": "PCB_10",
+          "description": "pcb congener 10",
+          "title": "10",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_10",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_11": {
+          "name": "PCB_11",
+          "description": "pcb congener 11",
+          "title": "11",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_11",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_12": {
+          "name": "PCB_12",
+          "description": "pcb congener 12",
+          "title": "12",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_12",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_13": {
+          "name": "PCB_13",
+          "description": "pcb congener 13",
+          "title": "13",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_13",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_14": {
+          "name": "PCB_14",
+          "description": "pcb congener 14",
+          "title": "14",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_14",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_15": {
+          "name": "PCB_15",
+          "description": "pcb congener 15",
+          "title": "15",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_15",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_16": {
+          "name": "PCB_16",
+          "description": "pcb congener 16",
+          "title": "16",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_16",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_17": {
+          "name": "PCB_17",
+          "description": "pcb congener 17",
+          "title": "17",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_17",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_18": {
+          "name": "PCB_18",
+          "description": "pcb congener 18",
+          "title": "18",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_18",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_19": {
+          "name": "PCB_19",
+          "description": "pcb congener 19",
+          "title": "19",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_19",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_20": {
+          "name": "PCB_20",
+          "description": "pcb congener 20",
+          "title": "20",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_20",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_21": {
+          "name": "PCB_21",
+          "description": "pcb congener 21",
+          "title": "21",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_21",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_22": {
+          "name": "PCB_22",
+          "description": "pcb congener 22",
+          "title": "22",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_22",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_23": {
+          "name": "PCB_23",
+          "description": "pcb congener 23",
+          "title": "23",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_23",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_24": {
+          "name": "PCB_24",
+          "description": "pcb congener 24",
+          "title": "24",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_24",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_25": {
+          "name": "PCB_25",
+          "description": "pcb congener 25",
+          "title": "25",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_25",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_26": {
+          "name": "PCB_26",
+          "description": "pcb congener 26",
+          "title": "26",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_26",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_27": {
+          "name": "PCB_27",
+          "description": "pcb congener 27",
+          "title": "27",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_27",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_28": {
+          "name": "PCB_28",
+          "description": "pcb congener 28",
+          "title": "28",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_28",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_29": {
+          "name": "PCB_29",
+          "description": "pcb congener 29",
+          "title": "29",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_29",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_30": {
+          "name": "PCB_30",
+          "description": "pcb congener 30",
+          "title": "30",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_30",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_31": {
+          "name": "PCB_31",
+          "description": "pcb congener 31",
+          "title": "31",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_31",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_32": {
+          "name": "PCB_32",
+          "description": "pcb congener 32",
+          "title": "32",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_32",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_33": {
+          "name": "PCB_33",
+          "description": "pcb congener 33",
+          "title": "33",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_33",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_34": {
+          "name": "PCB_34",
+          "description": "pcb congener 34",
+          "title": "34",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_34",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_35": {
+          "name": "PCB_35",
+          "description": "pcb congener 35",
+          "title": "35",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_35",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_36": {
+          "name": "PCB_36",
+          "description": "pcb congener 36",
+          "title": "36",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_36",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_37": {
+          "name": "PCB_37",
+          "description": "pcb congener 37",
+          "title": "37",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_37",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_38": {
+          "name": "PCB_38",
+          "description": "pcb congener 38",
+          "title": "38",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_38",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_39": {
+          "name": "PCB_39",
+          "description": "pcb congener 39",
+          "title": "39",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_39",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_40": {
+          "name": "PCB_40",
+          "description": "pcb congener 40",
+          "title": "40",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_40",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_41": {
+          "name": "PCB_41",
+          "description": "pcb congener 41",
+          "title": "41",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_41",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_42": {
+          "name": "PCB_42",
+          "description": "pcb congener 42",
+          "title": "42",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_42",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_43": {
+          "name": "PCB_43",
+          "description": "pcb congener 43",
+          "title": "43",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_43",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_44": {
+          "name": "PCB_44",
+          "description": "pcb congener 44",
+          "title": "44",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_44",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_45": {
+          "name": "PCB_45",
+          "description": "pcb congener 45",
+          "title": "45",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_45",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_46": {
+          "name": "PCB_46",
+          "description": "pcb congener 46",
+          "title": "46",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_46",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_47": {
+          "name": "PCB_47",
+          "description": "pcb congener 47",
+          "title": "47",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_47",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_48": {
+          "name": "PCB_48",
+          "description": "pcb congener 48",
+          "title": "48",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_48",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_49": {
+          "name": "PCB_49",
+          "description": "pcb congener 49",
+          "title": "49",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_49",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_50": {
+          "name": "PCB_50",
+          "description": "pcb congener 50",
+          "title": "50",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_50",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_51": {
+          "name": "PCB_51",
+          "description": "pcb congener 51",
+          "title": "51",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_51",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_52": {
+          "name": "PCB_52",
+          "description": "pcb congener 52",
+          "title": "52",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_52",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_53": {
+          "name": "PCB_53",
+          "description": "pcb congener 53",
+          "title": "53",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_53",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_54": {
+          "name": "PCB_54",
+          "description": "pcb congener 54",
+          "title": "54",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_54",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_55": {
+          "name": "PCB_55",
+          "description": "pcb congener 55",
+          "title": "55",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_55",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_56": {
+          "name": "PCB_56",
+          "description": "pcb congener 56",
+          "title": "56",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_56",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_57": {
+          "name": "PCB_57",
+          "description": "pcb congener 57",
+          "title": "57",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_57",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_58": {
+          "name": "PCB_58",
+          "description": "pcb congener 58",
+          "title": "58",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_58",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_59": {
+          "name": "PCB_59",
+          "description": "pcb congener 59",
+          "title": "59",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_59",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_60": {
+          "name": "PCB_60",
+          "description": "pcb congener 60",
+          "title": "60",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_60",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_61": {
+          "name": "PCB_61",
+          "description": "pcb congener 61",
+          "title": "61",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_61",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_62": {
+          "name": "PCB_62",
+          "description": "pcb congener 62",
+          "title": "62",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_62",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_63": {
+          "name": "PCB_63",
+          "description": "pcb congener 63",
+          "title": "63",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_63",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_64": {
+          "name": "PCB_64",
+          "description": "pcb congener 64",
+          "title": "64",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_64",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_65": {
+          "name": "PCB_65",
+          "description": "pcb congener 65",
+          "title": "65",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_65",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_66": {
+          "name": "PCB_66",
+          "description": "pcb congener 66",
+          "title": "66",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_66",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_67": {
+          "name": "PCB_67",
+          "description": "pcb congener 67",
+          "title": "67",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_67",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_68": {
+          "name": "PCB_68",
+          "description": "pcb congener 68",
+          "title": "68",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_68",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_69": {
+          "name": "PCB_69",
+          "description": "pcb congener 69",
+          "title": "69",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_69",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_70": {
+          "name": "PCB_70",
+          "description": "pcb congener 70",
+          "title": "70",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_70",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_71": {
+          "name": "PCB_71",
+          "description": "pcb congener 71",
+          "title": "71",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_71",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_72": {
+          "name": "PCB_72",
+          "description": "pcb congener 72",
+          "title": "72",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_72",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_73": {
+          "name": "PCB_73",
+          "description": "pcb congener 73",
+          "title": "73",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_73",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_74": {
+          "name": "PCB_74",
+          "description": "pcb congener 74",
+          "title": "74",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_74",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_75": {
+          "name": "PCB_75",
+          "description": "pcb congener 75",
+          "title": "75",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_75",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_76": {
+          "name": "PCB_76",
+          "description": "pcb congener 76",
+          "title": "76",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_76",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_77": {
+          "name": "PCB_77",
+          "description": "pcb congener 77",
+          "title": "77",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_77",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_78": {
+          "name": "PCB_78",
+          "description": "pcb congener 78",
+          "title": "78",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_78",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_79": {
+          "name": "PCB_79",
+          "description": "pcb congener 79",
+          "title": "79",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_79",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_80": {
+          "name": "PCB_80",
+          "description": "pcb congener 80",
+          "title": "80",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_80",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_81": {
+          "name": "PCB_81",
+          "description": "pcb congener 81",
+          "title": "81",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_81",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_82": {
+          "name": "PCB_82",
+          "description": "pcb congener 82",
+          "title": "82",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_82",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_83": {
+          "name": "PCB_83",
+          "description": "pcb congener 83",
+          "title": "83",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_83",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_84": {
+          "name": "PCB_84",
+          "description": "pcb congener 84",
+          "title": "84",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_84",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_85": {
+          "name": "PCB_85",
+          "description": "pcb congener 85",
+          "title": "85",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_85",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_86": {
+          "name": "PCB_86",
+          "description": "pcb congener 86",
+          "title": "86",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_86",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_87": {
+          "name": "PCB_87",
+          "description": "pcb congener 87",
+          "title": "87",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_87",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_88": {
+          "name": "PCB_88",
+          "description": "pcb congener 88",
+          "title": "88",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_88",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_89": {
+          "name": "PCB_89",
+          "description": "pcb congener 89",
+          "title": "89",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_89",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_90": {
+          "name": "PCB_90",
+          "description": "pcb congener 90",
+          "title": "90",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_90",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_91": {
+          "name": "PCB_91",
+          "description": "pcb congener 91",
+          "title": "91",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_91",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_92": {
+          "name": "PCB_92",
+          "description": "pcb congener 92",
+          "title": "92",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_92",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_93": {
+          "name": "PCB_93",
+          "description": "pcb congener 93",
+          "title": "93",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_93",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_94": {
+          "name": "PCB_94",
+          "description": "pcb congener 94",
+          "title": "94",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_94",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_95": {
+          "name": "PCB_95",
+          "description": "pcb congener 95",
+          "title": "95",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_95",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_96": {
+          "name": "PCB_96",
+          "description": "pcb congener 96",
+          "title": "96",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_96",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_97": {
+          "name": "PCB_97",
+          "description": "pcb congener 97",
+          "title": "97",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_97",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_98": {
+          "name": "PCB_98",
+          "description": "pcb congener 98",
+          "title": "98",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_98",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_99": {
+          "name": "PCB_99",
+          "description": "pcb congener 99",
+          "title": "99",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_99",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_100": {
+          "name": "PCB_100",
+          "description": "pcb congener 100",
+          "title": "100",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_100",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_101": {
+          "name": "PCB_101",
+          "description": "pcb congener 101",
+          "title": "101",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_101",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_102": {
+          "name": "PCB_102",
+          "description": "pcb congener 102",
+          "title": "102",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_102",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_103": {
+          "name": "PCB_103",
+          "description": "pcb congener 103",
+          "title": "103",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_103",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_104": {
+          "name": "PCB_104",
+          "description": "pcb congener 104",
+          "title": "104",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_104",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_105": {
+          "name": "PCB_105",
+          "description": "pcb congener 105",
+          "title": "105",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_105",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_106": {
+          "name": "PCB_106",
+          "description": "pcb congener 106",
+          "title": "106",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_106",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_107": {
+          "name": "PCB_107",
+          "description": "pcb congener 107",
+          "title": "107",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_107",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_108": {
+          "name": "PCB_108",
+          "description": "pcb congener 108",
+          "title": "108",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_108",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_109": {
+          "name": "PCB_109",
+          "description": "pcb congener 109",
+          "title": "109",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_109",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_110": {
+          "name": "PCB_110",
+          "description": "pcb congener 110",
+          "title": "110",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_110",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_111": {
+          "name": "PCB_111",
+          "description": "pcb congener 111",
+          "title": "111",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_111",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_112": {
+          "name": "PCB_112",
+          "description": "pcb congener 112",
+          "title": "112",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_112",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_113": {
+          "name": "PCB_113",
+          "description": "pcb congener 113",
+          "title": "113",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_113",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_114": {
+          "name": "PCB_114",
+          "description": "pcb congener 114",
+          "title": "114",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_114",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_115": {
+          "name": "PCB_115",
+          "description": "pcb congener 115",
+          "title": "115",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_115",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_116": {
+          "name": "PCB_116",
+          "description": "pcb congener 116",
+          "title": "116",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_116",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_117": {
+          "name": "PCB_117",
+          "description": "pcb congener 117",
+          "title": "117",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_117",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_118": {
+          "name": "PCB_118",
+          "description": "pcb congener 118",
+          "title": "118",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_118",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_119": {
+          "name": "PCB_119",
+          "description": "pcb congener 119",
+          "title": "119",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_119",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_120": {
+          "name": "PCB_120",
+          "description": "pcb congener 120",
+          "title": "120",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_120",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_121": {
+          "name": "PCB_121",
+          "description": "pcb congener 121",
+          "title": "121",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_121",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_122": {
+          "name": "PCB_122",
+          "description": "pcb congener 122",
+          "title": "122",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_122",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_123": {
+          "name": "PCB_123",
+          "description": "pcb congener 123",
+          "title": "123",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_123",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_124": {
+          "name": "PCB_124",
+          "description": "pcb congener 124",
+          "title": "124",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_124",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_125": {
+          "name": "PCB_125",
+          "description": "pcb congener 125",
+          "title": "125",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_125",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_126": {
+          "name": "PCB_126",
+          "description": "pcb congener 126",
+          "title": "126",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_126",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_127": {
+          "name": "PCB_127",
+          "description": "pcb congener 127",
+          "title": "127",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_127",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_128": {
+          "name": "PCB_128",
+          "description": "pcb congener 128",
+          "title": "128",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_128",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_129": {
+          "name": "PCB_129",
+          "description": "pcb congener 129",
+          "title": "129",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_129",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_130": {
+          "name": "PCB_130",
+          "description": "pcb congener 130",
+          "title": "130",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_130",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_131": {
+          "name": "PCB_131",
+          "description": "pcb congener 131",
+          "title": "131",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_131",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_132": {
+          "name": "PCB_132",
+          "description": "pcb congener 132",
+          "title": "132",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_132",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_133": {
+          "name": "PCB_133",
+          "description": "pcb congener 133",
+          "title": "133",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_133",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_134": {
+          "name": "PCB_134",
+          "description": "pcb congener 134",
+          "title": "134",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_134",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_135": {
+          "name": "PCB_135",
+          "description": "pcb congener 135",
+          "title": "135",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_135",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_136": {
+          "name": "PCB_136",
+          "description": "pcb congener 136",
+          "title": "136",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_136",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_137": {
+          "name": "PCB_137",
+          "description": "pcb congener 137",
+          "title": "137",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_137",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_138": {
+          "name": "PCB_138",
+          "description": "pcb congener 138",
+          "title": "138",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_138",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_139": {
+          "name": "PCB_139",
+          "description": "pcb congener 139",
+          "title": "139",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_139",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_140": {
+          "name": "PCB_140",
+          "description": "pcb congener 140",
+          "title": "140",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_140",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_141": {
+          "name": "PCB_141",
+          "description": "pcb congener 141",
+          "title": "141",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_141",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_142": {
+          "name": "PCB_142",
+          "description": "pcb congener 142",
+          "title": "142",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_142",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_143": {
+          "name": "PCB_143",
+          "description": "pcb congener 143",
+          "title": "143",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_143",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_144": {
+          "name": "PCB_144",
+          "description": "pcb congener 144",
+          "title": "144",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_144",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_145": {
+          "name": "PCB_145",
+          "description": "pcb congener 145",
+          "title": "145",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_145",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_146": {
+          "name": "PCB_146",
+          "description": "pcb congener 146",
+          "title": "146",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_146",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_147": {
+          "name": "PCB_147",
+          "description": "pcb congener 147",
+          "title": "147",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_147",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_148": {
+          "name": "PCB_148",
+          "description": "pcb congener 148",
+          "title": "148",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_148",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_149": {
+          "name": "PCB_149",
+          "description": "pcb congener 149",
+          "title": "149",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_149",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_150": {
+          "name": "PCB_150",
+          "description": "pcb congener 150",
+          "title": "150",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_150",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_151": {
+          "name": "PCB_151",
+          "description": "pcb congener 151",
+          "title": "151",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_151",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_152": {
+          "name": "PCB_152",
+          "description": "pcb congener 152",
+          "title": "152",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_152",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_153": {
+          "name": "PCB_153",
+          "description": "pcb congener 153",
+          "title": "153",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_153",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_154": {
+          "name": "PCB_154",
+          "description": "pcb congener 154",
+          "title": "154",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_154",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_155": {
+          "name": "PCB_155",
+          "description": "pcb congener 155",
+          "title": "155",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_155",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_156": {
+          "name": "PCB_156",
+          "description": "pcb congener 156",
+          "title": "156",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_156",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_157": {
+          "name": "PCB_157",
+          "description": "pcb congener 157",
+          "title": "157",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_157",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_158": {
+          "name": "PCB_158",
+          "description": "pcb congener 158",
+          "title": "158",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_158",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_159": {
+          "name": "PCB_159",
+          "description": "pcb congener 159",
+          "title": "159",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_159",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_160": {
+          "name": "PCB_160",
+          "description": "pcb congener 160",
+          "title": "160",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_160",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_161": {
+          "name": "PCB_161",
+          "description": "pcb congener 161",
+          "title": "161",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_161",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_162": {
+          "name": "PCB_162",
+          "description": "pcb congener 162",
+          "title": "162",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_162",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_163": {
+          "name": "PCB_163",
+          "description": "pcb congener 163",
+          "title": "163",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_163",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_164": {
+          "name": "PCB_164",
+          "description": "pcb congener 164",
+          "title": "164",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_164",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_165": {
+          "name": "PCB_165",
+          "description": "pcb congener 165",
+          "title": "165",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_165",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_166": {
+          "name": "PCB_166",
+          "description": "pcb congener 166",
+          "title": "166",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_166",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_167": {
+          "name": "PCB_167",
+          "description": "pcb congener 167",
+          "title": "167",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_167",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_168": {
+          "name": "PCB_168",
+          "description": "pcb congener 168",
+          "title": "168",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_168",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_169": {
+          "name": "PCB_169",
+          "description": "pcb congener 169",
+          "title": "169",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_169",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_170": {
+          "name": "PCB_170",
+          "description": "pcb congener 170",
+          "title": "170",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_170",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_171": {
+          "name": "PCB_171",
+          "description": "pcb congener 171",
+          "title": "171",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_171",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_172": {
+          "name": "PCB_172",
+          "description": "pcb congener 172",
+          "title": "172",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_172",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_173": {
+          "name": "PCB_173",
+          "description": "pcb congener 173",
+          "title": "173",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_173",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_174": {
+          "name": "PCB_174",
+          "description": "pcb congener 174",
+          "title": "174",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_174",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_175": {
+          "name": "PCB_175",
+          "description": "pcb congener 175",
+          "title": "175",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_175",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_176": {
+          "name": "PCB_176",
+          "description": "pcb congener 176",
+          "title": "176",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_176",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_177": {
+          "name": "PCB_177",
+          "description": "pcb congener 177",
+          "title": "177",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_177",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_178": {
+          "name": "PCB_178",
+          "description": "pcb congener 178",
+          "title": "178",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_178",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_179": {
+          "name": "PCB_179",
+          "description": "pcb congener 179",
+          "title": "179",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_179",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_180": {
+          "name": "PCB_180",
+          "description": "pcb congener 180",
+          "title": "180",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_180",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_181": {
+          "name": "PCB_181",
+          "description": "pcb congener 181",
+          "title": "181",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_181",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_182": {
+          "name": "PCB_182",
+          "description": "pcb congener 182",
+          "title": "182",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_182",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_183": {
+          "name": "PCB_183",
+          "description": "pcb congener 183",
+          "title": "183",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_183",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_184": {
+          "name": "PCB_184",
+          "description": "pcb congener 184",
+          "title": "184",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_184",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_185": {
+          "name": "PCB_185",
+          "description": "pcb congener 185",
+          "title": "185",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_185",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_186": {
+          "name": "PCB_186",
+          "description": "pcb congener 186",
+          "title": "186",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_186",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_187": {
+          "name": "PCB_187",
+          "description": "pcb congener 187",
+          "title": "187",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_187",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_188": {
+          "name": "PCB_188",
+          "description": "pcb congener 188",
+          "title": "188",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_188",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_189": {
+          "name": "PCB_189",
+          "description": "pcb congener 189",
+          "title": "189",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_189",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_190": {
+          "name": "PCB_190",
+          "description": "pcb congener 190",
+          "title": "190",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_190",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_191": {
+          "name": "PCB_191",
+          "description": "pcb congener 191",
+          "title": "191",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_191",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_192": {
+          "name": "PCB_192",
+          "description": "pcb congener 192",
+          "title": "192",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_192",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_193": {
+          "name": "PCB_193",
+          "description": "pcb congener 193",
+          "title": "193",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_193",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_194": {
+          "name": "PCB_194",
+          "description": "pcb congener 194",
+          "title": "194",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_194",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_195": {
+          "name": "PCB_195",
+          "description": "pcb congener 195",
+          "title": "195",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_195",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_196": {
+          "name": "PCB_196",
+          "description": "pcb congener 196",
+          "title": "196",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_196",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_197": {
+          "name": "PCB_197",
+          "description": "pcb congener 197",
+          "title": "197",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_197",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_198": {
+          "name": "PCB_198",
+          "description": "pcb congener 198",
+          "title": "198",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_198",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_199": {
+          "name": "PCB_199",
+          "description": "pcb congener 199",
+          "title": "199",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_199",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_200": {
+          "name": "PCB_200",
+          "description": "pcb congener 200",
+          "title": "200",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_200",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_201": {
+          "name": "PCB_201",
+          "description": "pcb congener 201",
+          "title": "201",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_201",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_202": {
+          "name": "PCB_202",
+          "description": "pcb congener 202",
+          "title": "202",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_202",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_203": {
+          "name": "PCB_203",
+          "description": "pcb congener 203",
+          "title": "203",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_203",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_204": {
+          "name": "PCB_204",
+          "description": "pcb congener 204",
+          "title": "204",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_204",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_205": {
+          "name": "PCB_205",
+          "description": "pcb congener 205",
+          "title": "205",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_205",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_206": {
+          "name": "PCB_206",
+          "description": "pcb congener 206",
+          "title": "206",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_206",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_207": {
+          "name": "PCB_207",
+          "description": "pcb congener 207",
+          "title": "207",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_207",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_208": {
+          "name": "PCB_208",
+          "description": "pcb congener 208",
+          "title": "208",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_208",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "PCB_209": {
+          "name": "PCB_209",
+          "description": "pcb congener 209",
+          "title": "209",
+          "from_schema": "https://example.org/isrp-project3",
+          "alias": "PCB_209",
+          "owner": "ISRP_Project3",
+          "domain_of": [
+            "ISRP_Project3"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        }
+      },
+      "tree_root": true,
+      "unique_keys": {
+        "sid_unique": {
+          "unique_key_name": "sid_unique",
+          "unique_key_slots": [
+            "sid"
+          ]
+        }
+      }
+    }
+  },
+  "@type": "SchemaDefinition"
+}

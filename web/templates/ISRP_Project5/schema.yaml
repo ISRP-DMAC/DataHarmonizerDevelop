@@ -1,0 +1,400 @@
+
+id: https://example.org/isrp-project5
+name: ISRP_Project5_DH_Schema
+version: 0.1.0
+description: >-
+  DataHarmonizer schema generated from ISRP Project 5 dictionary covering
+  multiple PCB datasets. Supports long-form rows with one congener per row.
+prefixes:
+  linkml: https://w3id.org/linkml/
+  xsd: http://www.w3.org/2001/XMLSchema#
+default_curi_maps:
+  - semweb_context
+default_prefix: isrp5
+imports:
+  - linkml:types
+
+types:
+  WhitespaceMinimizedString:
+    name: WhitespaceMinimizedString
+    typeof: string
+    base: str
+    uri: xsd:token
+    description: >-
+      A string that has all whitespace trimmed off of beginning and end,
+      and internal whitespace collapsed to single spaces.
+
+classes:
+  dh_interface:
+    name: dh_interface
+    description: A DataHarmonizer interface (sheet)
+
+  ISRP_Project5:
+    name: ISRP_Project5
+    description: One row per sample (and congener if long-form)
+    is_a: dh_interface
+    tree_root: true
+    slots:
+      - ID
+      - Replicate
+      - Blank_ID
+      - PCB_Congener
+      - PCB_mass
+      - tPCB
+      - LCPCB
+      - Group
+    unique_keys:
+      sample_key:
+        unique_key_name: sample_key
+        unique_key_slots: [ID, Replicate, PCB_Congener]
+
+slots:
+  ID:
+    name: ID
+    title: experiment ID
+    description: >-
+      Denotes which experiment the sample belongs to.
+      Options: Altavista Shaken (AVL_S), Altavista Non-Shaken (AVL_NS),
+      or New Bedford Non-Shaken (NBH_NS).
+    range: IDMenu
+    required: true
+
+  Replicate:
+    name: Replicate
+    title: replicate number
+    description: Denotes which replicate belongs to each sample (1 to 4)
+    range: ReplicateMenu
+    required: true
+
+  Blank_ID:
+    name: Blank_ID
+    title: blank sample ID
+    description: Sample number for each blank used to calculate LOQ (B1..B22)
+    range: BlankMenu
+    required: false
+
+  PCB_Congener:
+    name: PCB_Congener
+    title: PCB congener
+    description: >-
+      Congener identifier (PCB_1..PCB_209). Coelutions may be noted in data
+      as PCB_12+13, PCB_18+30, PCB_20+28, PCB_21+33, PCB_26+29, PCB_40+71,
+      PCB_44+47+65, PCB_49+69, PCB_50+53, PCB_59+62+79, PCB_61+70+74+76,
+      PCB_85+116, PCB_86+97+109+119, PCB_87+125, PCB_90+101+113, PCB_93+100,
+      PCB_108+124, PCB_128+166, PCB_129+138+163, PCB_135+151, PCB_139+140,
+      PCB_147+149, PCB_153+168, PCB_156+157, PCB_171+173, PCB_180+193,
+      PCB_198+199.
+    range: CongenerMenu
+    required: false
+
+  PCB_mass:
+    name: PCB_mass
+    title: PCB mass
+    description: >-
+      Mass of the specified congener. Units vary by matrix: ng (standards/cal),
+      ng per PUF (air), ng per cm SPME fiber (aqueous), or ng per g dry sediment (sediment).
+    range: float
+    required: false
+    minimum_value: 0
+    annotations:
+      unit:
+        tag: unit
+        value: ng | ng/PUF | ng/cm SPME | ng/g dry
+
+  tPCB:
+    name: tPCB
+    title: total PCBs (sum of 209)
+    description: Total PCBs, sum of all 209 PCB congeners
+    range: float
+    required: false
+    minimum_value: 0
+    annotations:
+      unit:
+        tag: unit
+        value: ng | ng/PUF | ng/cm SPME | ng/g dry
+
+  LCPCB:
+    name: LCPCB
+    title: low-chlorinated PCBs (1-39)
+    description: Sum of mono-, di-, and tri-chlorinated congeners (1..39)
+    range: float
+    required: false
+    minimum_value: 0
+    annotations:
+      unit:
+        tag: unit
+        value: ng | ng/PUF | ng/cm SPME | ng/g dry
+
+  Group:
+    name: Group
+    title: treatment group
+    description: Control (no LB400) or treatment (LB400 added)
+    range: GroupMenu
+    required: false
+
+# Enumerations
+enums:
+  IDMenu:
+    name: IDMenu
+    description: Allowed experiment IDs
+    permissible_values:
+      AVL_S: {}
+      AVL_NS: {}
+      NBH_NS: {}
+
+  ReplicateMenu:
+    name: ReplicateMenu
+    description: Replicate numbers 1..4
+    permissible_values:
+      "1": {}
+      "2": {}
+      "3": {}
+      "4": {}
+
+  BlankMenu:
+    name: BlankMenu
+    description: Blank IDs B1..B22
+    permissible_values:
+      B1: {}
+      B2: {}
+      B3: {}
+      B4: {}
+      B5: {}
+      B6: {}
+      B7: {}
+      B8: {}
+      B9: {}
+      B10: {}
+      B11: {}
+      B12: {}
+      B13: {}
+      B14: {}
+      B15: {}
+      B16: {}
+      B17: {}
+      B18: {}
+      B19: {}
+      B20: {}
+      B21: {}
+      B22: {}
+
+  GroupMenu:
+    name: GroupMenu
+    description: Treatment group
+    permissible_values:
+      control: {}
+      treatment: {}
+
+  CongenerMenu:
+    name: CongenerMenu
+    description: PCB congeners 1..209
+    permissible_values:
+      PCB_1: {}
+      PCB_2: {}
+      PCB_3: {}
+      PCB_4: {}
+      PCB_5: {}
+      PCB_6: {}
+      PCB_7: {}
+      PCB_8: {}
+      PCB_9: {}
+      PCB_10: {}
+      PCB_11: {}
+      PCB_12: {}
+      PCB_13: {}
+      PCB_14: {}
+      PCB_15: {}
+      PCB_16: {}
+      PCB_17: {}
+      PCB_18: {}
+      PCB_19: {}
+      PCB_20: {}
+      PCB_21: {}
+      PCB_22: {}
+      PCB_23: {}
+      PCB_24: {}
+      PCB_25: {}
+      PCB_26: {}
+      PCB_27: {}
+      PCB_28: {}
+      PCB_29: {}
+      PCB_30: {}
+      PCB_31: {}
+      PCB_32: {}
+      PCB_33: {}
+      PCB_34: {}
+      PCB_35: {}
+      PCB_36: {}
+      PCB_37: {}
+      PCB_38: {}
+      PCB_39: {}
+      PCB_40: {}
+      PCB_41: {}
+      PCB_42: {}
+      PCB_43: {}
+      PCB_44: {}
+      PCB_45: {}
+      PCB_46: {}
+      PCB_47: {}
+      PCB_48: {}
+      PCB_49: {}
+      PCB_50: {}
+      PCB_51: {}
+      PCB_52: {}
+      PCB_53: {}
+      PCB_54: {}
+      PCB_55: {}
+      PCB_56: {}
+      PCB_57: {}
+      PCB_58: {}
+      PCB_59: {}
+      PCB_60: {}
+      PCB_61: {}
+      PCB_62: {}
+      PCB_63: {}
+      PCB_64: {}
+      PCB_65: {}
+      PCB_66: {}
+      PCB_67: {}
+      PCB_68: {}
+      PCB_69: {}
+      PCB_70: {}
+      PCB_71: {}
+      PCB_72: {}
+      PCB_73: {}
+      PCB_74: {}
+      PCB_75: {}
+      PCB_76: {}
+      PCB_77: {}
+      PCB_78: {}
+      PCB_79: {}
+      PCB_80: {}
+      PCB_81: {}
+      PCB_82: {}
+      PCB_83: {}
+      PCB_84: {}
+      PCB_85: {}
+      PCB_86: {}
+      PCB_87: {}
+      PCB_88: {}
+      PCB_89: {}
+      PCB_90: {}
+      PCB_91: {}
+      PCB_92: {}
+      PCB_93: {}
+      PCB_94: {}
+      PCB_95: {}
+      PCB_96: {}
+      PCB_97: {}
+      PCB_98: {}
+      PCB_99: {}
+      PCB_100: {}
+      PCB_101: {}
+      PCB_102: {}
+      PCB_103: {}
+      PCB_104: {}
+      PCB_105: {}
+      PCB_106: {}
+      PCB_107: {}
+      PCB_108: {}
+      PCB_109: {}
+      PCB_110: {}
+      PCB_111: {}
+      PCB_112: {}
+      PCB_113: {}
+      PCB_114: {}
+      PCB_115: {}
+      PCB_116: {}
+      PCB_117: {}
+      PCB_118: {}
+      PCB_119: {}
+      PCB_120: {}
+      PCB_121: {}
+      PCB_122: {}
+      PCB_123: {}
+      PCB_124: {}
+      PCB_125: {}
+      PCB_126: {}
+      PCB_127: {}
+      PCB_128: {}
+      PCB_129: {}
+      PCB_130: {}
+      PCB_131: {}
+      PCB_132: {}
+      PCB_133: {}
+      PCB_134: {}
+      PCB_135: {}
+      PCB_136: {}
+      PCB_137: {}
+      PCB_138: {}
+      PCB_139: {}
+      PCB_140: {}
+      PCB_141: {}
+      PCB_142: {}
+      PCB_143: {}
+      PCB_144: {}
+      PCB_145: {}
+      PCB_146: {}
+      PCB_147: {}
+      PCB_148: {}
+      PCB_149: {}
+      PCB_150: {}
+      PCB_151: {}
+      PCB_152: {}
+      PCB_153: {}
+      PCB_154: {}
+      PCB_155: {}
+      PCB_156: {}
+      PCB_157: {}
+      PCB_158: {}
+      PCB_159: {}
+      PCB_160: {}
+      PCB_161: {}
+      PCB_162: {}
+      PCB_163: {}
+      PCB_164: {}
+      PCB_165: {}
+      PCB_166: {}
+      PCB_167: {}
+      PCB_168: {}
+      PCB_169: {}
+      PCB_170: {}
+      PCB_171: {}
+      PCB_172: {}
+      PCB_173: {}
+      PCB_174: {}
+      PCB_175: {}
+      PCB_176: {}
+      PCB_177: {}
+      PCB_178: {}
+      PCB_179: {}
+      PCB_180: {}
+      PCB_181: {}
+      PCB_182: {}
+      PCB_183: {}
+      PCB_184: {}
+      PCB_185: {}
+      PCB_186: {}
+      PCB_187: {}
+      PCB_188: {}
+      PCB_189: {}
+      PCB_190: {}
+      PCB_191: {}
+      PCB_192: {}
+      PCB_193: {}
+      PCB_194: {}
+      PCB_195: {}
+      PCB_196: {}
+      PCB_197: {}
+      PCB_198: {}
+      PCB_199: {}
+      PCB_200: {}
+      PCB_201: {}
+      PCB_202: {}
+      PCB_203: {}
+      PCB_204: {}
+      PCB_205: {}
+      PCB_206: {}
+      PCB_207: {}
+      PCB_208: {}
+      PCB_209: {}

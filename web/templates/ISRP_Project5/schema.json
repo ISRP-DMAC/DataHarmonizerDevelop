@@ -1,0 +1,1309 @@
+{
+  "name": "ISRP_Project5_DH_Schema",
+  "description": "DataHarmonizer schema generated from ISRP Project 5 dictionary covering multiple PCB datasets. Supports long-form rows with one congener per row.",
+  "id": "https://example.org/isrp-project5",
+  "version": "0.1.0",
+  "prefixes": {
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    "xsd": {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "shex": {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
+    },
+    "schema": {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
+    }
+  },
+  "default_curi_maps": [
+    "semweb_context"
+  ],
+  "default_prefix": "isrp5",
+  "types": {
+    "WhitespaceMinimizedString": {
+      "name": "WhitespaceMinimizedString",
+      "description": "A string that has all whitespace trimmed off of beginning and end, and internal whitespace collapsed to single spaces.",
+      "from_schema": "https://example.org/isrp-project5",
+      "typeof": "string",
+      "base": "str",
+      "uri": "xsd:token"
+    },
+    "string": {
+      "name": "string",
+      "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "exact_mappings": [
+        "schema:Text"
+      ],
+      "base": "str",
+      "uri": "xsd:string"
+    },
+    "integer": {
+      "name": "integer",
+      "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
+      "base": "int",
+      "uri": "xsd:integer"
+    },
+    "boolean": {
+      "name": "boolean",
+      "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
+      "base": "Bool",
+      "uri": "xsd:boolean",
+      "repr": "bool"
+    },
+    "float": {
+      "name": "float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "exact_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:float"
+    },
+    "double": {
+      "name": "double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "close_mappings": [
+        "schema:Float"
+      ],
+      "base": "float",
+      "uri": "xsd:double"
+    },
+    "decimal": {
+      "name": "decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "broad_mappings": [
+        "schema:Number"
+      ],
+      "base": "Decimal",
+      "uri": "xsd:decimal"
+    },
+    "time": {
+      "name": "time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "exact_mappings": [
+        "schema:Time"
+      ],
+      "base": "XSDTime",
+      "uri": "xsd:time",
+      "repr": "str"
+    },
+    "date": {
+      "name": "date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "exact_mappings": [
+        "schema:Date"
+      ],
+      "base": "XSDDate",
+      "uri": "xsd:date",
+      "repr": "str"
+    },
+    "datetime": {
+      "name": "datetime",
+      "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
+      "base": "XSDDateTime",
+      "uri": "xsd:dateTime",
+      "repr": "str"
+    },
+    "date_or_datetime": {
+      "name": "date_or_datetime",
+      "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "str",
+      "uri": "linkml:DateOrDatetime",
+      "repr": "str"
+    },
+    "uriorcurie": {
+      "name": "uriorcurie",
+      "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "URIorCURIE",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "curie": {
+      "name": "curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "Curie",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "uri": {
+      "name": "uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "close_mappings": [
+        "schema:URL"
+      ],
+      "base": "URI",
+      "uri": "xsd:anyURI",
+      "repr": "str"
+    },
+    "ncname": {
+      "name": "ncname",
+      "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "NCName",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "objectidentifier": {
+      "name": "objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
+      "comments": [
+        "Used for inheritance and type checking"
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "ElementIdentifier",
+      "uri": "shex:iri",
+      "repr": "str"
+    },
+    "nodeidentifier": {
+      "name": "nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "NodeIdentifier",
+      "uri": "shex:nonLiteral",
+      "repr": "str"
+    },
+    "jsonpointer": {
+      "name": "jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "jsonpath": {
+      "name": "jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    },
+    "sparqlpath": {
+      "name": "sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://example.org/isrp-project5",
+      "base": "str",
+      "uri": "xsd:string",
+      "repr": "str"
+    }
+  },
+  "enums": {
+    "IDMenu": {
+      "name": "IDMenu",
+      "description": "Allowed experiment IDs",
+      "from_schema": "https://example.org/isrp-project5",
+      "permissible_values": {
+        "AVL_S": {
+          "text": "AVL_S"
+        },
+        "AVL_NS": {
+          "text": "AVL_NS"
+        },
+        "NBH_NS": {
+          "text": "NBH_NS"
+        }
+      }
+    },
+    "ReplicateMenu": {
+      "name": "ReplicateMenu",
+      "description": "Replicate numbers 1..4",
+      "from_schema": "https://example.org/isrp-project5",
+      "permissible_values": {
+        "1": {
+          "text": "1"
+        },
+        "2": {
+          "text": "2"
+        },
+        "3": {
+          "text": "3"
+        },
+        "4": {
+          "text": "4"
+        }
+      }
+    },
+    "BlankMenu": {
+      "name": "BlankMenu",
+      "description": "Blank IDs B1..B22",
+      "from_schema": "https://example.org/isrp-project5",
+      "permissible_values": {
+        "B1": {
+          "text": "B1"
+        },
+        "B2": {
+          "text": "B2"
+        },
+        "B3": {
+          "text": "B3"
+        },
+        "B4": {
+          "text": "B4"
+        },
+        "B5": {
+          "text": "B5"
+        },
+        "B6": {
+          "text": "B6"
+        },
+        "B7": {
+          "text": "B7"
+        },
+        "B8": {
+          "text": "B8"
+        },
+        "B9": {
+          "text": "B9"
+        },
+        "B10": {
+          "text": "B10"
+        },
+        "B11": {
+          "text": "B11"
+        },
+        "B12": {
+          "text": "B12"
+        },
+        "B13": {
+          "text": "B13"
+        },
+        "B14": {
+          "text": "B14"
+        },
+        "B15": {
+          "text": "B15"
+        },
+        "B16": {
+          "text": "B16"
+        },
+        "B17": {
+          "text": "B17"
+        },
+        "B18": {
+          "text": "B18"
+        },
+        "B19": {
+          "text": "B19"
+        },
+        "B20": {
+          "text": "B20"
+        },
+        "B21": {
+          "text": "B21"
+        },
+        "B22": {
+          "text": "B22"
+        }
+      }
+    },
+    "GroupMenu": {
+      "name": "GroupMenu",
+      "description": "Treatment group",
+      "from_schema": "https://example.org/isrp-project5",
+      "permissible_values": {
+        "control": {
+          "text": "control"
+        },
+        "treatment": {
+          "text": "treatment"
+        }
+      }
+    },
+    "CongenerMenu": {
+      "name": "CongenerMenu",
+      "description": "PCB congeners 1..209",
+      "from_schema": "https://example.org/isrp-project5",
+      "permissible_values": {
+        "PCB_1": {
+          "text": "PCB_1"
+        },
+        "PCB_2": {
+          "text": "PCB_2"
+        },
+        "PCB_3": {
+          "text": "PCB_3"
+        },
+        "PCB_4": {
+          "text": "PCB_4"
+        },
+        "PCB_5": {
+          "text": "PCB_5"
+        },
+        "PCB_6": {
+          "text": "PCB_6"
+        },
+        "PCB_7": {
+          "text": "PCB_7"
+        },
+        "PCB_8": {
+          "text": "PCB_8"
+        },
+        "PCB_9": {
+          "text": "PCB_9"
+        },
+        "PCB_10": {
+          "text": "PCB_10"
+        },
+        "PCB_11": {
+          "text": "PCB_11"
+        },
+        "PCB_12": {
+          "text": "PCB_12"
+        },
+        "PCB_13": {
+          "text": "PCB_13"
+        },
+        "PCB_14": {
+          "text": "PCB_14"
+        },
+        "PCB_15": {
+          "text": "PCB_15"
+        },
+        "PCB_16": {
+          "text": "PCB_16"
+        },
+        "PCB_17": {
+          "text": "PCB_17"
+        },
+        "PCB_18": {
+          "text": "PCB_18"
+        },
+        "PCB_19": {
+          "text": "PCB_19"
+        },
+        "PCB_20": {
+          "text": "PCB_20"
+        },
+        "PCB_21": {
+          "text": "PCB_21"
+        },
+        "PCB_22": {
+          "text": "PCB_22"
+        },
+        "PCB_23": {
+          "text": "PCB_23"
+        },
+        "PCB_24": {
+          "text": "PCB_24"
+        },
+        "PCB_25": {
+          "text": "PCB_25"
+        },
+        "PCB_26": {
+          "text": "PCB_26"
+        },
+        "PCB_27": {
+          "text": "PCB_27"
+        },
+        "PCB_28": {
+          "text": "PCB_28"
+        },
+        "PCB_29": {
+          "text": "PCB_29"
+        },
+        "PCB_30": {
+          "text": "PCB_30"
+        },
+        "PCB_31": {
+          "text": "PCB_31"
+        },
+        "PCB_32": {
+          "text": "PCB_32"
+        },
+        "PCB_33": {
+          "text": "PCB_33"
+        },
+        "PCB_34": {
+          "text": "PCB_34"
+        },
+        "PCB_35": {
+          "text": "PCB_35"
+        },
+        "PCB_36": {
+          "text": "PCB_36"
+        },
+        "PCB_37": {
+          "text": "PCB_37"
+        },
+        "PCB_38": {
+          "text": "PCB_38"
+        },
+        "PCB_39": {
+          "text": "PCB_39"
+        },
+        "PCB_40": {
+          "text": "PCB_40"
+        },
+        "PCB_41": {
+          "text": "PCB_41"
+        },
+        "PCB_42": {
+          "text": "PCB_42"
+        },
+        "PCB_43": {
+          "text": "PCB_43"
+        },
+        "PCB_44": {
+          "text": "PCB_44"
+        },
+        "PCB_45": {
+          "text": "PCB_45"
+        },
+        "PCB_46": {
+          "text": "PCB_46"
+        },
+        "PCB_47": {
+          "text": "PCB_47"
+        },
+        "PCB_48": {
+          "text": "PCB_48"
+        },
+        "PCB_49": {
+          "text": "PCB_49"
+        },
+        "PCB_50": {
+          "text": "PCB_50"
+        },
+        "PCB_51": {
+          "text": "PCB_51"
+        },
+        "PCB_52": {
+          "text": "PCB_52"
+        },
+        "PCB_53": {
+          "text": "PCB_53"
+        },
+        "PCB_54": {
+          "text": "PCB_54"
+        },
+        "PCB_55": {
+          "text": "PCB_55"
+        },
+        "PCB_56": {
+          "text": "PCB_56"
+        },
+        "PCB_57": {
+          "text": "PCB_57"
+        },
+        "PCB_58": {
+          "text": "PCB_58"
+        },
+        "PCB_59": {
+          "text": "PCB_59"
+        },
+        "PCB_60": {
+          "text": "PCB_60"
+        },
+        "PCB_61": {
+          "text": "PCB_61"
+        },
+        "PCB_62": {
+          "text": "PCB_62"
+        },
+        "PCB_63": {
+          "text": "PCB_63"
+        },
+        "PCB_64": {
+          "text": "PCB_64"
+        },
+        "PCB_65": {
+          "text": "PCB_65"
+        },
+        "PCB_66": {
+          "text": "PCB_66"
+        },
+        "PCB_67": {
+          "text": "PCB_67"
+        },
+        "PCB_68": {
+          "text": "PCB_68"
+        },
+        "PCB_69": {
+          "text": "PCB_69"
+        },
+        "PCB_70": {
+          "text": "PCB_70"
+        },
+        "PCB_71": {
+          "text": "PCB_71"
+        },
+        "PCB_72": {
+          "text": "PCB_72"
+        },
+        "PCB_73": {
+          "text": "PCB_73"
+        },
+        "PCB_74": {
+          "text": "PCB_74"
+        },
+        "PCB_75": {
+          "text": "PCB_75"
+        },
+        "PCB_76": {
+          "text": "PCB_76"
+        },
+        "PCB_77": {
+          "text": "PCB_77"
+        },
+        "PCB_78": {
+          "text": "PCB_78"
+        },
+        "PCB_79": {
+          "text": "PCB_79"
+        },
+        "PCB_80": {
+          "text": "PCB_80"
+        },
+        "PCB_81": {
+          "text": "PCB_81"
+        },
+        "PCB_82": {
+          "text": "PCB_82"
+        },
+        "PCB_83": {
+          "text": "PCB_83"
+        },
+        "PCB_84": {
+          "text": "PCB_84"
+        },
+        "PCB_85": {
+          "text": "PCB_85"
+        },
+        "PCB_86": {
+          "text": "PCB_86"
+        },
+        "PCB_87": {
+          "text": "PCB_87"
+        },
+        "PCB_88": {
+          "text": "PCB_88"
+        },
+        "PCB_89": {
+          "text": "PCB_89"
+        },
+        "PCB_90": {
+          "text": "PCB_90"
+        },
+        "PCB_91": {
+          "text": "PCB_91"
+        },
+        "PCB_92": {
+          "text": "PCB_92"
+        },
+        "PCB_93": {
+          "text": "PCB_93"
+        },
+        "PCB_94": {
+          "text": "PCB_94"
+        },
+        "PCB_95": {
+          "text": "PCB_95"
+        },
+        "PCB_96": {
+          "text": "PCB_96"
+        },
+        "PCB_97": {
+          "text": "PCB_97"
+        },
+        "PCB_98": {
+          "text": "PCB_98"
+        },
+        "PCB_99": {
+          "text": "PCB_99"
+        },
+        "PCB_100": {
+          "text": "PCB_100"
+        },
+        "PCB_101": {
+          "text": "PCB_101"
+        },
+        "PCB_102": {
+          "text": "PCB_102"
+        },
+        "PCB_103": {
+          "text": "PCB_103"
+        },
+        "PCB_104": {
+          "text": "PCB_104"
+        },
+        "PCB_105": {
+          "text": "PCB_105"
+        },
+        "PCB_106": {
+          "text": "PCB_106"
+        },
+        "PCB_107": {
+          "text": "PCB_107"
+        },
+        "PCB_108": {
+          "text": "PCB_108"
+        },
+        "PCB_109": {
+          "text": "PCB_109"
+        },
+        "PCB_110": {
+          "text": "PCB_110"
+        },
+        "PCB_111": {
+          "text": "PCB_111"
+        },
+        "PCB_112": {
+          "text": "PCB_112"
+        },
+        "PCB_113": {
+          "text": "PCB_113"
+        },
+        "PCB_114": {
+          "text": "PCB_114"
+        },
+        "PCB_115": {
+          "text": "PCB_115"
+        },
+        "PCB_116": {
+          "text": "PCB_116"
+        },
+        "PCB_117": {
+          "text": "PCB_117"
+        },
+        "PCB_118": {
+          "text": "PCB_118"
+        },
+        "PCB_119": {
+          "text": "PCB_119"
+        },
+        "PCB_120": {
+          "text": "PCB_120"
+        },
+        "PCB_121": {
+          "text": "PCB_121"
+        },
+        "PCB_122": {
+          "text": "PCB_122"
+        },
+        "PCB_123": {
+          "text": "PCB_123"
+        },
+        "PCB_124": {
+          "text": "PCB_124"
+        },
+        "PCB_125": {
+          "text": "PCB_125"
+        },
+        "PCB_126": {
+          "text": "PCB_126"
+        },
+        "PCB_127": {
+          "text": "PCB_127"
+        },
+        "PCB_128": {
+          "text": "PCB_128"
+        },
+        "PCB_129": {
+          "text": "PCB_129"
+        },
+        "PCB_130": {
+          "text": "PCB_130"
+        },
+        "PCB_131": {
+          "text": "PCB_131"
+        },
+        "PCB_132": {
+          "text": "PCB_132"
+        },
+        "PCB_133": {
+          "text": "PCB_133"
+        },
+        "PCB_134": {
+          "text": "PCB_134"
+        },
+        "PCB_135": {
+          "text": "PCB_135"
+        },
+        "PCB_136": {
+          "text": "PCB_136"
+        },
+        "PCB_137": {
+          "text": "PCB_137"
+        },
+        "PCB_138": {
+          "text": "PCB_138"
+        },
+        "PCB_139": {
+          "text": "PCB_139"
+        },
+        "PCB_140": {
+          "text": "PCB_140"
+        },
+        "PCB_141": {
+          "text": "PCB_141"
+        },
+        "PCB_142": {
+          "text": "PCB_142"
+        },
+        "PCB_143": {
+          "text": "PCB_143"
+        },
+        "PCB_144": {
+          "text": "PCB_144"
+        },
+        "PCB_145": {
+          "text": "PCB_145"
+        },
+        "PCB_146": {
+          "text": "PCB_146"
+        },
+        "PCB_147": {
+          "text": "PCB_147"
+        },
+        "PCB_148": {
+          "text": "PCB_148"
+        },
+        "PCB_149": {
+          "text": "PCB_149"
+        },
+        "PCB_150": {
+          "text": "PCB_150"
+        },
+        "PCB_151": {
+          "text": "PCB_151"
+        },
+        "PCB_152": {
+          "text": "PCB_152"
+        },
+        "PCB_153": {
+          "text": "PCB_153"
+        },
+        "PCB_154": {
+          "text": "PCB_154"
+        },
+        "PCB_155": {
+          "text": "PCB_155"
+        },
+        "PCB_156": {
+          "text": "PCB_156"
+        },
+        "PCB_157": {
+          "text": "PCB_157"
+        },
+        "PCB_158": {
+          "text": "PCB_158"
+        },
+        "PCB_159": {
+          "text": "PCB_159"
+        },
+        "PCB_160": {
+          "text": "PCB_160"
+        },
+        "PCB_161": {
+          "text": "PCB_161"
+        },
+        "PCB_162": {
+          "text": "PCB_162"
+        },
+        "PCB_163": {
+          "text": "PCB_163"
+        },
+        "PCB_164": {
+          "text": "PCB_164"
+        },
+        "PCB_165": {
+          "text": "PCB_165"
+        },
+        "PCB_166": {
+          "text": "PCB_166"
+        },
+        "PCB_167": {
+          "text": "PCB_167"
+        },
+        "PCB_168": {
+          "text": "PCB_168"
+        },
+        "PCB_169": {
+          "text": "PCB_169"
+        },
+        "PCB_170": {
+          "text": "PCB_170"
+        },
+        "PCB_171": {
+          "text": "PCB_171"
+        },
+        "PCB_172": {
+          "text": "PCB_172"
+        },
+        "PCB_173": {
+          "text": "PCB_173"
+        },
+        "PCB_174": {
+          "text": "PCB_174"
+        },
+        "PCB_175": {
+          "text": "PCB_175"
+        },
+        "PCB_176": {
+          "text": "PCB_176"
+        },
+        "PCB_177": {
+          "text": "PCB_177"
+        },
+        "PCB_178": {
+          "text": "PCB_178"
+        },
+        "PCB_179": {
+          "text": "PCB_179"
+        },
+        "PCB_180": {
+          "text": "PCB_180"
+        },
+        "PCB_181": {
+          "text": "PCB_181"
+        },
+        "PCB_182": {
+          "text": "PCB_182"
+        },
+        "PCB_183": {
+          "text": "PCB_183"
+        },
+        "PCB_184": {
+          "text": "PCB_184"
+        },
+        "PCB_185": {
+          "text": "PCB_185"
+        },
+        "PCB_186": {
+          "text": "PCB_186"
+        },
+        "PCB_187": {
+          "text": "PCB_187"
+        },
+        "PCB_188": {
+          "text": "PCB_188"
+        },
+        "PCB_189": {
+          "text": "PCB_189"
+        },
+        "PCB_190": {
+          "text": "PCB_190"
+        },
+        "PCB_191": {
+          "text": "PCB_191"
+        },
+        "PCB_192": {
+          "text": "PCB_192"
+        },
+        "PCB_193": {
+          "text": "PCB_193"
+        },
+        "PCB_194": {
+          "text": "PCB_194"
+        },
+        "PCB_195": {
+          "text": "PCB_195"
+        },
+        "PCB_196": {
+          "text": "PCB_196"
+        },
+        "PCB_197": {
+          "text": "PCB_197"
+        },
+        "PCB_198": {
+          "text": "PCB_198"
+        },
+        "PCB_199": {
+          "text": "PCB_199"
+        },
+        "PCB_200": {
+          "text": "PCB_200"
+        },
+        "PCB_201": {
+          "text": "PCB_201"
+        },
+        "PCB_202": {
+          "text": "PCB_202"
+        },
+        "PCB_203": {
+          "text": "PCB_203"
+        },
+        "PCB_204": {
+          "text": "PCB_204"
+        },
+        "PCB_205": {
+          "text": "PCB_205"
+        },
+        "PCB_206": {
+          "text": "PCB_206"
+        },
+        "PCB_207": {
+          "text": "PCB_207"
+        },
+        "PCB_208": {
+          "text": "PCB_208"
+        },
+        "PCB_209": {
+          "text": "PCB_209"
+        }
+      }
+    }
+  },
+  "slots": {
+    "ID": {
+      "name": "ID",
+      "description": "Denotes which experiment the sample belongs to. Options: Altavista Shaken (AVL_S), Altavista Non-Shaken (AVL_NS), or New Bedford Non-Shaken (NBH_NS).",
+      "title": "experiment ID",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "IDMenu",
+      "required": true
+    },
+    "Replicate": {
+      "name": "Replicate",
+      "description": "Denotes which replicate belongs to each sample (1 to 4)",
+      "title": "replicate number",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "ReplicateMenu",
+      "required": true
+    },
+    "Blank_ID": {
+      "name": "Blank_ID",
+      "description": "Sample number for each blank used to calculate LOQ (B1..B22)",
+      "title": "blank sample ID",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "BlankMenu",
+      "required": false
+    },
+    "PCB_Congener": {
+      "name": "PCB_Congener",
+      "description": "Congener identifier (PCB_1..PCB_209). Coelutions may be noted in data as PCB_12+13, PCB_18+30, PCB_20+28, PCB_21+33, PCB_26+29, PCB_40+71, PCB_44+47+65, PCB_49+69, PCB_50+53, PCB_59+62+79, PCB_61+70+74+76, PCB_85+116, PCB_86+97+109+119, PCB_87+125, PCB_90+101+113, PCB_93+100, PCB_108+124, PCB_128+166, PCB_129+138+163, PCB_135+151, PCB_139+140, PCB_147+149, PCB_153+168, PCB_156+157, PCB_171+173, PCB_180+193, PCB_198+199.",
+      "title": "PCB congener",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "CongenerMenu",
+      "required": false
+    },
+    "PCB_mass": {
+      "name": "PCB_mass",
+      "annotations": {
+        "unit": {
+          "tag": "unit",
+          "value": "ng | ng/PUF | ng/cm SPME | ng/g dry"
+        }
+      },
+      "description": "Mass of the specified congener. Units vary by matrix: ng (standards/cal), ng per PUF (air), ng per cm SPME fiber (aqueous), or ng per g dry sediment (sediment).",
+      "title": "PCB mass",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "tPCB": {
+      "name": "tPCB",
+      "annotations": {
+        "unit": {
+          "tag": "unit",
+          "value": "ng | ng/PUF | ng/cm SPME | ng/g dry"
+        }
+      },
+      "description": "Total PCBs, sum of all 209 PCB congeners",
+      "title": "total PCBs (sum of 209)",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "LCPCB": {
+      "name": "LCPCB",
+      "annotations": {
+        "unit": {
+          "tag": "unit",
+          "value": "ng | ng/PUF | ng/cm SPME | ng/g dry"
+        }
+      },
+      "description": "Sum of mono-, di-, and tri-chlorinated congeners (1..39)",
+      "title": "low-chlorinated PCBs (1-39)",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "float",
+      "required": false,
+      "minimum_value": 0
+    },
+    "Group": {
+      "name": "Group",
+      "description": "Control (no LB400) or treatment (LB400 added)",
+      "title": "treatment group",
+      "from_schema": "https://example.org/isrp-project5",
+      "domain_of": [
+        "ISRP_Project5"
+      ],
+      "range": "GroupMenu",
+      "required": false
+    }
+  },
+  "classes": {
+    "dh_interface": {
+      "name": "dh_interface",
+      "description": "A DataHarmonizer interface (sheet)",
+      "from_schema": "https://example.org/isrp-project5"
+    },
+    "ISRP_Project5": {
+      "name": "ISRP_Project5",
+      "description": "One row per sample (and congener if long-form)",
+      "from_schema": "https://example.org/isrp-project5",
+      "is_a": "dh_interface",
+      "attributes": {
+        "ID": {
+          "name": "ID",
+          "description": "Denotes which experiment the sample belongs to. Options: Altavista Shaken (AVL_S), Altavista Non-Shaken (AVL_NS), or New Bedford Non-Shaken (NBH_NS).",
+          "title": "experiment ID",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "ID",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "IDMenu",
+          "required": true
+        },
+        "Replicate": {
+          "name": "Replicate",
+          "description": "Denotes which replicate belongs to each sample (1 to 4)",
+          "title": "replicate number",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "Replicate",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "ReplicateMenu",
+          "required": true
+        },
+        "Blank_ID": {
+          "name": "Blank_ID",
+          "description": "Sample number for each blank used to calculate LOQ (B1..B22)",
+          "title": "blank sample ID",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "Blank_ID",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "BlankMenu",
+          "required": false
+        },
+        "PCB_Congener": {
+          "name": "PCB_Congener",
+          "description": "Congener identifier (PCB_1..PCB_209). Coelutions may be noted in data as PCB_12+13, PCB_18+30, PCB_20+28, PCB_21+33, PCB_26+29, PCB_40+71, PCB_44+47+65, PCB_49+69, PCB_50+53, PCB_59+62+79, PCB_61+70+74+76, PCB_85+116, PCB_86+97+109+119, PCB_87+125, PCB_90+101+113, PCB_93+100, PCB_108+124, PCB_128+166, PCB_129+138+163, PCB_135+151, PCB_139+140, PCB_147+149, PCB_153+168, PCB_156+157, PCB_171+173, PCB_180+193, PCB_198+199.",
+          "title": "PCB congener",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "PCB_Congener",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "CongenerMenu",
+          "required": false
+        },
+        "PCB_mass": {
+          "name": "PCB_mass",
+          "annotations": {
+            "unit": {
+              "tag": "unit",
+              "value": "ng | ng/PUF | ng/cm SPME | ng/g dry"
+            }
+          },
+          "description": "Mass of the specified congener. Units vary by matrix: ng (standards/cal), ng per PUF (air), ng per cm SPME fiber (aqueous), or ng per g dry sediment (sediment).",
+          "title": "PCB mass",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "PCB_mass",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "tPCB": {
+          "name": "tPCB",
+          "annotations": {
+            "unit": {
+              "tag": "unit",
+              "value": "ng | ng/PUF | ng/cm SPME | ng/g dry"
+            }
+          },
+          "description": "Total PCBs, sum of all 209 PCB congeners",
+          "title": "total PCBs (sum of 209)",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "tPCB",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "LCPCB": {
+          "name": "LCPCB",
+          "annotations": {
+            "unit": {
+              "tag": "unit",
+              "value": "ng | ng/PUF | ng/cm SPME | ng/g dry"
+            }
+          },
+          "description": "Sum of mono-, di-, and tri-chlorinated congeners (1..39)",
+          "title": "low-chlorinated PCBs (1-39)",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "LCPCB",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "float",
+          "required": false,
+          "minimum_value": 0
+        },
+        "Group": {
+          "name": "Group",
+          "description": "Control (no LB400) or treatment (LB400 added)",
+          "title": "treatment group",
+          "from_schema": "https://example.org/isrp-project5",
+          "alias": "Group",
+          "owner": "ISRP_Project5",
+          "domain_of": [
+            "ISRP_Project5"
+          ],
+          "range": "GroupMenu",
+          "required": false
+        }
+      },
+      "tree_root": true,
+      "unique_keys": {
+        "sample_key": {
+          "unique_key_name": "sample_key",
+          "unique_key_slots": [
+            "ID",
+            "Replicate",
+            "PCB_Congener"
+          ]
+        }
+      }
+    }
+  },
+  "@type": "SchemaDefinition"
+}

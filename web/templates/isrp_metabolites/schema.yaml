@@ -1,0 +1,360 @@
+id: https://example.org/ISRP_Metabolites
+name: PCB_Metabolites
+description: ''
+version: 0.1.3
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  xsd: http://www.w3.org/2001/XMLSchema#
+classes:
+
+  dh_interface:
+    name: dh_interface
+    description: A DataHarmonizer interface
+  Study:
+    name: Study
+    description: DataHarmonizer interface for Study-level metadata
+    is_a: dh_interface
+    slots:
+    - study_id
+    - title
+    - description
+    - principal_investigator
+    - institution
+    - ecosystem
+    - ecosystem_category
+    - ecosystem_type
+    - ecosystem_subtype
+    - specific_ecosystem
+    slot_usage:
+      study_id:
+        rank: 1
+        slot_group: ''
+      title: 
+        rank: 2
+        slot_group: ''
+      description:
+        rank: 3
+        slot_group: ''
+      principal_investigator:
+        rank: 4
+        slot_group: ''
+      institution:
+        rank: 5
+        slot_group: ''
+      ecosystem:
+        rank: 6
+        slot_group: ''
+      ecosystem_category:
+        rank: 7
+        slot_group: ''
+      ecosystem_type:
+        rank: 8
+        slot_group: ''
+      ecosystem_subtype:
+        rank: 9
+        slot_group: ''
+      specific_ecosystem:
+        rank: 10
+        slot_group: ''
+  Biosample:
+    name: Biosample
+    description: DataHarmonizer interface for Biosample metadata
+    is_a: dh_interface
+    slots:
+    - biosample_local_id
+    - study_id
+    - body_site
+    - sample_id
+    - treatment
+    - collection_date
+    - geo_location
+    - host
+    slot_usage:
+      biosample_local_id:
+        rank: 1
+        slot_group: ''
+      study_id:
+        rank: 2
+        slot_group: ''
+      body_site:
+        rank: 3
+        slot_group: ''
+      sample_id:
+        rank: 4
+        slot_group: ''
+      treatment:
+        rank: 5
+        slot_group: ''
+      collection_date:
+        rank: 6
+        slot_group: ''
+      geo_location:
+        rank: 7
+        slot_group: ''
+      host:
+        rank: 8
+        slot_group: ''
+  OmicsProcessing:
+    name: OmicsProcessing
+    description: DataHarmonizer interface for OmicsProcessing (metabolomics)
+    is_a: dh_interface
+    slots:
+    - omics_processing_local_id
+    - biosample_local_id
+    - omics_type
+    - instrument
+    - processing_institution
+    - protocol_link
+    - data_file_name
+    slot_usage:
+      omics_processing_local_id:
+        rank: 1
+        slot_group: ''
+      biosample_local_id:
+        rank: 2
+        slot_group: ''
+      omics_type:
+        rank: 3
+        slot_group: ''
+      instrument:
+        rank: 4
+        slot_group: ''
+      processing_institution:
+        rank: 5
+        slot_group: ''
+      protocol_link:
+        rank: 6
+        slot_group: ''
+      data_file_name:
+        rank: 7
+        slot_group: ''
+  MetaboliteAbundance:
+    name: MetaboliteAbundance
+    description: DataHarmonizer interface for PCB metabolite abundance table
+    is_a: dh_interface
+    slots:
+    - biosample_local_id
+    - sample_id
+    - treatment
+    - metabolite_identified
+    - chemical_formula
+    - mass_to_charge
+    - retention_time_min
+    - abundance
+    - abundance_unit
+    - analyte_category
+    slot_usage:
+      biosample_local_id:
+        rank: 1
+        slot_group: ''
+      sample_id:
+        rank: 2
+        slot_group: ''
+      treatment:
+        rank: 3
+        slot_group: ''
+      metabolite_identified:
+        rank: 4
+        slot_group: ''
+      chemical_formula:
+        rank: 5
+        slot_group: ''
+      mass_to_charge:
+        rank: 6
+        slot_group: ''
+      retention_time_min:
+        rank: 7
+        slot_group: ''
+      abundance:
+        rank: 8
+        slot_group: ''
+      abundance_unit:
+        rank: 9
+        slot_group: ''
+      analyte_category:
+        rank: 10
+        slot_group: ''
+    tree_root: true
+
+slots:
+  study_id:
+    description: Local study identifier (string you control; can be replaced with
+      resolvable IDs later)
+    range: string
+    required: true
+    title: Study ID
+  biosample_local_id:
+    description: Local biosample identifier (string you control)
+    range: string
+    required: true
+    title: Biosample Local ID
+  omics_processing_local_id:
+    description: Local identifier for the omics processing record
+    range: string
+    required: true
+    title: Omics Processing Local ID
+  title:
+    range: string
+    required: true
+    title: Title
+  description:
+    range: string
+    title: Description
+  principal_investigator:
+    range: string
+    title: Principal Investigator
+  institution:
+    range: string
+    title: Institution
+  ecosystem:
+    range: string
+    title: Ecosystem
+  ecosystem_category:
+    range: string
+    title: Ecosystem Category
+  ecosystem_type:
+    range: string
+    title: Ecosystem Type
+  ecosystem_subtype:
+    range: string
+    title: Ecosystem Subtype
+  specific_ecosystem:
+    range: string
+    title: Specific Ecosystem
+  body_site:
+    description: Anatomical region for sample origin (validated against Uberon terms)
+    range: BodySiteEnum
+    required: true
+    title: Body Site
+  sample_id:
+    description: 'Sample label (normalized: remove a single leading 0 after the treatment
+      letter; e.g., S03→S3)'
+    range: string
+    pattern: ^[SLMH][1-9][0-9]*$
+    required: true
+    title: Sample ID
+  treatment:
+    range: TreatmentEnum
+    required: true
+    title: Treatment
+  collection_date:
+    range: date
+    title: Collection Date
+  geo_location:
+    description: Free-text geographic description or coordinates
+    range: string
+    title: Geographic Location
+  host:
+    range: string
+    title: Host
+  omics_type:
+    range: OmicsTypeEnum
+    ifabsent: default
+    equals_string: metabolomics
+    title: Omics Type
+  instrument:
+    range: string
+    title: Instrument
+  processing_institution:
+    range: string
+    title: Processing Institution
+  protocol_link:
+    range: string
+    pattern: ^https?://.+$
+    title: Protocol Link (URL)
+  data_file_name:
+    range: string
+    title: Data File Name
+  metabolite_identified:
+    range: string
+    required: true
+    title: Metabolite Identified
+  chemical_formula:
+    range: string
+    title: Chemical Formula
+  mass_to_charge:
+    range: float
+    title: m/z (Mass-to-Charge)
+  retention_time_min:
+    range: float
+    title: Retention Time (min)
+  abundance:
+    range: float
+    title: Abundance
+  abundance_unit:
+    range: AbundanceUnitEnum
+    ifabsent: default
+    equals_string: relative_abundance_PFOS_normalized
+    title: Abundance Unit
+  analyte_category:
+    range: AnalyteCategoryEnum
+    ifabsent: default
+    equals_string: metabolite
+    title: Analyte Category
+
+enums:
+  BodySiteMenu:
+    description: Controlled anatomical sites from Uberon
+    permissible_values:
+      jejunum:
+        meaning: UBERON:0002115
+      ileum:
+        meaning: UBERON:0002116
+      colon:
+        meaning: UBERON:0001155
+  TreatmentMenu:
+    permissible_values:
+      Sham: {}
+      Low: {}
+      Medium: {}
+      High: {}
+  OmicsTypeMenu:
+    permissible_values:
+      metabolomics: {}
+  AbundanceUnitMenu:
+    permissible_values:
+      relative_abundance_PFOS_normalized: {}
+  AnalyteCategoryMenu:
+    permissible_values:
+      metabolite: {}
+
+types:
+  WhitespaceMinimizedString:
+    name: WhitespaceMinimizedString
+    typeof: string
+    description: 'A string that has all whitespace trimmed off of beginning and end,
+      and all internal whitespace segments reduced to single spaces. Whitespace includes
+      #x9 (tab), #xA (linefeed), and #xD (carriage return).'
+    base: str
+    uri: xsd:token
+  Provenance:
+    name: Provenance
+    typeof: string
+    description: A field containing a DataHarmonizer versioning marker. It is issued
+      by DataHarmonizer when validation is applied to a given row of data.
+    base: str
+    uri: xsd:token
+  string:
+    name: string
+    typeof: string
+    base: str
+    uri: xsd:string
+    description:
+  float:
+    name: float
+    base: float
+    uri: xsd:float
+  date:
+    name: date
+    base: str
+    uri: xsd:date
+
+settings:
+  Title_Case: (((?<=\b)[^a-z\W]\w*?|[\W])+)
+  UPPER_CASE: '[A-Z\W\d_]*'
+  lower_case: '[a-z\W\d_]*'
+
