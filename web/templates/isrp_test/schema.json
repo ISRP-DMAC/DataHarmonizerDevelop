@@ -1,16 +1,12 @@
 {
-  "name": "isrp_test",
-  "description": "",
-  "id": "https://example.com/isrp_test",
-  "version": "2.3.0",
+  "name": "isrp",
+  "description": "isrp project",
+  "id": "https://example.com/isrp",
+  "version": "1.0.0",
   "prefixes": {
     "linkml": {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
-    },
-    "GENEPIO": {
-      "prefix_prefix": "GENEPIO",
-      "prefix_reference": "http://purl.obolibrary.org/obo/GENEPIO_"
     },
     "xsd": {
       "prefix_prefix": "xsd",
@@ -25,12 +21,12 @@
       "prefix_reference": "http://schema.org/"
     }
   },
-  "default_prefix": "https://example.com/isrp_test/",
+  "default_prefix": "https://example.com/isrp/",
   "types": {
     "WhitespaceMinimizedString": {
       "name": "WhitespaceMinimizedString",
       "description": "A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).",
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "typeof": "string",
       "base": "str",
       "uri": "xsd:token"
@@ -38,7 +34,7 @@
     "Provenance": {
       "name": "Provenance",
       "description": "A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.",
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "typeof": "string",
       "base": "str",
       "uri": "xsd:token"
@@ -49,7 +45,7 @@
       "notes": [
         "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "exact_mappings": [
         "schema:Text"
       ],
@@ -62,7 +58,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "exact_mappings": [
         "schema:Integer"
       ],
@@ -75,7 +71,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "exact_mappings": [
         "schema:Boolean"
       ],
@@ -89,7 +85,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "exact_mappings": [
         "schema:Float"
       ],
@@ -102,7 +98,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "close_mappings": [
         "schema:Float"
       ],
@@ -115,7 +111,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "broad_mappings": [
         "schema:Number"
       ],
@@ -129,7 +125,7 @@
         "URI is dateTime because OWL reasoners do not work with straight date or time",
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "exact_mappings": [
         "schema:Time"
       ],
@@ -144,7 +140,7 @@
         "URI is dateTime because OWL reasoners don't work with straight date or time",
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "exact_mappings": [
         "schema:Date"
       ],
@@ -158,7 +154,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "exact_mappings": [
         "schema:DateTime"
       ],
@@ -172,7 +168,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "str",
       "uri": "linkml:DateOrDatetime",
       "repr": "str"
@@ -183,7 +179,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "URIorCURIE",
       "uri": "xsd:anyURI",
       "repr": "str"
@@ -199,7 +195,7 @@
         "in RDF serializations this MUST be expanded to a URI",
         "in non-RDF serializations MAY be serialized as the compact representation"
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "Curie",
       "uri": "xsd:string",
       "repr": "str"
@@ -214,7 +210,7 @@
       "comments": [
         "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "close_mappings": [
         "schema:URL"
       ],
@@ -228,7 +224,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "NCName",
       "uri": "xsd:string",
       "repr": "str"
@@ -242,7 +238,7 @@
       "comments": [
         "Used for inheritance and type checking"
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "ElementIdentifier",
       "uri": "shex:iri",
       "repr": "str"
@@ -253,7 +249,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "NodeIdentifier",
       "uri": "shex:nonLiteral",
       "repr": "str"
@@ -265,7 +261,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "str",
       "uri": "xsd:string",
       "repr": "str"
@@ -277,7 +273,7 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "str",
       "uri": "xsd:string",
       "repr": "str"
@@ -289,23 +285,315 @@
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
       ],
-      "from_schema": "https://example.com/isrp_test",
+      "from_schema": "https://example.com/isrp",
       "base": "str",
       "uri": "xsd:string",
       "repr": "str"
+    }
+  },
+  "enums": {
+    "sample_medium_type": {
+      "name": "sample_medium_type",
+      "title": "sample medium type",
+      "from_schema": "https://example.com/isrp",
+      "permissible_values": {
+        "PUF": {
+          "text": "PUF",
+          "description": "polyurethane foam, used to collect airborne PCBs from microcosms"
+        },
+        "SPME": {
+          "text": "SPME",
+          "description": "solid-phase microextraction fibers, used to measure aqueous phase PCBs in microcosms"
+        }
+      }
+    },
+    "units_option": {
+      "name": "units_option",
+      "title": "measurement units",
+      "from_schema": "https://example.com/isrp",
+      "permissible_values": {
+        "ng/PUF": {
+          "text": "ng/PUF",
+          "description": "nanograms per PUF"
+        }
+      }
+    },
+    "NullValueMenu": {
+      "name": "NullValueMenu",
+      "title": "null value",
+      "from_schema": "https://example.com/isrp",
+      "permissible_values": {
+        "Missing": {
+          "text": "Missing",
+          "description": "an unknown value"
+        },
+        "LoB": {
+          "text": "LoB",
+          "description": "limit of blank"
+        },
+        "LoD": {
+          "text": "LoD",
+          "description": "limit of detection"
+        },
+        "LoQ": {
+          "text": "LoQ",
+          "description": "limit of quantitation"
+        }
+      }
+    }
+  },
+  "slots": {
+    "sample_id": {
+      "name": "sample_id",
+      "description": "unique identifier assigned to each sample within a study.",
+      "title": "sample id",
+      "from_schema": "https://example.com/isrp",
+      "domain_of": [
+        "raw_mass",
+        "sediment"
+      ],
+      "range": "WhitespaceMinimizedString",
+      "required": true
+    },
+    "sample_medium": {
+      "name": "sample_medium",
+      "description": "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.",
+      "title": "sample medium",
+      "from_schema": "https://example.com/isrp",
+      "domain_of": [
+        "raw_mass"
+      ],
+      "range": "sample_medium_type",
+      "required": true
+    },
+    "units": {
+      "name": "units",
+      "title": "units",
+      "from_schema": "https://example.com/isrp",
+      "domain_of": [
+        "raw_mass",
+        "sediment"
+      ],
+      "range": "units_option",
+      "required": true
+    },
+    "tPCB": {
+      "name": "tPCB",
+      "description": "total PCBs, sum of all 209 PCB congeners",
+      "title": "tPCB",
+      "from_schema": "https://example.com/isrp",
+      "domain_of": [
+        "raw_mass",
+        "sediment"
+      ],
+      "required": false,
+      "any_of": [
+        {
+          "range": "NullValueMenu"
+        },
+        {
+          "range": "float"
+        }
+      ]
     }
   },
   "classes": {
     "dh_interface": {
       "name": "dh_interface",
       "description": "A DataHarmonizer interface",
-      "from_schema": "https://example.com/isrp_test"
+      "from_schema": "https://example.com/isrp"
     },
-    "isrp_test": {
-      "name": "isrp_test",
+    "raw_mass": {
+      "name": "raw_mass",
+      "annotations": {
+        "version": {
+          "tag": "version",
+          "value": "1.0.0"
+        }
+      },
       "description": "TEST",
-      "from_schema": "https://example.com/isrp_test",
-      "is_a": "dh_interface"
+      "title": "raw mass",
+      "from_schema": "https://example.com/isrp",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "sample_id": {
+          "name": "sample_id",
+          "rank": 1,
+          "slot_group": "sampling"
+        },
+        "sample_medium": {
+          "name": "sample_medium",
+          "rank": 2,
+          "slot_group": "sampling"
+        },
+        "units": {
+          "name": "units",
+          "rank": 3,
+          "slot_group": "sampling"
+        },
+        "tPCB": {
+          "name": "tPCB",
+          "rank": 4,
+          "slot_group": "sampling"
+        }
+      },
+      "attributes": {
+        "sample_id": {
+          "name": "sample_id",
+          "description": "unique identifier assigned to each sample within a study.",
+          "title": "sample id",
+          "from_schema": "https://example.com/isrp",
+          "rank": 1,
+          "alias": "sample_id",
+          "owner": "raw_mass",
+          "domain_of": [
+            "raw_mass",
+            "sediment"
+          ],
+          "slot_group": "sampling",
+          "range": "WhitespaceMinimizedString",
+          "required": true
+        },
+        "sample_medium": {
+          "name": "sample_medium",
+          "description": "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.",
+          "title": "sample medium",
+          "from_schema": "https://example.com/isrp",
+          "rank": 2,
+          "alias": "sample_medium",
+          "owner": "raw_mass",
+          "domain_of": [
+            "raw_mass"
+          ],
+          "slot_group": "sampling",
+          "range": "sample_medium_type",
+          "required": true
+        },
+        "units": {
+          "name": "units",
+          "title": "units",
+          "from_schema": "https://example.com/isrp",
+          "rank": 3,
+          "alias": "units",
+          "owner": "raw_mass",
+          "domain_of": [
+            "raw_mass",
+            "sediment"
+          ],
+          "slot_group": "sampling",
+          "range": "units_option",
+          "required": true
+        },
+        "tPCB": {
+          "name": "tPCB",
+          "description": "total PCBs, sum of all 209 PCB congeners",
+          "title": "tPCB",
+          "from_schema": "https://example.com/isrp",
+          "rank": 4,
+          "alias": "tPCB",
+          "owner": "raw_mass",
+          "domain_of": [
+            "raw_mass",
+            "sediment"
+          ],
+          "slot_group": "sampling",
+          "required": false,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        }
+      }
+    },
+    "sediment": {
+      "name": "sediment",
+      "annotations": {
+        "version": {
+          "tag": "version",
+          "value": "1.0.0"
+        }
+      },
+      "description": "NBH Sediment PCBs",
+      "title": "sediment",
+      "from_schema": "https://example.com/isrp",
+      "is_a": "dh_interface",
+      "slot_usage": {
+        "sample_id": {
+          "name": "sample_id",
+          "rank": 1,
+          "slot_group": "sampling"
+        },
+        "units": {
+          "name": "units",
+          "rank": 2,
+          "slot_group": "sampling"
+        },
+        "tPCB": {
+          "name": "tPCB",
+          "rank": 3,
+          "slot_group": "sampling"
+        }
+      },
+      "attributes": {
+        "sample_id": {
+          "name": "sample_id",
+          "description": "unique identifier assigned to each sample within a study.",
+          "title": "sample id",
+          "from_schema": "https://example.com/isrp",
+          "rank": 1,
+          "alias": "sample_id",
+          "owner": "sediment",
+          "domain_of": [
+            "raw_mass",
+            "sediment"
+          ],
+          "slot_group": "sampling",
+          "range": "WhitespaceMinimizedString",
+          "required": true
+        },
+        "units": {
+          "name": "units",
+          "title": "units",
+          "from_schema": "https://example.com/isrp",
+          "rank": 2,
+          "alias": "units",
+          "owner": "sediment",
+          "domain_of": [
+            "raw_mass",
+            "sediment"
+          ],
+          "slot_group": "sampling",
+          "range": "units_option",
+          "required": true
+        },
+        "tPCB": {
+          "name": "tPCB",
+          "description": "total PCBs, sum of all 209 PCB congeners",
+          "title": "tPCB",
+          "from_schema": "https://example.com/isrp",
+          "rank": 3,
+          "alias": "tPCB",
+          "owner": "sediment",
+          "domain_of": [
+            "raw_mass",
+            "sediment"
+          ],
+          "slot_group": "sampling",
+          "required": false,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        }
+      }
     }
   },
   "settings": {

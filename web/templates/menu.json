@@ -230,14 +230,20 @@
       }
     }
   },
-    "isrp_test": {
+    "isrp": {
     "folder": "isrp_test",
     "id": "https://example.com/isrp_test",
     "version": "1.0.0",
     "templates": {
-      "isrp_test": {
-        "name": "isrp_test",
-        "display": false
+      "raw_mass": {
+        "name": "raw mass",
+        "display": true,
+        "version": "1.0.0"
+      },
+      "sediment": {
+        "name": "sediment",
+        "display": true,
+        "version": "1.0.0"
       }
     }
   }
