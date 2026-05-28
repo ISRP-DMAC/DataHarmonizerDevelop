@@ -246,5 +246,35 @@
         "version": "1.0.0"
       }
     }
-  }
+  },
+  "Project1": { 
+
+    "folder": "Project1", 
+
+    "id": "https://example.com/Project1", 
+
+    "version": "1.0.0", 
+
+    "templates": { 
+
+      "Project1": { 
+
+        "name": "Project1", 
+
+        "display": true 
+
+      } 
+    } 
+  },
+   "Project3": {
+    "folder": "Project3",
+    "id": "https://example.com/Project3",
+    "version": "1.0.0",
+    "templates": {
+      "Project3": {
+        "name": "Project3",
+        "display": true
+      }
+    }
+  } 
 }

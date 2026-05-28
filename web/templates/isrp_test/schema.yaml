@@ -109,14 +109,11 @@ enums:
     name: NullValueMenu
     title: null value 
     permissible_values:
-      Missing:
-        description: an unknown value
-      LoB: 
-        description: limit of blank
-      LoD: 
-        description: limit of detection
-      LoQ: 
-        description: limit of quantitation
+      NA:
+        description: missing value
+      ND: 
+        description: limit of quantification
+      
 
 types:
   WhitespaceMinimizedString:
