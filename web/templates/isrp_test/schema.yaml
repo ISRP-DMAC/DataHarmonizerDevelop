@@ -88,7 +88,7 @@ slots:
       - range: NullValueMenu
       - range: float
     description: total PCBs, sum of all 209 PCB congeners
-    required: false
+    required: true
 
 enums: 
   sample_medium_type:
