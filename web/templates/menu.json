@@ -19,9 +19,13 @@
         "display": true  
       },
       "David_06_final_PCBmass_PUF": {
-        "name": "06_final_PCBmass_PUF",
+        "name": "David_06_final_PCBmass_PUF",
         "display": true 
-
+      },
+  
+      "David_07_final_PCBmass_SPME": {
+        "name": "David_07_final_PCBmass_SPME",
+        "display": true 
       },
       "David_08_Dataset_NBH_SedimentPCBs": {
         "name": "David_08_Dataset_NBH_SedimentPCBs",
