@@ -30,15 +30,8 @@
       "David_09_RT-qPCR_data": {
         "name": "David_09_RT-qPCR_data",
         "display": true
-      },
-      "Container": {
-        "name": "Container",
-        "display": false
       }
-    },
-    "locales": [
-      "en"
-    ]
+    }
   },
     "TEST": {
     "folder": "test",
