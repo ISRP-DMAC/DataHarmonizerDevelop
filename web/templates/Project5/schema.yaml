@@ -219,17 +219,12 @@ classes:
       - PCB208
       - PCB209
 
-    unique_keys:
-      sample_key:
-        unique_key_name: sample_key
-        unique_key_slots: [sample_id]
-    
 
   David_04_rawPCBmass_SPME:
     name: David_04_rawPCBmass_SPME
     description: One row per sample (and congener if long-form)
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_medium
       - units
@@ -420,7 +415,7 @@ classes:
     name: David_05_Dataset_rawBlankmass
     description: One row per sample (and congener if long-form)
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - blank_id
       - sample_medium
@@ -600,17 +595,12 @@ classes:
       - PCB208
       - PCB209
 
-    unique_keys:
-      sample_key:
-        unique_key_name: sample_key
-        unique_key_slots: [blank_id]
-
 
   David_06_final_PCBmass_PUF:
     name: David_06_final_PCBmass_PUF
     description: One row per sample (and congener if long-form)
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_medium
       - units
@@ -800,7 +790,7 @@ classes:
     name: David_08_Dataset_NBH_SedimentPCBs
     description: One row per sample (and congener if long-form)
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - location
       - latitude
@@ -987,7 +977,7 @@ classes:
     name: David_09_RT-qPCR_data
     description: One row per sample (and congener if long-form)
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_id
       - experimental_replicate
@@ -999,19 +989,23 @@ classes:
       - units
       - DNA
       - cDNA
+    
     unique_keys:
       sample_key:
         unique_key_name: sample_key
-        unique_key_slots: [sample_id]
+        unique_key_slots: [blank_id]
 
 slots:
   sample_id:
     name: sample_id
-    title: sample_id
-    description: >-
-      Unique identifier for each sample.
-    range: SampleIDMenu
+    title: sample ID
+    description: Unique identifier for each sample.
+    range: WhitespaceMinimizedString
+    identifier: true
     required: true
+    comments: unique identifier. 
+    examples: 
+      - value: d0_1
   
   sample_medium:
     name: sample_medium
@@ -1031,6 +1025,11 @@ slots:
       Options include ng/PUF and ng/cm.
     range: UnitsMenu
     required: false
+    recommended: true
+    comments: specify the measurement unit
+    examples: 
+      - value: ng/PUF
+    
 
   experiment:
     name: experiment
@@ -1112,7 +1111,7 @@ slots:
       Sample number for each blank used to calculate LOQ (B1..B22). 
       Provides the sample number for each blank sample used to calculate the limit of quantification.
     range: BlankMenu
-    required: false
+    required: true
 
   PCB1:
     name: PCB1
@@ -2973,8 +2972,11 @@ enums:
       SPME: {}
 
   UnitsMenu:
+    title: unit options
     permissible_values:
-      ng/PUF: {}
+      ng/PUF: 
+        description: nanograms per PUF
+        title: ng per PUF
       ng/cm: {}
       copies/g biochar: {}
       copies/g sediment: {}

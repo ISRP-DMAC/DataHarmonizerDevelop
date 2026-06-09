@@ -7,45 +7,47 @@ imports:
 prefixes:
   linkml: https://w3id.org/linkml/
   xsd: http://www.w3.org/2001/XMLSchema#
-
 classes:
   dh_interface:
     name: dh_interface
     description: A DataHarmonizer interface
     from_schema: https://example.com/isrp
- 
   raw_mass:
     name: raw_mass
     title: raw mass
     description: TEST
     is_a: dh_interface
+    see_also:
     annotations:
       version: 1.0.0
-    slots: 
+    slots:
       - sample_id
       - sample_medium
       - units
       - tPCB
     slot_usage:
       sample_id:
+        name: sample_id
         rank: 1
         slot_group: sampling
       sample_medium:
+        name: sample_medium
         rank: 2
         slot_group: sampling
       units:
+        name: units
         rank: 3
         slot_group: sampling
-      tPCB: 
+      tPCB:
+        name: tPCB
         rank: 4
-        slot_group: sampling
-
+        slot_group: PCB measurement
   sediment:
     name: sediment
-    title: sediment
+    title: sediment test
     description: NBH Sediment PCBs
     is_a: dh_interface
-    see_also: null
+    see_also:
     annotations:
       version: 1.0.0
     slots:
@@ -54,82 +56,103 @@ classes:
       - tPCB
     slot_usage:
       sample_id:
+        name: sample_id
         rank: 1
         slot_group: sampling
       units:
+        name: units
         rank: 2
         slot_group: sampling
       tPCB:
+        name: tPCB
         rank: 3
-        slot_group: sampling
-
-slots:  
-  sample_id: 
+        slot_group: PCB measurement
+slots:
+  sample_id:
     name: sample_id
     title: sample id
-    description: unique identifier assigned to each sample within a study.
     range: WhitespaceMinimizedString
     required: true
+    description: unique identifier assigned to each sample within a study
+    identifier: true
+    comments:
+      - unique identifier assigned to each sample within a study
+    examples:
+      - value: d01
   sample_medium:
     name: sample_medium
-    title: sample medium 
-    range: sample_medium_type
-    description: Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.
-    required: true
-  units: 
+    title: sample medium
+    range: sample_medium_option
+    recommended: true
+    description: Type of passive sampler used to collect airborne or aqueous PCBs from microcosms
+    comments:
+      - Type of passive sampler used to collect airborne or aqueous PCBs from microcosms
+    examples:
+      - value: PUF
+  units:
     name: units
     title: units
     range: units_option
-    required: true
-  tPCB: 
+    recommended: true
+    description: measurement units
+    comments:
+      - measurement units
+  tPCB:
     name: tPCB
     title: tPCB
     any_of:
-      - range: NullValueMenu
+      - range: null_value_option
       - range: float
+    recommended: true
     description: total PCBs, sum of all 209 PCB congeners
-    required: true
-
-enums: 
-  sample_medium_type:
-    name: sample_medium_type
-    title: sample medium type
-    permissible_values: 
-      PUF:
-        description: polyurethane foam, used to collect airborne PCBs from microcosms
-      SPME: 
-        description: solid-phase microextraction fibers, used to measure aqueous phase PCBs in microcosms
-  units_option: 
-    name: units_option
-    title: measurement units
-    permissible_values: 
-      ng/PUF: 
-        description: nanograms per PUF
-  NullValueMenu:
-    name: NullValueMenu
-    title: null value 
+    comments:
+      - total PCBs, sum of all 209 PCB congeners
+enums:
+  sample_medium_option:
+    name: sample_medium_option
+    title: sample medium option
     permissible_values:
-      NA:
+      PUF:
+        text: PUF
+        title: PUF
+        description: polyurethane foam, used to collect airborne PCBs from microcosms
+      SPME:
+        text: SPME
+        title: SPME
+        description: solid-phase microextraction fibers, used to measure aqueous phase PCBs in microcosms
+  units_option:
+    name: units_option
+    title: units option
+    permissible_values:
+      ng/PUF:
+        text: ng/PUF
+        title: ng/PUF
+  null_value_option:
+    name: null_value_option
+    title: null value
+    permissible_values:
+      missing:
+        text: missing
+        title: NA
         description: missing value
-      ND: 
+      limit of quantification:
+        text: limit of quantification
+        title: ND
         description: limit of quantification
-      
-
 types:
   WhitespaceMinimizedString:
-    name: 'WhitespaceMinimizedString'
+    name: WhitespaceMinimizedString
     typeof: string
     description: 'A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).'
     base: str
     uri: xsd:token
   Provenance:
-    name: 'Provenance'
+    name: Provenance
     typeof: string
-    description: 'A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.'
+    description: A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.
     base: str
     uri: xsd:token
-
 settings:
-  Title_Case: "(((?<=\\b)[^a-z\\W]\\w*?|[\\W])+)"
-  UPPER_CASE: "[A-Z\\W\\d_]*"
-  lower_case: "[a-z\\W\\d_]*"
+  Title_Case: (((?<=\b)[^a-z\W]\w*?|[\W])+)
+  UPPER_CASE: '[A-Z\W\d_]*'
+  lower_case: '[a-z\W\d_]*'

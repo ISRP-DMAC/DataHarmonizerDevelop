@@ -301,10 +301,16 @@
     },
     "UnitsMenu": {
       "name": "UnitsMenu",
+      "title": "unit options",
       "from_schema": "https://example.org/Project5",
       "permissible_values": {
         "ng/PUF": {
-          "text": "ng/PUF"
+          "text": "ng/PUF",
+          "description": "nanograms per PUF",
+          "title": "ng per PUF",
+          "comments": [
+            "just a comment"
+          ]
         },
         "ng/cm": {
           "text": "ng/cm"
@@ -567,13 +573,22 @@
     "sample_id": {
       "name": "sample_id",
       "description": "Unique identifier for each sample.",
-      "title": "sample_id",
+      "title": "sample ID",
+      "comments": [
+        "unique identifier."
+      ],
+      "examples": [
+        {
+          "value": "d0_1"
+        }
+      ],
       "from_schema": "https://example.org/Project5",
+      "identifier": true,
       "domain_of": [
         "David_03_rawPCBmass_PUF",
         "David_09_RT-qPCR_data"
       ],
-      "range": "SampleIDMenu",
+      "range": "WhitespaceMinimizedString",
       "required": true
     },
     "sample_medium": {
@@ -594,6 +609,14 @@
       "name": "units",
       "description": "Measurement units associated with the sample result. Options include ng/PUF and ng/cm.",
       "title": "units",
+      "comments": [
+        "specify the measurement unit"
+      ],
+      "examples": [
+        {
+          "value": "ng/PUF"
+        }
+      ],
       "from_schema": "https://example.org/Project5",
       "domain_of": [
         "David_03_rawPCBmass_PUF",
@@ -603,7 +626,8 @@
         "David_09_RT-qPCR_data"
       ],
       "range": "UnitsMenu",
-      "required": false
+      "required": false,
+      "recommended": true
     },
     "experiment": {
       "name": "experiment",
@@ -741,7 +765,7 @@
         "David_05_Dataset_rawBlankmass"
       ],
       "range": "BlankMenu",
-      "required": false
+      "required": true
     },
     "PCB1": {
       "name": "PCB1",
@@ -4895,15 +4919,24 @@
         "sample_id": {
           "name": "sample_id",
           "description": "Unique identifier for each sample.",
-          "title": "sample_id",
+          "title": "sample ID",
+          "comments": [
+            "unique identifier."
+          ],
+          "examples": [
+            {
+              "value": "d0_1"
+            }
+          ],
           "from_schema": "https://example.org/Project5",
+          "identifier": true,
           "alias": "sample_id",
           "owner": "David_03_rawPCBmass_PUF",
           "domain_of": [
             "David_03_rawPCBmass_PUF",
             "David_09_RT-qPCR_data"
           ],
-          "range": "SampleIDMenu",
+          "range": "WhitespaceMinimizedString",
           "required": true
         },
         "sample_medium": {
@@ -4926,6 +4959,14 @@
           "name": "units",
           "description": "Measurement units associated with the sample result. Options include ng/PUF and ng/cm.",
           "title": "units",
+          "comments": [
+            "specify the measurement unit"
+          ],
+          "examples": [
+            {
+              "value": "ng/PUF"
+            }
+          ],
           "from_schema": "https://example.org/Project5",
           "alias": "units",
           "owner": "David_03_rawPCBmass_PUF",
@@ -4937,7 +4978,8 @@
             "David_09_RT-qPCR_data"
           ],
           "range": "UnitsMenu",
-          "required": false
+          "required": false,
+          "recommended": true
         },
         "experiment": {
           "name": "experiment",
@@ -9406,15 +9448,7 @@
           ]
         }
       },
-      "tree_root": true,
-      "unique_keys": {
-        "sample_key": {
-          "unique_key_name": "sample_key",
-          "unique_key_slots": [
-            "sample_id"
-          ]
-        }
-      }
+      "tree_root": false
     },
     "David_04_rawPCBmass_SPME": {
       "name": "David_04_rawPCBmass_SPME",
@@ -9442,6 +9476,14 @@
           "name": "units",
           "description": "Measurement units associated with the sample result. Options include ng/PUF and ng/cm.",
           "title": "units",
+          "comments": [
+            "specify the measurement unit"
+          ],
+          "examples": [
+            {
+              "value": "ng/PUF"
+            }
+          ],
           "from_schema": "https://example.org/Project5",
           "alias": "units",
           "owner": "David_04_rawPCBmass_SPME",
@@ -9453,7 +9495,8 @@
             "David_09_RT-qPCR_data"
           ],
           "range": "UnitsMenu",
-          "required": false
+          "required": false,
+          "recommended": true
         },
         "experiment": {
           "name": "experiment",
@@ -13922,7 +13965,7 @@
           ]
         }
       },
-      "tree_root": true
+      "tree_root": false
     },
     "David_05_Dataset_rawBlankmass": {
       "name": "David_05_Dataset_rawBlankmass",
@@ -13941,7 +13984,7 @@
             "David_05_Dataset_rawBlankmass"
           ],
           "range": "BlankMenu",
-          "required": false
+          "required": true
         },
         "sample_medium": {
           "name": "sample_medium",
@@ -13963,6 +14006,14 @@
           "name": "units",
           "description": "Measurement units associated with the sample result. Options include ng/PUF and ng/cm.",
           "title": "units",
+          "comments": [
+            "specify the measurement unit"
+          ],
+          "examples": [
+            {
+              "value": "ng/PUF"
+            }
+          ],
           "from_schema": "https://example.org/Project5",
           "alias": "units",
           "owner": "David_05_Dataset_rawBlankmass",
@@ -13974,7 +14025,8 @@
             "David_09_RT-qPCR_data"
           ],
           "range": "UnitsMenu",
-          "required": false
+          "required": false,
+          "recommended": true
         },
         "tPCB": {
           "name": "tPCB",
@@ -18333,15 +18385,7 @@
           ]
         }
       },
-      "tree_root": true,
-      "unique_keys": {
-        "sample_key": {
-          "unique_key_name": "sample_key",
-          "unique_key_slots": [
-            "blank_id"
-          ]
-        }
-      }
+      "tree_root": false
     },
     "David_06_final_PCBmass_PUF": {
       "name": "David_06_final_PCBmass_PUF",
@@ -18369,6 +18413,14 @@
           "name": "units",
           "description": "Measurement units associated with the sample result. Options include ng/PUF and ng/cm.",
           "title": "units",
+          "comments": [
+            "specify the measurement unit"
+          ],
+          "examples": [
+            {
+              "value": "ng/PUF"
+            }
+          ],
           "from_schema": "https://example.org/Project5",
           "alias": "units",
           "owner": "David_06_final_PCBmass_PUF",
@@ -18380,7 +18432,8 @@
             "David_09_RT-qPCR_data"
           ],
           "range": "UnitsMenu",
-          "required": false
+          "required": false,
+          "recommended": true
         },
         "experiment": {
           "name": "experiment",
@@ -22849,7 +22902,7 @@
           ]
         }
       },
-      "tree_root": true
+      "tree_root": false
     },
     "David_08_Dataset_NBH_SedimentPCBs": {
       "name": "David_08_Dataset_NBH_SedimentPCBs",
@@ -27299,7 +27352,7 @@
           ]
         }
       },
-      "tree_root": true
+      "tree_root": false
     },
     "David_09_RT-qPCR_data": {
       "name": "David_09_RT-qPCR_data",
@@ -27310,15 +27363,24 @@
         "sample_id": {
           "name": "sample_id",
           "description": "Unique identifier for each sample.",
-          "title": "sample_id",
+          "title": "sample ID",
+          "comments": [
+            "unique identifier."
+          ],
+          "examples": [
+            {
+              "value": "d0_1"
+            }
+          ],
           "from_schema": "https://example.org/Project5",
+          "identifier": true,
           "alias": "sample_id",
           "owner": "David_09_RT-qPCR_data",
           "domain_of": [
             "David_03_rawPCBmass_PUF",
             "David_09_RT-qPCR_data"
           ],
-          "range": "SampleIDMenu",
+          "range": "WhitespaceMinimizedString",
           "required": true
         },
         "experimental_replicate": {
@@ -27415,6 +27477,14 @@
           "name": "units",
           "description": "Measurement units associated with the sample result. Options include ng/PUF and ng/cm.",
           "title": "units",
+          "comments": [
+            "specify the measurement unit"
+          ],
+          "examples": [
+            {
+              "value": "ng/PUF"
+            }
+          ],
           "from_schema": "https://example.org/Project5",
           "alias": "units",
           "owner": "David_09_RT-qPCR_data",
@@ -27426,7 +27496,8 @@
             "David_09_RT-qPCR_data"
           ],
           "range": "UnitsMenu",
-          "required": false
+          "required": false,
+          "recommended": true
         },
         "DNA": {
           "name": "DNA",
@@ -27471,12 +27542,12 @@
           ]
         }
       },
-      "tree_root": true,
+      "tree_root": false,
       "unique_keys": {
         "sample_key": {
           "unique_key_name": "sample_key",
           "unique_key_slots": [
-            "sample_id"
+            "blank_id"
           ]
         }
       }
