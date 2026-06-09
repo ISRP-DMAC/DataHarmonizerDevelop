@@ -62,17 +62,6 @@
 
     }
   },
-   "PathogenAgnostic": {
-    "folder": "pathogen",
-    "id": "https://example.com/Pathogen_Agnostic",
-    "version": "1.0.1",
-    "templates": {
-      "PathogenAgnostic": {
-        "name": "PathogenAgnostic",
-        "display": true
-      }
-    }
-  },
 
   "Project1": { 
 
