@@ -292,52 +292,48 @@
     }
   },
   "enums": {
-    "sample_medium_type": {
-      "name": "sample_medium_type",
-      "title": "sample medium type",
+    "sample_medium_option": {
+      "name": "sample_medium_option",
+      "title": "sample medium option",
       "from_schema": "https://example.com/isrp",
       "permissible_values": {
         "PUF": {
           "text": "PUF",
-          "description": "polyurethane foam, used to collect airborne PCBs from microcosms"
+          "description": "polyurethane foam, used to collect airborne PCBs from microcosms",
+          "title": "PUF"
         },
         "SPME": {
           "text": "SPME",
-          "description": "solid-phase microextraction fibers, used to measure aqueous phase PCBs in microcosms"
+          "description": "solid-phase microextraction fibers, used to measure aqueous phase PCBs in microcosms",
+          "title": "SPME"
         }
       }
     },
     "units_option": {
       "name": "units_option",
-      "title": "measurement units",
+      "title": "units option",
       "from_schema": "https://example.com/isrp",
       "permissible_values": {
         "ng/PUF": {
           "text": "ng/PUF",
-          "description": "nanograms per PUF"
+          "title": "ng/PUF"
         }
       }
     },
-    "NullValueMenu": {
-      "name": "NullValueMenu",
+    "null_value_option": {
+      "name": "null_value_option",
       "title": "null value",
       "from_schema": "https://example.com/isrp",
       "permissible_values": {
-        "Missing": {
-          "text": "Missing",
-          "description": "an unknown value"
+        "missing": {
+          "text": "missing",
+          "description": "missing value",
+          "title": "NA"
         },
-        "LoB": {
-          "text": "LoB",
-          "description": "limit of blank"
-        },
-        "LoD": {
-          "text": "LoD",
-          "description": "limit of detection"
-        },
-        "LoQ": {
-          "text": "LoQ",
-          "description": "limit of quantitation"
+        "limit of quantification": {
+          "text": "limit of quantification",
+          "description": "limit of quantification",
+          "title": "ND"
         }
       }
     }
@@ -345,9 +341,18 @@
   "slots": {
     "sample_id": {
       "name": "sample_id",
-      "description": "unique identifier assigned to each sample within a study.",
+      "description": "unique identifier assigned to each sample within a study",
       "title": "sample id",
+      "comments": [
+        "unique identifier assigned to each sample within a study"
+      ],
+      "examples": [
+        {
+          "value": "d01"
+        }
+      ],
       "from_schema": "https://example.com/isrp",
+      "identifier": true,
       "domain_of": [
         "raw_mass",
         "sediment"
@@ -357,39 +362,54 @@
     },
     "sample_medium": {
       "name": "sample_medium",
-      "description": "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.",
+      "description": "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms",
       "title": "sample medium",
+      "comments": [
+        "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms"
+      ],
+      "examples": [
+        {
+          "value": "PUF"
+        }
+      ],
       "from_schema": "https://example.com/isrp",
       "domain_of": [
         "raw_mass"
       ],
-      "range": "sample_medium_type",
-      "required": true
+      "range": "sample_medium_option",
+      "recommended": true
     },
     "units": {
       "name": "units",
+      "description": "measurement units",
       "title": "units",
+      "comments": [
+        "measurement units"
+      ],
       "from_schema": "https://example.com/isrp",
       "domain_of": [
         "raw_mass",
         "sediment"
       ],
       "range": "units_option",
-      "required": true
+      "recommended": true
     },
     "tPCB": {
       "name": "tPCB",
       "description": "total PCBs, sum of all 209 PCB congeners",
       "title": "tPCB",
+      "comments": [
+        "total PCBs, sum of all 209 PCB congeners"
+      ],
       "from_schema": "https://example.com/isrp",
       "domain_of": [
         "raw_mass",
         "sediment"
       ],
-      "required": false,
+      "recommended": true,
       "any_of": [
         {
-          "range": "NullValueMenu"
+          "range": "null_value_option"
         },
         {
           "range": "float"
@@ -434,16 +454,25 @@
         "tPCB": {
           "name": "tPCB",
           "rank": 4,
-          "slot_group": "sampling"
+          "slot_group": "PCB measurement"
         }
       },
       "attributes": {
         "sample_id": {
           "name": "sample_id",
-          "description": "unique identifier assigned to each sample within a study.",
+          "description": "unique identifier assigned to each sample within a study",
           "title": "sample id",
+          "comments": [
+            "unique identifier assigned to each sample within a study"
+          ],
+          "examples": [
+            {
+              "value": "d01"
+            }
+          ],
           "from_schema": "https://example.com/isrp",
           "rank": 1,
+          "identifier": true,
           "alias": "sample_id",
           "owner": "raw_mass",
           "domain_of": [
@@ -456,8 +485,16 @@
         },
         "sample_medium": {
           "name": "sample_medium",
-          "description": "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.",
+          "description": "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms",
           "title": "sample medium",
+          "comments": [
+            "Type of passive sampler used to collect airborne or aqueous PCBs from microcosms"
+          ],
+          "examples": [
+            {
+              "value": "PUF"
+            }
+          ],
           "from_schema": "https://example.com/isrp",
           "rank": 2,
           "alias": "sample_medium",
@@ -466,12 +503,16 @@
             "raw_mass"
           ],
           "slot_group": "sampling",
-          "range": "sample_medium_type",
-          "required": true
+          "range": "sample_medium_option",
+          "recommended": true
         },
         "units": {
           "name": "units",
+          "description": "measurement units",
           "title": "units",
+          "comments": [
+            "measurement units"
+          ],
           "from_schema": "https://example.com/isrp",
           "rank": 3,
           "alias": "units",
@@ -482,12 +523,15 @@
           ],
           "slot_group": "sampling",
           "range": "units_option",
-          "required": true
+          "recommended": true
         },
         "tPCB": {
           "name": "tPCB",
           "description": "total PCBs, sum of all 209 PCB congeners",
           "title": "tPCB",
+          "comments": [
+            "total PCBs, sum of all 209 PCB congeners"
+          ],
           "from_schema": "https://example.com/isrp",
           "rank": 4,
           "alias": "tPCB",
@@ -496,11 +540,11 @@
             "raw_mass",
             "sediment"
           ],
-          "slot_group": "sampling",
-          "required": false,
+          "slot_group": "PCB measurement",
+          "recommended": true,
           "any_of": [
             {
-              "range": "NullValueMenu"
+              "range": "null_value_option"
             },
             {
               "range": "float"
@@ -518,7 +562,7 @@
         }
       },
       "description": "NBH Sediment PCBs",
-      "title": "sediment",
+      "title": "sediment test",
       "from_schema": "https://example.com/isrp",
       "is_a": "dh_interface",
       "slot_usage": {
@@ -535,16 +579,25 @@
         "tPCB": {
           "name": "tPCB",
           "rank": 3,
-          "slot_group": "sampling"
+          "slot_group": "PCB measurement"
         }
       },
       "attributes": {
         "sample_id": {
           "name": "sample_id",
-          "description": "unique identifier assigned to each sample within a study.",
+          "description": "unique identifier assigned to each sample within a study",
           "title": "sample id",
+          "comments": [
+            "unique identifier assigned to each sample within a study"
+          ],
+          "examples": [
+            {
+              "value": "d01"
+            }
+          ],
           "from_schema": "https://example.com/isrp",
           "rank": 1,
+          "identifier": true,
           "alias": "sample_id",
           "owner": "sediment",
           "domain_of": [
@@ -557,7 +610,11 @@
         },
         "units": {
           "name": "units",
+          "description": "measurement units",
           "title": "units",
+          "comments": [
+            "measurement units"
+          ],
           "from_schema": "https://example.com/isrp",
           "rank": 2,
           "alias": "units",
@@ -568,12 +625,15 @@
           ],
           "slot_group": "sampling",
           "range": "units_option",
-          "required": true
+          "recommended": true
         },
         "tPCB": {
           "name": "tPCB",
           "description": "total PCBs, sum of all 209 PCB congeners",
           "title": "tPCB",
+          "comments": [
+            "total PCBs, sum of all 209 PCB congeners"
+          ],
           "from_schema": "https://example.com/isrp",
           "rank": 3,
           "alias": "tPCB",
@@ -582,11 +642,11 @@
             "raw_mass",
             "sediment"
           ],
-          "slot_group": "sampling",
-          "required": false,
+          "slot_group": "PCB measurement",
+          "recommended": true,
           "any_of": [
             {
-              "range": "NullValueMenu"
+              "range": "null_value_option"
             },
             {
               "range": "float"
