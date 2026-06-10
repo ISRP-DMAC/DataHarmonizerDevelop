@@ -17,7 +17,7 @@ imports:
 types:
   WhitespaceMinimizedString:
     name: WhitespaceMinimizedString
-    typeof: string
+    typeof: WhitespaceMinimizedString
     base: str
     uri: xsd:token
     description: >-
@@ -28,12 +28,13 @@ classes:
   dh_interface:
     name: dh_interface
     description: A DataHarmonizer interface (sheet)
+  
 
   David_03_rawPCBmass_PUF:
     name: David_03_rawPCBmass_PUF
-    description: One row per sample (and congener if long-form)
+    description: Raw PCB mass measurements collected using PUF samplers
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_id
       - sample_medium
@@ -136,7 +137,6 @@ classes:
       - PCB110
       - PCB111
       - PCB112
-      - PCB113
       - PCB114
       - PCB115
       - PCB117
@@ -212,24 +212,752 @@ classes:
       - PCB201
       - PCB202
       - PCB203
-      - PCB204
       - PCB205
       - PCB206
       - PCB207
       - PCB208
       - PCB209
-
-    unique_keys:
-      sample_key:
-        unique_key_name: sample_key
-        unique_key_slots: [sample_id]
     
+    slot_usage:
+      sample_id:
+        rank: 1
+        slot_group: Sample Metadata
+
+      sample_medium:
+        rank: 2
+        slot_group: Sample Metadata
+
+      units:
+        rank: 3
+        slot_group: Sample Metadata
+
+      experiment:
+        rank: 4
+        slot_group: Sample Metadata
+
+      percent_biochar:
+        rank: 5
+        slot_group: Sample Metadata
+
+      time:
+        rank: 6
+        slot_group: Sample Metadata
+
+      group:
+        rank: 7
+        slot_group: Sample Metadata
+
+      replicate:
+        rank: 8
+        slot_group: Sample Metadata
+
+      tPCB:
+        rank: 9
+        slot_group: PCB Measurements
+
+      LCPCB:
+        rank: 10
+        slot_group: PCB Measurements
+
+      PCB1:
+        rank: 11
+        slot_group: PCB Measurements
+
+      PCB2:
+        rank: 12
+        slot_group: PCB Measurements
+
+      PCB3:
+        rank: 13
+        slot_group: PCB Measurements
+
+      PCB4:
+        rank: 14
+        slot_group: PCB Measurements
+
+      PCB5:
+        rank: 15
+        slot_group: PCB Measurements
+
+      PCB6:
+        rank: 16
+        slot_group: PCB Measurements
+
+      PCB7:
+        rank: 17
+        slot_group: PCB Measurements
+
+      PCB8:
+        rank: 18
+        slot_group: PCB Measurements
+
+      PCB9:
+        rank: 19
+        slot_group: PCB Measurements
+
+      PCB10:
+        rank: 20
+        slot_group: PCB Measurements
+
+      PCB11:
+        rank: 21
+        slot_group: PCB Measurements
+
+      PCB12.13:
+        rank: 22
+        slot_group: PCB Measurements
+
+      PCB14:
+        rank: 23
+        slot_group: PCB Measurements
+
+      PCB15:
+        rank: 24
+        slot_group: PCB Measurements
+
+      PCB16:
+        rank: 25
+        slot_group: PCB Measurements
+
+      PCB17:
+        rank: 26
+        slot_group: PCB Measurements
+
+      PCB18.30:
+        rank: 27
+        slot_group: PCB Measurements
+
+      PCB19:
+        rank: 28
+        slot_group: PCB Measurements
+
+      PCB20.28:
+        rank: 29
+        slot_group: PCB Measurements
+
+      PCB21.33:
+        rank: 30
+        slot_group: PCB Measurements
+
+      PCB22:
+        rank: 31
+        slot_group: PCB Measurements
+
+      PCB23:
+        rank: 32
+        slot_group: PCB Measurements
+
+      PCB24:
+        rank: 33
+        slot_group: PCB Measurements
+
+      PCB25:
+        rank: 34
+        slot_group: PCB Measurements
+
+      PCB26.29:
+        rank: 35
+        slot_group: PCB Measurements
+
+      PCB27:
+        rank: 36
+        slot_group: PCB Measurements
+
+      PCB31:
+        rank: 37
+        slot_group: PCB Measurements
+
+      PCB32:
+        rank: 38
+        slot_group: PCB Measurements
+
+      PCB34:
+        rank: 39
+        slot_group: PCB Measurements
+
+      PCB35:
+        rank: 40
+        slot_group: PCB Measurements
+
+      PCB36:
+        rank: 41
+        slot_group: PCB Measurements
+
+      PCB37:
+        rank: 42
+        slot_group: PCB Measurements
+
+      PCB38:
+        rank: 43
+        slot_group: PCB Measurements
+
+      PCB39:
+        rank: 44
+        slot_group: PCB Measurements
+
+      PCB40.71:
+        rank: 45
+        slot_group: PCB Measurements
+
+      PCB41:
+        rank: 46
+        slot_group: PCB Measurements
+
+      PCB42:
+        rank: 47
+        slot_group: PCB Measurements
+
+      PCB43:
+        rank: 48
+        slot_group: PCB Measurements
+
+      PCB44.47.65:
+        rank: 49
+        slot_group: PCB Measurements
+
+      PCB45:
+        rank: 50
+        slot_group: PCB Measurements
+
+      PCB46:
+        rank: 51
+        slot_group: PCB Measurements
+
+      PCB48:
+        rank: 52
+        slot_group: PCB Measurements
+
+      PCB49.69:
+        rank: 53
+        slot_group: PCB Measurements
+
+      PCB50.53:
+        rank: 54
+        slot_group: PCB Measurements
+
+      PCB51:
+        rank: 55
+        slot_group: PCB Measurements
+
+      PCB52:
+        rank: 56
+        slot_group: PCB Measurements
+
+      PCB54:
+        rank: 57
+        slot_group: PCB Measurements
+
+      PCB55:
+        rank: 58
+        slot_group: PCB Measurements
+
+      PCB56:
+        rank: 59
+        slot_group: PCB Measurements
+
+      PCB57:
+        rank: 60
+        slot_group: PCB Measurements
+
+      PCB58:
+        rank: 61
+        slot_group: PCB Measurements
+
+      PCB59.62.75:
+        rank: 62
+        slot_group: PCB Measurements
+
+      PCB60:
+        rank: 63
+        slot_group: PCB Measurements
+
+      PCB61.70.74.76:
+        rank: 64
+        slot_group: PCB Measurements
+
+      PCB63:
+        rank: 65
+        slot_group: PCB Measurements
+
+      PCB64:
+        rank: 66
+        slot_group: PCB Measurements
+
+      PCB66:
+        rank: 67
+        slot_group: PCB Measurements
+
+      PCB67:
+        rank: 68
+        slot_group: PCB Measurements
+
+      PCB68:
+        rank: 69
+        slot_group: PCB Measurements
+
+      PCB72:
+        rank: 70
+        slot_group: PCB Measurements
+
+      PCB73:
+        rank: 71
+        slot_group: PCB Measurements
+
+      PCB77:
+        rank: 72
+        slot_group: PCB Measurements
+
+      PCB78:
+        rank: 73
+        slot_group: PCB Measurements
+
+      PCB79:
+        rank: 74
+        slot_group: PCB Measurements
+
+      PCB80:
+        rank: 75
+        slot_group: PCB Measurements
+
+      PCB81:
+        rank: 76
+        slot_group: PCB Measurements
+
+      PCB82:
+        rank: 77
+        slot_group: PCB Measurements
+
+      PCB83:
+        rank: 78
+        slot_group: PCB Measurements
+
+      PCB84:
+        rank: 79
+        slot_group: PCB Measurements
+
+      PCB85.116:
+        rank: 80
+        slot_group: PCB Measurements
+
+      PCB86.97.109.119:
+        rank: 81
+        slot_group: PCB Measurements
+
+      PCB87.125:
+        rank: 82
+        slot_group: PCB Measurements
+
+      PCB88:
+        rank: 83
+        slot_group: PCB Measurements
+
+      PCB89:
+        rank: 84
+        slot_group: PCB Measurements
+
+      PCB90.101.113:
+        rank: 85
+        slot_group: PCB Measurements
+
+      PCB91:
+        rank: 86
+        slot_group: PCB Measurements
+
+      PCB92:
+        rank: 87
+        slot_group: PCB Measurements
+
+      PCB93.100:
+        rank: 88
+        slot_group: PCB Measurements
+
+      PCB94:
+        rank: 89
+        slot_group: PCB Measurements
+
+      PCB95:
+        rank: 90
+        slot_group: PCB Measurements
+
+      PCB96:
+        rank: 91
+        slot_group: PCB Measurements
+
+      PCB98:
+        rank: 92
+        slot_group: PCB Measurements
+
+      PCB99:
+        rank: 93
+        slot_group: PCB Measurements
+
+      PCB102:
+        rank: 94
+        slot_group: PCB Measurements
+
+      PCB103:
+        rank: 95
+        slot_group: PCB Measurements
+
+      PCB104:
+        rank: 96
+        slot_group: PCB Measurements
+
+      PCB105:
+        rank: 97
+        slot_group: PCB Measurements
+
+      PCB106:
+        rank: 98
+        slot_group: PCB Measurements
+
+      PCB107:
+        rank: 99
+        slot_group: PCB Measurements
+
+      PCB108.124:
+        rank: 100
+        slot_group: PCB Measurements
+
+      PCB110:
+        rank: 101
+        slot_group: PCB Measurements
+
+      PCB111:
+        rank: 102
+        slot_group: PCB Measurements
+
+      PCB112:
+        rank: 103
+        slot_group: PCB Measurements
+
+      PCB114:
+        rank: 104
+        slot_group: PCB Measurements
+
+      PCB115:
+        rank: 105
+        slot_group: PCB Measurements
+
+      PCB117:
+        rank: 106
+        slot_group: PCB Measurements
+
+      PCB118:
+        rank: 107
+        slot_group: PCB Measurements
+
+      PCB120:
+        rank: 108
+        slot_group: PCB Measurements
+
+      PCB121:
+        rank: 109
+        slot_group: PCB Measurements
+
+      PCB122:
+        rank: 110
+        slot_group: PCB Measurements
+
+      PCB123:
+        rank: 111
+        slot_group: PCB Measurements
+
+      PCB126:
+        rank: 112
+        slot_group: PCB Measurements
+
+      PCB127:
+        rank: 113
+        slot_group: PCB Measurements
+
+      PCB128.166:
+        rank: 114
+        slot_group: PCB Measurements
+
+      PCB129.138.163:
+        rank: 115
+        slot_group: PCB Measurements
+
+      PCB130:
+        rank: 116
+        slot_group: PCB Measurements
+
+      PCB131:
+        rank: 117
+        slot_group: PCB Measurements
+
+      PCB132:
+        rank: 118
+        slot_group: PCB Measurements
+
+      PCB133:
+        rank: 119
+        slot_group: PCB Measurements
+
+      PCB134:
+        rank: 120
+        slot_group: PCB Measurements
+
+      PCB135.151:
+        rank: 121
+        slot_group: PCB Measurements
+
+      PCB136:
+        rank: 122
+        slot_group: PCB Measurements
+
+      PCB137:
+        rank: 123
+        slot_group: PCB Measurements
+
+      PCB139.140:
+        rank: 124
+        slot_group: PCB Measurements
+
+      PCB141:
+        rank: 125
+        slot_group: PCB Measurements
+
+      PCB142:
+        rank: 126
+        slot_group: PCB Measurements
+
+      PCB143:
+        rank: 127
+        slot_group: PCB Measurements
+
+      PCB144:
+        rank: 128
+        slot_group: PCB Measurements
+
+      PCB145:
+        rank: 129
+        slot_group: PCB Measurements
+
+      PCB146:
+        rank: 130
+        slot_group: PCB Measurements
+
+      PCB147.149:
+        rank: 131
+        slot_group: PCB Measurements
+
+      PCB148:
+        rank: 132
+        slot_group: PCB Measurements
+
+      PCB150:
+        rank: 133
+        slot_group: PCB Measurements
+
+      PCB152:
+        rank: 134
+        slot_group: PCB Measurements
+
+      PCB153.168:
+        rank: 135
+        slot_group: PCB Measurements
+
+      PCB154:
+        rank: 136
+        slot_group: PCB Measurements
+
+      PCB155:
+        rank: 137
+        slot_group: PCB Measurements
+
+      PCB156.157:
+        rank: 138
+        slot_group: PCB Measurements
+
+      PCB158:
+        rank: 139
+        slot_group: PCB Measurements
+
+      PCB159:
+        rank: 140
+        slot_group: PCB Measurements
+
+      PCB160:
+        rank: 141
+        slot_group: PCB Measurements
+
+      PCB161:
+        rank: 142
+        slot_group: PCB Measurements
+
+      PCB162:
+        rank: 143
+        slot_group: PCB Measurements
+
+      PCB164:
+        rank: 144
+        slot_group: PCB Measurements
+
+      PCB165:
+        rank: 145
+        slot_group: PCB Measurements
+
+      PCB167:
+        rank: 146
+        slot_group: PCB Measurements
+
+      PCB169:
+        rank: 147
+        slot_group: PCB Measurements
+
+      PCB170:
+        rank: 148
+        slot_group: PCB Measurements
+
+      PCB171.173:
+        rank: 149
+        slot_group: PCB Measurements
+
+      PCB172:
+        rank: 150
+        slot_group: PCB Measurements
+
+      PCB174:
+        rank: 151
+        slot_group: PCB Measurements
+
+      PCB175:
+        rank: 152
+        slot_group: PCB Measurements
+
+      PCB176:
+        rank: 153
+        slot_group: PCB Measurements
+
+      PCB177:
+        rank: 154
+        slot_group: PCB Measurements
+
+      PCB178:
+        rank: 155
+        slot_group: PCB Measurements
+
+      PCB179:
+        rank: 156
+        slot_group: PCB Measurements
+
+      PCB180.193:
+        rank: 157
+        slot_group: PCB Measurements
+
+      PCB181:
+        rank: 158
+        slot_group: PCB Measurements
+
+      PCB182:
+        rank: 159
+        slot_group: PCB Measurements
+
+      PCB183:
+        rank: 160
+        slot_group: PCB Measurements
+
+      PCB184:
+        rank: 161
+        slot_group: PCB Measurements
+
+      PCB185:
+        rank: 162
+        slot_group: PCB Measurements
+
+      PCB186:
+        rank: 163
+        slot_group: PCB Measurements
+
+      PCB187:
+        rank: 164
+        slot_group: PCB Measurements
+
+      PCB188:
+        rank: 165
+        slot_group: PCB Measurements
+
+      PCB189:
+        rank: 166
+        slot_group: PCB Measurements
+
+      PCB190:
+        rank: 167
+        slot_group: PCB Measurements
+
+      PCB191:
+        rank: 168
+        slot_group: PCB Measurements
+
+      PCB192:
+        rank: 169
+        slot_group: PCB Measurements
+
+      PCB194:
+        rank: 170
+        slot_group: PCB Measurements
+
+      PCB195:
+        rank: 171
+        slot_group: PCB Measurements
+
+      PCB196:
+        rank: 172
+        slot_group: PCB Measurements
+
+      PCB197:
+        rank: 173
+        slot_group: PCB Measurements
+
+      PCB198.199:
+        rank: 174
+        slot_group: PCB Measurements
+
+      PCB200:
+        rank: 175
+        slot_group: PCB Measurements
+
+      PCB201:
+        rank: 176
+        slot_group: PCB Measurements
+
+      PCB202:
+        rank: 177
+        slot_group: PCB Measurements
+
+      PCB203:
+        rank: 178
+        slot_group: PCB Measurements
+
+      PCB205:
+        rank: 179
+        slot_group: PCB Measurements
+
+      PCB206:
+        rank: 180
+        slot_group: PCB Measurements
+
+      PCB207:
+        rank: 181
+        slot_group: PCB Measurements
+
+      PCB208:
+        rank: 182
+        slot_group: PCB Measurements
+
+      PCB209:
+        rank: 183
+        slot_group: PCB Measurements
+
+          
 
   David_04_rawPCBmass_SPME:
     name: David_04_rawPCBmass_SPME
-    description: One row per sample (and congener if long-form)
+    description: Raw PCB mass measurements collected using SPME samplers
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_medium
       - units
@@ -331,7 +1059,6 @@ classes:
       - PCB110
       - PCB111
       - PCB112
-      - PCB113
       - PCB114
       - PCB115
       - PCB117
@@ -407,20 +1134,747 @@ classes:
       - PCB201
       - PCB202
       - PCB203
-      - PCB204
       - PCB205
       - PCB206
       - PCB207
       - PCB208
       - PCB209
 
+    slot_usage:
+      sample_medium:
+        rank: 1
+        slot_group: Sample Metadata
+
+      units:
+        rank: 2
+        slot_group: Sample Metadata
+
+      experiment:
+        rank: 3
+        slot_group: Sample Metadata
+
+      percent_biochar:
+        rank: 4
+        slot_group: Sample Metadata
+
+      time:
+        rank: 5
+        slot_group: Sample Metadata
+
+      group:
+        rank: 6
+        slot_group: Sample Metadata
+
+      replicate:
+        rank: 7
+        slot_group: Sample Metadata
+
+      tPCB:
+        rank: 8
+        slot_group: PCB Measurements
+
+      LCPCB:
+        rank: 9
+        slot_group: PCB Measurements
+
+      PCB1:
+        rank: 10
+        slot_group: PCB Measurements
+
+      PCB2:
+        rank: 11
+        slot_group: PCB Measurements
+
+      PCB3:
+        rank: 12
+        slot_group: PCB Measurements
+
+      PCB4:
+        rank: 13
+        slot_group: PCB Measurements
+
+      PCB5:
+        rank: 14
+        slot_group: PCB Measurements
+
+      PCB6:
+        rank: 15
+        slot_group: PCB Measurements
+
+      PCB7:
+        rank: 16
+        slot_group: PCB Measurements
+
+      PCB8:
+        rank: 17
+        slot_group: PCB Measurements
+
+      PCB9:
+        rank: 18
+        slot_group: PCB Measurements
+
+      PCB10:
+        rank: 19
+        slot_group: PCB Measurements
+
+      PCB11:
+        rank: 20
+        slot_group: PCB Measurements
+
+      PCB12.13:
+        rank: 21
+        slot_group: PCB Measurements
+
+      PCB14:
+        rank: 22
+        slot_group: PCB Measurements
+
+      PCB15:
+        rank: 23
+        slot_group: PCB Measurements
+
+      PCB16:
+        rank: 24
+        slot_group: PCB Measurements
+
+      PCB17:
+        rank: 25
+        slot_group: PCB Measurements
+
+      PCB18.30:
+        rank: 26
+        slot_group: PCB Measurements
+
+      PCB19:
+        rank: 27
+        slot_group: PCB Measurements
+
+      PCB20.28:
+        rank: 28
+        slot_group: PCB Measurements
+
+      PCB21.33:
+        rank: 29
+        slot_group: PCB Measurements
+
+      PCB22:
+        rank: 30
+        slot_group: PCB Measurements
+
+      PCB23:
+        rank: 31
+        slot_group: PCB Measurements
+
+      PCB24:
+        rank: 32
+        slot_group: PCB Measurements
+
+      PCB25:
+        rank: 33
+        slot_group: PCB Measurements
+
+      PCB26.29:
+        rank: 34
+        slot_group: PCB Measurements
+
+      PCB27:
+        rank: 35
+        slot_group: PCB Measurements
+
+      PCB31:
+        rank: 36
+        slot_group: PCB Measurements
+
+      PCB32:
+        rank: 37
+        slot_group: PCB Measurements
+
+      PCB34:
+        rank: 38
+        slot_group: PCB Measurements
+
+      PCB35:
+        rank: 39
+        slot_group: PCB Measurements
+
+      PCB36:
+        rank: 40
+        slot_group: PCB Measurements
+
+      PCB37:
+        rank: 41
+        slot_group: PCB Measurements
+
+      PCB38:
+        rank: 42
+        slot_group: PCB Measurements
+
+      PCB39:
+        rank: 43
+        slot_group: PCB Measurements
+
+      PCB40.71:
+        rank: 44
+        slot_group: PCB Measurements
+
+      PCB41:
+        rank: 45
+        slot_group: PCB Measurements
+
+      PCB42:
+        rank: 46
+        slot_group: PCB Measurements
+
+      PCB43:
+        rank: 47
+        slot_group: PCB Measurements
+
+      PCB44.47.65:
+        rank: 48
+        slot_group: PCB Measurements
+
+      PCB45:
+        rank: 49
+        slot_group: PCB Measurements
+
+      PCB46:
+        rank: 50
+        slot_group: PCB Measurements
+
+      PCB48:
+        rank: 51
+        slot_group: PCB Measurements
+
+      PCB49.69:
+        rank: 52
+        slot_group: PCB Measurements
+
+      PCB50.53:
+        rank: 53
+        slot_group: PCB Measurements
+
+      PCB51:
+        rank: 54
+        slot_group: PCB Measurements
+
+      PCB52:
+        rank: 55
+        slot_group: PCB Measurements
+
+      PCB54:
+        rank: 56
+        slot_group: PCB Measurements
+
+      PCB55:
+        rank: 57
+        slot_group: PCB Measurements
+
+      PCB56:
+        rank: 58
+        slot_group: PCB Measurements
+
+      PCB57:
+        rank: 59
+        slot_group: PCB Measurements
+
+      PCB58:
+        rank: 60
+        slot_group: PCB Measurements
+
+      PCB59.62.75:
+        rank: 61
+        slot_group: PCB Measurements
+
+      PCB60:
+        rank: 62
+        slot_group: PCB Measurements
+
+      PCB61.70.74.76:
+        rank: 63
+        slot_group: PCB Measurements
+
+      PCB63:
+        rank: 64
+        slot_group: PCB Measurements
+
+      PCB64:
+        rank: 65
+        slot_group: PCB Measurements
+
+      PCB66:
+        rank: 66
+        slot_group: PCB Measurements
+
+      PCB67:
+        rank: 67
+        slot_group: PCB Measurements
+
+      PCB68:
+        rank: 68
+        slot_group: PCB Measurements
+
+      PCB72:
+        rank: 69
+        slot_group: PCB Measurements
+
+      PCB73:
+        rank: 70
+        slot_group: PCB Measurements
+
+      PCB77:
+        rank: 71
+        slot_group: PCB Measurements
+
+      PCB78:
+        rank: 72
+        slot_group: PCB Measurements
+
+      PCB79:
+        rank: 73
+        slot_group: PCB Measurements
+
+      PCB80:
+        rank: 74
+        slot_group: PCB Measurements
+
+      PCB81:
+        rank: 75
+        slot_group: PCB Measurements
+
+      PCB82:
+        rank: 76
+        slot_group: PCB Measurements
+
+      PCB83:
+        rank: 77
+        slot_group: PCB Measurements
+
+      PCB84:
+        rank: 78
+        slot_group: PCB Measurements
+
+      PCB85.116:
+        rank: 79
+        slot_group: PCB Measurements
+
+      PCB86.97.109.119:
+        rank: 80
+        slot_group: PCB Measurements
+
+      PCB87.125:
+        rank: 81
+        slot_group: PCB Measurements
+
+      PCB88:
+        rank: 82
+        slot_group: PCB Measurements
+
+      PCB89:
+        rank: 83
+        slot_group: PCB Measurements
+
+      PCB90.101.113:
+        rank: 84
+        slot_group: PCB Measurements
+
+      PCB91:
+        rank: 85
+        slot_group: PCB Measurements
+
+      PCB92:
+        rank: 86
+        slot_group: PCB Measurements
+
+      PCB93.100:
+        rank: 87
+        slot_group: PCB Measurements
+
+      PCB94:
+        rank: 88
+        slot_group: PCB Measurements
+
+      PCB95:
+        rank: 89
+        slot_group: PCB Measurements
+
+      PCB96:
+        rank: 90
+        slot_group: PCB Measurements
+
+      PCB98:
+        rank: 91
+        slot_group: PCB Measurements
+
+      PCB99:
+        rank: 92
+        slot_group: PCB Measurements
+
+      PCB102:
+        rank: 93
+        slot_group: PCB Measurements
+
+      PCB103:
+        rank: 94
+        slot_group: PCB Measurements
+
+      PCB104:
+        rank: 95
+        slot_group: PCB Measurements
+
+      PCB105:
+        rank: 96
+        slot_group: PCB Measurements
+
+      PCB106:
+        rank: 97
+        slot_group: PCB Measurements
+
+      PCB107:
+        rank: 98
+        slot_group: PCB Measurements
+
+      PCB108.124:
+        rank: 99
+        slot_group: PCB Measurements
+
+      PCB110:
+        rank: 100
+        slot_group: PCB Measurements
+
+      PCB111:
+        rank: 101
+        slot_group: PCB Measurements
+
+      PCB112:
+        rank: 102
+        slot_group: PCB Measurements
+
+      PCB114:
+        rank: 103
+        slot_group: PCB Measurements
+
+      PCB115:
+        rank: 104
+        slot_group: PCB Measurements
+
+      PCB117:
+        rank: 105
+        slot_group: PCB Measurements
+
+      PCB118:
+        rank: 106
+        slot_group: PCB Measurements
+
+      PCB120:
+        rank: 107
+        slot_group: PCB Measurements
+
+      PCB121:
+        rank: 108
+        slot_group: PCB Measurements
+
+      PCB122:
+        rank: 109
+        slot_group: PCB Measurements
+
+      PCB123:
+        rank: 110
+        slot_group: PCB Measurements
+
+      PCB126:
+        rank: 111
+        slot_group: PCB Measurements
+
+      PCB127:
+        rank: 112
+        slot_group: PCB Measurements
+
+      PCB128.166:
+        rank: 113
+        slot_group: PCB Measurements
+
+      PCB129.138.163:
+        rank: 114
+        slot_group: PCB Measurements
+
+      PCB130:
+        rank: 115
+        slot_group: PCB Measurements
+
+      PCB131:
+        rank: 116
+        slot_group: PCB Measurements
+
+      PCB132:
+        rank: 117
+        slot_group: PCB Measurements
+
+      PCB133:
+        rank: 118
+        slot_group: PCB Measurements
+
+      PCB134:
+        rank: 119
+        slot_group: PCB Measurements
+
+      PCB135.151:
+        rank: 120
+        slot_group: PCB Measurements
+
+      PCB136:
+        rank: 121
+        slot_group: PCB Measurements
+
+      PCB137:
+        rank: 122
+        slot_group: PCB Measurements
+
+      PCB139.140:
+        rank: 123
+        slot_group: PCB Measurements
+
+      PCB141:
+        rank: 124
+        slot_group: PCB Measurements
+
+      PCB142:
+        rank: 125
+        slot_group: PCB Measurements
+
+      PCB143:
+        rank: 126
+        slot_group: PCB Measurements
+
+      PCB144:
+        rank: 127
+        slot_group: PCB Measurements
+
+      PCB145:
+        rank: 128
+        slot_group: PCB Measurements
+
+      PCB146:
+        rank: 129
+        slot_group: PCB Measurements
+
+      PCB147.149:
+        rank: 130
+        slot_group: PCB Measurements
+
+      PCB148:
+        rank: 131
+        slot_group: PCB Measurements
+
+      PCB150:
+        rank: 132
+        slot_group: PCB Measurements
+
+      PCB152:
+        rank: 133
+        slot_group: PCB Measurements
+
+      PCB153.168:
+        rank: 134
+        slot_group: PCB Measurements
+
+      PCB154:
+        rank: 135
+        slot_group: PCB Measurements
+
+      PCB155:
+        rank: 136
+        slot_group: PCB Measurements
+
+      PCB156.157:
+        rank: 137
+        slot_group: PCB Measurements
+
+      PCB158:
+        rank: 138
+        slot_group: PCB Measurements
+
+      PCB159:
+        rank: 139
+        slot_group: PCB Measurements
+
+      PCB160:
+        rank: 140
+        slot_group: PCB Measurements
+
+      PCB161:
+        rank: 141
+        slot_group: PCB Measurements
+
+      PCB162:
+        rank: 142
+        slot_group: PCB Measurements
+
+      PCB164:
+        rank: 143
+        slot_group: PCB Measurements
+
+      PCB165:
+        rank: 144
+        slot_group: PCB Measurements
+
+      PCB167:
+        rank: 145
+        slot_group: PCB Measurements
+
+      PCB169:
+        rank: 146
+        slot_group: PCB Measurements
+
+      PCB170:
+        rank: 147
+        slot_group: PCB Measurements
+
+      PCB171.173:
+        rank: 148
+        slot_group: PCB Measurements
+
+      PCB172:
+        rank: 149
+        slot_group: PCB Measurements
+
+      PCB174:
+        rank: 150
+        slot_group: PCB Measurements
+
+      PCB175:
+        rank: 151
+        slot_group: PCB Measurements
+
+      PCB176:
+        rank: 152
+        slot_group: PCB Measurements
+
+      PCB177:
+        rank: 153
+        slot_group: PCB Measurements
+
+      PCB178:
+        rank: 154
+        slot_group: PCB Measurements
+
+      PCB179:
+        rank: 155
+        slot_group: PCB Measurements
+
+      PCB180.193:
+        rank: 156
+        slot_group: PCB Measurements
+
+      PCB181:
+        rank: 157
+        slot_group: PCB Measurements
+
+      PCB182:
+        rank: 158
+        slot_group: PCB Measurements
+
+      PCB183:
+        rank: 159
+        slot_group: PCB Measurements
+
+      PCB184:
+        rank: 160
+        slot_group: PCB Measurements
+
+      PCB185:
+        rank: 161
+        slot_group: PCB Measurements
+
+      PCB186:
+        rank: 162
+        slot_group: PCB Measurements
+
+      PCB187:
+        rank: 163
+        slot_group: PCB Measurements
+
+      PCB188:
+        rank: 164
+        slot_group: PCB Measurements
+
+      PCB189:
+        rank: 165
+        slot_group: PCB Measurements
+
+      PCB190:
+        rank: 166
+        slot_group: PCB Measurements
+
+      PCB191:
+        rank: 167
+        slot_group: PCB Measurements
+
+      PCB192:
+        rank: 168
+        slot_group: PCB Measurements
+
+      PCB194:
+        rank: 169
+        slot_group: PCB Measurements
+
+      PCB195:
+        rank: 170
+        slot_group: PCB Measurements
+
+      PCB196:
+        rank: 171
+        slot_group: PCB Measurements
+
+      PCB197:
+        rank: 172
+        slot_group: PCB Measurements
+
+      PCB198.199:
+        rank: 173
+        slot_group: PCB Measurements
+
+      PCB200:
+        rank: 174
+        slot_group: PCB Measurements
+
+      PCB201:
+        rank: 175
+        slot_group: PCB Measurements
+
+      PCB202:
+        rank: 176
+        slot_group: PCB Measurements
+
+      PCB203:
+        rank: 177
+        slot_group: PCB Measurements
+
+      PCB205:
+        rank: 178
+        slot_group: PCB Measurements
+
+      PCB206:
+        rank: 179
+        slot_group: PCB Measurements
+
+      PCB207:
+        rank: 180
+        slot_group: PCB Measurements
+
+      PCB208:
+        rank: 181
+        slot_group: PCB Measurements
+
+      PCB209:
+        rank: 182
+        slot_group: PCB Measurements
 
 
   David_05_Dataset_rawBlankmass:
     name: David_05_Dataset_rawBlankmass
-    description: One row per sample (and congener if long-form)
+    description: Blank mass measurements used for limit-of-quantification (LOQ)
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - blank_id
       - sample_medium
@@ -517,7 +1971,6 @@ classes:
       - PCB110
       - PCB111
       - PCB112
-      - PCB113
       - PCB114
       - PCB115
       - PCB117
@@ -593,7 +2046,6 @@ classes:
       - PCB201
       - PCB202
       - PCB203
-      - PCB204
       - PCB205
       - PCB206
       - PCB207
@@ -604,13 +2056,723 @@ classes:
       sample_key:
         unique_key_name: sample_key
         unique_key_slots: [blank_id]
+  
+    slot_usage:
+      blank_id:
+        rank: 1
+        slot_group: Sample Metadata
+
+      sample_medium:
+        rank: 2
+        slot_group: Sample Metadata
+
+      units:
+        rank: 3
+        slot_group: Sample Metadata
+
+      tPCB:
+        rank: 4
+        slot_group: PCB Measurements
+
+      PCB1:
+        rank: 5
+        slot_group: PCB Measurements
+
+      PCB2:
+        rank: 6
+        slot_group: PCB Measurements
+
+      PCB3:
+        rank: 7
+        slot_group: PCB Measurements
+
+      PCB4:
+        rank: 8
+        slot_group: PCB Measurements
+
+      PCB5:
+        rank: 9
+        slot_group: PCB Measurements
+
+      PCB6:
+        rank: 10
+        slot_group: PCB Measurements
+
+      PCB7:
+        rank: 11
+        slot_group: PCB Measurements
+
+      PCB8:
+        rank: 12
+        slot_group: PCB Measurements
+
+      PCB9:
+        rank: 13
+        slot_group: PCB Measurements
+
+      PCB10:
+        rank: 14
+        slot_group: PCB Measurements
+
+      PCB11:
+        rank: 15
+        slot_group: PCB Measurements
+
+      PCB12.13:
+        rank: 16
+        slot_group: PCB Measurements
+
+      PCB14:
+        rank: 17
+        slot_group: PCB Measurements
+
+      PCB15:
+        rank: 18
+        slot_group: PCB Measurements
+
+      PCB16:
+        rank: 19
+        slot_group: PCB Measurements
+
+      PCB17:
+        rank: 20
+        slot_group: PCB Measurements
+
+      PCB18.30:
+        rank: 21
+        slot_group: PCB Measurements
+
+      PCB19:
+        rank: 22
+        slot_group: PCB Measurements
+
+      PCB20.28:
+        rank: 23
+        slot_group: PCB Measurements
+
+      PCB21.33:
+        rank: 24
+        slot_group: PCB Measurements
+
+      PCB22:
+        rank: 25
+        slot_group: PCB Measurements
+
+      PCB23:
+        rank: 26
+        slot_group: PCB Measurements
+
+      PCB24:
+        rank: 27
+        slot_group: PCB Measurements
+
+      PCB25:
+        rank: 28
+        slot_group: PCB Measurements
+
+      PCB26.29:
+        rank: 29
+        slot_group: PCB Measurements
+
+      PCB27:
+        rank: 30
+        slot_group: PCB Measurements
+
+      PCB31:
+        rank: 31
+        slot_group: PCB Measurements
+
+      PCB32:
+        rank: 32
+        slot_group: PCB Measurements
+
+      PCB34:
+        rank: 33
+        slot_group: PCB Measurements
+
+      PCB35:
+        rank: 34
+        slot_group: PCB Measurements
+
+      PCB36:
+        rank: 35
+        slot_group: PCB Measurements
+
+      PCB37:
+        rank: 36
+        slot_group: PCB Measurements
+
+      PCB38:
+        rank: 37
+        slot_group: PCB Measurements
+
+      PCB39:
+        rank: 38
+        slot_group: PCB Measurements
+
+      PCB40.71:
+        rank: 39
+        slot_group: PCB Measurements
+
+      PCB41:
+        rank: 40
+        slot_group: PCB Measurements
+
+      PCB42:
+        rank: 41
+        slot_group: PCB Measurements
+
+      PCB43:
+        rank: 42
+        slot_group: PCB Measurements
+
+      PCB44.47.65:
+        rank: 43
+        slot_group: PCB Measurements
+
+      PCB45:
+        rank: 44
+        slot_group: PCB Measurements
+
+      PCB46:
+        rank: 45
+        slot_group: PCB Measurements
+
+      PCB48:
+        rank: 46
+        slot_group: PCB Measurements
+
+      PCB49.69:
+        rank: 47
+        slot_group: PCB Measurements
+
+      PCB50.53:
+        rank: 48
+        slot_group: PCB Measurements
+
+      PCB51:
+        rank: 49
+        slot_group: PCB Measurements
+
+      PCB52:
+        rank: 50
+        slot_group: PCB Measurements
+
+      PCB54:
+        rank: 51
+        slot_group: PCB Measurements
+
+      PCB55:
+        rank: 52
+        slot_group: PCB Measurements
+
+      PCB56:
+        rank: 53
+        slot_group: PCB Measurements
+
+      PCB57:
+        rank: 54
+        slot_group: PCB Measurements
+
+      PCB58:
+        rank: 55
+        slot_group: PCB Measurements
+
+      PCB59.62.75:
+        rank: 56
+        slot_group: PCB Measurements
+
+      PCB60:
+        rank: 57
+        slot_group: PCB Measurements
+
+      PCB61.70.74.76:
+        rank: 58
+        slot_group: PCB Measurements
+
+      PCB63:
+        rank: 59
+        slot_group: PCB Measurements
+
+      PCB64:
+        rank: 60
+        slot_group: PCB Measurements
+
+      PCB66:
+        rank: 61
+        slot_group: PCB Measurements
+
+      PCB67:
+        rank: 62
+        slot_group: PCB Measurements
+
+      PCB68:
+        rank: 63
+        slot_group: PCB Measurements
+
+      PCB72:
+        rank: 64
+        slot_group: PCB Measurements
+
+      PCB73:
+        rank: 65
+        slot_group: PCB Measurements
+
+      PCB77:
+        rank: 66
+        slot_group: PCB Measurements
+
+      PCB78:
+        rank: 67
+        slot_group: PCB Measurements
+
+      PCB79:
+        rank: 68
+        slot_group: PCB Measurements
+
+      PCB80:
+        rank: 69
+        slot_group: PCB Measurements
+
+      PCB81:
+        rank: 70
+        slot_group: PCB Measurements
+
+      PCB82:
+        rank: 71
+        slot_group: PCB Measurements
+
+      PCB83:
+        rank: 72
+        slot_group: PCB Measurements
+
+      PCB84:
+        rank: 73
+        slot_group: PCB Measurements
+
+      PCB85.116:
+        rank: 74
+        slot_group: PCB Measurements
+
+      PCB86.97.109.119:
+        rank: 75
+        slot_group: PCB Measurements
+
+      PCB87.125:
+        rank: 76
+        slot_group: PCB Measurements
+
+      PCB88:
+        rank: 77
+        slot_group: PCB Measurements
+
+      PCB89:
+        rank: 78
+        slot_group: PCB Measurements
+
+      PCB90.101.113:
+        rank: 79
+        slot_group: PCB Measurements
+
+      PCB91:
+        rank: 80
+        slot_group: PCB Measurements
+
+      PCB92:
+        rank: 81
+        slot_group: PCB Measurements
+
+      PCB93.100:
+        rank: 82
+        slot_group: PCB Measurements
+
+      PCB94:
+        rank: 83
+        slot_group: PCB Measurements
+
+      PCB95:
+        rank: 84
+        slot_group: PCB Measurements
+
+      PCB96:
+        rank: 85
+        slot_group: PCB Measurements
+
+      PCB98:
+        rank: 86
+        slot_group: PCB Measurements
+
+      PCB99:
+        rank: 87
+        slot_group: PCB Measurements
+
+      PCB102:
+        rank: 88
+        slot_group: PCB Measurements
+
+      PCB103:
+        rank: 89
+        slot_group: PCB Measurements
+
+      PCB104:
+        rank: 90
+        slot_group: PCB Measurements
+
+      PCB105:
+        rank: 91
+        slot_group: PCB Measurements
+
+      PCB106:
+        rank: 92
+        slot_group: PCB Measurements
+
+      PCB107:
+        rank: 93
+        slot_group: PCB Measurements
+
+      PCB108.124:
+        rank: 94
+        slot_group: PCB Measurements
+
+      PCB110:
+        rank: 95
+        slot_group: PCB Measurements
+
+      PCB111:
+        rank: 96
+        slot_group: PCB Measurements
+
+      PCB112:
+        rank: 97
+        slot_group: PCB Measurements
+
+      PCB114:
+        rank: 98
+        slot_group: PCB Measurements
+
+      PCB115:
+        rank: 99
+        slot_group: PCB Measurements
+
+      PCB117:
+        rank: 100
+        slot_group: PCB Measurements
+
+      PCB118:
+        rank: 101
+        slot_group: PCB Measurements
+
+      PCB120:
+        rank: 102
+        slot_group: PCB Measurements
+
+      PCB121:
+        rank: 103
+        slot_group: PCB Measurements
+
+      PCB122:
+        rank: 104
+        slot_group: PCB Measurements
+
+      PCB123:
+        rank: 105
+        slot_group: PCB Measurements
+
+      PCB126:
+        rank: 106
+        slot_group: PCB Measurements
+
+      PCB127:
+        rank: 107
+        slot_group: PCB Measurements
+
+      PCB128.166:
+        rank: 108
+        slot_group: PCB Measurements
+
+      PCB129.138.163:
+        rank: 109
+        slot_group: PCB Measurements
+
+      PCB130:
+        rank: 110
+        slot_group: PCB Measurements
+
+      PCB131:
+        rank: 111
+        slot_group: PCB Measurements
+
+      PCB132:
+        rank: 112
+        slot_group: PCB Measurements
+
+      PCB133:
+        rank: 113
+        slot_group: PCB Measurements
+
+      PCB134:
+        rank: 114
+        slot_group: PCB Measurements
+
+      PCB135.151:
+        rank: 115
+        slot_group: PCB Measurements
+
+      PCB136:
+        rank: 116
+        slot_group: PCB Measurements
+
+      PCB137:
+        rank: 117
+        slot_group: PCB Measurements
+
+      PCB139.140:
+        rank: 118
+        slot_group: PCB Measurements
+
+      PCB141:
+        rank: 119
+        slot_group: PCB Measurements
+
+      PCB142:
+        rank: 120
+        slot_group: PCB Measurements
+
+      PCB143:
+        rank: 121
+        slot_group: PCB Measurements
+
+      PCB144:
+        rank: 122
+        slot_group: PCB Measurements
+
+      PCB145:
+        rank: 123
+        slot_group: PCB Measurements
+
+      PCB146:
+        rank: 124
+        slot_group: PCB Measurements
+
+      PCB147.149:
+        rank: 125
+        slot_group: PCB Measurements
+
+      PCB148:
+        rank: 126
+        slot_group: PCB Measurements
+
+      PCB150:
+        rank: 127
+        slot_group: PCB Measurements
+
+      PCB152:
+        rank: 128
+        slot_group: PCB Measurements
+
+      PCB153.168:
+        rank: 129
+        slot_group: PCB Measurements
+
+      PCB154:
+        rank: 130
+        slot_group: PCB Measurements
+
+      PCB155:
+        rank: 131
+        slot_group: PCB Measurements
+
+      PCB156.157:
+        rank: 132
+        slot_group: PCB Measurements
+
+      PCB158:
+        rank: 133
+        slot_group: PCB Measurements
+
+      PCB159:
+        rank: 134
+        slot_group: PCB Measurements
+
+      PCB160:
+        rank: 135
+        slot_group: PCB Measurements
+
+      PCB161:
+        rank: 136
+        slot_group: PCB Measurements
+
+      PCB162:
+        rank: 137
+        slot_group: PCB Measurements
+
+      PCB164:
+        rank: 138
+        slot_group: PCB Measurements
+
+      PCB165:
+        rank: 139
+        slot_group: PCB Measurements
+
+      PCB167:
+        rank: 140
+        slot_group: PCB Measurements
+
+      PCB169:
+        rank: 141
+        slot_group: PCB Measurements
+
+      PCB170:
+        rank: 142
+        slot_group: PCB Measurements
+
+      PCB171.173:
+        rank: 143
+        slot_group: PCB Measurements
+
+      PCB172:
+        rank: 144
+        slot_group: PCB Measurements
+
+      PCB174:
+        rank: 145
+        slot_group: PCB Measurements
+
+      PCB175:
+        rank: 146
+        slot_group: PCB Measurements
+
+      PCB176:
+        rank: 147
+        slot_group: PCB Measurements
+
+      PCB177:
+        rank: 148
+        slot_group: PCB Measurements
+
+      PCB178:
+        rank: 149
+        slot_group: PCB Measurements
+
+      PCB179:
+        rank: 150
+        slot_group: PCB Measurements
+
+      PCB180.193:
+        rank: 151
+        slot_group: PCB Measurements
+
+      PCB181:
+        rank: 152
+        slot_group: PCB Measurements
+
+      PCB182:
+        rank: 153
+        slot_group: PCB Measurements
+
+      PCB183:
+        rank: 154
+        slot_group: PCB Measurements
+
+      PCB184:
+        rank: 155
+        slot_group: PCB Measurements
+
+      PCB185:
+        rank: 156
+        slot_group: PCB Measurements
+
+      PCB186:
+        rank: 157
+        slot_group: PCB Measurements
+
+      PCB187:
+        rank: 158
+        slot_group: PCB Measurements
+
+      PCB188:
+        rank: 159
+        slot_group: PCB Measurements
+
+      PCB189:
+        rank: 160
+        slot_group: PCB Measurements
+
+      PCB190:
+        rank: 161
+        slot_group: PCB Measurements
+
+      PCB191:
+        rank: 162
+        slot_group: PCB Measurements
+
+      PCB192:
+        rank: 163
+        slot_group: PCB Measurements
+
+      PCB194:
+        rank: 164
+        slot_group: PCB Measurements
+
+      PCB195:
+        rank: 165
+        slot_group: PCB Measurements
+
+      PCB196:
+        rank: 166
+        slot_group: PCB Measurements
+
+      PCB197:
+        rank: 167
+        slot_group: PCB Measurements
+
+      PCB198.199:
+        rank: 168
+        slot_group: PCB Measurements
+
+      PCB200:
+        rank: 169
+        slot_group: PCB Measurements
+
+      PCB201:
+        rank: 170
+        slot_group: PCB Measurements
+
+      PCB202:
+        rank: 171
+        slot_group: PCB Measurements
+
+      PCB203:
+        rank: 172
+        slot_group: PCB Measurements
+
+      PCB205:
+        rank: 173
+        slot_group: PCB Measurements
+
+      PCB206:
+        rank: 174
+        slot_group: PCB Measurements
+
+      PCB207:
+        rank: 175
+        slot_group: PCB Measurements
+
+      PCB208:
+        rank: 176
+        slot_group: PCB Measurements
+
+      PCB209:
+        rank: 177
+        slot_group: PCB Measurements
+
 
 
   David_06_final_PCBmass_PUF:
     name: David_06_final_PCBmass_PUF
-    description: One row per sample (and congener if long-form)
+    description: Final PCB mass measurements for PUF samples after blank correction
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_medium
       - units
@@ -712,7 +2874,6 @@ classes:
       - PCB110
       - PCB111
       - PCB112
-      - PCB113
       - PCB114
       - PCB115
       - PCB117
@@ -788,18 +2949,747 @@ classes:
       - PCB201
       - PCB202
       - PCB203
-      - PCB204
       - PCB205
       - PCB206
       - PCB207
       - PCB208
       - PCB209
+
+    slot_usage:
+      sample_medium:
+        rank: 1
+        slot_group: Sample Metadata
+
+      units:
+        rank: 2
+        slot_group: Sample Metadata
+
+      experiment:
+        rank: 3
+        slot_group: Sample Metadata
+
+      percent_biochar:
+        rank: 4
+        slot_group: Sample Metadata
+
+      time:
+        rank: 5
+        slot_group: Sample Metadata
+
+      group:
+        rank: 6
+        slot_group: Sample Metadata
+
+      replicate:
+        rank: 7
+        slot_group: Sample Metadata
+
+      tPCB:
+        rank: 8
+        slot_group: PCB Measurements
+
+      LCPCB:
+        rank: 9
+        slot_group: PCB Measurements
+
+      PCB1:
+        rank: 10
+        slot_group: PCB Measurements
+
+      PCB2:
+        rank: 11
+        slot_group: PCB Measurements
+
+      PCB3:
+        rank: 12
+        slot_group: PCB Measurements
+
+      PCB4:
+        rank: 13
+        slot_group: PCB Measurements
+
+      PCB5:
+        rank: 14
+        slot_group: PCB Measurements
+
+      PCB6:
+        rank: 15
+        slot_group: PCB Measurements
+
+      PCB7:
+        rank: 16
+        slot_group: PCB Measurements
+
+      PCB8:
+        rank: 17
+        slot_group: PCB Measurements
+
+      PCB9:
+        rank: 18
+        slot_group: PCB Measurements
+
+      PCB10:
+        rank: 19
+        slot_group: PCB Measurements
+
+      PCB11:
+        rank: 20
+        slot_group: PCB Measurements
+
+      PCB12.13:
+        rank: 21
+        slot_group: PCB Measurements
+
+      PCB14:
+        rank: 22
+        slot_group: PCB Measurements
+
+      PCB15:
+        rank: 23
+        slot_group: PCB Measurements
+
+      PCB16:
+        rank: 24
+        slot_group: PCB Measurements
+
+      PCB17:
+        rank: 25
+        slot_group: PCB Measurements
+
+      PCB18.30:
+        rank: 26
+        slot_group: PCB Measurements
+
+      PCB19:
+        rank: 27
+        slot_group: PCB Measurements
+
+      PCB20.28:
+        rank: 28
+        slot_group: PCB Measurements
+
+      PCB21.33:
+        rank: 29
+        slot_group: PCB Measurements
+
+      PCB22:
+        rank: 30
+        slot_group: PCB Measurements
+
+      PCB23:
+        rank: 31
+        slot_group: PCB Measurements
+
+      PCB24:
+        rank: 32
+        slot_group: PCB Measurements
+
+      PCB25:
+        rank: 33
+        slot_group: PCB Measurements
+
+      PCB26.29:
+        rank: 34
+        slot_group: PCB Measurements
+
+      PCB27:
+        rank: 35
+        slot_group: PCB Measurements
+
+      PCB31:
+        rank: 36
+        slot_group: PCB Measurements
+
+      PCB32:
+        rank: 37
+        slot_group: PCB Measurements
+
+      PCB34:
+        rank: 38
+        slot_group: PCB Measurements
+
+      PCB35:
+        rank: 39
+        slot_group: PCB Measurements
+
+      PCB36:
+        rank: 40
+        slot_group: PCB Measurements
+
+      PCB37:
+        rank: 41
+        slot_group: PCB Measurements
+
+      PCB38:
+        rank: 42
+        slot_group: PCB Measurements
+
+      PCB39:
+        rank: 43
+        slot_group: PCB Measurements
+
+      PCB40.71:
+        rank: 44
+        slot_group: PCB Measurements
+
+      PCB41:
+        rank: 45
+        slot_group: PCB Measurements
+
+      PCB42:
+        rank: 46
+        slot_group: PCB Measurements
+
+      PCB43:
+        rank: 47
+        slot_group: PCB Measurements
+
+      PCB44.47.65:
+        rank: 48
+        slot_group: PCB Measurements
+
+      PCB45:
+        rank: 49
+        slot_group: PCB Measurements
+
+      PCB46:
+        rank: 50
+        slot_group: PCB Measurements
+
+      PCB48:
+        rank: 51
+        slot_group: PCB Measurements
+
+      PCB49.69:
+        rank: 52
+        slot_group: PCB Measurements
+
+      PCB50.53:
+        rank: 53
+        slot_group: PCB Measurements
+
+      PCB51:
+        rank: 54
+        slot_group: PCB Measurements
+
+      PCB52:
+        rank: 55
+        slot_group: PCB Measurements
+
+      PCB54:
+        rank: 56
+        slot_group: PCB Measurements
+
+      PCB55:
+        rank: 57
+        slot_group: PCB Measurements
+
+      PCB56:
+        rank: 58
+        slot_group: PCB Measurements
+
+      PCB57:
+        rank: 59
+        slot_group: PCB Measurements
+
+      PCB58:
+        rank: 60
+        slot_group: PCB Measurements
+
+      PCB59.62.75:
+        rank: 61
+        slot_group: PCB Measurements
+
+      PCB60:
+        rank: 62
+        slot_group: PCB Measurements
+
+      PCB61.70.74.76:
+        rank: 63
+        slot_group: PCB Measurements
+
+      PCB63:
+        rank: 64
+        slot_group: PCB Measurements
+
+      PCB64:
+        rank: 65
+        slot_group: PCB Measurements
+
+      PCB66:
+        rank: 66
+        slot_group: PCB Measurements
+
+      PCB67:
+        rank: 67
+        slot_group: PCB Measurements
+
+      PCB68:
+        rank: 68
+        slot_group: PCB Measurements
+
+      PCB72:
+        rank: 69
+        slot_group: PCB Measurements
+
+      PCB73:
+        rank: 70
+        slot_group: PCB Measurements
+
+      PCB77:
+        rank: 71
+        slot_group: PCB Measurements
+
+      PCB78:
+        rank: 72
+        slot_group: PCB Measurements
+
+      PCB79:
+        rank: 73
+        slot_group: PCB Measurements
+
+      PCB80:
+        rank: 74
+        slot_group: PCB Measurements
+
+      PCB81:
+        rank: 75
+        slot_group: PCB Measurements
+
+      PCB82:
+        rank: 76
+        slot_group: PCB Measurements
+
+      PCB83:
+        rank: 77
+        slot_group: PCB Measurements
+
+      PCB84:
+        rank: 78
+        slot_group: PCB Measurements
+
+      PCB85.116:
+        rank: 79
+        slot_group: PCB Measurements
+
+      PCB86.97.109.119:
+        rank: 80
+        slot_group: PCB Measurements
+
+      PCB87.125:
+        rank: 81
+        slot_group: PCB Measurements
+
+      PCB88:
+        rank: 82
+        slot_group: PCB Measurements
+
+      PCB89:
+        rank: 83
+        slot_group: PCB Measurements
+
+      PCB90.101.113:
+        rank: 84
+        slot_group: PCB Measurements
+
+      PCB91:
+        rank: 85
+        slot_group: PCB Measurements
+
+      PCB92:
+        rank: 86
+        slot_group: PCB Measurements
+
+      PCB93.100:
+        rank: 87
+        slot_group: PCB Measurements
+
+      PCB94:
+        rank: 88
+        slot_group: PCB Measurements
+
+      PCB95:
+        rank: 89
+        slot_group: PCB Measurements
+
+      PCB96:
+        rank: 90
+        slot_group: PCB Measurements
+
+      PCB98:
+        rank: 91
+        slot_group: PCB Measurements
+
+      PCB99:
+        rank: 92
+        slot_group: PCB Measurements
+
+      PCB102:
+        rank: 93
+        slot_group: PCB Measurements
+
+      PCB103:
+        rank: 94
+        slot_group: PCB Measurements
+
+      PCB104:
+        rank: 95
+        slot_group: PCB Measurements
+
+      PCB105:
+        rank: 96
+        slot_group: PCB Measurements
+
+      PCB106:
+        rank: 97
+        slot_group: PCB Measurements
+
+      PCB107:
+        rank: 98
+        slot_group: PCB Measurements
+
+      PCB108.124:
+        rank: 99
+        slot_group: PCB Measurements
+
+      PCB110:
+        rank: 100
+        slot_group: PCB Measurements
+
+      PCB111:
+        rank: 101
+        slot_group: PCB Measurements
+
+      PCB112:
+        rank: 102
+        slot_group: PCB Measurements
+
+      PCB114:
+        rank: 103
+        slot_group: PCB Measurements
+
+      PCB115:
+        rank: 104
+        slot_group: PCB Measurements
+
+      PCB117:
+        rank: 105
+        slot_group: PCB Measurements
+
+      PCB118:
+        rank: 106
+        slot_group: PCB Measurements
+
+      PCB120:
+        rank: 107
+        slot_group: PCB Measurements
+
+      PCB121:
+        rank: 108
+        slot_group: PCB Measurements
+
+      PCB122:
+        rank: 109
+        slot_group: PCB Measurements
+
+      PCB123:
+        rank: 110
+        slot_group: PCB Measurements
+
+      PCB126:
+        rank: 111
+        slot_group: PCB Measurements
+
+      PCB127:
+        rank: 112
+        slot_group: PCB Measurements
+
+      PCB128.166:
+        rank: 113
+        slot_group: PCB Measurements
+
+      PCB129.138.163:
+        rank: 114
+        slot_group: PCB Measurements
+
+      PCB130:
+        rank: 115
+        slot_group: PCB Measurements
+
+      PCB131:
+        rank: 116
+        slot_group: PCB Measurements
+
+      PCB132:
+        rank: 117
+        slot_group: PCB Measurements
+
+      PCB133:
+        rank: 118
+        slot_group: PCB Measurements
+
+      PCB134:
+        rank: 119
+        slot_group: PCB Measurements
+
+      PCB135.151:
+        rank: 120
+        slot_group: PCB Measurements
+
+      PCB136:
+        rank: 121
+        slot_group: PCB Measurements
+
+      PCB137:
+        rank: 122
+        slot_group: PCB Measurements
+
+      PCB139.140:
+        rank: 123
+        slot_group: PCB Measurements
+
+      PCB141:
+        rank: 124
+        slot_group: PCB Measurements
+
+      PCB142:
+        rank: 125
+        slot_group: PCB Measurements
+
+      PCB143:
+        rank: 126
+        slot_group: PCB Measurements
+
+      PCB144:
+        rank: 127
+        slot_group: PCB Measurements
+
+      PCB145:
+        rank: 128
+        slot_group: PCB Measurements
+
+      PCB146:
+        rank: 129
+        slot_group: PCB Measurements
+
+      PCB147.149:
+        rank: 130
+        slot_group: PCB Measurements
+
+      PCB148:
+        rank: 131
+        slot_group: PCB Measurements
+
+      PCB150:
+        rank: 132
+        slot_group: PCB Measurements
+
+      PCB152:
+        rank: 133
+        slot_group: PCB Measurements
+
+      PCB153.168:
+        rank: 134
+        slot_group: PCB Measurements
+
+      PCB154:
+        rank: 135
+        slot_group: PCB Measurements
+
+      PCB155:
+        rank: 136
+        slot_group: PCB Measurements
+
+      PCB156.157:
+        rank: 137
+        slot_group: PCB Measurements
+
+      PCB158:
+        rank: 138
+        slot_group: PCB Measurements
+
+      PCB159:
+        rank: 139
+        slot_group: PCB Measurements
+
+      PCB160:
+        rank: 140
+        slot_group: PCB Measurements
+
+      PCB161:
+        rank: 141
+        slot_group: PCB Measurements
+
+      PCB162:
+        rank: 142
+        slot_group: PCB Measurements
+
+      PCB164:
+        rank: 143
+        slot_group: PCB Measurements
+
+      PCB165:
+        rank: 144
+        slot_group: PCB Measurements
+
+      PCB167:
+        rank: 145
+        slot_group: PCB Measurements
+
+      PCB169:
+        rank: 146
+        slot_group: PCB Measurements
+
+      PCB170:
+        rank: 147
+        slot_group: PCB Measurements
+
+      PCB171.173:
+        rank: 148
+        slot_group: PCB Measurements
+
+      PCB172:
+        rank: 149
+        slot_group: PCB Measurements
+
+      PCB174:
+        rank: 150
+        slot_group: PCB Measurements
+
+      PCB175:
+        rank: 151
+        slot_group: PCB Measurements
+
+      PCB176:
+        rank: 152
+        slot_group: PCB Measurements
+
+      PCB177:
+        rank: 153
+        slot_group: PCB Measurements
+
+      PCB178:
+        rank: 154
+        slot_group: PCB Measurements
+
+      PCB179:
+        rank: 155
+        slot_group: PCB Measurements
+
+      PCB180.193:
+        rank: 156
+        slot_group: PCB Measurements
+
+      PCB181:
+        rank: 157
+        slot_group: PCB Measurements
+
+      PCB182:
+        rank: 158
+        slot_group: PCB Measurements
+
+      PCB183:
+        rank: 159
+        slot_group: PCB Measurements
+
+      PCB184:
+        rank: 160
+        slot_group: PCB Measurements
+
+      PCB185:
+        rank: 161
+        slot_group: PCB Measurements
+
+      PCB186:
+        rank: 162
+        slot_group: PCB Measurements
+
+      PCB187:
+        rank: 163
+        slot_group: PCB Measurements
+
+      PCB188:
+        rank: 164
+        slot_group: PCB Measurements
+
+      PCB189:
+        rank: 165
+        slot_group: PCB Measurements
+
+      PCB190:
+        rank: 166
+        slot_group: PCB Measurements
+
+      PCB191:
+        rank: 167
+        slot_group: PCB Measurements
+
+      PCB192:
+        rank: 168
+        slot_group: PCB Measurements
+
+      PCB194:
+        rank: 169
+        slot_group: PCB Measurements
+
+      PCB195:
+        rank: 170
+        slot_group: PCB Measurements
+
+      PCB196:
+        rank: 171
+        slot_group: PCB Measurements
+
+      PCB197:
+        rank: 172
+        slot_group: PCB Measurements
+
+      PCB198.199:
+        rank: 173
+        slot_group: PCB Measurements
+
+      PCB200:
+        rank: 174
+        slot_group: PCB Measurements
+
+      PCB201:
+        rank: 175
+        slot_group: PCB Measurements
+
+      PCB202:
+        rank: 176
+        slot_group: PCB Measurements
+
+      PCB203:
+        rank: 177
+        slot_group: PCB Measurements
+
+      PCB205:
+        rank: 178
+        slot_group: PCB Measurements
+
+      PCB206:
+        rank: 179
+        slot_group: PCB Measurements
+
+      PCB207:
+        rank: 180
+        slot_group: PCB Measurements
+
+      PCB208:
+        rank: 181
+        slot_group: PCB Measurements
+
+      PCB209:
+        rank: 182
+        slot_group: PCB Measurements
+
 
   David_07_final_PCBmass_SPME:
     name: David_07_final_PCBmass_SPME
-    description: One row per sample (and congener if long-form)
+    description: Final PCB mass measurements for SPME samples after blank correction
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_medium
       - units
@@ -901,7 +3791,6 @@ classes:
       - PCB110
       - PCB111
       - PCB112
-      - PCB113
       - PCB114
       - PCB115
       - PCB117
@@ -977,18 +3866,747 @@ classes:
       - PCB201
       - PCB202
       - PCB203
-      - PCB204
       - PCB205
       - PCB206
       - PCB207
       - PCB208
       - PCB209
 
+    slot_usage:
+      sample_medium:
+        rank: 1
+        slot_group: Sample Metadata
+
+      units:
+        rank: 2
+        slot_group: Sample Metadata
+
+      experiment:
+        rank: 3
+        slot_group: Sample Metadata
+
+      percent_biochar:
+        rank: 4
+        slot_group: Sample Metadata
+
+      time:
+        rank: 5
+        slot_group: Sample Metadata
+
+      group:
+        rank: 6
+        slot_group: Sample Metadata
+
+      replicate:
+        rank: 7
+        slot_group: Sample Metadata
+
+      tPCB:
+        rank: 8
+        slot_group: PCB Measurements
+
+      LCPCB:
+        rank: 9
+        slot_group: PCB Measurements
+
+      PCB1:
+        rank: 10
+        slot_group: PCB Measurements
+
+      PCB2:
+        rank: 11
+        slot_group: PCB Measurements
+
+      PCB3:
+        rank: 12
+        slot_group: PCB Measurements
+
+      PCB4:
+        rank: 13
+        slot_group: PCB Measurements
+
+      PCB5:
+        rank: 14
+        slot_group: PCB Measurements
+
+      PCB6:
+        rank: 15
+        slot_group: PCB Measurements
+
+      PCB7:
+        rank: 16
+        slot_group: PCB Measurements
+
+      PCB8:
+        rank: 17
+        slot_group: PCB Measurements
+
+      PCB9:
+        rank: 18
+        slot_group: PCB Measurements
+
+      PCB10:
+        rank: 19
+        slot_group: PCB Measurements
+
+      PCB11:
+        rank: 20
+        slot_group: PCB Measurements
+
+      PCB12.13:
+        rank: 21
+        slot_group: PCB Measurements
+
+      PCB14:
+        rank: 22
+        slot_group: PCB Measurements
+
+      PCB15:
+        rank: 23
+        slot_group: PCB Measurements
+
+      PCB16:
+        rank: 24
+        slot_group: PCB Measurements
+
+      PCB17:
+        rank: 25
+        slot_group: PCB Measurements
+
+      PCB18.30:
+        rank: 26
+        slot_group: PCB Measurements
+
+      PCB19:
+        rank: 27
+        slot_group: PCB Measurements
+
+      PCB20.28:
+        rank: 28
+        slot_group: PCB Measurements
+
+      PCB21.33:
+        rank: 29
+        slot_group: PCB Measurements
+
+      PCB22:
+        rank: 30
+        slot_group: PCB Measurements
+
+      PCB23:
+        rank: 31
+        slot_group: PCB Measurements
+
+      PCB24:
+        rank: 32
+        slot_group: PCB Measurements
+
+      PCB25:
+        rank: 33
+        slot_group: PCB Measurements
+
+      PCB26.29:
+        rank: 34
+        slot_group: PCB Measurements
+
+      PCB27:
+        rank: 35
+        slot_group: PCB Measurements
+
+      PCB31:
+        rank: 36
+        slot_group: PCB Measurements
+
+      PCB32:
+        rank: 37
+        slot_group: PCB Measurements
+
+      PCB34:
+        rank: 38
+        slot_group: PCB Measurements
+
+      PCB35:
+        rank: 39
+        slot_group: PCB Measurements
+
+      PCB36:
+        rank: 40
+        slot_group: PCB Measurements
+
+      PCB37:
+        rank: 41
+        slot_group: PCB Measurements
+
+      PCB38:
+        rank: 42
+        slot_group: PCB Measurements
+
+      PCB39:
+        rank: 43
+        slot_group: PCB Measurements
+
+      PCB40.71:
+        rank: 44
+        slot_group: PCB Measurements
+
+      PCB41:
+        rank: 45
+        slot_group: PCB Measurements
+
+      PCB42:
+        rank: 46
+        slot_group: PCB Measurements
+
+      PCB43:
+        rank: 47
+        slot_group: PCB Measurements
+
+      PCB44.47.65:
+        rank: 48
+        slot_group: PCB Measurements
+
+      PCB45:
+        rank: 49
+        slot_group: PCB Measurements
+
+      PCB46:
+        rank: 50
+        slot_group: PCB Measurements
+
+      PCB48:
+        rank: 51
+        slot_group: PCB Measurements
+
+      PCB49.69:
+        rank: 52
+        slot_group: PCB Measurements
+
+      PCB50.53:
+        rank: 53
+        slot_group: PCB Measurements
+
+      PCB51:
+        rank: 54
+        slot_group: PCB Measurements
+
+      PCB52:
+        rank: 55
+        slot_group: PCB Measurements
+
+      PCB54:
+        rank: 56
+        slot_group: PCB Measurements
+
+      PCB55:
+        rank: 57
+        slot_group: PCB Measurements
+
+      PCB56:
+        rank: 58
+        slot_group: PCB Measurements
+
+      PCB57:
+        rank: 59
+        slot_group: PCB Measurements
+
+      PCB58:
+        rank: 60
+        slot_group: PCB Measurements
+
+      PCB59.62.75:
+        rank: 61
+        slot_group: PCB Measurements
+
+      PCB60:
+        rank: 62
+        slot_group: PCB Measurements
+
+      PCB61.70.74.76:
+        rank: 63
+        slot_group: PCB Measurements
+
+      PCB63:
+        rank: 64
+        slot_group: PCB Measurements
+
+      PCB64:
+        rank: 65
+        slot_group: PCB Measurements
+
+      PCB66:
+        rank: 66
+        slot_group: PCB Measurements
+
+      PCB67:
+        rank: 67
+        slot_group: PCB Measurements
+
+      PCB68:
+        rank: 68
+        slot_group: PCB Measurements
+
+      PCB72:
+        rank: 69
+        slot_group: PCB Measurements
+
+      PCB73:
+        rank: 70
+        slot_group: PCB Measurements
+
+      PCB77:
+        rank: 71
+        slot_group: PCB Measurements
+
+      PCB78:
+        rank: 72
+        slot_group: PCB Measurements
+
+      PCB79:
+        rank: 73
+        slot_group: PCB Measurements
+
+      PCB80:
+        rank: 74
+        slot_group: PCB Measurements
+
+      PCB81:
+        rank: 75
+        slot_group: PCB Measurements
+
+      PCB82:
+        rank: 76
+        slot_group: PCB Measurements
+
+      PCB83:
+        rank: 77
+        slot_group: PCB Measurements
+
+      PCB84:
+        rank: 78
+        slot_group: PCB Measurements
+
+      PCB85.116:
+        rank: 79
+        slot_group: PCB Measurements
+
+      PCB86.97.109.119:
+        rank: 80
+        slot_group: PCB Measurements
+
+      PCB87.125:
+        rank: 81
+        slot_group: PCB Measurements
+
+      PCB88:
+        rank: 82
+        slot_group: PCB Measurements
+
+      PCB89:
+        rank: 83
+        slot_group: PCB Measurements
+
+      PCB90.101.113:
+        rank: 84
+        slot_group: PCB Measurements
+
+      PCB91:
+        rank: 85
+        slot_group: PCB Measurements
+
+      PCB92:
+        rank: 86
+        slot_group: PCB Measurements
+
+      PCB93.100:
+        rank: 87
+        slot_group: PCB Measurements
+
+      PCB94:
+        rank: 88
+        slot_group: PCB Measurements
+
+      PCB95:
+        rank: 89
+        slot_group: PCB Measurements
+
+      PCB96:
+        rank: 90
+        slot_group: PCB Measurements
+
+      PCB98:
+        rank: 91
+        slot_group: PCB Measurements
+
+      PCB99:
+        rank: 92
+        slot_group: PCB Measurements
+
+      PCB102:
+        rank: 93
+        slot_group: PCB Measurements
+
+      PCB103:
+        rank: 94
+        slot_group: PCB Measurements
+
+      PCB104:
+        rank: 95
+        slot_group: PCB Measurements
+
+      PCB105:
+        rank: 96
+        slot_group: PCB Measurements
+
+      PCB106:
+        rank: 97
+        slot_group: PCB Measurements
+
+      PCB107:
+        rank: 98
+        slot_group: PCB Measurements
+
+      PCB108.124:
+        rank: 99
+        slot_group: PCB Measurements
+
+      PCB110:
+        rank: 100
+        slot_group: PCB Measurements
+
+      PCB111:
+        rank: 101
+        slot_group: PCB Measurements
+
+      PCB112:
+        rank: 102
+        slot_group: PCB Measurements
+
+      PCB114:
+        rank: 103
+        slot_group: PCB Measurements
+
+      PCB115:
+        rank: 104
+        slot_group: PCB Measurements
+
+      PCB117:
+        rank: 105
+        slot_group: PCB Measurements
+
+      PCB118:
+        rank: 106
+        slot_group: PCB Measurements
+
+      PCB120:
+        rank: 107
+        slot_group: PCB Measurements
+
+      PCB121:
+        rank: 108
+        slot_group: PCB Measurements
+
+      PCB122:
+        rank: 109
+        slot_group: PCB Measurements
+
+      PCB123:
+        rank: 110
+        slot_group: PCB Measurements
+
+      PCB126:
+        rank: 111
+        slot_group: PCB Measurements
+
+      PCB127:
+        rank: 112
+        slot_group: PCB Measurements
+
+      PCB128.166:
+        rank: 113
+        slot_group: PCB Measurements
+
+      PCB129.138.163:
+        rank: 114
+        slot_group: PCB Measurements
+
+      PCB130:
+        rank: 115
+        slot_group: PCB Measurements
+
+      PCB131:
+        rank: 116
+        slot_group: PCB Measurements
+
+      PCB132:
+        rank: 117
+        slot_group: PCB Measurements
+
+      PCB133:
+        rank: 118
+        slot_group: PCB Measurements
+
+      PCB134:
+        rank: 119
+        slot_group: PCB Measurements
+
+      PCB135.151:
+        rank: 120
+        slot_group: PCB Measurements
+
+      PCB136:
+        rank: 121
+        slot_group: PCB Measurements
+
+      PCB137:
+        rank: 122
+        slot_group: PCB Measurements
+
+      PCB139.140:
+        rank: 123
+        slot_group: PCB Measurements
+
+      PCB141:
+        rank: 124
+        slot_group: PCB Measurements
+
+      PCB142:
+        rank: 125
+        slot_group: PCB Measurements
+
+      PCB143:
+        rank: 126
+        slot_group: PCB Measurements
+
+      PCB144:
+        rank: 127
+        slot_group: PCB Measurements
+
+      PCB145:
+        rank: 128
+        slot_group: PCB Measurements
+
+      PCB146:
+        rank: 129
+        slot_group: PCB Measurements
+
+      PCB147.149:
+        rank: 130
+        slot_group: PCB Measurements
+
+      PCB148:
+        rank: 131
+        slot_group: PCB Measurements
+
+      PCB150:
+        rank: 132
+        slot_group: PCB Measurements
+
+      PCB152:
+        rank: 133
+        slot_group: PCB Measurements
+
+      PCB153.168:
+        rank: 134
+        slot_group: PCB Measurements
+
+      PCB154:
+        rank: 135
+        slot_group: PCB Measurements
+
+      PCB155:
+        rank: 136
+        slot_group: PCB Measurements
+
+      PCB156.157:
+        rank: 137
+        slot_group: PCB Measurements
+
+      PCB158:
+        rank: 138
+        slot_group: PCB Measurements
+
+      PCB159:
+        rank: 139
+        slot_group: PCB Measurements
+
+      PCB160:
+        rank: 140
+        slot_group: PCB Measurements
+
+      PCB161:
+        rank: 141
+        slot_group: PCB Measurements
+
+      PCB162:
+        rank: 142
+        slot_group: PCB Measurements
+
+      PCB164:
+        rank: 143
+        slot_group: PCB Measurements
+
+      PCB165:
+        rank: 144
+        slot_group: PCB Measurements
+
+      PCB167:
+        rank: 145
+        slot_group: PCB Measurements
+
+      PCB169:
+        rank: 146
+        slot_group: PCB Measurements
+
+      PCB170:
+        rank: 147
+        slot_group: PCB Measurements
+
+      PCB171.173:
+        rank: 148
+        slot_group: PCB Measurements
+
+      PCB172:
+        rank: 149
+        slot_group: PCB Measurements
+
+      PCB174:
+        rank: 150
+        slot_group: PCB Measurements
+
+      PCB175:
+        rank: 151
+        slot_group: PCB Measurements
+
+      PCB176:
+        rank: 152
+        slot_group: PCB Measurements
+
+      PCB177:
+        rank: 153
+        slot_group: PCB Measurements
+
+      PCB178:
+        rank: 154
+        slot_group: PCB Measurements
+
+      PCB179:
+        rank: 155
+        slot_group: PCB Measurements
+
+      PCB180.193:
+        rank: 156
+        slot_group: PCB Measurements
+
+      PCB181:
+        rank: 157
+        slot_group: PCB Measurements
+
+      PCB182:
+        rank: 158
+        slot_group: PCB Measurements
+
+      PCB183:
+        rank: 159
+        slot_group: PCB Measurements
+
+      PCB184:
+        rank: 160
+        slot_group: PCB Measurements
+
+      PCB185:
+        rank: 161
+        slot_group: PCB Measurements
+
+      PCB186:
+        rank: 162
+        slot_group: PCB Measurements
+
+      PCB187:
+        rank: 163
+        slot_group: PCB Measurements
+
+      PCB188:
+        rank: 164
+        slot_group: PCB Measurements
+
+      PCB189:
+        rank: 165
+        slot_group: PCB Measurements
+
+      PCB190:
+        rank: 166
+        slot_group: PCB Measurements
+
+      PCB191:
+        rank: 167
+        slot_group: PCB Measurements
+
+      PCB192:
+        rank: 168
+        slot_group: PCB Measurements
+
+      PCB194:
+        rank: 169
+        slot_group: PCB Measurements
+
+      PCB195:
+        rank: 170
+        slot_group: PCB Measurements
+
+      PCB196:
+        rank: 171
+        slot_group: PCB Measurements
+
+      PCB197:
+        rank: 172
+        slot_group: PCB Measurements
+
+      PCB198.199:
+        rank: 173
+        slot_group: PCB Measurements
+
+      PCB200:
+        rank: 174
+        slot_group: PCB Measurements
+
+      PCB201:
+        rank: 175
+        slot_group: PCB Measurements
+
+      PCB202:
+        rank: 176
+        slot_group: PCB Measurements
+
+      PCB203:
+        rank: 177
+        slot_group: PCB Measurements
+
+      PCB205:
+        rank: 178
+        slot_group: PCB Measurements
+
+      PCB206:
+        rank: 179
+        slot_group: PCB Measurements
+
+      PCB207:
+        rank: 180
+        slot_group: PCB Measurements
+
+      PCB208:
+        rank: 181
+        slot_group: PCB Measurements
+
+      PCB209:
+        rank: 182
+        slot_group: PCB Measurements
+
+
   David_08_Dataset_NBH_SedimentPCBs:
     name: David_08_Dataset_NBH_SedimentPCBs
-    description: One row per sample (and congener if long-form)
+    description: PCB measurements from New Bedford Harbor sediment samples
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - location
       - latitude
@@ -1086,7 +4704,6 @@ classes:
       - PCB110
       - PCB111
       - PCB112
-      - PCB113
       - PCB114
       - PCB115
       - PCB117
@@ -1162,7 +4779,6 @@ classes:
       - PCB201
       - PCB202
       - PCB203
-      - PCB204
       - PCB205
       - PCB206
       - PCB207
@@ -1170,12 +4786,729 @@ classes:
       - PCB209
       - LCPCB
 
+    slot_usage:
+      location:
+        rank: 1
+        slot_group: Sample Metadata
+
+      latitude:
+        rank: 2
+        slot_group: Sample Metadata
+
+      longitude:
+        rank: 3
+        slot_group: Sample Metadata
+
+      replicate:
+        rank: 4
+        slot_group: Sample Metadata
+
+      tPCB:
+        rank: 5
+        slot_group: PCB Measurements
+
+      PCB1:
+        rank: 6
+        slot_group: PCB Measurements
+
+      PCB2:
+        rank: 7
+        slot_group: PCB Measurements
+
+      PCB3:
+        rank: 8
+        slot_group: PCB Measurements
+
+      PCB4:
+        rank: 9
+        slot_group: PCB Measurements
+
+      PCB5:
+        rank: 10
+        slot_group: PCB Measurements
+
+      PCB6:
+        rank: 11
+        slot_group: PCB Measurements
+
+      PCB7:
+        rank: 12
+        slot_group: PCB Measurements
+
+      PCB8:
+        rank: 13
+        slot_group: PCB Measurements
+
+      PCB9:
+        rank: 14
+        slot_group: PCB Measurements
+
+      PCB10:
+        rank: 15
+        slot_group: PCB Measurements
+
+      PCB11:
+        rank: 16
+        slot_group: PCB Measurements
+
+      PCB12.13:
+        rank: 17
+        slot_group: PCB Measurements
+
+      PCB14:
+        rank: 18
+        slot_group: PCB Measurements
+
+      PCB15:
+        rank: 19
+        slot_group: PCB Measurements
+
+      PCB16:
+        rank: 20
+        slot_group: PCB Measurements
+
+      PCB17:
+        rank: 21
+        slot_group: PCB Measurements
+
+      PCB18.30:
+        rank: 22
+        slot_group: PCB Measurements
+
+      PCB19:
+        rank: 23
+        slot_group: PCB Measurements
+
+      PCB20.28:
+        rank: 24
+        slot_group: PCB Measurements
+
+      PCB21.33:
+        rank: 25
+        slot_group: PCB Measurements
+
+      PCB22:
+        rank: 26
+        slot_group: PCB Measurements
+
+      PCB23:
+        rank: 27
+        slot_group: PCB Measurements
+
+      PCB24:
+        rank: 28
+        slot_group: PCB Measurements
+
+      PCB25:
+        rank: 29
+        slot_group: PCB Measurements
+
+      PCB26.29:
+        rank: 30
+        slot_group: PCB Measurements
+
+      PCB27:
+        rank: 31
+        slot_group: PCB Measurements
+
+      PCB31:
+        rank: 32
+        slot_group: PCB Measurements
+
+      PCB32:
+        rank: 33
+        slot_group: PCB Measurements
+
+      PCB34:
+        rank: 34
+        slot_group: PCB Measurements
+
+      PCB35:
+        rank: 35
+        slot_group: PCB Measurements
+
+      PCB36:
+        rank: 36
+        slot_group: PCB Measurements
+
+      PCB37:
+        rank: 37
+        slot_group: PCB Measurements
+
+      PCB38:
+        rank: 38
+        slot_group: PCB Measurements
+
+      PCB39:
+        rank: 39
+        slot_group: PCB Measurements
+
+      PCB40.71:
+        rank: 40
+        slot_group: PCB Measurements
+
+      PCB41:
+        rank: 41
+        slot_group: PCB Measurements
+
+      PCB42:
+        rank: 42
+        slot_group: PCB Measurements
+
+      PCB43:
+        rank: 43
+        slot_group: PCB Measurements
+
+      PCB44.47.65:
+        rank: 44
+        slot_group: PCB Measurements
+
+      PCB45:
+        rank: 45
+        slot_group: PCB Measurements
+
+      PCB46:
+        rank: 46
+        slot_group: PCB Measurements
+
+      PCB48:
+        rank: 47
+        slot_group: PCB Measurements
+
+      PCB49.69:
+        rank: 48
+        slot_group: PCB Measurements
+
+      PCB50.53:
+        rank: 49
+        slot_group: PCB Measurements
+
+      PCB51:
+        rank: 50
+        slot_group: PCB Measurements
+
+      PCB52:
+        rank: 51
+        slot_group: PCB Measurements
+
+      PCB54:
+        rank: 52
+        slot_group: PCB Measurements
+
+      PCB55:
+        rank: 53
+        slot_group: PCB Measurements
+
+      PCB56:
+        rank: 54
+        slot_group: PCB Measurements
+
+      PCB57:
+        rank: 55
+        slot_group: PCB Measurements
+
+      PCB58:
+        rank: 56
+        slot_group: PCB Measurements
+
+      PCB59.62.75:
+        rank: 57
+        slot_group: PCB Measurements
+
+      PCB60:
+        rank: 58
+        slot_group: PCB Measurements
+
+      PCB61.70.74.76:
+        rank: 59
+        slot_group: PCB Measurements
+
+      PCB63:
+        rank: 60
+        slot_group: PCB Measurements
+
+      PCB64:
+        rank: 61
+        slot_group: PCB Measurements
+
+      PCB66:
+        rank: 62
+        slot_group: PCB Measurements
+
+      PCB67:
+        rank: 63
+        slot_group: PCB Measurements
+
+      PCB68:
+        rank: 64
+        slot_group: PCB Measurements
+
+      PCB72:
+        rank: 65
+        slot_group: PCB Measurements
+
+      PCB73:
+        rank: 66
+        slot_group: PCB Measurements
+
+      PCB77:
+        rank: 67
+        slot_group: PCB Measurements
+
+      PCB78:
+        rank: 68
+        slot_group: PCB Measurements
+
+      PCB79:
+        rank: 69
+        slot_group: PCB Measurements
+
+      PCB80:
+        rank: 70
+        slot_group: PCB Measurements
+
+      PCB81:
+        rank: 71
+        slot_group: PCB Measurements
+
+      PCB82:
+        rank: 72
+        slot_group: PCB Measurements
+
+      PCB83:
+        rank: 73
+        slot_group: PCB Measurements
+
+      PCB84:
+        rank: 74
+        slot_group: PCB Measurements
+
+      PCB85.116:
+        rank: 75
+        slot_group: PCB Measurements
+
+      PCB86.97.109.119:
+        rank: 76
+        slot_group: PCB Measurements
+
+      PCB87.125:
+        rank: 77
+        slot_group: PCB Measurements
+
+      PCB88:
+        rank: 78
+        slot_group: PCB Measurements
+
+      PCB89:
+        rank: 79
+        slot_group: PCB Measurements
+
+      PCB90.101.113:
+        rank: 80
+        slot_group: PCB Measurements
+
+      PCB91:
+        rank: 81
+        slot_group: PCB Measurements
+
+      PCB92:
+        rank: 82
+        slot_group: PCB Measurements
+
+      PCB93.100:
+        rank: 83
+        slot_group: PCB Measurements
+
+      PCB94:
+        rank: 84
+        slot_group: PCB Measurements
+
+      PCB95:
+        rank: 85
+        slot_group: PCB Measurements
+
+      PCB96:
+        rank: 86
+        slot_group: PCB Measurements
+
+      PCB98:
+        rank: 87
+        slot_group: PCB Measurements
+
+      PCB99:
+        rank: 88
+        slot_group: PCB Measurements
+
+      PCB102:
+        rank: 89
+        slot_group: PCB Measurements
+
+      PCB103:
+        rank: 90
+        slot_group: PCB Measurements
+
+      PCB104:
+        rank: 91
+        slot_group: PCB Measurements
+
+      PCB105:
+        rank: 92
+        slot_group: PCB Measurements
+
+      PCB106:
+        rank: 93
+        slot_group: PCB Measurements
+
+      PCB107:
+        rank: 94
+        slot_group: PCB Measurements
+
+      PCB108.124:
+        rank: 95
+        slot_group: PCB Measurements
+
+      PCB110:
+        rank: 96
+        slot_group: PCB Measurements
+
+      PCB111:
+        rank: 97
+        slot_group: PCB Measurements
+
+      PCB112:
+        rank: 98
+        slot_group: PCB Measurements
+
+      PCB114:
+        rank: 99
+        slot_group: PCB Measurements
+
+      PCB115:
+        rank: 100
+        slot_group: PCB Measurements
+
+      PCB117:
+        rank: 101
+        slot_group: PCB Measurements
+
+      PCB118:
+        rank: 102
+        slot_group: PCB Measurements
+
+      PCB120:
+        rank: 103
+        slot_group: PCB Measurements
+
+      PCB121:
+        rank: 104
+        slot_group: PCB Measurements
+
+      PCB122:
+        rank: 105
+        slot_group: PCB Measurements
+
+      PCB123:
+        rank: 106
+        slot_group: PCB Measurements
+
+      PCB126:
+        rank: 107
+        slot_group: PCB Measurements
+
+      PCB127:
+        rank: 108
+        slot_group: PCB Measurements
+
+      PCB128.166:
+        rank: 109
+        slot_group: PCB Measurements
+
+      PCB129.138.163:
+        rank: 110
+        slot_group: PCB Measurements
+
+      PCB130:
+        rank: 111
+        slot_group: PCB Measurements
+
+      PCB131:
+        rank: 112
+        slot_group: PCB Measurements
+
+      PCB132:
+        rank: 113
+        slot_group: PCB Measurements
+
+      PCB133:
+        rank: 114
+        slot_group: PCB Measurements
+
+      PCB134:
+        rank: 115
+        slot_group: PCB Measurements
+
+      PCB135.151:
+        rank: 116
+        slot_group: PCB Measurements
+
+      PCB136:
+        rank: 117
+        slot_group: PCB Measurements
+
+      PCB137:
+        rank: 118
+        slot_group: PCB Measurements
+
+      PCB139.140:
+        rank: 119
+        slot_group: PCB Measurements
+
+      PCB141:
+        rank: 120
+        slot_group: PCB Measurements
+
+      PCB142:
+        rank: 121
+        slot_group: PCB Measurements
+
+      PCB143:
+        rank: 122
+        slot_group: PCB Measurements
+
+      PCB144:
+        rank: 123
+        slot_group: PCB Measurements
+
+      PCB145:
+        rank: 124
+        slot_group: PCB Measurements
+
+      PCB146:
+        rank: 125
+        slot_group: PCB Measurements
+
+      PCB147.149:
+        rank: 126
+        slot_group: PCB Measurements
+
+      PCB148:
+        rank: 127
+        slot_group: PCB Measurements
+
+      PCB150:
+        rank: 128
+        slot_group: PCB Measurements
+
+      PCB152:
+        rank: 129
+        slot_group: PCB Measurements
+
+      PCB153.168:
+        rank: 130
+        slot_group: PCB Measurements
+
+      PCB154:
+        rank: 131
+        slot_group: PCB Measurements
+
+      PCB155:
+        rank: 132
+        slot_group: PCB Measurements
+
+      PCB156.157:
+        rank: 133
+        slot_group: PCB Measurements
+
+      PCB158:
+        rank: 134
+        slot_group: PCB Measurements
+
+      PCB159:
+        rank: 135
+        slot_group: PCB Measurements
+
+      PCB160:
+        rank: 136
+        slot_group: PCB Measurements
+
+      PCB161:
+        rank: 137
+        slot_group: PCB Measurements
+
+      PCB162:
+        rank: 138
+        slot_group: PCB Measurements
+
+      PCB164:
+        rank: 139
+        slot_group: PCB Measurements
+
+      PCB165:
+        rank: 140
+        slot_group: PCB Measurements
+
+      PCB167:
+        rank: 141
+        slot_group: PCB Measurements
+
+      PCB169:
+        rank: 142
+        slot_group: PCB Measurements
+
+      PCB170:
+        rank: 143
+        slot_group: PCB Measurements
+
+      PCB171.173:
+        rank: 144
+        slot_group: PCB Measurements
+
+      PCB172:
+        rank: 145
+        slot_group: PCB Measurements
+
+      PCB174:
+        rank: 146
+        slot_group: PCB Measurements
+
+      PCB175:
+        rank: 147
+        slot_group: PCB Measurements
+
+      PCB176:
+        rank: 148
+        slot_group: PCB Measurements
+
+      PCB177:
+        rank: 149
+        slot_group: PCB Measurements
+
+      PCB178:
+        rank: 150
+        slot_group: PCB Measurements
+
+      PCB179:
+        rank: 151
+        slot_group: PCB Measurements
+
+      PCB180.193:
+        rank: 152
+        slot_group: PCB Measurements
+
+      PCB181:
+        rank: 153
+        slot_group: PCB Measurements
+
+      PCB182:
+        rank: 154
+        slot_group: PCB Measurements
+
+      PCB183:
+        rank: 155
+        slot_group: PCB Measurements
+
+      PCB184:
+        rank: 156
+        slot_group: PCB Measurements
+
+      PCB185:
+        rank: 157
+        slot_group: PCB Measurements
+
+      PCB186:
+        rank: 158
+        slot_group: PCB Measurements
+
+      PCB187:
+        rank: 159
+        slot_group: PCB Measurements
+
+      PCB188:
+        rank: 160
+        slot_group: PCB Measurements
+
+      PCB189:
+        rank: 161
+        slot_group: PCB Measurements
+
+      PCB190:
+        rank: 162
+        slot_group: PCB Measurements
+
+      PCB191:
+        rank: 163
+        slot_group: PCB Measurements
+
+      PCB192:
+        rank: 164
+        slot_group: PCB Measurements
+
+      PCB194:
+        rank: 165
+        slot_group: PCB Measurements
+
+      PCB195:
+        rank: 166
+        slot_group: PCB Measurements
+
+      PCB196:
+        rank: 167
+        slot_group: PCB Measurements
+
+      PCB197:
+        rank: 168
+        slot_group: PCB Measurements
+
+      PCB198.199:
+        rank: 169
+        slot_group: PCB Measurements
+
+      PCB200:
+        rank: 170
+        slot_group: PCB Measurements
+
+      PCB201:
+        rank: 171
+        slot_group: PCB Measurements
+
+      PCB202:
+        rank: 172
+        slot_group: PCB Measurements
+
+      PCB203:
+        rank: 173
+        slot_group: PCB Measurements
+
+      PCB205:
+        rank: 174
+        slot_group: PCB Measurements
+
+      PCB206:
+        rank: 175
+        slot_group: PCB Measurements
+
+      PCB207:
+        rank: 176
+        slot_group: PCB Measurements
+
+      PCB208:
+        rank: 177
+        slot_group: PCB Measurements
+
+      PCB209:
+        rank: 178
+        slot_group: PCB Measurements
+
+      LCPCB:
+        rank: 179
+        slot_group: PCB Measurements
+
 
   David_09_RT-qPCR_data:
     name: David_09_RT-qPCR_data
-    description: One row per sample (and congener if long-form)
+    description: RT-qPCR measurements and associated sample metadata
     is_a: dh_interface
-    tree_root: true
+    tree_root: false
     slots:
       - sample_id
       - experimental_replicate
@@ -1187,92 +5520,178 @@ classes:
       - units
       - DNA
       - cDNA
-    unique_keys:
-      sample_key:
-        unique_key_name: sample_key
-        unique_key_slots: [sample_id]
+
+    slot_usage:
+      sample_id:
+        rank: 1
+        slot_group: Sample Metadata
+
+      experimental_replicate:
+        rank: 2
+        slot_group: Sample Metadata
+
+      technical_replicate:
+        rank: 3
+        slot_group: Sample Metadata
+
+      experiment:
+        rank: 4
+        slot_group: Sample Metadata
+
+      percent_biochar:
+        rank: 5
+        slot_group: Sample Metadata
+
+      time:
+        rank: 6
+        slot_group: Sample Metadata
+
+      group:
+        rank: 7
+        slot_group: Sample Metadata
+
+      units:
+        rank: 8
+        slot_group: Sample Metadata
+
+      DNA:
+        rank: 9
+        slot_group: qPCR Measurements
+
+      cDNA:
+        rank: 10
+        slot_group: qPCR Measurements
+
 
 slots:
   sample_id:
     name: sample_id
-    title: sample_id
+    title: sample ID
     description: >-
       Unique identifier for each sample.
-    range: SampleIDMenu
+    range: WhitespaceMinimizedString
+    identifier: true
     required: true
+    comments: unique identifier
+    examples:
+      - value: d0_1
+      - value: d11_BC_1
+      - value: d11_ctrl
   
   sample_medium:
     name: sample_medium
-    title: sample_medium
+    title: sample medium
     description: >-
       Type of sampling medium used for sample collection.
-      Options include PUF and SPME.
-      Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.
-    range: SampleMediumMenu
-    required: false
+    comments: Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.
+    range: Sample medium option
+    required: true
+    examples:
+      - value: PUF
+      - value: SPME
   
   units:
     name: units
     title: units
     description: >-
       Measurement units associated with the sample result.
-      Options include ng/PUF and ng/cm.
-    range: UnitsMenu
-    required: false
+    range: Units option
+    required: true
+    comments: specify the measurement unit
+    examples:
+      - value: ng/PUF
+      - value: ng/cm
+      - value: copies/g biochar
+      - value: copies/g sediment
 
   experiment:
     name: experiment
     title: experiment
     description: >-
       Experiment category or experiment name associated with the sample. 
-      Denotes which experiment each sample belongs to; Altavista Shaken (AVL_S), Altavista Non-Shaken (AVL_NS), or New Bedford Non-Shaken (NBH_NS)
-    range: ExperimentMenu
-    required: false
+    comments: >-
+      Denotes which experiment each sample belongs to.
+    examples:
+      - value: biochar_percentage
+      - value: biochar_timeseries
+    range: Experiment option
+    required: true
 
   percent_biochar:
     name: percent_biochar
-    title: percent_biochar
+    title: percent biochar
     description: >-
       Percentage of biochar used in the experiment. 
-      Example values include 0, 1.5, 5, and 10.
+    comments: >-
       Percentage of biochar added to sediment microcosms by weight (10 g sediment)
-    range: PercentBiocharMenu
-    required: false
+    examples:
+      - value: "0"
+      - value: "1.5"
+      - value: "5"
+
+    range: float
+    required: true
 
   time:
     name: time
     title: time
     description: >-
-      Experiment duration or sampling time.
-      Example value shown is 90.
-    range: TimeMenu
-    required: false
+      Experiment duration or sampling time (days).
+    comments: >-
+      Time point associated with sample collection.
+    examples:
+      - value: "0"
+      - value: "11"
+      - value: "90"
+    range: integer
+    required: true
 
   group:
     name: group
     title: group
     description: >-
       Experimental treatment group associated with the sample.
+    comments: >-
       Describes whether a sample is a control without addition of P. xenovorans LB400 biofilms on biochar or a treatment with LB400 added
-    range: GroupMenu
-    required: false
+    examples:
+      - value: Control
+      - value: Treatment
+    range: Group option
+    required: true
   
   replicate:
     name: replicate
     title: replicate
     description: Denotes which replicate belongs to each sample (1 to 4)
-    range: ReplicateMenu
-    required: false
+    comments: >-
+      Denotes which replicate belongs to each sample.
+    examples:
+      - value: "1"
+      - value: "2"
+      - value: "3"
+      - value: "4"
+    range: Replicate option
+    required: true
 
 
   tPCB:
     name: tPCB
     title: tPCB
     description: Total PCBs, sum of all 209 PCB congeners
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+    - value: "0.011354"
+    - value: ND
+    - value: NA
+
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
     annotations:
       unit:
@@ -1283,10 +5702,19 @@ slots:
     name: LCPCB
     title: LCPCB
     description: Sum of mono-, di-, and tri-chlorinated congeners (1..39)
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+    - value: "0.011354"
+    - value: ND
+    - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
     annotations:
       unit:
@@ -1295,1794 +5723,3481 @@ slots:
 
   blank_id:
     name: blank_id
-    title: blank sample id
+    title: blank ID
     description: >-
       Sample number for each blank used to calculate LOQ (B1..B22). 
-      Provides the sample number for each blank sample used to calculate the limit of quantification.
-    range: BlankMenu
-    required: false
+    comments: >-
+      Blank sample identifiers used to calculate the limit of quantification.
+    examples:
+      - value: B1
+      - value: B2
+      - value: B11
+      
+    range: Blank option
+    required: true
 
   PCB1:
     name: PCB1
-    title: "PCB1"
-    description: pcb congener 1
+    title: PCB1
+    description: >-
+      Concentration or mass measurement for PCB congener 1.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB2:
     name: PCB2
-    title: "PCB2"
-    description: pcb congener 2
+    title: PCB2
+    description: >-
+      Concentration or mass measurement for PCB congener 2.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB3:
     name: PCB3
-    title: "PCB3"
-    description: pcb congener 3
+    title: PCB3
+    description: >-
+      Concentration or mass measurement for PCB congener 3.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB4:
     name: PCB4
-    title: "PCB4"
-    description: pcb congener 4
+    title: PCB4
+    description: >-
+      Concentration or mass measurement for PCB congener 4.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB5:
     name: PCB5
-    title: "PCB5"
-    description: pcb congener 5
+    title: PCB5
+    description: >-
+      Concentration or mass measurement for PCB congener 5.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB6:
     name: PCB6
-    title: "PCB6"
-    description: pcb congener 6
+    title: PCB6
+    description: >-
+      Concentration or mass measurement for PCB congener 6.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB7:
     name: PCB7
-    title: "PCB7"
-    description: pcb congener 7
+    title: PCB7
+    description: >-
+      Concentration or mass measurement for PCB congener 7.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB8:
     name: PCB8
-    title: "PCB8"
-    description: pcb congener 8
+    title: PCB8
+    description: >-
+      Concentration or mass measurement for PCB congener 8.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB9:
     name: PCB9
-    title: "PCB9"
-    description: pcb congener 9
+    title: PCB9
+    description: >-
+      Concentration or mass measurement for PCB congener 9.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB10:
     name: PCB10
-    title: "PCB10"
-    description: pcb congener 10
+    title: PCB10
+    description: >-
+      Concentration or mass measurement for PCB congener 10.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB11:
     name: PCB11
-    title: "PCB11"
-    description: pcb congener 11
+    title: PCB11
+    description: >-
+      Concentration or mass measurement for PCB congener 11.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB12.13:
     name: PCB12.13
-    title: "PCB12.13"
-    description: mass of individual or coeluting PCB congeners accumulated in 12,13
+    title: PCB12.13
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 12 and 13.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
-  PCB13:
-    name: PCB13
-    title: "PCB13"
-    description: pcb congener 13
-    any_of:
-      - range: NullValueMenu
-      - range: float
-    required: false
-    minimum_value: 0
 
   PCB14:
     name: PCB14
-    title: "PCB14"
-    description: pcb congener 14
+    title: PCB14
+    description: >-
+      Concentration or mass measurement for PCB congener 14.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB15:
     name: PCB15
-    title: "PCB15"
-    description: pcb congener 15
+    title: PCB15
+    description: >-
+      Concentration or mass measurement for PCB congener 15.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB16:
     name: PCB16
-    title: "PCB16"
-    description: pcb congener 16
+    title: PCB16
+    description: >-
+      Concentration or mass measurement for PCB congener 16.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB17:
     name: PCB17
-    title: "PCB17"
-    description: pcb congener 17
+    title: PCB17
+    description: >-
+      Concentration or mass measurement for PCB congener 17.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB18.30:
     name: PCB18.30
-    title: "PCB18.30"
-    description: pcb congener 18,30
+    title: PCB18.30
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 18 and 30.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB19:
     name: PCB19
-    title: "PCB19"
-    description: pcb congener 19
+    title: PCB19
+    description: >-
+      Concentration or mass measurement for PCB congener 19.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB20.28:
     name: PCB20.28
-    title: "PCB20.28"
-    description: pcb congener 20,28
+    title: PCB20.28
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 20 and 28.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB21.33:
     name: PCB21.33
-    title: "PCB21.33"
-    description: mass of individual or coeluting PCB congeners accumulated in 21,33
+    title: PCB21.33
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 21 and 33.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB22:
     name: PCB22
-    title: "PCB22"
-    description: pcb congener 22
+    title: PCB22
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 22.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB23:
     name: PCB23
-    title: "PCB23"
-    description: pcb congener 23
+    title: PCB23
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 23.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB24:
     name: PCB24
-    title: "PCB24"
-    description: pcb congener 24
+    title: PCB24
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 24.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB25:
     name: PCB25
-    title: "PCB25"
-    description: pcb congener 25
+    title: PCB25
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 25.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB26.29:
     name: PCB26.29
-    title: "PCB26.29"
-    description: pcb congener 26
+    title: PCB26.29
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 26 and 29.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB27:
     name: PCB27
-    title: "PCB27"
-    description: pcb congener 27
+    title: PCB27
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 27.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
 
   PCB31:
     name: PCB31
-    title: "PCB31"
-    description: pcb congener 31
+    title: PCB31
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 31.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.011354"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB32:
     name: PCB32
-    title: "PCB32"
-    description: pcb congener 32
+    title: PCB32
+    description: >-
+      Concentration or mass measurement for PCB congener 32.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.032"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
-    minimum_value: 0
-
-  PCB33:
-    name: PCB33
-    title: "PCB33"
-    description: pcb congener 33
-    any_of:
-      - range: NullValueMenu
-      - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB34:
     name: PCB34
-    title: "PCB34"
-    description: pcb congener 34
+    title: PCB34
+    description: >-
+      Concentration or mass measurement for PCB congener 34.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.034"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB35:
     name: PCB35
-    title: "PCB35"
-    description: pcb congener 35
+    title: PCB35
+    description: >-
+      Concentration or mass measurement for PCB congener 35.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.035"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB36:
     name: PCB36
-    title: "PCB36"
-    description: pcb congener 36
+    title: PCB36
+    description: >-
+      Concentration or mass measurement for PCB congener 36.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.036"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB37:
     name: PCB37
-    title: "PCB37"
-    description: pcb congener 37
+    title: PCB37
+    description: >-
+      Concentration or mass measurement for PCB congener 37.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.037"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB38:
     name: PCB38
-    title: "PCB38"
-    description: pcb congener 38
+    title: PCB38
+    description: >-
+      Concentration or mass measurement for PCB congener 38.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.038"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB39:
     name: PCB39
-    title: "PCB39"
-    description: pcb congener 39
+    title: PCB39
+    description: >-
+      Concentration or mass measurement for PCB congener 39.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.039"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB40.71:
     name: PCB40.71
-    title: "PCB40.71"
-    description: mass of individual or coeluting PCB congeners accumulated in 40, 71
+    title: PCB40.71
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 40, 71.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.040071"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB41:
     name: PCB41
-    title: "PCB41"
-    description: pcb congener 41
+    title: PCB41
+    description: >-
+      Concentration or mass measurement for PCB congener 41.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.041"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB42:
     name: PCB42
-    title: "PCB42"
-    description: pcb congener 42
+    title: PCB42
+    description: >-
+      Concentration or mass measurement for PCB congener 42.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.042"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB43:
     name: PCB43
-    title: "PCB43"
-    description: pcb congener 43
+    title: PCB43
+    description: >-
+      Concentration or mass measurement for PCB congener 43.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.043"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB44.47.65:
     name: PCB44.47.65
-    title: "PCB44.47.65"
-    description: pcb congener 44, 47, 65
+    title: PCB44.47.65
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 44, 47, 65.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.044047"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB45:
     name: PCB45
-    title: "PCB45"
-    description: pcb congener 45
+    title: PCB45
+    description: >-
+      Concentration or mass measurement for PCB congener 45.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.045"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB46:
     name: PCB46
-    title: "PCB46"
-    description: pcb congener 46
+    title: PCB46
+    description: >-
+      Concentration or mass measurement for PCB congener 46.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.046"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB48:
     name: PCB48
-    title: "PCB48"
-    description: pcb congener 48
+    title: PCB48
+    description: >-
+      Concentration or mass measurement for PCB congener 48.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.048"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB49.69:
     name: PCB49.69
-    title: "PCB49"
-    description: pcb congener 49,69
+    title: PCB49.69
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 49, 69.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.049069"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB50.53:
     name: PCB50.53
-    title: "PCB50.53"
-    description: pcb congener 50, 53
+    title: PCB50.53
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 50, 53.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.050053"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB51:
     name: PCB51
-    title: "PCB51"
-    description: pcb congener 51
+    title: PCB51
+    description: >-
+      Concentration or mass measurement for PCB congener 51.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.051"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB52:
     name: PCB52
-    title: "PCB52"
-    description: pcb congener 52
+    title: PCB52
+    description: >-
+      Concentration or mass measurement for PCB congener 52.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.052"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB54:
     name: PCB54
-    title: "PCB54"
-    description: pcb congener 54
+    title: PCB54
+    description: >-
+      Concentration or mass measurement for PCB congener 54.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.054"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB55:
     name: PCB55
-    title: "PCB55"
-    description: pcb congener 55
+    title: PCB55
+    description: >-
+      Concentration or mass measurement for PCB congener 55.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.055"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB56:
     name: PCB56
-    title: "PCB56"
-    description: pcb congener 56
+    title: PCB56
+    description: >-
+      Concentration or mass measurement for PCB congener 56.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.056"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB57:
     name: PCB57
-    title: "PCB57"
-    description: pcb congener 57
+    title: PCB57
+    description: >-
+      Concentration or mass measurement for PCB congener 57.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.057"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB58:
     name: PCB58
-    title: "PCB58"
-    description: pcb congener 58
+    title: PCB58
+    description: >-
+      Concentration or mass measurement for PCB congener 58.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.058"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB59.62.75:
     name: PCB59.62.75
-    title: "PCB59.62.75"
-    description: pcb congener 59, 62, 75
+    title: PCB59.62.75
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 59, 62, 75.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.059062"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB60:
     name: PCB60
-    title: "PCB60"
-    description: pcb congener 60
+    title: PCB60
+    description: >-
+      Concentration or mass measurement for PCB congener 60.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.060"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB61.70.74.76:
     name: PCB61.70.74.76
-    title: "PCB61.70.74.76"
-    description: pcb congener 61, 70, 74, 76
+    title: PCB61.70.74.76
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 61, 70, 74, 76.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.061070"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB63:
     name: PCB63
-    title: "PCB63"
-    description: pcb congener 63
+    title: PCB63
+    description: >-
+      Concentration or mass measurement for PCB congener 63.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.063"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB64:
     name: PCB64
-    title: "PCB64"
-    description: pcb congener 64
+    title: PCB64
+    description: >-
+      Concentration or mass measurement for PCB congener 64.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.064"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB66:
     name: PCB66
-    title: "PCB66"
-    description: pcb congener 66
+    title: PCB66
+    description: >-
+      Concentration or mass measurement for PCB congener 66.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.066"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB67:
     name: PCB67
-    title: "PCB67"
-    description: pcb congener 67
+    title: PCB67
+    description: >-
+      Concentration or mass measurement for PCB congener 67.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.067"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB68:
     name: PCB68
-    title: "PCB68"
-    description: pcb congener 68
+    title: PCB68
+    description: >-
+      Concentration or mass measurement for PCB congener 68.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.068"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB72:
     name: PCB72
-    title: "PCB72"
-    description: pcb congener 72
+    title: PCB72
+    description: >-
+      Concentration or mass measurement for PCB congener 72.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.072"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB73:
     name: PCB73
-    title: "PCB73"
-    description: pcb congener 73
+    title: PCB73
+    description: >-
+      Concentration or mass measurement for PCB congener 73.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.073"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB77:
     name: PCB77
-    title: "PCB77"
-    description: pcb congener 77
+    title: PCB77
+    description: >-
+      Concentration or mass measurement for PCB congener 77.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.077"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB78:
     name: PCB78
-    title: "PCB78"
-    description: pcb congener 78
+    title: PCB78
+    description: >-
+      Concentration or mass measurement for PCB congener 78.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.078"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB79:
     name: PCB79
-    title: "PCB79"
-    description: pcb congener 79
+    title: PCB79
+    description: >-
+      Concentration or mass measurement for PCB congener 79.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.079"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB80:
     name: PCB80
-    title: "PCB80"
-    description: pcb congener 80
+    title: PCB80
+    description: >-
+      Concentration or mass measurement for PCB congener 80.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.080"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB81:
     name: PCB81
-    title: "PCB81"
-    description: pcb congener 81
+    title: PCB81
+    description: >-
+      Concentration or mass measurement for PCB congener 81.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.081"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB82:
     name: PCB82
-    title: "PCB82"
-    description: pcb congener 82
+    title: PCB82
+    description: >-
+      Concentration or mass measurement for PCB congener 82.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.082"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
-    minimum_value: 0
-
-  PCB83:
-    name: PCB83
-    title: "PCB83"
-    description: pcb congener 83
-    any_of:
-      - range: NullValueMenu
-      - range: float
-    required: false
-    minimum_value: 0
-
-  PCB84:
-    name: PCB84
-    title: "PCB84"
-    description: pcb congener 84
-    any_of:
-      - range: NullValueMenu
-      - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB85.116:
     name: PCB85.116
-    title: "PCB85.116"
-    description: pcb congener 85, 116
+    title: PCB85.116
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 85, 116.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.085116"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB86.97.109.119:
     name: PCB86.97.109.119
-    title: "PCB86.97.109.119"
-    description: pcb congener 86, 97, 109, 119
+    title: PCB86.97.109.119
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 86, 97, 109, 119.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.086097"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB87.125:
     name: PCB87.125
-    title: "PCB87.125"
-    description: pcb congener 87, 125
+    title: PCB87.125
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 87, 125.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.087125"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB88:
     name: PCB88
-    title: "PCB88"
-    description: pcb congener 88
+    title: PCB88
+    description: >-
+      Concentration or mass measurement for PCB congener 88.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.088"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB89:
     name: PCB89
-    title: "PCB89"
-    description: pcb congener 89
+    title: PCB89
+    description: >-
+      Concentration or mass measurement for PCB congener 89.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.089"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB90.101.113:
     name: PCB90.101.113
-    title: "PCB90.101.113"
-    description: pcb congener 90, 101, 113
+    title: PCB90.101.113
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 90, 101, 113.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.090101"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB91:
     name: PCB91
-    title: "PCB91"
-    description: pcb congener 91
+    title: PCB91
+    description: >-
+      Concentration or mass measurement for PCB congener 91.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.091"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB92:
     name: PCB92
-    title: "PCB92"
-    description: pcb congener 92
+    title: PCB92
+    description: >-
+      Concentration or mass measurement for PCB congener 92.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.092"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB93.100:
     name: PCB93.100
-    title: "PCB93.100"
-    description: pcb congener 93, 100
+    title: PCB93.100
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 93, 100.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.093100"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB94:
     name: PCB94
-    title: "PCB94"
-    description: pcb congener 94
+    title: PCB94
+    description: >-
+      Concentration or mass measurement for PCB congener 94.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.094"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB95:
     name: PCB95
-    title: "PCB95"
-    description: pcb congener 95
+    title: PCB95
+    description: >-
+      Concentration or mass measurement for PCB congener 95.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.095"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB96:
     name: PCB96
-    title: "PCB96"
-    description: pcb congener 96
+    title: PCB96
+    description: >-
+      Concentration or mass measurement for PCB congener 96.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.096"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB98:
     name: PCB98
-    title: "PCB98"
-    description: pcb congener 98
+    title: PCB98
+    description: >-
+      Concentration or mass measurement for PCB congener 98.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.098"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB99:
     name: PCB99
-    title: "PCB99"
-    description: pcb congener 99
+    title: PCB99
+    description: >-
+      Concentration or mass measurement for PCB congener 99.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.099"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB102:
     name: PCB102
-    title: "PCB102"
-    description: pcb congener 102
+    title: PCB102
+    description: >-
+      Concentration or mass measurement for PCB congener 102.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.102"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB103:
     name: PCB103
-    title: "PCB103"
-    description: pcb congener 103
+    title: PCB103
+    description: >-
+      Concentration or mass measurement for PCB congener 103.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.103"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB104:
     name: PCB104
-    title: "PCB104"
-    description: pcb congener 104
+    title: PCB104
+    description: >-
+      Concentration or mass measurement for PCB congener 104.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.104"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB105:
     name: PCB105
-    title: "PCB105"
-    description: pcb congener 105
+    title: PCB105
+    description: >-
+      Concentration or mass measurement for PCB congener 105.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.105"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB106:
     name: PCB106
-    title: "PCB106"
-    description: pcb congener 106
+    title: PCB106
+    description: >-
+      Concentration or mass measurement for PCB congener 106.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.106"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB107:
     name: PCB107
-    title: "PCB107"
-    description: pcb congener 107
+    title: PCB107
+    description: >-
+      Concentration or mass measurement for PCB congener 107.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.107"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB108.124:
     name: PCB108.124
-    title: "PCB108.124"
-    description: pcb congener 108, 124
+    title: PCB108.124
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 108, 124.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.108124"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB110:
     name: PCB110
-    title: "PCB110"
-    description: pcb congener 110
+    title: PCB110
+    description: >-
+      Concentration or mass measurement for PCB congener 110.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.110"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB111:
     name: PCB111
-    title: "PCB111"
-    description: pcb congener 111
+    title: PCB111
+    description: >-
+      Concentration or mass measurement for PCB congener 111.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.111"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB112:
     name: PCB112
-    title: "PCB112"
-    description: pcb congener 112
+    title: PCB112
+    description: >-
+      Concentration or mass measurement for PCB congener 112.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.112"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB113:
     name: PCB113
-    title: "PCB113"
-    description: pcb congener 113
+    title: PCB113
+    description: >-
+      Concentration or mass measurement for PCB congener 113.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.113"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB114:
     name: PCB114
-    title: "PCB114"
-    description: pcb congener 114
+    title: PCB114
+    description: >-
+      Concentration or mass measurement for PCB congener 114.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.114"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB115:
     name: PCB115
-    title: "PCB115"
-    description: pcb congener 115
+    title: PCB115
+    description: >-
+      Concentration or mass measurement for PCB congener 115.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.115"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB117:
     name: PCB117
-    title: "PCB117"
-    description: pcb congener 117
+    title: PCB117
+    description: >-
+      Concentration or mass measurement for PCB congener 117.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.117"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB118:
     name: PCB118
-    title: "PCB118"
-    description: pcb congener 118
+    title: PCB118
+    description: >-
+      Concentration or mass measurement for PCB congener 118.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.118"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB120:
     name: PCB120
-    title: "PCB120"
-    description: pcb congener 120
+    title: PCB120
+    description: >-
+      Concentration or mass measurement for PCB congener 120.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.120"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB121:
     name: PCB121
-    title: "PCB121"
-    description: pcb congener 121
+    title: PCB121
+    description: >-
+      Concentration or mass measurement for PCB congener 121.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.121"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB122:
     name: PCB122
-    title: "PCB122"
-    description: pcb congener 122
+    title: PCB122
+    description: >-
+      Concentration or mass measurement for PCB congener 122.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.122"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB123:
     name: PCB123
-    title: "PCB123"
-    description: pcb congener 123
+    title: PCB123
+    description: >-
+      Concentration or mass measurement for PCB congener 123.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.123"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB126:
     name: PCB126
-    title: "PCB126"
-    description: pcb congener 126
+    title: PCB126
+    description: >-
+      Concentration or mass measurement for PCB congener 126.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.126"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB127:
     name: PCB127
-    title: "PCB127"
-    description: pcb congener 127
+    title: PCB127
+    description: >-
+      Concentration or mass measurement for PCB congener 127.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.127"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB128.166:
     name: PCB128.166
-    title: "PCB128.166"
-    description: pcb congener 128, 166
+    title: PCB128.166
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 128, 166.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.128166"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB129.138.163:
     name: PCB129.138.163
-    title: "PCB129.138.163"
-    description: pcb congener 129.138.163
+    title: PCB129.138.163
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 129, 138, 163.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.129138"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB130:
     name: PCB130
-    title: "PCB130"
-    description: pcb congener 130
+    title: PCB130
+    description: >-
+      Concentration or mass measurement for PCB congener 130.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.130"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB131:
     name: PCB131
-    title: "PCB131"
-    description: pcb congener 131
+    title: PCB131
+    description: >-
+      Concentration or mass measurement for PCB congener 131.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.131"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB132:
     name: PCB132
-    title: "PCB132"
-    description: pcb congener 132
+    title: PCB132
+    description: >-
+      Concentration or mass measurement for PCB congener 132.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.132"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB133:
     name: PCB133
-    title: "PCB133"
-    description: pcb congener 133
+    title: PCB133
+    description: >-
+      Concentration or mass measurement for PCB congener 133.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.133"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB134:
     name: PCB134
-    title: "PCB134"
-    description: pcb congener 134
+    title: PCB134
+    description: >-
+      Concentration or mass measurement for PCB congener 134.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.134"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB135.151:
     name: PCB135.151
-    title: "PCB135.151"
-    description: pcb congener 135, 151
+    title: PCB135.151
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 135, 151.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.135151"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB136:
     name: PCB136
-    title: "PCB136"
-    description: pcb congener 136
+    title: PCB136
+    description: >-
+      Concentration or mass measurement for PCB congener 136.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.136"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB137:
     name: PCB137
-    title: "PCB137"
-    description: pcb congener 137
+    title: PCB137
+    description: >-
+      Concentration or mass measurement for PCB congener 137.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.137"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB139.140:
     name: PCB139.140
-    title: "PCB139.140"
-    description: pcb congener 139, 140
+    title: PCB139.140
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 139, 140.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.139140"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB141:
     name: PCB141
-    title: "PCB141"
-    description: pcb congener 141
+    title: PCB141
+    description: >-
+      Concentration or mass measurement for PCB congener 141.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.141"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB142:
     name: PCB142
-    title: "PCB142"
-    description: pcb congener 142
+    title: PCB142
+    description: >-
+      Concentration or mass measurement for PCB congener 142.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.142"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB143:
     name: PCB143
-    title: "PCB143"
-    description: pcb congener 143
+    title: PCB143
+    description: >-
+      Concentration or mass measurement for PCB congener 143.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.143"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB144:
     name: PCB144
-    title: "PCB144"
-    description: pcb congener 144
+    title: PCB144
+    description: >-
+      Concentration or mass measurement for PCB congener 144.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.144"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB145:
     name: PCB145
-    title: "PCB145"
-    description: pcb congener 145
+    title: PCB145
+    description: >-
+      Concentration or mass measurement for PCB congener 145.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.145"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB146:
     name: PCB146
-    title: "PCB146"
-    description: pcb congener 146
+    title: PCB146
+    description: >-
+      Concentration or mass measurement for PCB congener 146.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.146"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB147.149:
     name: PCB147.149
-    title: "PCB147.149"
-    description: pcb congener 147, 149
+    title: PCB147.149
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 147, 149.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.147149"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB148:
     name: PCB148
-    title: "PCB148"
-    description: pcb congener 148
+    title: PCB148
+    description: >-
+      Concentration or mass measurement for PCB congener 148.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.148"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB150:
     name: PCB150
-    title: "PCB150"
-    description: pcb congener 150
+    title: PCB150
+    description: >-
+      Concentration or mass measurement for PCB congener 150.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.150"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB152:
     name: PCB152
-    title: "PCB152"
-    description: pcb congener 152
+    title: PCB152
+    description: >-
+      Concentration or mass measurement for PCB congener 152.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.152"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB153.168:
     name: PCB153.168
-    title: "PCB153.168"
-    description: pcb congener 153, 168
+    title: PCB153.168
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 153, 168.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.153168"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB154:
     name: PCB154
-    title: "PCB154"
-    description: pcb congener 154
+    title: PCB154
+    description: >-
+      Concentration or mass measurement for PCB congener 154.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.154"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB155:
     name: PCB155
-    title: "PCB155"
-    description: pcb congener 155
+    title: PCB155
+    description: >-
+      Concentration or mass measurement for PCB congener 155.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.155"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB156.157:
     name: PCB156.157
-    title: "PCB156.157"
-    description: pcb congener 156, 157
+    title: PCB156.157
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 156, 157.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.156157"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB158:
     name: PCB158
-    title: "PCB158"
-    description: pcb congener 158
+    title: PCB158
+    description: >-
+      Concentration or mass measurement for PCB congener 158.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.158"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB159:
     name: PCB159
-    title: "PCB159"
-    description: pcb congener 159
+    title: PCB159
+    description: >-
+      Concentration or mass measurement for PCB congener 159.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.159"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB160:
     name: PCB160
-    title: "PCB160"
-    description: pcb congener 160
+    title: PCB160
+    description: >-
+      Concentration or mass measurement for PCB congener 160.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.160"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB161:
     name: PCB161
-    title: "PCB161"
-    description: pcb congener 161
+    title: PCB161
+    description: >-
+      Concentration or mass measurement for PCB congener 161.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.161"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB162:
     name: PCB162
-    title: "PCB162"
-    description: pcb congener 162
+    title: PCB162
+    description: >-
+      Concentration or mass measurement for PCB congener 162.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.162"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB164:
     name: PCB164
-    title: "PCB164"
-    description: pcb congener 164
+    title: PCB164
+    description: >-
+      Concentration or mass measurement for PCB congener 164.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.164"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB165:
     name: PCB165
-    title: "PCB165"
-    description: pcb congener 165
+    title: PCB165
+    description: >-
+      Concentration or mass measurement for PCB congener 165.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.165"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB167:
     name: PCB167
-    title: "PCB167"
-    description: pcb congener 167
+    title: PCB167
+    description: >-
+      Concentration or mass measurement for PCB congener 167.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.167"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB169:
     name: PCB169
-    title: "PCB169"
-    description: pcb congener 169
+    title: PCB169
+    description: >-
+      Concentration or mass measurement for PCB congener 169.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.169"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB170:
     name: PCB170
-    title: "PCB170"
-    description: pcb congener 170
+    title: PCB170
+    description: >-
+      Concentration or mass measurement for PCB congener 170.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.170"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB171.173:
     name: PCB171.173
-    title: "PCB171.173"
-    description: pcb congener 171, 173
+    title: PCB171.173
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 171, 173.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.171173"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB172:
     name: PCB172
-    title: "PCB172"
-    description: pcb congener 172
+    title: PCB172
+    description: >-
+      Concentration or mass measurement for PCB congener 172.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.172"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB174:
     name: PCB174
-    title: "PCB174"
-    description: pcb congener 174
+    title: PCB174
+    description: >-
+      Concentration or mass measurement for PCB congener 174.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.174"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB175:
     name: PCB175
-    title: "PCB175"
-    description: pcb congener 175
+    title: PCB175
+    description: >-
+      Concentration or mass measurement for PCB congener 175.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.175"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB176:
     name: PCB176
-    title: "PCB176"
-    description: pcb congener 176
+    title: PCB176
+    description: >-
+      Concentration or mass measurement for PCB congener 176.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.176"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB177:
     name: PCB177
-    title: "PCB177"
-    description: pcb congener 177
+    title: PCB177
+    description: >-
+      Concentration or mass measurement for PCB congener 177.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.177"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB178:
     name: PCB178
-    title: "PCB178"
-    description: pcb congener 178
+    title: PCB178
+    description: >-
+      Concentration or mass measurement for PCB congener 178.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.178"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB179:
     name: PCB179
-    title: "PCB179"
-    description: pcb congener 179
+    title: PCB179
+    description: >-
+      Concentration or mass measurement for PCB congener 179.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.179"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB180.193:
     name: PCB180.193
-    title: "PCB180.193"
-    description: mass of individual or coeluting PCB congeners accumulated in XXX
+    title: PCB180.193
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 180, 193.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.180193"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB181:
     name: PCB181
-    title: "PCB181"
-    description: pcb congener 181
+    title: PCB181
+    description: >-
+      Concentration or mass measurement for PCB congener 181.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.181"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB182:
     name: PCB182
-    title: "PCB182"
-    description: pcb congener 182
+    title: PCB182
+    description: >-
+      Concentration or mass measurement for PCB congener 182.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.182"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB183:
     name: PCB183
-    title: "PCB183"
-    description: pcb congener 183
+    title: PCB183
+    description: >-
+      Concentration or mass measurement for PCB congener 183.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.183"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB184:
     name: PCB184
-    title: "PCB184"
-    description: pcb congener 184
+    title: PCB184
+    description: >-
+      Concentration or mass measurement for PCB congener 184.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.184"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB185:
     name: PCB185
-    title: "PCB185"
-    description: pcb congener 185
+    title: PCB185
+    description: >-
+      Concentration or mass measurement for PCB congener 185.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.185"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB186:
     name: PCB186
-    title: "PCB186"
-    description: pcb congener 186
+    title: PCB186
+    description: >-
+      Concentration or mass measurement for PCB congener 186.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.186"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB187:
     name: PCB187
-    title: "PCB187"
-    description: pcb congener 187
+    title: PCB187
+    description: >-
+      Concentration or mass measurement for PCB congener 187.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.187"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB188:
     name: PCB188
-    title: "PCB188"
-    description: pcb congener 188
+    title: PCB188
+    description: >-
+      Concentration or mass measurement for PCB congener 188.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.188"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB189:
     name: PCB189
-    title: "PCB189"
-    description: pcb congener 189
+    title: PCB189
+    description: >-
+      Concentration or mass measurement for PCB congener 189.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.189"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB190:
     name: PCB190
-    title: "PCB190"
-    description: pcb congener 190
+    title: PCB190
+    description: >-
+      Concentration or mass measurement for PCB congener 190.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.190"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB191:
     name: PCB191
-    title: "PCB191"
-    description: pcb congener 191
+    title: PCB191
+    description: >-
+      Concentration or mass measurement for PCB congener 191.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.191"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB192:
     name: PCB192
-    title: "PCB192"
-    description: pcb congener 192
+    title: PCB192
+    description: >-
+      Concentration or mass measurement for PCB congener 192.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.192"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
-
 
   PCB194:
     name: PCB194
-    title: "PCB194"
-    description: pcb congener 194
+    title: PCB194
+    description: >-
+      Concentration or mass measurement for PCB congener 194.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.194"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB195:
     name: PCB195
-    title: "PCB195"
-    description: pcb congener 195
+    title: PCB195
+    description: >-
+      Concentration or mass measurement for PCB congener 195.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.195"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB196:
     name: PCB196
-    title: "PCB196"
-    description: pcb congener 196
+    title: PCB196
+    description: >-
+      Concentration or mass measurement for PCB congener 196.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.196"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB197:
     name: PCB197
-    title: "PCB197"
-    description: pcb congener 197
+    title: PCB197
+    description: >-
+      Concentration or mass measurement for PCB congener 197.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.197"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB198.199:
     name: PCB198.199
-    title: "PCB198.199"
-    description: mass of individual or coeluting PCB congeners accumulated in 198,199
+    title: PCB198.199
+    description: >-
+      Concentration or mass measurement for coeluting PCB congeners 198, 199.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.198199"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB200:
     name: PCB200
-    title: "PCB200"
-    description: pcb congener 200
+    title: PCB200
+    description: >-
+      Concentration or mass measurement for PCB congener 200.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.200"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB201:
     name: PCB201
-    title: "PCB201"
-    description: pcb congener 201
+    title: PCB201
+    description: >-
+      Concentration or mass measurement for PCB congener 201.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.201"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB202:
     name: PCB202
-    title: "PCB202"
-    description: pcb congener 202
+    title: PCB202
+    description: >-
+      Concentration or mass measurement for PCB congener 202.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.202"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB203:
     name: PCB203
-    title: "PCB203"
-    description: pcb congener 203
+    title: PCB203
+    description: >-
+      Concentration or mass measurement for PCB congener 203.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.203"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB204:
     name: PCB204
-    title: "PCB204"
-    description: pcb congener 204
+    title: PCB204
+    description: >-
+      Concentration or mass measurement for PCB congener 204.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.204"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB205:
     name: PCB205
-    title: "PCB205"
-    description: pcb congener 205
+    title: PCB205
+    description: >-
+      Concentration or mass measurement for PCB congener 205.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.205"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB206:
     name: PCB206
-    title: "PCB206"
-    description: pcb congener 206
+    title: PCB206
+    description: >-
+      Concentration or mass measurement for PCB congener 206.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.206"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB207:
     name: PCB207
-    title: "PCB207"
-    description: pcb congener 207
+    title: PCB207
+    description: >-
+      Concentration or mass measurement for PCB congener 207.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.207"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB208:
     name: PCB208
-    title: "PCB208"
-    description: pcb congener 208
+    title: PCB208
+    description: >-
+      Concentration or mass measurement for PCB congener 208.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.208"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
 
   PCB209:
     name: PCB209
-    title: "PCB209"
-    description: pcb congener 209
+    title: PCB209
+    description: >-
+      Concentration or mass measurement for PCB congener 209.
+    comments: >-
+      Numeric value expected.
+      Special values:
+      NA = missing value.
+      ND = below the limit of quantification (LOQ).
+    examples:
+      - value: "0.209"
+      - value: ND
+      - value: NA
     any_of:
       - range: NullValueMenu
       - range: float
-    required: false
+    required: true
     minimum_value: 0
+
 
   
   location:
@@ -3090,64 +9205,100 @@ slots:
     title: location
     description: >-
       Sampling location identifier associated with the environmental sample.
-      Example locations include INT_218, INT_222, WS229, and WS229.
+    comments: >-
       Location of collection of sediment samples from New Bedford Harbor.
-    range: LocationMenu
+    examples:
+      - value: INT_218
+      - value: INT_222
+      - value: WS229
+    range: string
     required: true
 
   latitude:
     name: latitude
     title: latitude
     description: >-
-      Latitude coordinate of the sampling location in degrees, minutes,
-      and seconds format.
-    range: LatitudeMenu
+      Latitude coordinate of the sampling location in degrees, minutes,and seconds format.
+    comments: >-
+      Latitude of the sediment sampling location.
+    examples:
+      - value: 41°40'15"N
+      - value: 41°40'12"N
+      - value: 41°40'17"N
+    range: string
     required: true
 
   longitude:
     name: longitude
     title: longitude
     description: >-
-      Longitude coordinate of the sampling location in degrees, minutes,
-      and seconds format.
-    range: LongitudeMenu
+      Longitude coordinate of the sampling location in degrees, minutes,and seconds format.
+    comments: >-
+      Longitude of the sediment sampling location.
+    examples:
+      - value: 70°55'08"W
+      - value: 70°55'09"W
+      - value: 70°55'04"W
+    range: string
     required: true
 
   experimental_replicate:
     name: experimental_replicate
-    title: experimental_replicate
+    title: experimental replicate
     description: Denotes which experimental replicate belongs to each sample.
-    range: ExperimentalReplicateMenu
-    required: false
+    comments: >-
+      Denotes the biological or experimental replicate.
+    examples:
+      - value: "1"
+      - value: "2"
+      - value: "3"
+    range: Experimental replicate option
+    required: true
 
   technical_replicate:
     name: technical_replicate
-    title: technical_replicate
-    description: Denotes which technical replicate belongs to each sample.
+    title: technical replicate
+    description: >-
+      Denotes which technical replicate belongs to each sample.
     range: TechnicalReplicateMenu
-    required: false
-
+    required: true
+    comments: >-
+      Denotes the technical replicate for qPCR measurement.
+    examples:
+      - value: "1"
+      - value: "2"
 
   DNA:
     name: DNA
     title: DNA
-    description: DNA abundance measured by RT-qPCR.
-       Copies of the Biphenyl Dioxygenase Subunit A gene used in the aerobic PCB biodegradation process; measured using RT-qPCR.
+    description: >-
+      DNA abundance measured by RT-qPCR.    
+    comments: >-
+      Copies of the Biphenyl Dioxygenase Subunit A gene used in the aerobic PCB biodegradation process; measured using RT-qPCR.
+    examples:
+      - value: "68002995"
+      - value: "2730.247"
+      - value: "NA"
     any_of:
       - range: NullValueMenu
-      - range: float
-    required: false
+      - range: string
+    required: true
     minimum_value: 0
 
   cDNA:
     name: cDNA
     title: cDNA
     description: cDNA abundance measured by RT-qPCR.
+      
+    comments: >-
       Expression of the Biphenyl Dioxygenase Subunit A gene used in the aerobic PCB biodegradation process; measured using RT-qPCR.
+    examples:
+      - value: "74491397"
+      - value: "1.32E+08"
     any_of:
       - range: NullValueMenu
-      - range: float
-    required: false
+      - range: string
+    required: true
     minimum_value: 0
 
 
@@ -3155,47 +9306,50 @@ slots:
 # Enumerations
 enums:
 
-  SampleMediumMenu:
+  Sample medium option:
+    name: Sample medium option
+    title: sample medium option
     permissible_values:
       PUF: {}
       SPME: {}
 
-  UnitsMenu:
+  Units option:
+    title: unit option
     permissible_values:
-      ng/PUF: {}
-      ng/cm: {}
-      copies/g biochar: {}
-      copies/g sediment: {}
+      ng/PUF: 
+         title: ng per PUF 
+         description: nanograms of PCB measured per polyurethane foam (PUF) passive sampler.   
+      ng/cm:
+          title: ng per cm
+          description: nanograms of PCB measured per centimeter of SPME fiber.
+      copies/g biochar:
+          title: copies per gram biochar
+          description: quantitative PCR measurement expressed as gene copies per gram of biochar.
+      copies/g sediment:
+          title: copies per gram sediment
+          description: quantitative PCR measurement expressed as gene copies per gram of sediment.
 
-  ExperimentMenu:
+
+  Experiment option:
+    name: Experiment option
+    title: experiment option
     permissible_values:
       biochar_percentage: {}
       biochar_timeseries: {}
 
-  PercentBiocharMenu:
-    permissible_values:
-      "0": {}
-      "1.5": {}
-      "5": {}
-      "10": {}
 
-  TimeMenu:
-    permissible_values:
-      "90": {}
-      "11": {}
-      "25": {}
-      "60": {}
-      "120": {}
 
-  GroupMenu:
-    name: GroupMenu
+  Group option:
+    name: Group option
+    title: group option
     description: Treatment group
     permissible_values:
       control: {}
       treatment: {}
 
-  ReplicateMenu:
-    name: ReplicateMenu
+  Replicate option:
+    name: Replicate option
+    title: replicate option
     description: Replicate numbers 1..4
     permissible_values:
       "1": {}
@@ -3212,65 +9366,21 @@ enums:
       ND: 
         description: limit of quantification
 
-  LocationMenu:
-    permissible_values:
-      INT_218: {}
-      INT_222: {}
-      WS229: {}
-
-  LatitudeMenu:
-    permissible_values:
-      "41°40'15\"N": {}
-      "41°40'12\"N": {}
-      "41°40'17\"N": {}
-
-  LongitudeMenu:
-    permissible_values:
-      "70°55'08\"W": {}
-      "70°55'09\"W": {}
-      "70°55'04\"W": {}
-
-
-  ExperimentalReplicateMenu:
-    name: ExperimentalReplicateMenu
+  Experimental replicate option:
+    name: Experimental replicate option
+    title: experimental replicate option
     description: Experimental replicate numbers
     permissible_values:
       "1": {}
       "2": {}
       "3": {}
 
-  TechnicalReplicateMenu:
-    name: TechnicalReplicateMenu
+  Technical replicate option:
+    name: Technical replicate option
+    title: technical replicate option
     description: Technical replicate numbers
     permissible_values:
       "1": {}
       "2": {}
 
 
-
-  BlankMenu:
-    name: BlankMenu
-    description: Blank IDs B1..B22
-    permissible_values:
-      B1: {}
-      B2: {}
-      B3: {}
-      B4: {}
-      B5: {}
-      B6: {}
-      B7: {}
-      B8: {}
-      B9: {}
-      B10: {}
-      B11: {}
-      B12: {}
-      B13: {}
-      B14: {}
-      B15: {}
-      B16: {}
-      B17: {}
-      B18: {}
-      B19: {}
-      B20: {}
-      B21: {}
-      B22: {}
