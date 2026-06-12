@@ -1,0 +1,13 @@
+title	name	text	meaning	menu_1	menu_2	menu_3	menu_4	menu_5	description
+									
+sample type option	sample_type_option			emission					Indicates the type of sampler used for sample collection.
+				air					Indicates the type of sampler used for sample collection.
+				lab blank					Indicates the type of sampler used for sample collection.
+				field blank					Indicates the type of sampler used for sample collection.
+									
+value option	value_option			1					The sampling round associated with each sample for a school.
+				2					The sampling round associated with each sample for a school.
+				3					The sampling round associated with each sample for a school.
+									
+null value	null_value_option	missing		NA					missing value
+		limit of quantification		ND					limit of quantification

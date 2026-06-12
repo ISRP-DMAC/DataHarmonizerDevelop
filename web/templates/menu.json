@@ -55,12 +55,12 @@
     "templates": {
       "raw_mass": {
         "name": "raw mass",
-        "display": false,
+        "display": true,
         "version": "1.0.0"
       },
       "sediment": {
         "name": "sediment",
-        "display": false,
+        "display": true,
         "version": "1.0.0"
       }
 
@@ -75,15 +75,21 @@
 
     "version": "1.0.0", 
 
-    "templates": { 
+    "templates": {
+      "David_03_rawPCBmass_PUF": {
+        "name": "David_03_rawPCBmass_PUF",
+        "display": true
 
-      "Project1": { 
+      },
+      "David_04_rawPCBmass_SPME": {
+        "name": "David_04_rawPCBmass_SPME",
+        "display": true  
 
-        "name": "Project1", 
-
-        "display": false 
-
-      } 
+      },
+      "David_05_Dataset_rawBlankmass": {
+        "name": "David_05_Dataset_rawBlankmass",
+        "display": true  
+      }
     } 
   },
    "Project3": {
@@ -91,9 +97,19 @@
     "id": "https://example.com/Project3",
     "version": "1.0.0",
     "templates": {
-      "Project3": {
-        "name": "Project3",
-        "display": false
+      "Jason_emissions": {
+        "name": "Jason_emissions",
+        "display": true
+
+      },
+      "Jason_concentrations": {
+        "name": "Jason_concentrations",
+        "display": true  
+
+      },
+      "Jason_sampleType": {
+        "name": "Jason_sampletype",
+        "display": true  
       }
     }
   }

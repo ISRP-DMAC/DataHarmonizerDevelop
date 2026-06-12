@@ -1,0 +1,62 @@
+id: https://example.com/Project3
+name: Project3
+description: isrp project
+version: 1.0.0
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+classes:
+  dh_interface:
+    name: dh_interface
+    description: A DataHarmonizer interface
+    from_schema: https://example.com/Project3
+  Jason_emissions:
+    name: Jason_emissions
+    title: emissions
+    description: Emissions for each emission sample in ng m-2 d-1 for individual PCB congeners or co-eluting congeners. 
+    is_a: dh_interface
+    see_also: null
+    annotations:
+      version: 1.0.0 
+  
+  Jason_concentrations:
+    name: Jason_concentrations
+    title: concentrations
+    description: Concentrations for each air sample in ng m-3 for individual PCB congeners or co-eluting congeners. 
+    is_a: dh_interface
+    see_also: null
+    annotations:
+      version: 1.0.0
+  
+  Jason_sampleType:
+    name: Jason_sampleType
+    title: sampleType
+    description: Location and material descriptions for each sample.
+    is_a: dh_interface
+    see_also: null
+    annotations:
+      version: 1.0.0
+
+slots: {}
+enums: {}
+
+types:
+  WhitespaceMinimizedString:
+    name: 'WhitespaceMinimizedString'
+    typeof: string
+    description: 'A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).'
+    base: str
+    uri: xsd:token
+  Provenance:
+    name: 'Provenance'
+    typeof: string
+    description: 'A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.'
+    base: str
+    uri: xsd:token
+settings:
+  Title_Case: "(((?<=\\b)[^a-z\\W]\\w*?|[\\W])+)"
+  UPPER_CASE: "[A-Z\\W\\d_]*"
+  lower_case: "[a-z\\W\\d_]*"

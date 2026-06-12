@@ -3308,6 +3308,78 @@
         }
       ]
     },
+    "PCB83": {
+      "name": "PCB83",
+      "description": "Concentration or mass measurement for PCB congener 83.",
+      "title": "PCB83",
+      "comments": [
+        "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+      ],
+      "examples": [
+        {
+          "value": "0.083"
+        },
+        {
+          "value": "ND"
+        },
+        {
+          "value": "NA"
+        }
+      ],
+      "from_schema": "https://example.org/Project5",
+      "domain_of": [
+        "David_03_rawPCBmass_PUF",
+        "David_04_rawPCBmass_SPME",
+        "David_05_Dataset_rawBlankmass",
+        "David_06_final_PCBmass_PUF",
+        "David_07_final_PCBmass_SPME",
+        "David_08_Dataset_NBH_SedimentPCBs"
+      ],
+      "required": true,
+      "minimum_value": 0,
+      "any_of": [
+        {
+          "range": "NullValueMenu"
+        },
+        {
+          "range": "float"
+        }
+      ]
+    },
+    "PCB84": {
+      "name": "PCB84",
+      "description": "Concentration or mass measurement for PCB congener 84.",
+      "title": "PCB84",
+      "comments": [
+        "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+      ],
+      "examples": [
+        {
+          "value": "0.083"
+        },
+        {
+          "value": "ND"
+        },
+        {
+          "value": "NA"
+        }
+      ],
+      "from_schema": "https://example.org/Project5",
+      "domain_of": [
+        "David_03_rawPCBmass_PUF",
+        "David_04_rawPCBmass_SPME"
+      ],
+      "required": true,
+      "minimum_value": 0,
+      "any_of": [
+        {
+          "range": "NullValueMenu"
+        },
+        {
+          "range": "float"
+        }
+      ]
+    },
     "PCB85.116": {
       "name": "PCB85.116",
       "description": "Concentration or mass measurement for coeluting PCB congeners 85, 116.",
@@ -11591,6 +11663,86 @@
             "David_06_final_PCBmass_PUF",
             "David_07_final_PCBmass_SPME",
             "David_08_Dataset_NBH_SedimentPCBs"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
+        "PCB83": {
+          "name": "PCB83",
+          "description": "Concentration or mass measurement for PCB congener 83.",
+          "title": "PCB83",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 78,
+          "alias": "PCB83",
+          "owner": "David_03_rawPCBmass_PUF",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME",
+            "David_05_Dataset_rawBlankmass",
+            "David_06_final_PCBmass_PUF",
+            "David_07_final_PCBmass_SPME",
+            "David_08_Dataset_NBH_SedimentPCBs"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
+        "PCB84": {
+          "name": "PCB84",
+          "description": "Concentration or mass measurement for PCB congener 84.",
+          "title": "PCB84",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 79,
+          "alias": "PCB84",
+          "owner": "David_03_rawPCBmass_PUF",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME"
           ],
           "slot_group": "PCB Measurements",
           "required": true,
@@ -20031,6 +20183,86 @@
             }
           ]
         },
+        "PCB83": {
+          "name": "PCB83",
+          "description": "Concentration or mass measurement for PCB congener 83.",
+          "title": "PCB83",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 77,
+          "alias": "PCB83",
+          "owner": "David_04_rawPCBmass_SPME",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME",
+            "David_05_Dataset_rawBlankmass",
+            "David_06_final_PCBmass_PUF",
+            "David_07_final_PCBmass_SPME",
+            "David_08_Dataset_NBH_SedimentPCBs"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
+        "PCB84": {
+          "name": "PCB84",
+          "description": "Concentration or mass measurement for PCB congener 84.",
+          "title": "PCB84",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 78,
+          "alias": "PCB84",
+          "owner": "David_04_rawPCBmass_SPME",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
         "PCB85.116": {
           "name": "PCB85.116",
           "description": "Concentration or mass measurement for coeluting PCB congeners 85, 116.",
@@ -28232,6 +28464,48 @@
           "from_schema": "https://example.org/Project5",
           "rank": 71,
           "alias": "PCB82",
+          "owner": "David_05_Dataset_rawBlankmass",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME",
+            "David_05_Dataset_rawBlankmass",
+            "David_06_final_PCBmass_PUF",
+            "David_07_final_PCBmass_SPME",
+            "David_08_Dataset_NBH_SedimentPCBs"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
+        "PCB83": {
+          "name": "PCB83",
+          "description": "Concentration or mass measurement for PCB congener 83.",
+          "title": "PCB83",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 72,
+          "alias": "PCB83",
           "owner": "David_05_Dataset_rawBlankmass",
           "domain_of": [
             "David_03_rawPCBmass_PUF",
@@ -36688,6 +36962,48 @@
             }
           ]
         },
+        "PCB83": {
+          "name": "PCB83",
+          "description": "Concentration or mass measurement for PCB congener 83.",
+          "title": "PCB83",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 77,
+          "alias": "PCB83",
+          "owner": "David_06_final_PCBmass_PUF",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME",
+            "David_05_Dataset_rawBlankmass",
+            "David_06_final_PCBmass_PUF",
+            "David_07_final_PCBmass_SPME",
+            "David_08_Dataset_NBH_SedimentPCBs"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
         "PCB85.116": {
           "name": "PCB85.116",
           "description": "Concentration or mass measurement for coeluting PCB congeners 85, 116.",
@@ -45115,6 +45431,48 @@
             }
           ]
         },
+        "PCB83": {
+          "name": "PCB83",
+          "description": "Concentration or mass measurement for PCB congener 83.",
+          "title": "PCB83",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 77,
+          "alias": "PCB83",
+          "owner": "David_07_final_PCBmass_SPME",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME",
+            "David_05_Dataset_rawBlankmass",
+            "David_06_final_PCBmass_PUF",
+            "David_07_final_PCBmass_SPME",
+            "David_08_Dataset_NBH_SedimentPCBs"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
         "PCB85.116": {
           "name": "PCB85.116",
           "description": "Concentration or mass measurement for coeluting PCB congeners 85, 116.",
@@ -53353,6 +53711,48 @@
           "from_schema": "https://example.org/Project5",
           "rank": 72,
           "alias": "PCB82",
+          "owner": "David_08_Dataset_NBH_SedimentPCBs",
+          "domain_of": [
+            "David_03_rawPCBmass_PUF",
+            "David_04_rawPCBmass_SPME",
+            "David_05_Dataset_rawBlankmass",
+            "David_06_final_PCBmass_PUF",
+            "David_07_final_PCBmass_SPME",
+            "David_08_Dataset_NBH_SedimentPCBs"
+          ],
+          "slot_group": "PCB Measurements",
+          "required": true,
+          "minimum_value": 0,
+          "any_of": [
+            {
+              "range": "NullValueMenu"
+            },
+            {
+              "range": "float"
+            }
+          ]
+        },
+        "PCB83": {
+          "name": "PCB83",
+          "description": "Concentration or mass measurement for PCB congener 83.",
+          "title": "PCB83",
+          "comments": [
+            "Numeric value expected. Special values: NA = missing value. ND = below the limit of quantification (LOQ)."
+          ],
+          "examples": [
+            {
+              "value": "0.083"
+            },
+            {
+              "value": "ND"
+            },
+            {
+              "value": "NA"
+            }
+          ],
+          "from_schema": "https://example.org/Project5",
+          "rank": 73,
+          "alias": "PCB83",
           "owner": "David_08_Dataset_NBH_SedimentPCBs",
           "domain_of": [
             "David_03_rawPCBmass_PUF",

@@ -1,0 +1,255 @@
+﻿sample_id,sample_type,room_id,materials,school_id,sampling_round,remediation,sampling_start_date,sampling_end_date,remediation_method
+S620,Air,Utility,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S648,Air,D611,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S649,Air,D611,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S652,Emissions,D611,Mastic,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S669,Emissions,D611,CMU Wall,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S671,Emissions,D611,Carpet,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S650,Air,D611,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S651,Emissions,D611,Mastic,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S653,Emissions,D611,Mastic,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S660,Emissions,Utility,Fireproof Coating,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S661,Emissions,Utility,CMU Wall,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S662,Air,Utility,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S663,Air,Utility,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S664,Air,Utility,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S624,Air,Gym,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S626,Air,Gym,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S632,Emissions,Gym,Steel Beam,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S622,Emissions,Gym,CMU Wall,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S623,Emissions,Gym,Fireproof Coating,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S633,Emissions,Gym,Steel Beam,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S635,Air,Gym,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S667,Emissions,Gym,Rubber Floor,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S627,Emissions,Gym,Fireproof Coating,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S628,Emissions,Gym,Fireproof Coating,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S629,Emissions,Gym,CMU Wall,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S630,Emissions,Gym,Steel Beam,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S634,Air,Gym,Air,SCH A,1,Before,10/21/2023,11/17/2023,NA
+S670,Field Blank,D611,Blank,SCH A,1,Before,4/17/2025,5/16/2025,NA
+S631,Field Blank,Utility,Blank,SCH A,1,Before,4/17/2025,5/16/2025,NA
+S665,Field Blank,Utility,Blank,SCH A,1,Before,4/17/2025,5/16/2025,NA
+S625,Field Blank,Gym,Blank,SCH A,1,Before,4/17/2025,5/16/2025,NA
+S686,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S688,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S687,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S689,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S690,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S691,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S692,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S693,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S694,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S696,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S697,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S698,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S699,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S700,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S701,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S684,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S685,Lab Blank,uiLab,Blank,SCH A,1,Before,NA,NA,NA
+S818,Emissions,Gym,Steel Column,SCH A,2,After,4/17/2025,5/16/2025,srcRmEncap
+S819,Emissions,Gym,Steel Column,SCH A,2,After,4/17/2025,5/16/2025,srcRmEncap
+S820,Emissions,Gym,Steel Column,SCH A,2,After,4/17/2025,5/16/2025,srcRmEncap
+S821,Emissions,Gym,CMU Wall,SCH A,2,After,4/17/2025,5/16/2025,surfaceRm
+S822,Emissions,Gym,CMU Wall,SCH A,2,After,4/17/2025,5/16/2025,surfaceRm
+S814,Emissions,Utility,Steel Column,SCH A,2,After,4/17/2025,5/16/2025,srcRmEncap
+S816,Emissions,Utility,Steel Column,SCH A,2,After,4/17/2025,5/16/2025,srcRmEncap
+S817,Emissions,Utility,Steel Column,SCH A,2,After,4/17/2025,5/16/2025,srcRmEncap
+S792,Air,Utility,Air,SCH A,2,After,4/17/2025,5/16/2025,NA
+S778,Emissions,Utility,CMU Wall,SCH A,2,After,4/17/2025,5/16/2025,NA
+S813,Emissions,Gym,Fireproof Coating,SCH A,2,Before,4/17/2025,5/16/2025,NA
+S812,Emissions,Gym,CMU Wall,SCH A,2,After,4/17/2025,5/16/2025,surfaceRm
+S786,Emissions,D611,CMU Wall,SCH A,2,After,4/17/2025,5/16/2025,renovated
+S787,Emissions,D611,Cove Base,SCH A,2,After,4/17/2025,5/16/2025,renovated
+S783,Air,D611,Air,SCH A,2,After,4/17/2025,5/16/2025,NA
+S784,Air,D611,Air,SCH A,2,After,4/17/2025,5/16/2025,NA
+S785,Air,D611,Air,SCH A,2,After,4/17/2025,5/16/2025,NA
+S788,Emissions,D611,Floor Tile,SCH A,2,After,4/17/2025,5/16/2025,renovated
+S789,Emissions,D611,Drywall,SCH A,2,After,4/17/2025,5/16/2025,renovated
+S777,Air,Gym,Air,SCH A,2,After,4/17/2025,5/16/2025,NA
+S791,Air,Gym,Air,SCH A,2,After,4/17/2025,5/16/2025,NA
+S763,Emissions,dWing,Fireproof Coating,SCH A,2,Before,4/17/2025,5/16/2025,NA
+S765,Emissions,dWing,Fireproof Coating,SCH A,2,Before,4/17/2025,5/16/2025,NA
+S766,Emissions,dWing,Fireproof Coating,SCH A,2,Before,4/17/2025,5/16/2025,NA
+S767,Emissions,dWing,Fireproof Coating,SCH A,2,Before,4/17/2025,5/16/2025,NA
+S815,Field Blank,Gym,Blank,SCH A,2,After,4/17/2025,5/16/2025,NA
+S811,Field Blank,Utility,Blank,SCH A,2,After,4/17/2025,5/16/2025,NA
+S790,Field Blank,D611,Blank,SCH A,2,After,4/17/2025,5/16/2025,NA
+S760,Field Blank,dWing,Blank,SCH A,2,After,4/17/2025,5/16/2025,NA
+S873,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S874,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S880,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S857,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S858,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S859,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S860,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S870,Lab Blank,uiLab,Blank,SCH A,2,After,NA,NA,NA
+S411,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S412,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S409,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S410,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S482,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S485,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S480,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S481,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S478,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S479,Lab Blank,uiLab,Blank,SCH O,1,Before,NA,NA,NA
+S318,Air,Mezzanine,Air,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S322,Air,Mezzanine,Air,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S315,Air,Mezzanine,Air,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S312,Air,Boilers,Air,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S320,Air,Boilers,Air,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S321,Air,Boilers,Air,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S507,Emissions,Boilers,CMU Wall,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S508,Emissions,Boilers,Fireproof Coating,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S383,Air,Gym,Air,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S389,Emissions,Gym,Joint Sealant,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S390,Emissions,Gym,Joint Sealant,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S391,Emissions,Gym,Gym Mat,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S392,Emissions,Gym,Gym Floor,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S503,Field Blank,Boilers,Blank,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S393,Field Blank,Gym,Blank,SCH O,1,Before,4/23/2023,5/22/2023,NA
+S881,Lab Blank,uiLab,Blank,SCH O,2,After,NA,NA,NA
+S882,Lab Blank,uiLab,Blank,SCH O,2,After,NA,NA,NA
+S877,Lab Blank,uiLab,Blank,SCH O,2,After,NA,NA,NA
+S878,Lab Blank,uiLab,Blank,SCH O,2,After,NA,NA,NA
+S875,Lab Blank,uiLab,Blank,SCH O,2,After,NA,NA,NA
+S876,Lab Blank,uiLab,Blank,SCH O,2,After,NA,NA,NA
+S879,Lab Blank,uiLab,Blank,SCH O,2,After,NA,NA,NA
+S795,Emissions,Mezzanine,Insulation,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S796,Emissions,Mezzanine,Insulation,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S797,Emissions,Mezzanine,CMU Wall,SCH O,2,After,4/16/2025,5/14/2025,nonprimaryEncap
+S798,Emissions,Mezzanine,Floor,SCH O,2,After,4/16/2025,5/14/2025,nonprimaryEncap
+S799,Emissions,Mezzanine,Insulation,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S800,Emissions,Mezzanine,CMU Wall,SCH O,2,After,4/16/2025,5/14/2025,nonprimaryEncap
+S801,Air,Mezzanine,Air,SCH O,2,After,4/16/2025,5/14/2025,NA
+S802,Air,Mezzanine,Air,SCH O,2,After,4/16/2025,5/14/2025,NA
+S805,Air,Mezzanine,Air,SCH O,2,After,4/16/2025,5/14/2025,NA
+S806,Emissions,Mezzanine,Floor,SCH O,2,After,4/16/2025,5/14/2025,nonprimaryEncap
+S779,Emissions,Mezzanine,CMU Wall,SCH O,2,After,4/16/2025,5/14/2025,nonprimaryEncap
+S780,Emissions,Mezzanine,Floor,SCH O,2,After,4/16/2025,5/14/2025,nonprimaryEncap
+S781,Air,Boilers,Air,SCH O,2,After,4/16/2025,5/14/2025,NA
+S823,Emissions,Boilers,CMU Wall,SCH O,2,After,4/16/2025,5/14/2025,NA
+S827,Air,Boilers,Air,SCH O,2,After,4/16/2025,5/14/2025,NA
+S729,Emissions,Boilers,Floor,SCH O,2,After,4/16/2025,5/14/2025,NA
+S730,Emissions,Gym,Joint Tape,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S731,Emissions,Gym,Joint Tape,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S734,Emissions,Boilers,Insulation,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S825,Emissions,Boilers,Insulation,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S826,Emissions,Boilers,Insulation,SCH O,2,After,4/16/2025,5/14/2025,srcRmEncap
+S803,Field Blank,Mezzanine,Blank,SCH O,2,After,4/16/2025,5/14/2025,NA
+S804,Field Blank,Mezzanine,Blank,SCH O,2,After,4/16/2025,5/14/2025,NA
+S732,Field Blank,Boilers,Blank,SCH O,2,After,4/16/2025,5/14/2025,NA
+S733,Field Blank,Boilers,Blank,SCH O,2,After,4/16/2025,5/14/2025,NA
+S739,Field Blank,Gym,Blank,SCH O,2,After,4/16/2025,5/14/2025,NA
+S443,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S444,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S359,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S515,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S640,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S641,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S513,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S514,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S510,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S511,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S638,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S639,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S598,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S599,Lab Blank,uiLab,Blank,SCH K,1,Before,NA,NA,NA
+S564,Air,boilers,Air,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S568,Air,boilers,Air,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S570,Air,boilers,Air,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S516,Emissions,260,Floor Tile,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S517,Emissions,260,Floor Tile,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S518,Emissions,260,Floor Tile,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S524,Emissions,260,Joint Sealant,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S526,Emissions,260,CMU Wall,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S521,Emissions,260,Joint Sealant,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S519,Emissions,260,CMU Wall,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S520,Emissions,260,CMU Wall,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S522,Emissions,260,Ceiling Joint,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S523,Air,260,Air,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S527,Emissions,260,CMU Wall,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S436,Air,439,Air,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S582,Air,439,Air,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S583,Air,439,Air,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S525,Field Blank,260,Blank,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S439,Field Blank,439,Blank,SCH K,1,Before,7/10/2023,8/9/2023,NA
+S728,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S737,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S736,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S740,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S793,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S794,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S756,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S757,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S754,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S755,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S738,Lab Blank,uiLab,Blank,SCH K,2,Interim,NA,NA,NA
+S704,Emissions,260,Metal Tape on Joint,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S705,Emissions,260,Coated Joint Sealant,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S706,Emissions,260,CMU Wall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S707,Emissions,260,CMU Wall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S708,Emissions,260,Drywall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S702,Emissions,260,CMU Wall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S711,Emissions,260,Drywall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S743,Emissions,260,CMU Wall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S710,Emissions,260,Metal Tape on Joint,SCH K,2,After,4/18/2024,5/20/2024,physicalEncap
+S709,Emissions,260,Coated Joint Sealant,SCH K,2,After,4/18/2024,5/20/2024,primaryEncap
+S745,Emissions,260,CMU Wall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S749,Emissions,260,CMU Wall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S748,Emissions,260,Drywall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S747,Emissions,260,Metal Tape on Joint,SCH K,2,After,4/18/2024,5/20/2024,physicalEncap
+S744,Emissions,260,Coated Joint Sealant,SCH K,2,After,4/18/2024,5/20/2024,primaryEncap
+S677,Emissions,439,Ceiling Joint,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S717,Emissions,439,CMU Wall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S727,Emissions,439,Drywall,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S726,Emissions,439,Metal Tape on Joint,SCH K,2,After,4/18/2024,5/20/2024,physicalEncap
+S728,Emissions,439,Coated Joint Sealant,SCH K,2,After,4/18/2024,5/20/2024,primaryEncap
+S750,Emissions,260,Floor Tile,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S751,Emissions,260,Floor Tile,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S752,Emissions,260,Floor Tile,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S674,Air,439,Air,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S675,Air,439,Air,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S676,Air,439,Air,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S712,Emissions,260,Column,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S713,Emissions,260,Column,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S703,Air,260,Air,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S741,Air,260,Air,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S742,Air,260,Air,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S673,Field Blank,260,Blank,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S672,Field Blank,260,Blank,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S746,Field Blank,260,Blank,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S714,Field Blank,439,Blank,SCH K,2,Interim,4/18/2024,5/20/2024,NA
+S942,Lab Blank,uiLab,Blank,SCH K,3,After,NA,NA,NA
+S944,Lab Blank,uiLab,Blank,SCH K,3,After,NA,NA,NA
+S969,Lab Blank,uiLab,Blank,SCH K,3,After,NA,NA,NA
+S970,Lab Blank,uiLab,Blank,SCH K,3,After,NA,NA,NA
+S974,Lab Blank,uiLab,Blank,SCH K,3,After,NA,NA,NA
+S972,Lab Blank,uiLab,Blank,SCH K,3,After,NA,NA,NA
+S971,Lab Blank,uiLab,Blank,SCH K,3,After,NA,NA,NA
+S844,Emissions,260,Drywall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S840,Emissions,260,Drywall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S841,Emissions,260,CMU Wall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S842,Emissions,260,Joint Sealant,SCH K,3,After,7/15/2025,8/19/2025,srcRmEncap
+S843,Emissions,260,Joint Sealant,SCH K,3,After,7/15/2025,8/19/2025,srcRmEncap
+S850,Emissions,260,Drywall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S867,Emissions,260,CMU Wall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S845,Emissions,260,Joint Sealant,SCH K,3,After,7/15/2025,8/19/2025,primaryEncap
+S846,Emissions,260,Joint Sealant,SCH K,3,After,7/15/2025,8/19/2025,primaryEncap
+S852,Air,260,Air,SCH K,3,After,7/15/2025,8/19/2025,NA
+S847,Emissions,260,Drywall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S849,Emissions,260,Floor Tile,SCH K,3,After,7/15/2025,8/19/2025,NA
+S851,Air,260,Air,SCH K,3,After,7/15/2025,8/19/2025,NA
+S853,Air,260,Air,SCH K,3,After,7/15/2025,8/19/2025,NA
+S902,Emissions,439,Drywall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S908,Emissions,439,CMU Wall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S862,Emissions,439,Joint Sealant,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S863,Emissions,439,Joint Sealant,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S861,Emissions,439,Drywall,SCH K,3,After,7/15/2025,8/19/2025,nonprimaryEncap
+S864,Air,439,Air,SCH K,3,After,7/15/2025,8/19/2025,NA
+S865,Air,439,Air,SCH K,3,After,7/15/2025,8/19/2025,NA
+S866,Air,439,Air,SCH K,3,After,7/15/2025,8/19/2025,NA
+S868,Field Blank,260,Blank,SCH K,3,After,7/15/2025,8/19/2025,NA
+S848,Field Blank,260,Blank,SCH K,3,After,7/15/2025,8/19/2025,NA
+S869,Field Blank,439,Blank,SCH K,3,After,7/15/2025,8/19/2025,NA

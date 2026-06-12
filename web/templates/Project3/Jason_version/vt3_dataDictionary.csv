@@ -1,0 +1,12 @@
+﻿file,variable,dataType,constraint,fieldSize,description,dataFormat,example
+,sample_id,char,primary key,4,unique sample ID given to each sample before deployment,XNNN,S324
+,sample_type,varchar,not null,10,"type of sampler deployed: air, emission, blank",,Emissions
+,room_id,varchar,not null,20,room ID assigned in the field,,"260, Mezzanine"
+,materials,varchar,not null,30,"specific material, surface, matrix etc. that was sampled",,Fireproof Coating
+,school_id,varchar,not null,5,unqiue school ID,,SCH A
+,sampling_round,int,not null,1,the sampling round associated with each sample for a school ,,
+,sampling_start_date,date,not null,9,sampler deployment start date,YYYY-MM-DD,12/9/2023
+,remediation,varchar,not null,9,indicates if the sampler was deployed before or after remediation was performed on the material,,Before
+,sampling_end_date,date,not null,9,sampler deployment collection/end date,YYYY-MM-DD,7/14/2024
+,remediation_method,varchar,,30,describes how the material was remediated,,srcRmEncap
+,pcb congener ,float,> 0,,PCB.1 through PCB.209,,22.399314
