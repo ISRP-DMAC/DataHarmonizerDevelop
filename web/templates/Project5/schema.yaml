@@ -9365,17 +9365,17 @@ enums:
     title: unit option
     permissible_values:
       ng/PUF: 
-         title: ng per PUF 
-         description: nanograms of PCB measured per polyurethane foam (PUF) passive sampler.   
+         description: nanograms of PCB measured per polyurethane foam (PUF) passive sampler. 
+         comments: ng per PUF   
       ng/cm:
-          title: ng per cm
           description: nanograms of PCB measured per centimeter of SPME fiber.
+          comments: ng per cm
       copies/g biochar:
-          title: copies per gram biochar
           description: quantitative PCR measurement expressed as gene copies per gram of biochar.
+          comments: copies per gram biochar
       copies/g sediment:
-          title: copies per gram sediment
           description: quantitative PCR measurement expressed as gene copies per gram of sediment.
+          comments: copies per gram sediment
 
 
   Experiment option:
@@ -9410,12 +9410,10 @@ enums:
     title: null value 
     permissible_values:
       NA:
-        text: NA
-        title: missing value
+        title: NA - missing value
         description: missing value
       ND: 
-        text: ND
-        title: limit of quantification
+        title: ND - limit of quantification
         description: limit of quantification
 
   Experimental replicate option:

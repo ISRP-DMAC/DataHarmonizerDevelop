@@ -308,22 +308,30 @@
         "ng/PUF": {
           "text": "ng/PUF",
           "description": "nanograms of PCB measured per polyurethane foam (PUF) passive sampler.",
-          "title": "ng per PUF"
+          "comments": [
+            "ng per PUF"
+          ]
         },
         "ng/cm": {
           "text": "ng/cm",
           "description": "nanograms of PCB measured per centimeter of SPME fiber.",
-          "title": "ng per cm"
+          "comments": [
+            "ng per cm"
+          ]
         },
         "copies/g biochar": {
           "text": "copies/g biochar",
           "description": "quantitative PCR measurement expressed as gene copies per gram of biochar.",
-          "title": "copies per gram biochar"
+          "comments": [
+            "copies per gram biochar"
+          ]
         },
         "copies/g sediment": {
           "text": "copies/g sediment",
           "description": "quantitative PCR measurement expressed as gene copies per gram of sediment.",
-          "title": "copies per gram sediment"
+          "comments": [
+            "copies per gram sediment"
+          ]
         }
       }
     },
@@ -382,12 +390,12 @@
         "NA": {
           "text": "NA",
           "description": "missing value",
-          "title": "missing value"
+          "title": "NA - missing value"
         },
         "ND": {
           "text": "ND",
           "description": "limit of quantification",
-          "title": "limit of quantification"
+          "title": "ND - limit of quantification"
         }
       }
     },

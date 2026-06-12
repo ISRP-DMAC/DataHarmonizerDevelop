@@ -15345,7 +15345,7 @@
             "Jason_sampleType"
           ],
           "slot_group": "Sampling Metadata",
-          "range": "remediation_option",
+          "range": "Remediation option",
           "required": true
         },
         "sampling_start_date": {
@@ -15606,7 +15606,7 @@
       "domain_of": [
         "Jason_sampleType"
       ],
-      "range": "remediation_option",
+      "range": "Remediation option",
       "required": true
     },
     "sampling_start_date": {
@@ -21612,6 +21612,28 @@
         }
       }
     },
+    "Remediation option": {
+      "name": "Remediation option",
+      "title": "remediation option",
+      "from_schema": "https://example.com/Project3",
+      "permissible_values": {
+        "before": {
+          "text": "before",
+          "description": "Indicates if the sampler was deployed before or after remediation was performed on the material",
+          "title": "before"
+        },
+        "after": {
+          "text": "after",
+          "description": "Indicates if the sampler was deployed before or after remediation was performed on the material",
+          "title": "after"
+        },
+        "interim": {
+          "text": "interim",
+          "description": "Indicates if the sampler was deployed before or after remediation was performed on the material",
+          "title": "interim"
+        }
+      }
+    },
     "Null value option": {
       "name": "Null value option",
       "title": "null value option",
@@ -21620,12 +21642,12 @@
         "NA": {
           "text": "NA",
           "description": "missing value",
-          "title": "mission value"
+          "title": "NA"
         },
         "ND": {
           "text": "ND",
           "description": "limit of quantification",
-          "title": "limit of quantification"
+          "title": "ND"
         }
       }
     }

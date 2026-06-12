@@ -1919,7 +1919,7 @@ slots:
   remediation:
     name: remediation
     title: remediation
-    range: remediation_option
+    range: Remediation option
     required: true
     description: Indicates if the sampler was deployed before or after remediation was performed on the material
     comments:
@@ -4589,17 +4589,33 @@ enums:
         text: field blank
         title: field blank
         description: Indicates the type of sampler used for sample collection.
+  Remediation option:
+    name: Remediation option
+    title: remediation option
+    permissible_values:
+      before:
+        text: before
+        title: before
+        description: Indicates if the sampler was deployed before or after remediation was performed on the material
+      after:
+        text: after
+        title: after
+        description: Indicates if the sampler was deployed before or after remediation was performed on the material
+      interim:
+        text: interim
+        title: interim
+        description: Indicates if the sampler was deployed before or after remediation was performed on the material
   Null value option:
     name: Null value option
     title: null value option
     permissible_values:
       NA:
         text: NA
-        title: mission value
+        title: NA
         description: missing value
       ND:
         text: ND
-        title: limit of quantification
+        title: ND
         description: limit of quantification
 types:
   WhitespaceMinimizedString:
