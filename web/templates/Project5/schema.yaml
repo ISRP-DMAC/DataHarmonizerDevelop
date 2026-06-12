@@ -9410,8 +9410,12 @@ enums:
     title: null value 
     permissible_values:
       NA:
+        text: NA
+        title: missing value
         description: missing value
       ND: 
+        text: ND
+        title: limit of quantification
         description: limit of quantification
 
   Experimental replicate option:

@@ -55,12 +55,12 @@
     "templates": {
       "raw_mass": {
         "name": "raw mass",
-        "display": true,
+        "display": false,
         "version": "1.0.0"
       },
       "sediment": {
         "name": "sediment",
-        "display": true,
+        "display": false,
         "version": "1.0.0"
       }
 
@@ -78,17 +78,17 @@
     "templates": {
       "David_03_rawPCBmass_PUF": {
         "name": "David_03_rawPCBmass_PUF",
-        "display": true
+        "display": false
 
       },
       "David_04_rawPCBmass_SPME": {
         "name": "David_04_rawPCBmass_SPME",
-        "display": true  
+        "display": false  
 
       },
       "David_05_Dataset_rawBlankmass": {
         "name": "David_05_Dataset_rawBlankmass",
-        "display": true  
+        "display": false  
       }
     } 
   },

@@ -1,0 +1,4638 @@
+id: https://example.com/Project3
+name: Project3
+description: isrp project
+version: 1.0.0
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  xsd: http://www.w3.org/2001/XMLSchema#
+classes:
+  dh_interface:
+    name: dh_interface
+    description: A DataHarmonizer interface
+    from_schema: https://example.com/Project3
+  Jason_emissions:
+    name: Jason_emissions
+    title: emissions
+    description: Emissions for each emission sample in ng m-2 d-1 for individual PCB congeners or co-eluting congeners.
+    is_a: dh_interface
+    see_also:
+    annotations:
+      version: 1.0.0
+    slots:
+      - sample_id
+      - tPCB
+      - PCB1
+      - PCB2
+      - PCB3
+      - PCB4
+      - PCB5
+      - PCB6
+      - PCB7
+      - PCB8
+      - PCB9
+      - PCB10
+      - PCB11
+      - PCB12.13
+      - PCB14
+      - PCB15
+      - PCB16
+      - PCB17
+      - PCB18.30
+      - PCB19
+      - PCB20.28
+      - PCB21.33
+      - PCB22
+      - PCB23
+      - PCB24
+      - PCB25
+      - PCB26.29
+      - PCB27
+      - PCB31
+      - PCB32
+      - PCB34
+      - PCB35
+      - PCB36
+      - PCB37
+      - PCB38
+      - PCB39
+      - PCB40.71
+      - PCB41
+      - PCB42
+      - PCB43
+      - PCB44.47.65
+      - PCB45
+      - PCB46
+      - PCB48
+      - PCB49.69
+      - PCB50.53
+      - PCB51
+      - PCB52
+      - PCB54
+      - PCB55
+      - PCB56
+      - PCB57
+      - PCB58
+      - PCB59.62.75
+      - PCB60
+      - PCB61.70.74.76
+      - PCB63
+      - PCB64
+      - PCB66
+      - PCB67
+      - PCB68
+      - PCB72
+      - PCB73
+      - PCB77
+      - PCB78
+      - PCB79
+      - PCB80
+      - PCB81
+      - PCB82
+      - PCB83
+      - PCB84
+      - PCB85.116
+      - PCB86.97.109.119
+      - PCB87.125
+      - PCB88
+      - PCB89
+      - PCB90.101.113
+      - PCB91
+      - PCB92
+      - PCB93.100
+      - PCB94
+      - PCB95
+      - PCB96
+      - PCB98
+      - PCB99
+      - PCB102
+      - PCB103
+      - PCB104
+      - PCB105
+      - PCB106
+      - PCB107
+      - PCB108.124
+      - PCB110
+      - PCB111
+      - PCB112
+      - PCB114
+      - PCB115
+      - PCB117
+      - PCB118
+      - PCB120
+      - PCB121
+      - PCB122
+      - PCB123
+      - PCB126
+      - PCB127
+      - PCB128.166
+      - PCB129.138.163
+      - PCB130
+      - PCB131
+      - PCB132
+      - PCB133
+      - PCB134
+      - PCB135.151
+      - PCB136
+      - PCB137
+      - PCB139.140
+      - PCB141
+      - PCB142
+      - PCB143
+      - PCB144
+      - PCB145
+      - PCB146
+      - PCB147.149
+      - PCB148
+      - PCB150
+      - PCB152
+      - PCB153.168
+      - PCB154
+      - PCB155
+      - PCB156.157
+      - PCB158
+      - PCB159
+      - PCB160
+      - PCB161
+      - PCB162
+      - PCB164
+      - PCB165
+      - PCB167
+      - PCB169
+      - PCB170
+      - PCB171.173
+      - PCB172
+      - PCB174
+      - PCB175
+      - PCB176
+      - PCB177
+      - PCB178
+      - PCB179
+      - PCB180.193
+      - PCB181
+      - PCB182
+      - PCB183
+      - PCB184
+      - PCB185
+      - PCB186
+      - PCB187
+      - PCB188
+      - PCB189
+      - PCB190
+      - PCB191
+      - PCB192
+      - PCB194
+      - PCB195
+      - PCB196
+      - PCB197
+      - PCB198.199
+      - PCB200
+      - PCB201
+      - PCB202
+      - PCB203
+      - PCB205
+      - PCB206
+      - PCB207
+      - PCB208
+      - PCB209
+    slot_usage:
+      sample_id:
+        name: sample_id
+        rank: 1
+        slot_group: Sampling Metadata
+      tPCB:
+        name: tPCB
+        rank: 2
+        slot_group: PCB measurement
+      PCB1:
+        name: PCB1
+        rank: 3
+        slot_group: PCB measurement
+      PCB2:
+        name: PCB2
+        rank: 4
+        slot_group: PCB measurement
+      PCB3:
+        name: PCB3
+        rank: 5
+        slot_group: PCB measurement
+      PCB4:
+        name: PCB4
+        rank: 6
+        slot_group: PCB measurement
+      PCB5:
+        name: PCB5
+        rank: 7
+        slot_group: PCB measurement
+      PCB6:
+        name: PCB6
+        rank: 8
+        slot_group: PCB measurement
+      PCB7:
+        name: PCB7
+        rank: 9
+        slot_group: PCB measurement
+      PCB8:
+        name: PCB8
+        rank: 10
+        slot_group: PCB measurement
+      PCB9:
+        name: PCB9
+        rank: 11
+        slot_group: PCB measurement
+      PCB10:
+        name: PCB10
+        rank: 12
+        slot_group: PCB measurement
+      PCB11:
+        name: PCB11
+        rank: 13
+        slot_group: PCB measurement
+      PCB12.13:
+        name: PCB12.13
+        rank: 14
+        slot_group: PCB measurement
+      PCB14:
+        name: PCB14
+        rank: 15
+        slot_group: PCB measurement
+      PCB15:
+        name: PCB15
+        rank: 16
+        slot_group: PCB measurement
+      PCB16:
+        name: PCB16
+        rank: 17
+        slot_group: PCB measurement
+      PCB17:
+        name: PCB17
+        rank: 18
+        slot_group: PCB measurement
+      PCB18.30:
+        name: PCB18.30
+        rank: 19
+        slot_group: PCB measurement
+      PCB19:
+        name: PCB19
+        rank: 20
+        slot_group: PCB measurement
+      PCB20.28:
+        name: PCB20.28
+        rank: 21
+        slot_group: PCB measurement
+      PCB21.33:
+        name: PCB21.33
+        rank: 22
+        slot_group: PCB measurement
+      PCB22:
+        name: PCB22
+        rank: 23
+        slot_group: PCB measurement
+      PCB23:
+        name: PCB23
+        rank: 24
+        slot_group: PCB measurement
+      PCB24:
+        name: PCB24
+        rank: 25
+        slot_group: PCB measurement
+      PCB25:
+        name: PCB25
+        rank: 26
+        slot_group: PCB measurement
+      PCB26.29:
+        name: PCB26.29
+        rank: 27
+        slot_group: PCB measurement
+      PCB27:
+        name: PCB27
+        rank: 28
+        slot_group: PCB measurement
+      PCB31:
+        name: PCB31
+        rank: 29
+        slot_group: PCB measurement
+      PCB32:
+        name: PCB32
+        rank: 30
+        slot_group: PCB measurement
+      PCB34:
+        name: PCB34
+        rank: 31
+        slot_group: PCB measurement
+      PCB35:
+        name: PCB35
+        rank: 32
+        slot_group: PCB measurement
+      PCB36:
+        name: PCB36
+        rank: 33
+        slot_group: PCB measurement
+      PCB37:
+        name: PCB37
+        rank: 34
+        slot_group: PCB measurement
+      PCB38:
+        name: PCB38
+        rank: 35
+        slot_group: PCB measurement
+      PCB39:
+        name: PCB39
+        rank: 36
+        slot_group: PCB measurement
+      PCB40.71:
+        name: PCB40.71
+        rank: 37
+        slot_group: PCB measurement
+      PCB41:
+        name: PCB41
+        rank: 38
+        slot_group: PCB measurement
+      PCB42:
+        name: PCB42
+        rank: 39
+        slot_group: PCB measurement
+      PCB43:
+        name: PCB43
+        rank: 40
+        slot_group: PCB measurement
+      PCB44.47.65:
+        name: PCB44.47.65
+        rank: 41
+        slot_group: PCB measurement
+      PCB45:
+        name: PCB45
+        rank: 42
+        slot_group: PCB measurement
+      PCB46:
+        name: PCB46
+        rank: 43
+        slot_group: PCB measurement
+      PCB48:
+        name: PCB48
+        rank: 44
+        slot_group: PCB measurement
+      PCB49.69:
+        name: PCB49.69
+        rank: 45
+        slot_group: PCB measurement
+      PCB50.53:
+        name: PCB50.53
+        rank: 46
+        slot_group: PCB measurement
+      PCB51:
+        name: PCB51
+        rank: 47
+        slot_group: PCB measurement
+      PCB52:
+        name: PCB52
+        rank: 48
+        slot_group: PCB measurement
+      PCB54:
+        name: PCB54
+        rank: 49
+        slot_group: PCB measurement
+      PCB55:
+        name: PCB55
+        rank: 50
+        slot_group: PCB measurement
+      PCB56:
+        name: PCB56
+        rank: 51
+        slot_group: PCB measurement
+      PCB57:
+        name: PCB57
+        rank: 52
+        slot_group: PCB measurement
+      PCB58:
+        name: PCB58
+        rank: 53
+        slot_group: PCB measurement
+      PCB59.62.75:
+        name: PCB59.62.75
+        rank: 54
+        slot_group: PCB measurement
+      PCB60:
+        name: PCB60
+        rank: 55
+        slot_group: PCB measurement
+      PCB61.70.74.76:
+        name: PCB61.70.74.76
+        rank: 56
+        slot_group: PCB measurement
+      PCB63:
+        name: PCB63
+        rank: 57
+        slot_group: PCB measurement
+      PCB64:
+        name: PCB64
+        rank: 58
+        slot_group: PCB measurement
+      PCB66:
+        name: PCB66
+        rank: 59
+        slot_group: PCB measurement
+      PCB67:
+        name: PCB67
+        rank: 60
+        slot_group: PCB measurement
+      PCB68:
+        name: PCB68
+        rank: 61
+        slot_group: PCB measurement
+      PCB72:
+        name: PCB72
+        rank: 62
+        slot_group: PCB measurement
+      PCB73:
+        name: PCB73
+        rank: 63
+        slot_group: PCB measurement
+      PCB77:
+        name: PCB77
+        rank: 64
+        slot_group: PCB measurement
+      PCB78:
+        name: PCB78
+        rank: 65
+        slot_group: PCB measurement
+      PCB79:
+        name: PCB79
+        rank: 66
+        slot_group: PCB measurement
+      PCB80:
+        name: PCB80
+        rank: 67
+        slot_group: PCB measurement
+      PCB81:
+        name: PCB81
+        rank: 68
+        slot_group: PCB measurement
+      PCB82:
+        name: PCB82
+        rank: 69
+        slot_group: PCB measurement
+      PCB83:
+        name: PCB83
+        rank: 70
+        slot_group: PCB measurement
+      PCB84:
+        name: PCB84
+        rank: 71
+        slot_group: PCB measurement
+      PCB85.116:
+        name: PCB85.116
+        rank: 72
+        slot_group: PCB measurement
+      PCB86.97.109.119:
+        name: PCB86.97.109.119
+        rank: 73
+        slot_group: PCB measurement
+      PCB87.125:
+        name: PCB87.125
+        rank: 74
+        slot_group: PCB measurement
+      PCB88:
+        name: PCB88
+        rank: 75
+        slot_group: PCB measurement
+      PCB89:
+        name: PCB89
+        rank: 76
+        slot_group: PCB measurement
+      PCB90.101.113:
+        name: PCB90.101.113
+        rank: 77
+        slot_group: PCB measurement
+      PCB91:
+        name: PCB91
+        rank: 78
+        slot_group: PCB measurement
+      PCB92:
+        name: PCB92
+        rank: 79
+        slot_group: PCB measurement
+      PCB93.100:
+        name: PCB93.100
+        rank: 80
+        slot_group: PCB measurement
+      PCB94:
+        name: PCB94
+        rank: 81
+        slot_group: PCB measurement
+      PCB95:
+        name: PCB95
+        rank: 82
+        slot_group: PCB measurement
+      PCB96:
+        name: PCB96
+        rank: 83
+        slot_group: PCB measurement
+      PCB98:
+        name: PCB98
+        rank: 84
+        slot_group: PCB measurement
+      PCB99:
+        name: PCB99
+        rank: 85
+        slot_group: PCB measurement
+      PCB102:
+        name: PCB102
+        rank: 86
+        slot_group: PCB measurement
+      PCB103:
+        name: PCB103
+        rank: 87
+        slot_group: PCB measurement
+      PCB104:
+        name: PCB104
+        rank: 88
+        slot_group: PCB measurement
+      PCB105:
+        name: PCB105
+        rank: 89
+        slot_group: PCB measurement
+      PCB106:
+        name: PCB106
+        rank: 90
+        slot_group: PCB measurement
+      PCB107:
+        name: PCB107
+        rank: 91
+        slot_group: PCB measurement
+      PCB108.124:
+        name: PCB108.124
+        rank: 92
+        slot_group: PCB measurement
+      PCB110:
+        name: PCB110
+        rank: 93
+        slot_group: PCB measurement
+      PCB111:
+        name: PCB111
+        rank: 94
+        slot_group: PCB measurement
+      PCB112:
+        name: PCB112
+        rank: 95
+        slot_group: PCB measurement
+      PCB114:
+        name: PCB114
+        rank: 96
+        slot_group: PCB measurement
+      PCB115:
+        name: PCB115
+        rank: 97
+        slot_group: PCB measurement
+      PCB117:
+        name: PCB117
+        rank: 98
+        slot_group: PCB measurement
+      PCB118:
+        name: PCB118
+        rank: 99
+        slot_group: PCB measurement
+      PCB120:
+        name: PCB120
+        rank: 100
+        slot_group: PCB measurement
+      PCB121:
+        name: PCB121
+        rank: 101
+        slot_group: PCB measurement
+      PCB122:
+        name: PCB122
+        rank: 102
+        slot_group: PCB measurement
+      PCB123:
+        name: PCB123
+        rank: 103
+        slot_group: PCB measurement
+      PCB126:
+        name: PCB126
+        rank: 104
+        slot_group: PCB measurement
+      PCB127:
+        name: PCB127
+        rank: 105
+        slot_group: PCB measurement
+      PCB128.166:
+        name: PCB128.166
+        rank: 106
+        slot_group: PCB measurement
+      PCB129.138.163:
+        name: PCB129.138.163
+        rank: 107
+        slot_group: PCB measurement
+      PCB130:
+        name: PCB130
+        rank: 108
+        slot_group: PCB measurement
+      PCB131:
+        name: PCB131
+        rank: 109
+        slot_group: PCB measurement
+      PCB132:
+        name: PCB132
+        rank: 110
+        slot_group: PCB measurement
+      PCB133:
+        name: PCB133
+        rank: 111
+        slot_group: PCB measurement
+      PCB134:
+        name: PCB134
+        rank: 112
+        slot_group: PCB measurement
+      PCB135.151:
+        name: PCB135.151
+        rank: 113
+        slot_group: PCB measurement
+      PCB136:
+        name: PCB136
+        rank: 114
+        slot_group: PCB measurement
+      PCB137:
+        name: PCB137
+        rank: 115
+        slot_group: PCB measurement
+      PCB139.140:
+        name: PCB139.140
+        rank: 116
+        slot_group: PCB measurement
+      PCB141:
+        name: PCB141
+        rank: 117
+        slot_group: PCB measurement
+      PCB142:
+        name: PCB142
+        rank: 118
+        slot_group: PCB measurement
+      PCB143:
+        name: PCB143
+        rank: 119
+        slot_group: PCB measurement
+      PCB144:
+        name: PCB144
+        rank: 120
+        slot_group: PCB measurement
+      PCB145:
+        name: PCB145
+        rank: 121
+        slot_group: PCB measurement
+      PCB146:
+        name: PCB146
+        rank: 122
+        slot_group: PCB measurement
+      PCB147.149:
+        name: PCB147.149
+        rank: 123
+        slot_group: PCB measurement
+      PCB148:
+        name: PCB148
+        rank: 124
+        slot_group: PCB measurement
+      PCB150:
+        name: PCB150
+        rank: 125
+        slot_group: PCB measurement
+      PCB152:
+        name: PCB152
+        rank: 126
+        slot_group: PCB measurement
+      PCB153.168:
+        name: PCB153.168
+        rank: 127
+        slot_group: PCB measurement
+      PCB154:
+        name: PCB154
+        rank: 128
+        slot_group: PCB measurement
+      PCB155:
+        name: PCB155
+        rank: 129
+        slot_group: PCB measurement
+      PCB156.157:
+        name: PCB156.157
+        rank: 130
+        slot_group: PCB measurement
+      PCB158:
+        name: PCB158
+        rank: 131
+        slot_group: PCB measurement
+      PCB159:
+        name: PCB159
+        rank: 132
+        slot_group: PCB measurement
+      PCB160:
+        name: PCB160
+        rank: 133
+        slot_group: PCB measurement
+      PCB161:
+        name: PCB161
+        rank: 134
+        slot_group: PCB measurement
+      PCB162:
+        name: PCB162
+        rank: 135
+        slot_group: PCB measurement
+      PCB164:
+        name: PCB164
+        rank: 136
+        slot_group: PCB measurement
+      PCB165:
+        name: PCB165
+        rank: 137
+        slot_group: PCB measurement
+      PCB167:
+        name: PCB167
+        rank: 138
+        slot_group: PCB measurement
+      PCB169:
+        name: PCB169
+        rank: 139
+        slot_group: PCB measurement
+      PCB170:
+        name: PCB170
+        rank: 140
+        slot_group: PCB measurement
+      PCB171.173:
+        name: PCB171.173
+        rank: 141
+        slot_group: PCB measurement
+      PCB172:
+        name: PCB172
+        rank: 142
+        slot_group: PCB measurement
+      PCB174:
+        name: PCB174
+        rank: 143
+        slot_group: PCB measurement
+      PCB175:
+        name: PCB175
+        rank: 144
+        slot_group: PCB measurement
+      PCB176:
+        name: PCB176
+        rank: 145
+        slot_group: PCB measurement
+      PCB177:
+        name: PCB177
+        rank: 146
+        slot_group: PCB measurement
+      PCB178:
+        name: PCB178
+        rank: 147
+        slot_group: PCB measurement
+      PCB179:
+        name: PCB179
+        rank: 148
+        slot_group: PCB measurement
+      PCB180.193:
+        name: PCB180.193
+        rank: 149
+        slot_group: PCB measurement
+      PCB181:
+        name: PCB181
+        rank: 150
+        slot_group: PCB measurement
+      PCB182:
+        name: PCB182
+        rank: 151
+        slot_group: PCB measurement
+      PCB183:
+        name: PCB183
+        rank: 152
+        slot_group: PCB measurement
+      PCB184:
+        name: PCB184
+        rank: 153
+        slot_group: PCB measurement
+      PCB185:
+        name: PCB185
+        rank: 154
+        slot_group: PCB measurement
+      PCB186:
+        name: PCB186
+        rank: 155
+        slot_group: PCB measurement
+      PCB187:
+        name: PCB187
+        rank: 156
+        slot_group: PCB measurement
+      PCB188:
+        name: PCB188
+        rank: 157
+        slot_group: PCB measurement
+      PCB189:
+        name: PCB189
+        rank: 158
+        slot_group: PCB measurement
+      PCB190:
+        name: PCB190
+        rank: 159
+        slot_group: PCB measurement
+      PCB191:
+        name: PCB191
+        rank: 160
+        slot_group: PCB measurement
+      PCB192:
+        name: PCB192
+        rank: 161
+        slot_group: PCB measurement
+      PCB194:
+        name: PCB194
+        rank: 162
+        slot_group: PCB measurement
+      PCB195:
+        name: PCB195
+        rank: 163
+        slot_group: PCB measurement
+      PCB196:
+        name: PCB196
+        rank: 164
+        slot_group: PCB measurement
+      PCB197:
+        name: PCB197
+        rank: 165
+        slot_group: PCB measurement
+      PCB198.199:
+        name: PCB198.199
+        rank: 166
+        slot_group: PCB measurement
+      PCB200:
+        name: PCB200
+        rank: 167
+        slot_group: PCB measurement
+      PCB201:
+        name: PCB201
+        rank: 168
+        slot_group: PCB measurement
+      PCB202:
+        name: PCB202
+        rank: 169
+        slot_group: PCB measurement
+      PCB203:
+        name: PCB203
+        rank: 170
+        slot_group: PCB measurement
+      PCB205:
+        name: PCB205
+        rank: 171
+        slot_group: PCB measurement
+      PCB206:
+        name: PCB206
+        rank: 172
+        slot_group: PCB measurement
+      PCB207:
+        name: PCB207
+        rank: 173
+        slot_group: PCB measurement
+      PCB208:
+        name: PCB208
+        rank: 174
+        slot_group: PCB measurement
+      PCB209:
+        name: PCB209
+        rank: 175
+        slot_group: PCB measurement
+  Jason_concentrations:
+    name: Jason_concentrations
+    title: concentrations
+    description: Concentrations for each air sample in ng m-3 for individual PCB congeners or co-eluting congeners.
+    is_a: dh_interface
+    see_also:
+    annotations:
+      version: 1.0.0
+    slots:
+      - sample_id
+      - tPCB
+      - PCB1
+      - PCB2
+      - PCB3
+      - PCB4
+      - PCB5
+      - PCB6
+      - PCB7
+      - PCB8
+      - PCB9
+      - PCB10
+      - PCB11
+      - PCB12.13
+      - PCB14
+      - PCB15
+      - PCB16
+      - PCB17
+      - PCB18.30
+      - PCB19
+      - PCB20.28
+      - PCB21.33
+      - PCB22
+      - PCB23
+      - PCB24
+      - PCB25
+      - PCB26.29
+      - PCB27
+      - PCB31
+      - PCB32
+      - PCB34
+      - PCB35
+      - PCB36
+      - PCB37
+      - PCB38
+      - PCB39
+      - PCB40.71
+      - PCB41
+      - PCB42
+      - PCB43
+      - PCB44.47.65
+      - PCB45
+      - PCB46
+      - PCB48
+      - PCB49.69
+      - PCB50.53
+      - PCB51
+      - PCB52
+      - PCB54
+      - PCB55
+      - PCB56
+      - PCB57
+      - PCB58
+      - PCB59.62.75
+      - PCB60
+      - PCB61.70.74.76
+      - PCB63
+      - PCB64
+      - PCB66
+      - PCB67
+      - PCB68
+      - PCB72
+      - PCB73
+      - PCB77
+      - PCB78
+      - PCB79
+      - PCB80
+      - PCB81
+      - PCB82
+      - PCB83
+      - PCB84
+      - PCB85.116
+      - PCB86.97.109.119
+      - PCB87.125
+      - PCB88
+      - PCB89
+      - PCB90.101.113
+      - PCB91
+      - PCB92
+      - PCB93.100
+      - PCB94
+      - PCB95
+      - PCB96
+      - PCB98
+      - PCB99
+      - PCB102
+      - PCB103
+      - PCB104
+      - PCB105
+      - PCB106
+      - PCB107
+      - PCB108.124
+      - PCB110
+      - PCB111
+      - PCB112
+      - PCB114
+      - PCB115
+      - PCB117
+      - PCB118
+      - PCB120
+      - PCB121
+      - PCB122
+      - PCB123
+      - PCB126
+      - PCB127
+      - PCB128.166
+      - PCB129.138.163
+      - PCB130
+      - PCB131
+      - PCB132
+      - PCB133
+      - PCB134
+      - PCB135.151
+      - PCB136
+      - PCB137
+      - PCB139.140
+      - PCB141
+      - PCB142
+      - PCB143
+      - PCB144
+      - PCB145
+      - PCB146
+      - PCB147.149
+      - PCB148
+      - PCB150
+      - PCB152
+      - PCB153.168
+      - PCB154
+      - PCB155
+      - PCB156.157
+      - PCB158
+      - PCB159
+      - PCB160
+      - PCB161
+      - PCB162
+      - PCB164
+      - PCB165
+      - PCB167
+      - PCB169
+      - PCB170
+      - PCB171.173
+      - PCB172
+      - PCB174
+      - PCB175
+      - PCB176
+      - PCB177
+      - PCB178
+      - PCB179
+      - PCB180.193
+      - PCB181
+      - PCB182
+      - PCB183
+      - PCB184
+      - PCB185
+      - PCB186
+      - PCB187
+      - PCB188
+      - PCB189
+      - PCB190
+      - PCB191
+      - PCB192
+      - PCB194
+      - PCB195
+      - PCB196
+      - PCB197
+      - PCB198.199
+      - PCB200
+      - PCB201
+      - PCB202
+      - PCB203
+      - PCB205
+      - PCB206
+      - PCB207
+      - PCB208
+      - PCB209
+    slot_usage:
+      sample_id:
+        name: sample_id
+        rank: 1
+        slot_group: Sampling Metadata
+      tPCB:
+        name: tPCB
+        rank: 2
+        slot_group: PCB measurement
+      PCB1:
+        name: PCB1
+        rank: 3
+        slot_group: PCB measurement
+      PCB2:
+        name: PCB2
+        rank: 4
+        slot_group: PCB measurement
+      PCB3:
+        name: PCB3
+        rank: 5
+        slot_group: PCB measurement
+      PCB4:
+        name: PCB4
+        rank: 6
+        slot_group: PCB measurement
+      PCB5:
+        name: PCB5
+        rank: 7
+        slot_group: PCB measurement
+      PCB6:
+        name: PCB6
+        rank: 8
+        slot_group: PCB measurement
+      PCB7:
+        name: PCB7
+        rank: 9
+        slot_group: PCB measurement
+      PCB8:
+        name: PCB8
+        rank: 10
+        slot_group: PCB measurement
+      PCB9:
+        name: PCB9
+        rank: 11
+        slot_group: PCB measurement
+      PCB10:
+        name: PCB10
+        rank: 12
+        slot_group: PCB measurement
+      PCB11:
+        name: PCB11
+        rank: 13
+        slot_group: PCB measurement
+      PCB12.13:
+        name: PCB12.13
+        rank: 14
+        slot_group: PCB measurement
+      PCB14:
+        name: PCB14
+        rank: 15
+        slot_group: PCB measurement
+      PCB15:
+        name: PCB15
+        rank: 16
+        slot_group: PCB measurement
+      PCB16:
+        name: PCB16
+        rank: 17
+        slot_group: PCB measurement
+      PCB17:
+        name: PCB17
+        rank: 18
+        slot_group: PCB measurement
+      PCB18.30:
+        name: PCB18.30
+        rank: 19
+        slot_group: PCB measurement
+      PCB19:
+        name: PCB19
+        rank: 20
+        slot_group: PCB measurement
+      PCB20.28:
+        name: PCB20.28
+        rank: 21
+        slot_group: PCB measurement
+      PCB21.33:
+        name: PCB21.33
+        rank: 22
+        slot_group: PCB measurement
+      PCB22:
+        name: PCB22
+        rank: 23
+        slot_group: PCB measurement
+      PCB23:
+        name: PCB23
+        rank: 24
+        slot_group: PCB measurement
+      PCB24:
+        name: PCB24
+        rank: 25
+        slot_group: PCB measurement
+      PCB25:
+        name: PCB25
+        rank: 26
+        slot_group: PCB measurement
+      PCB26.29:
+        name: PCB26.29
+        rank: 27
+        slot_group: PCB measurement
+      PCB27:
+        name: PCB27
+        rank: 28
+        slot_group: PCB measurement
+      PCB31:
+        name: PCB31
+        rank: 29
+        slot_group: PCB measurement
+      PCB32:
+        name: PCB32
+        rank: 30
+        slot_group: PCB measurement
+      PCB34:
+        name: PCB34
+        rank: 31
+        slot_group: PCB measurement
+      PCB35:
+        name: PCB35
+        rank: 32
+        slot_group: PCB measurement
+      PCB36:
+        name: PCB36
+        rank: 33
+        slot_group: PCB measurement
+      PCB37:
+        name: PCB37
+        rank: 34
+        slot_group: PCB measurement
+      PCB38:
+        name: PCB38
+        rank: 35
+        slot_group: PCB measurement
+      PCB39:
+        name: PCB39
+        rank: 36
+        slot_group: PCB measurement
+      PCB40.71:
+        name: PCB40.71
+        rank: 37
+        slot_group: PCB measurement
+      PCB41:
+        name: PCB41
+        rank: 38
+        slot_group: PCB measurement
+      PCB42:
+        name: PCB42
+        rank: 39
+        slot_group: PCB measurement
+      PCB43:
+        name: PCB43
+        rank: 40
+        slot_group: PCB measurement
+      PCB44.47.65:
+        name: PCB44.47.65
+        rank: 41
+        slot_group: PCB measurement
+      PCB45:
+        name: PCB45
+        rank: 42
+        slot_group: PCB measurement
+      PCB46:
+        name: PCB46
+        rank: 43
+        slot_group: PCB measurement
+      PCB48:
+        name: PCB48
+        rank: 44
+        slot_group: PCB measurement
+      PCB49.69:
+        name: PCB49.69
+        rank: 45
+        slot_group: PCB measurement
+      PCB50.53:
+        name: PCB50.53
+        rank: 46
+        slot_group: PCB measurement
+      PCB51:
+        name: PCB51
+        rank: 47
+        slot_group: PCB measurement
+      PCB52:
+        name: PCB52
+        rank: 48
+        slot_group: PCB measurement
+      PCB54:
+        name: PCB54
+        rank: 49
+        slot_group: PCB measurement
+      PCB55:
+        name: PCB55
+        rank: 50
+        slot_group: PCB measurement
+      PCB56:
+        name: PCB56
+        rank: 51
+        slot_group: PCB measurement
+      PCB57:
+        name: PCB57
+        rank: 52
+        slot_group: PCB measurement
+      PCB58:
+        name: PCB58
+        rank: 53
+        slot_group: PCB measurement
+      PCB59.62.75:
+        name: PCB59.62.75
+        rank: 54
+        slot_group: PCB measurement
+      PCB60:
+        name: PCB60
+        rank: 55
+        slot_group: PCB measurement
+      PCB61.70.74.76:
+        name: PCB61.70.74.76
+        rank: 56
+        slot_group: PCB measurement
+      PCB63:
+        name: PCB63
+        rank: 57
+        slot_group: PCB measurement
+      PCB64:
+        name: PCB64
+        rank: 58
+        slot_group: PCB measurement
+      PCB66:
+        name: PCB66
+        rank: 59
+        slot_group: PCB measurement
+      PCB67:
+        name: PCB67
+        rank: 60
+        slot_group: PCB measurement
+      PCB68:
+        name: PCB68
+        rank: 61
+        slot_group: PCB measurement
+      PCB72:
+        name: PCB72
+        rank: 62
+        slot_group: PCB measurement
+      PCB73:
+        name: PCB73
+        rank: 63
+        slot_group: PCB measurement
+      PCB77:
+        name: PCB77
+        rank: 64
+        slot_group: PCB measurement
+      PCB78:
+        name: PCB78
+        rank: 65
+        slot_group: PCB measurement
+      PCB79:
+        name: PCB79
+        rank: 66
+        slot_group: PCB measurement
+      PCB80:
+        name: PCB80
+        rank: 67
+        slot_group: PCB measurement
+      PCB81:
+        name: PCB81
+        rank: 68
+        slot_group: PCB measurement
+      PCB82:
+        name: PCB82
+        rank: 69
+        slot_group: PCB measurement
+      PCB83:
+        name: PCB83
+        rank: 70
+        slot_group: PCB measurement
+      PCB84:
+        name: PCB84
+        rank: 71
+        slot_group: PCB measurement
+      PCB85.116:
+        name: PCB85.116
+        rank: 72
+        slot_group: PCB measurement
+      PCB86.97.109.119:
+        name: PCB86.97.109.119
+        rank: 73
+        slot_group: PCB measurement
+      PCB87.125:
+        name: PCB87.125
+        rank: 74
+        slot_group: PCB measurement
+      PCB88:
+        name: PCB88
+        rank: 75
+        slot_group: PCB measurement
+      PCB89:
+        name: PCB89
+        rank: 76
+        slot_group: PCB measurement
+      PCB90.101.113:
+        name: PCB90.101.113
+        rank: 77
+        slot_group: PCB measurement
+      PCB91:
+        name: PCB91
+        rank: 78
+        slot_group: PCB measurement
+      PCB92:
+        name: PCB92
+        rank: 79
+        slot_group: PCB measurement
+      PCB93.100:
+        name: PCB93.100
+        rank: 80
+        slot_group: PCB measurement
+      PCB94:
+        name: PCB94
+        rank: 81
+        slot_group: PCB measurement
+      PCB95:
+        name: PCB95
+        rank: 82
+        slot_group: PCB measurement
+      PCB96:
+        name: PCB96
+        rank: 83
+        slot_group: PCB measurement
+      PCB98:
+        name: PCB98
+        rank: 84
+        slot_group: PCB measurement
+      PCB99:
+        name: PCB99
+        rank: 85
+        slot_group: PCB measurement
+      PCB102:
+        name: PCB102
+        rank: 86
+        slot_group: PCB measurement
+      PCB103:
+        name: PCB103
+        rank: 87
+        slot_group: PCB measurement
+      PCB104:
+        name: PCB104
+        rank: 88
+        slot_group: PCB measurement
+      PCB105:
+        name: PCB105
+        rank: 89
+        slot_group: PCB measurement
+      PCB106:
+        name: PCB106
+        rank: 90
+        slot_group: PCB measurement
+      PCB107:
+        name: PCB107
+        rank: 91
+        slot_group: PCB measurement
+      PCB108.124:
+        name: PCB108.124
+        rank: 92
+        slot_group: PCB measurement
+      PCB110:
+        name: PCB110
+        rank: 93
+        slot_group: PCB measurement
+      PCB111:
+        name: PCB111
+        rank: 94
+        slot_group: PCB measurement
+      PCB112:
+        name: PCB112
+        rank: 95
+        slot_group: PCB measurement
+      PCB114:
+        name: PCB114
+        rank: 96
+        slot_group: PCB measurement
+      PCB115:
+        name: PCB115
+        rank: 97
+        slot_group: PCB measurement
+      PCB117:
+        name: PCB117
+        rank: 98
+        slot_group: PCB measurement
+      PCB118:
+        name: PCB118
+        rank: 99
+        slot_group: PCB measurement
+      PCB120:
+        name: PCB120
+        rank: 100
+        slot_group: PCB measurement
+      PCB121:
+        name: PCB121
+        rank: 101
+        slot_group: PCB measurement
+      PCB122:
+        name: PCB122
+        rank: 102
+        slot_group: PCB measurement
+      PCB123:
+        name: PCB123
+        rank: 103
+        slot_group: PCB measurement
+      PCB126:
+        name: PCB126
+        rank: 104
+        slot_group: PCB measurement
+      PCB127:
+        name: PCB127
+        rank: 105
+        slot_group: PCB measurement
+      PCB128.166:
+        name: PCB128.166
+        rank: 106
+        slot_group: PCB measurement
+      PCB129.138.163:
+        name: PCB129.138.163
+        rank: 107
+        slot_group: PCB measurement
+      PCB130:
+        name: PCB130
+        rank: 108
+        slot_group: PCB measurement
+      PCB131:
+        name: PCB131
+        rank: 109
+        slot_group: PCB measurement
+      PCB132:
+        name: PCB132
+        rank: 110
+        slot_group: PCB measurement
+      PCB133:
+        name: PCB133
+        rank: 111
+        slot_group: PCB measurement
+      PCB134:
+        name: PCB134
+        rank: 112
+        slot_group: PCB measurement
+      PCB135.151:
+        name: PCB135.151
+        rank: 113
+        slot_group: PCB measurement
+      PCB136:
+        name: PCB136
+        rank: 114
+        slot_group: PCB measurement
+      PCB137:
+        name: PCB137
+        rank: 115
+        slot_group: PCB measurement
+      PCB139.140:
+        name: PCB139.140
+        rank: 116
+        slot_group: PCB measurement
+      PCB141:
+        name: PCB141
+        rank: 117
+        slot_group: PCB measurement
+      PCB142:
+        name: PCB142
+        rank: 118
+        slot_group: PCB measurement
+      PCB143:
+        name: PCB143
+        rank: 119
+        slot_group: PCB measurement
+      PCB144:
+        name: PCB144
+        rank: 120
+        slot_group: PCB measurement
+      PCB145:
+        name: PCB145
+        rank: 121
+        slot_group: PCB measurement
+      PCB146:
+        name: PCB146
+        rank: 122
+        slot_group: PCB measurement
+      PCB147.149:
+        name: PCB147.149
+        rank: 123
+        slot_group: PCB measurement
+      PCB148:
+        name: PCB148
+        rank: 124
+        slot_group: PCB measurement
+      PCB150:
+        name: PCB150
+        rank: 125
+        slot_group: PCB measurement
+      PCB152:
+        name: PCB152
+        rank: 126
+        slot_group: PCB measurement
+      PCB153.168:
+        name: PCB153.168
+        rank: 127
+        slot_group: PCB measurement
+      PCB154:
+        name: PCB154
+        rank: 128
+        slot_group: PCB measurement
+      PCB155:
+        name: PCB155
+        rank: 129
+        slot_group: PCB measurement
+      PCB156.157:
+        name: PCB156.157
+        rank: 130
+        slot_group: PCB measurement
+      PCB158:
+        name: PCB158
+        rank: 131
+        slot_group: PCB measurement
+      PCB159:
+        name: PCB159
+        rank: 132
+        slot_group: PCB measurement
+      PCB160:
+        name: PCB160
+        rank: 133
+        slot_group: PCB measurement
+      PCB161:
+        name: PCB161
+        rank: 134
+        slot_group: PCB measurement
+      PCB162:
+        name: PCB162
+        rank: 135
+        slot_group: PCB measurement
+      PCB164:
+        name: PCB164
+        rank: 136
+        slot_group: PCB measurement
+      PCB165:
+        name: PCB165
+        rank: 137
+        slot_group: PCB measurement
+      PCB167:
+        name: PCB167
+        rank: 138
+        slot_group: PCB measurement
+      PCB169:
+        name: PCB169
+        rank: 139
+        slot_group: PCB measurement
+      PCB170:
+        name: PCB170
+        rank: 140
+        slot_group: PCB measurement
+      PCB171.173:
+        name: PCB171.173
+        rank: 141
+        slot_group: PCB measurement
+      PCB172:
+        name: PCB172
+        rank: 142
+        slot_group: PCB measurement
+      PCB174:
+        name: PCB174
+        rank: 143
+        slot_group: PCB measurement
+      PCB175:
+        name: PCB175
+        rank: 144
+        slot_group: PCB measurement
+      PCB176:
+        name: PCB176
+        rank: 145
+        slot_group: PCB measurement
+      PCB177:
+        name: PCB177
+        rank: 146
+        slot_group: PCB measurement
+      PCB178:
+        name: PCB178
+        rank: 147
+        slot_group: PCB measurement
+      PCB179:
+        name: PCB179
+        rank: 148
+        slot_group: PCB measurement
+      PCB180.193:
+        name: PCB180.193
+        rank: 149
+        slot_group: PCB measurement
+      PCB181:
+        name: PCB181
+        rank: 150
+        slot_group: PCB measurement
+      PCB182:
+        name: PCB182
+        rank: 151
+        slot_group: PCB measurement
+      PCB183:
+        name: PCB183
+        rank: 152
+        slot_group: PCB measurement
+      PCB184:
+        name: PCB184
+        rank: 153
+        slot_group: PCB measurement
+      PCB185:
+        name: PCB185
+        rank: 154
+        slot_group: PCB measurement
+      PCB186:
+        name: PCB186
+        rank: 155
+        slot_group: PCB measurement
+      PCB187:
+        name: PCB187
+        rank: 156
+        slot_group: PCB measurement
+      PCB188:
+        name: PCB188
+        rank: 157
+        slot_group: PCB measurement
+      PCB189:
+        name: PCB189
+        rank: 158
+        slot_group: PCB measurement
+      PCB190:
+        name: PCB190
+        rank: 159
+        slot_group: PCB measurement
+      PCB191:
+        name: PCB191
+        rank: 160
+        slot_group: PCB measurement
+      PCB192:
+        name: PCB192
+        rank: 161
+        slot_group: PCB measurement
+      PCB194:
+        name: PCB194
+        rank: 162
+        slot_group: PCB measurement
+      PCB195:
+        name: PCB195
+        rank: 163
+        slot_group: PCB measurement
+      PCB196:
+        name: PCB196
+        rank: 164
+        slot_group: PCB measurement
+      PCB197:
+        name: PCB197
+        rank: 165
+        slot_group: PCB measurement
+      PCB198.199:
+        name: PCB198.199
+        rank: 166
+        slot_group: PCB measurement
+      PCB200:
+        name: PCB200
+        rank: 167
+        slot_group: PCB measurement
+      PCB201:
+        name: PCB201
+        rank: 168
+        slot_group: PCB measurement
+      PCB202:
+        name: PCB202
+        rank: 169
+        slot_group: PCB measurement
+      PCB203:
+        name: PCB203
+        rank: 170
+        slot_group: PCB measurement
+      PCB205:
+        name: PCB205
+        rank: 171
+        slot_group: PCB measurement
+      PCB206:
+        name: PCB206
+        rank: 172
+        slot_group: PCB measurement
+      PCB207:
+        name: PCB207
+        rank: 173
+        slot_group: PCB measurement
+      PCB208:
+        name: PCB208
+        rank: 174
+        slot_group: PCB measurement
+      PCB209:
+        name: PCB209
+        rank: 175
+        slot_group: PCB measurement
+  Jason_sampleType:
+    name: Jason_sampleType
+    title: sampleType
+    description: Location and material descriptions for each sample.
+    is_a: dh_interface
+    see_also:
+    annotations:
+      version: 1.0.0
+    slots:
+      - sample_id
+      - sample_type
+      - room_id
+      - materials
+      - school_id
+      - sampling_round
+      - remediation
+      - sampling_start_date
+      - sampling_end_date
+      - remendiation_method
+    slot_usage:
+      sample_id:
+        name: sample_id
+        rank: 1
+        slot_group: Sampling Metadata
+      sample_type:
+        name: sample_type
+        rank: 2
+        slot_group: Sampling Metadata
+      room_id:
+        name: room_id
+        rank: 3
+        slot_group: Sampling Metadata
+      materials:
+        name: materials
+        rank: 4
+        slot_group: Sampling Metadata
+      school_id:
+        name: school_id
+        rank: 5
+        slot_group: Sampling Metadata
+      sampling_round:
+        name: sampling_round
+        rank: 6
+        slot_group: Sampling Metadata
+      remediation:
+        name: remediation
+        rank: 7
+        slot_group: Sampling Metadata
+      sampling_start_date:
+        name: sampling_start_date
+        rank: 8
+        slot_group: Sampling Metadata
+      sampling_end_date:
+        name: sampling_end_date
+        rank: 9
+        slot_group: Sampling Metadata
+      remendiation_method:
+        name: remendiation_method
+        rank: 10
+        slot_group: Sampling Metadata
+slots:
+  sample_id:
+    name: sample_id
+    title: sample id
+    range: WhitespaceMinimizedString
+    required: true
+    description: Unique sample ID
+    identifier: true
+    comments:
+      - Unique identifier assigned to each sampler prior to deployment. The ID should remain unchanged throughout sample collection and analysis.
+    examples:
+      - value: S324
+      - value: S647
+      - value: S669
+  sample_type:
+    name: sample_type
+    title: sample type
+    range: sample_type_option
+    required: true
+    description: Type of sampler deployed
+    comments:
+      - Indicates the type of sampler used for sample collection. Values should correspond to the predefined sampler categories.
+    examples:
+      - value: emissions
+      - value: air, field blank
+  room_id:
+    name: room_id
+    title: room id
+    range: WhitespaceMinimizedString
+    required: true
+    description: Room ID assigned in the field
+    comments:
+      - Identifier used to designate the room or location where the sampler was deployed. Should match the room naming convention used for the site.
+    examples:
+      - value: '260'
+      - value: Mezzanine
+      - value: Gym
+  materials:
+    name: materials
+    title: materials
+    range: WhitespaceMinimizedString
+    required: true
+    description: Specific material, surface, matrix etc. that was sampled
+    comments:
+      - Describes the material, surface, or matrix from which the sample was collected. Use consistent terminology across samples.
+    examples:
+      - value: Fireproof Coating
+      - value: Mastic
+      - value: Steel Beam
+  school_id:
+    name: school_id
+    title: school id
+    range: WhitespaceMinimizedString
+    required: true
+    description: Unqiue school ID
+    identifier: true
+    comments:
+      - Identifier assigned to each school or building included in the study. Should be consistent across all sampling rounds.
+    examples:
+      - value: SCH A
+      - value: SCH O
+      - value: SCH K
+  sampling_round:
+    name: sampling_round
+    title: sampling round
+    any_of:
+      - range: value_option
+      - range: integer
+    required: true
+    description: The sampling round associated with each sample for a school
+    comments:
+      - Indicates the sampling event or campaign sequence for the school. Used to distinguish repeated measurements collected over time.
+    examples:
+      - value: '1'
+      - value: '2'
+      - value: '3'
+  remediation:
+    name: remediation
+    title: remediation
+    range: remediation_option
+    required: true
+    description: Indicates if the sampler was deployed before or after remediation was performed on the material
+    comments:
+      - Specifies whether sample collection occurred before or after remediation activities associated with the sampled material.
+    examples:
+      - value: Before
+      - value: After
+      - value: Interim
+  sampling_start_date:
+    name: sampling_start_date
+    title: sampling start date
+    range: date
+    required: true
+    description: Sampler deployment start date
+    comments:
+      - Date on which the sampler was deployed in the field. Represents the beginning of the sampling period.
+    examples:
+      - value: '2023-12-09'
+      - value: '2024-12-06'
+  sampling_end_date:
+    name: sampling_end_date
+    title: sampling end date
+    range: date
+    required: true
+    description: Sampler deployment collection/end date
+    comments:
+      - Date on which the sampler was retrieved or sampling was completed. Represents the end of the sampling period.
+    examples:
+      - value: '2024-07-17'
+      - value: '2025-07-16'
+  remendiation_method:
+    name: remendiation_method
+    title: remendiation method
+    range: WhitespaceMinimizedString
+    required: true
+    description: Describes how the material was remediated
+    comments:
+      - Describes the remediation approach or treatment applied to the sampled material prior to or following sampling. Use standardized terminology when possible.
+    examples:
+      - value: srcRmEncap
+      - value: surfaceRm
+      - value: renovated
+  tPCB:
+    name: tPCB
+    title: tPCB
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: total PCBs, sum of all 209 PCB congeners
+    minimum_value: 0
+    comments:
+      - Total PCB concentration calculated as the sum of all measured PCB congeners. Values should be reported using the units specified for the study.
+  PCB1:
+    name: PCB1
+    title: PCB1
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 1.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.001'
+      - value: ND
+      - value: NA
+  PCB2:
+    name: PCB2
+    title: PCB2
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 2.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.002'
+      - value: ND
+      - value: NA
+  PCB3:
+    name: PCB3
+    title: PCB3
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 3.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.003'
+      - value: ND
+      - value: NA
+  PCB4:
+    name: PCB4
+    title: PCB4
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 4.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.004'
+      - value: ND
+      - value: NA
+  PCB5:
+    name: PCB5
+    title: PCB5
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 5.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.005'
+      - value: ND
+      - value: NA
+  PCB6:
+    name: PCB6
+    title: PCB6
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 6.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.006'
+      - value: ND
+      - value: NA
+  PCB7:
+    name: PCB7
+    title: PCB7
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 7.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.007'
+      - value: ND
+      - value: NA
+  PCB8:
+    name: PCB8
+    title: PCB8
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 8.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.008'
+      - value: ND
+      - value: NA
+  PCB9:
+    name: PCB9
+    title: PCB9
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 9.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.009'
+      - value: ND
+      - value: NA
+  PCB10:
+    name: PCB10
+    title: PCB10
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 10.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.010'
+      - value: ND
+      - value: NA
+  PCB11:
+    name: PCB11
+    title: PCB11
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 11.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.011'
+      - value: ND
+      - value: NA
+  PCB12.13:
+    name: PCB12.13
+    title: PCB12.13
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 12.13.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.012'
+      - value: ND
+      - value: NA
+  PCB14:
+    name: PCB14
+    title: PCB14
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 14.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.013'
+      - value: ND
+      - value: NA
+  PCB15:
+    name: PCB15
+    title: PCB15
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 15.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.014'
+      - value: ND
+      - value: NA
+  PCB16:
+    name: PCB16
+    title: PCB16
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 16.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.015'
+      - value: ND
+      - value: NA
+  PCB17:
+    name: PCB17
+    title: PCB17
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 17.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.016'
+      - value: ND
+      - value: NA
+  PCB18.30:
+    name: PCB18.30
+    title: PCB18.30
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 18.30.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.017'
+      - value: ND
+      - value: NA
+  PCB19:
+    name: PCB19
+    title: PCB19
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 19.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.018'
+      - value: ND
+      - value: NA
+  PCB20.28:
+    name: PCB20.28
+    title: PCB20.28
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 20.28.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.019'
+      - value: ND
+      - value: NA
+  PCB21.33:
+    name: PCB21.33
+    title: PCB21.33
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 21.33.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.020'
+      - value: ND
+      - value: NA
+  PCB22:
+    name: PCB22
+    title: PCB22
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 22.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.021'
+      - value: ND
+      - value: NA
+  PCB23:
+    name: PCB23
+    title: PCB23
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 23.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.022'
+      - value: ND
+      - value: NA
+  PCB24:
+    name: PCB24
+    title: PCB24
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 24.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.023'
+      - value: ND
+      - value: NA
+  PCB25:
+    name: PCB25
+    title: PCB25
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 25.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.024'
+      - value: ND
+      - value: NA
+  PCB26.29:
+    name: PCB26.29
+    title: PCB26.29
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 26.29.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.025'
+      - value: ND
+      - value: NA
+  PCB27:
+    name: PCB27
+    title: PCB27
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 27.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.026'
+      - value: ND
+      - value: NA
+  PCB31:
+    name: PCB31
+    title: PCB31
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 31.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.027'
+      - value: ND
+      - value: NA
+  PCB32:
+    name: PCB32
+    title: PCB32
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 32.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.028'
+      - value: ND
+      - value: NA
+  PCB34:
+    name: PCB34
+    title: PCB34
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 34.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.029'
+      - value: ND
+      - value: NA
+  PCB35:
+    name: PCB35
+    title: PCB35
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 35.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.030'
+      - value: ND
+      - value: NA
+  PCB36:
+    name: PCB36
+    title: PCB36
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 36.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.031'
+      - value: ND
+      - value: NA
+  PCB37:
+    name: PCB37
+    title: PCB37
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 37.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.032'
+      - value: ND
+      - value: NA
+  PCB38:
+    name: PCB38
+    title: PCB38
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 38.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.033'
+      - value: ND
+      - value: NA
+  PCB39:
+    name: PCB39
+    title: PCB39
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 39.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.034'
+      - value: ND
+      - value: NA
+  PCB40.71:
+    name: PCB40.71
+    title: PCB40.71
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 40.71.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.035'
+      - value: ND
+      - value: NA
+  PCB41:
+    name: PCB41
+    title: PCB41
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 41.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.036'
+      - value: ND
+      - value: NA
+  PCB42:
+    name: PCB42
+    title: PCB42
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 42.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.037'
+      - value: ND
+      - value: NA
+  PCB43:
+    name: PCB43
+    title: PCB43
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 43.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.038'
+      - value: ND
+      - value: NA
+  PCB44.47.65:
+    name: PCB44.47.65
+    title: PCB44.47.65
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 44.47.65.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.039'
+      - value: ND
+      - value: NA
+  PCB45:
+    name: PCB45
+    title: PCB45
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 45.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.040'
+      - value: ND
+      - value: NA
+  PCB46:
+    name: PCB46
+    title: PCB46
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 46.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.041'
+      - value: ND
+      - value: NA
+  PCB48:
+    name: PCB48
+    title: PCB48
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 48.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.042'
+      - value: ND
+      - value: NA
+  PCB49.69:
+    name: PCB49.69
+    title: PCB49.69
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 49.69.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.043'
+      - value: ND
+      - value: NA
+  PCB50.53:
+    name: PCB50.53
+    title: PCB50.53
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 50.53.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.044'
+      - value: ND
+      - value: NA
+  PCB51:
+    name: PCB51
+    title: PCB51
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 51.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.045'
+      - value: ND
+      - value: NA
+  PCB52:
+    name: PCB52
+    title: PCB52
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 52.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.046'
+      - value: ND
+      - value: NA
+  PCB54:
+    name: PCB54
+    title: PCB54
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 54.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.047'
+      - value: ND
+      - value: NA
+  PCB55:
+    name: PCB55
+    title: PCB55
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 55.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.048'
+      - value: ND
+      - value: NA
+  PCB56:
+    name: PCB56
+    title: PCB56
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 56.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.049'
+      - value: ND
+      - value: NA
+  PCB57:
+    name: PCB57
+    title: PCB57
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 57.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.050'
+      - value: ND
+      - value: NA
+  PCB58:
+    name: PCB58
+    title: PCB58
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 58.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.051'
+      - value: ND
+      - value: NA
+  PCB59.62.75:
+    name: PCB59.62.75
+    title: PCB59.62.75
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 59.62.75.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.052'
+      - value: ND
+      - value: NA
+  PCB60:
+    name: PCB60
+    title: PCB60
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 60.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.053'
+      - value: ND
+      - value: NA
+  PCB61.70.74.76:
+    name: PCB61.70.74.76
+    title: PCB61.70.74.76
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 61.70.74.76.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.054'
+      - value: ND
+      - value: NA
+  PCB63:
+    name: PCB63
+    title: PCB63
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 63.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.055'
+      - value: ND
+      - value: NA
+  PCB64:
+    name: PCB64
+    title: PCB64
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 64.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.056'
+      - value: ND
+      - value: NA
+  PCB66:
+    name: PCB66
+    title: PCB66
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 66.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.057'
+      - value: ND
+      - value: NA
+  PCB67:
+    name: PCB67
+    title: PCB67
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 67.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.058'
+      - value: ND
+      - value: NA
+  PCB68:
+    name: PCB68
+    title: PCB68
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 68.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.059'
+      - value: ND
+      - value: NA
+  PCB72:
+    name: PCB72
+    title: PCB72
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 72.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.060'
+      - value: ND
+      - value: NA
+  PCB73:
+    name: PCB73
+    title: PCB73
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 73.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.061'
+      - value: ND
+      - value: NA
+  PCB77:
+    name: PCB77
+    title: PCB77
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 77.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.062'
+      - value: ND
+      - value: NA
+  PCB78:
+    name: PCB78
+    title: PCB78
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 78.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.063'
+      - value: ND
+      - value: NA
+  PCB79:
+    name: PCB79
+    title: PCB79
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 79.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.064'
+      - value: ND
+      - value: NA
+  PCB80:
+    name: PCB80
+    title: PCB80
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 80.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.065'
+      - value: ND
+      - value: NA
+  PCB81:
+    name: PCB81
+    title: PCB81
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 81.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.066'
+      - value: ND
+      - value: NA
+  PCB82:
+    name: PCB82
+    title: PCB82
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 82.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.067'
+      - value: ND
+      - value: NA
+  PCB83:
+    name: PCB83
+    title: PCB83
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 83.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.067'
+      - value: ND
+      - value: NA
+  PCB84:
+    name: PCB84
+    title: PCB84
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 84.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.067'
+      - value: ND
+      - value: NA
+  PCB85.116:
+    name: PCB85.116
+    title: PCB85.116
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 85.116.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.068'
+      - value: ND
+      - value: NA
+  PCB86.97.109.119:
+    name: PCB86.97.109.119
+    title: PCB86.97.109.119
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 86.97.109.119.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.069'
+      - value: ND
+      - value: NA
+  PCB87.125:
+    name: PCB87.125
+    title: PCB87.125
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 87.125.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.070'
+      - value: ND
+      - value: NA
+  PCB88:
+    name: PCB88
+    title: PCB88
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 88.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.071'
+      - value: ND
+      - value: NA
+  PCB89:
+    name: PCB89
+    title: PCB89
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 89.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.072'
+      - value: ND
+      - value: NA
+  PCB90.101.113:
+    name: PCB90.101.113
+    title: PCB90.101.113
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 90.101.113.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.073'
+      - value: ND
+      - value: NA
+  PCB91:
+    name: PCB91
+    title: PCB91
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 91.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.074'
+      - value: ND
+      - value: NA
+  PCB92:
+    name: PCB92
+    title: PCB92
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 92.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.075'
+      - value: ND
+      - value: NA
+  PCB93.100:
+    name: PCB93.100
+    title: PCB93.100
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 93.100.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.076'
+      - value: ND
+      - value: NA
+  PCB94:
+    name: PCB94
+    title: PCB94
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 94.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.077'
+      - value: ND
+      - value: NA
+  PCB95:
+    name: PCB95
+    title: PCB95
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 95.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.078'
+      - value: ND
+      - value: NA
+  PCB96:
+    name: PCB96
+    title: PCB96
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 96.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.079'
+      - value: ND
+      - value: NA
+  PCB98:
+    name: PCB98
+    title: PCB98
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 98.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.080'
+      - value: ND
+      - value: NA
+  PCB99:
+    name: PCB99
+    title: PCB99
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 99.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.081'
+      - value: ND
+      - value: NA
+  PCB102:
+    name: PCB102
+    title: PCB102
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 102.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.082'
+      - value: ND
+      - value: NA
+  PCB103:
+    name: PCB103
+    title: PCB103
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 103.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.083'
+      - value: ND
+      - value: NA
+  PCB104:
+    name: PCB104
+    title: PCB104
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 104.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.084'
+      - value: ND
+      - value: NA
+  PCB105:
+    name: PCB105
+    title: PCB105
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 105.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.085'
+      - value: ND
+      - value: NA
+  PCB106:
+    name: PCB106
+    title: PCB106
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 106.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.086'
+      - value: ND
+      - value: NA
+  PCB107:
+    name: PCB107
+    title: PCB107
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 107.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.087'
+      - value: ND
+      - value: NA
+  PCB108.124:
+    name: PCB108.124
+    title: PCB108.124
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 108.124.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.088'
+      - value: ND
+      - value: NA
+  PCB110:
+    name: PCB110
+    title: PCB110
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 110.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.089'
+      - value: ND
+      - value: NA
+  PCB111:
+    name: PCB111
+    title: PCB111
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 111.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.090'
+      - value: ND
+      - value: NA
+  PCB112:
+    name: PCB112
+    title: PCB112
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 112.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.091'
+      - value: ND
+      - value: NA
+  PCB114:
+    name: PCB114
+    title: PCB114
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 114.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.092'
+      - value: ND
+      - value: NA
+  PCB115:
+    name: PCB115
+    title: PCB115
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 115.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.093'
+      - value: ND
+      - value: NA
+  PCB117:
+    name: PCB117
+    title: PCB117
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 117.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.094'
+      - value: ND
+      - value: NA
+  PCB118:
+    name: PCB118
+    title: PCB118
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 118.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.095'
+      - value: ND
+      - value: NA
+  PCB120:
+    name: PCB120
+    title: PCB120
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 120.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.096'
+      - value: ND
+      - value: NA
+  PCB121:
+    name: PCB121
+    title: PCB121
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 121.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.097'
+      - value: ND
+      - value: NA
+  PCB122:
+    name: PCB122
+    title: PCB122
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 122.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.098'
+      - value: ND
+      - value: NA
+  PCB123:
+    name: PCB123
+    title: PCB123
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 123.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.099'
+      - value: ND
+      - value: NA
+  PCB126:
+    name: PCB126
+    title: PCB126
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 126.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.100'
+      - value: ND
+      - value: NA
+  PCB127:
+    name: PCB127
+    title: PCB127
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 127.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.101'
+      - value: ND
+      - value: NA
+  PCB128.166:
+    name: PCB128.166
+    title: PCB128.166
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 128.166.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.102'
+      - value: ND
+      - value: NA
+  PCB129.138.163:
+    name: PCB129.138.163
+    title: PCB129.138.163
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 129.138.163.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.103'
+      - value: ND
+      - value: NA
+  PCB130:
+    name: PCB130
+    title: PCB130
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 130.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.104'
+      - value: ND
+      - value: NA
+  PCB131:
+    name: PCB131
+    title: PCB131
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 131.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.105'
+      - value: ND
+      - value: NA
+  PCB132:
+    name: PCB132
+    title: PCB132
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 132.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.106'
+      - value: ND
+      - value: NA
+  PCB133:
+    name: PCB133
+    title: PCB133
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 133.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.107'
+      - value: ND
+      - value: NA
+  PCB134:
+    name: PCB134
+    title: PCB134
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 134.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.108'
+      - value: ND
+      - value: NA
+  PCB135.151:
+    name: PCB135.151
+    title: PCB135.151
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 135.151.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.109'
+      - value: ND
+      - value: NA
+  PCB136:
+    name: PCB136
+    title: PCB136
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 136.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.110'
+      - value: ND
+      - value: NA
+  PCB137:
+    name: PCB137
+    title: PCB137
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 137.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.111'
+      - value: ND
+      - value: NA
+  PCB139.140:
+    name: PCB139.140
+    title: PCB139.140
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 139.140.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.112'
+      - value: ND
+      - value: NA
+  PCB141:
+    name: PCB141
+    title: PCB141
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 141.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.113'
+      - value: ND
+      - value: NA
+  PCB142:
+    name: PCB142
+    title: PCB142
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 142.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.114'
+      - value: ND
+      - value: NA
+  PCB143:
+    name: PCB143
+    title: PCB143
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 143.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.115'
+      - value: ND
+      - value: NA
+  PCB144:
+    name: PCB144
+    title: PCB144
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 144.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.116'
+      - value: ND
+      - value: NA
+  PCB145:
+    name: PCB145
+    title: PCB145
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 145.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.117'
+      - value: ND
+      - value: NA
+  PCB146:
+    name: PCB146
+    title: PCB146
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 146.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.118'
+      - value: ND
+      - value: NA
+  PCB147.149:
+    name: PCB147.149
+    title: PCB147.149
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 147.149.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.119'
+      - value: ND
+      - value: NA
+  PCB148:
+    name: PCB148
+    title: PCB148
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 148.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.120'
+      - value: ND
+      - value: NA
+  PCB150:
+    name: PCB150
+    title: PCB150
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 150.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.121'
+      - value: ND
+      - value: NA
+  PCB152:
+    name: PCB152
+    title: PCB152
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 152.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.122'
+      - value: ND
+      - value: NA
+  PCB153.168:
+    name: PCB153.168
+    title: PCB153.168
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 153.168.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.123'
+      - value: ND
+      - value: NA
+  PCB154:
+    name: PCB154
+    title: PCB154
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 154.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.124'
+      - value: ND
+      - value: NA
+  PCB155:
+    name: PCB155
+    title: PCB155
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 155.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.125'
+      - value: ND
+      - value: NA
+  PCB156.157:
+    name: PCB156.157
+    title: PCB156.157
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 156.157.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.126'
+      - value: ND
+      - value: NA
+  PCB158:
+    name: PCB158
+    title: PCB158
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 158.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.127'
+      - value: ND
+      - value: NA
+  PCB159:
+    name: PCB159
+    title: PCB159
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 159.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.128'
+      - value: ND
+      - value: NA
+  PCB160:
+    name: PCB160
+    title: PCB160
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 160.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.129'
+      - value: ND
+      - value: NA
+  PCB161:
+    name: PCB161
+    title: PCB161
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 161.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.130'
+      - value: ND
+      - value: NA
+  PCB162:
+    name: PCB162
+    title: PCB162
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 162.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.131'
+      - value: ND
+      - value: NA
+  PCB164:
+    name: PCB164
+    title: PCB164
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 164.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.132'
+      - value: ND
+      - value: NA
+  PCB165:
+    name: PCB165
+    title: PCB165
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 165.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.133'
+      - value: ND
+      - value: NA
+  PCB167:
+    name: PCB167
+    title: PCB167
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 167.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.134'
+      - value: ND
+      - value: NA
+  PCB169:
+    name: PCB169
+    title: PCB169
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 169.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.135'
+      - value: ND
+      - value: NA
+  PCB170:
+    name: PCB170
+    title: PCB170
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 170.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.136'
+      - value: ND
+      - value: NA
+  PCB171.173:
+    name: PCB171.173
+    title: PCB171.173
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 171.173.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.137'
+      - value: ND
+      - value: NA
+  PCB172:
+    name: PCB172
+    title: PCB172
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 172.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.138'
+      - value: ND
+      - value: NA
+  PCB174:
+    name: PCB174
+    title: PCB174
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 174.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.139'
+      - value: ND
+      - value: NA
+  PCB175:
+    name: PCB175
+    title: PCB175
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 175.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.140'
+      - value: ND
+      - value: NA
+  PCB176:
+    name: PCB176
+    title: PCB176
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 176.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.141'
+      - value: ND
+      - value: NA
+  PCB177:
+    name: PCB177
+    title: PCB177
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 177.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.142'
+      - value: ND
+      - value: NA
+  PCB178:
+    name: PCB178
+    title: PCB178
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 178.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.143'
+      - value: ND
+      - value: NA
+  PCB179:
+    name: PCB179
+    title: PCB179
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 179.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.144'
+      - value: ND
+      - value: NA
+  PCB180.193:
+    name: PCB180.193
+    title: PCB180.193
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 180.193.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.145'
+      - value: ND
+      - value: NA
+  PCB181:
+    name: PCB181
+    title: PCB181
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 181.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.146'
+      - value: ND
+      - value: NA
+  PCB182:
+    name: PCB182
+    title: PCB182
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 182.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.147'
+      - value: ND
+      - value: NA
+  PCB183:
+    name: PCB183
+    title: PCB183
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 183.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.148'
+      - value: ND
+      - value: NA
+  PCB184:
+    name: PCB184
+    title: PCB184
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 184.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.149'
+      - value: ND
+      - value: NA
+  PCB185:
+    name: PCB185
+    title: PCB185
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 185.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.150'
+      - value: ND
+      - value: NA
+  PCB186:
+    name: PCB186
+    title: PCB186
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 186.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.151'
+      - value: ND
+      - value: NA
+  PCB187:
+    name: PCB187
+    title: PCB187
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 187.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.152'
+      - value: ND
+      - value: NA
+  PCB188:
+    name: PCB188
+    title: PCB188
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 188.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.153'
+      - value: ND
+      - value: NA
+  PCB189:
+    name: PCB189
+    title: PCB189
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 189.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.154'
+      - value: ND
+      - value: NA
+  PCB190:
+    name: PCB190
+    title: PCB190
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 190.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.155'
+      - value: ND
+      - value: NA
+  PCB191:
+    name: PCB191
+    title: PCB191
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 191.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.156'
+      - value: ND
+      - value: NA
+  PCB192:
+    name: PCB192
+    title: PCB192
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 192.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.157'
+      - value: ND
+      - value: NA
+  PCB194:
+    name: PCB194
+    title: PCB194
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 194.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.158'
+      - value: ND
+      - value: NA
+  PCB195:
+    name: PCB195
+    title: PCB195
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 195.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.159'
+      - value: ND
+      - value: NA
+  PCB196:
+    name: PCB196
+    title: PCB196
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 196.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.160'
+      - value: ND
+      - value: NA
+  PCB197:
+    name: PCB197
+    title: PCB197
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 197.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.161'
+      - value: ND
+      - value: NA
+  PCB198.199:
+    name: PCB198.199
+    title: PCB198.199
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 198.199.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.162'
+      - value: ND
+      - value: NA
+  PCB200:
+    name: PCB200
+    title: PCB200
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 200.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.163'
+      - value: ND
+      - value: NA
+  PCB201:
+    name: PCB201
+    title: PCB201
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 201.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.164'
+      - value: ND
+      - value: NA
+  PCB202:
+    name: PCB202
+    title: PCB202
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 202.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.165'
+      - value: ND
+      - value: NA
+  PCB203:
+    name: PCB203
+    title: PCB203
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 203.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.166'
+      - value: ND
+      - value: NA
+  PCB205:
+    name: PCB205
+    title: PCB205
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 205.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.167'
+      - value: ND
+      - value: NA
+  PCB206:
+    name: PCB206
+    title: PCB206
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 206.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.168'
+      - value: ND
+      - value: NA
+  PCB207:
+    name: PCB207
+    title: PCB207
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 207.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.169'
+      - value: ND
+      - value: NA
+  PCB208:
+    name: PCB208
+    title: PCB208
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 208.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.170'
+      - value: ND
+      - value: NA
+  PCB209:
+    name: PCB209
+    title: PCB209
+    any_of:
+      - range: null_value_option
+      - range: float
+    required: true
+    description: Concentration or mass measurement for PCB congener 209.
+    minimum_value: 0
+    comments:
+      - 'Numeric value expected.       Special values:       NA = missing value.       ND = below the limit of quantification (LOQ).'
+    examples:
+      - value: '0.171'
+      - value: ND
+      - value: NA
+enums:
+  Sample type option:
+    name: Sample type option
+    title: sample type option
+    permissible_values:
+      emission:
+        text: emission
+        title: emission
+        description: Indicates the type of sampler used for sample collection.
+      air:
+        text: air
+        title: air
+        description: Indicates the type of sampler used for sample collection.
+      lab blank:
+        text: lab blank
+        title: lab blank
+        description: Indicates the type of sampler used for sample collection.
+      field blank:
+        text: field blank
+        title: field blank
+        description: Indicates the type of sampler used for sample collection.
+  Value option:
+    name: Value option
+    title: value option
+    permissible_values:
+      '1':
+        text: '1'
+        title: '1'
+        description: The sampling round associated with each sample for a school.
+      '2':
+        text: '2'
+        title: '2'
+        description: The sampling round associated with each sample for a school.
+      '3':
+        text: '3'
+        title: '3'
+        description: The sampling round associated with each sample for a school.
+  Null value option:
+    name: Null value option
+    title: null value
+    permissible_values:
+      NA:
+        text: NA
+        title: mission value
+        description: missing value
+      ND:
+        text: ND
+        title: limit of quantification
+        description: limit of quantification
+types:
+  WhitespaceMinimizedString:
+    name: WhitespaceMinimizedString
+    typeof: string
+    description: 'A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces. Whitespace includes #x9 (tab), #xA (linefeed), and #xD (carriage return).'
+    base: str
+    uri: xsd:token
+  Provenance:
+    name: Provenance
+    typeof: string
+    description: A field containing a DataHarmonizer versioning marker. It is issued by DataHarmonizer when validation is applied to a given row of data.
+    base: str
+    uri: xsd:token
+settings:
+  Title_Case: (((?<=\b)[^a-z\W]\w*?|[\W])+)
+  UPPER_CASE: '[A-Z\W\d_]*'
+  lower_case: '[a-z\W\d_]*'

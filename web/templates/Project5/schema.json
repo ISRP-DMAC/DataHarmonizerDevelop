@@ -381,11 +381,13 @@
       "permissible_values": {
         "NA": {
           "text": "NA",
-          "description": "missing value"
+          "description": "missing value",
+          "title": "missing value"
         },
         "ND": {
           "text": "ND",
-          "description": "limit of quantification"
+          "description": "limit of quantification",
+          "title": "limit of quantification"
         }
       }
     },
