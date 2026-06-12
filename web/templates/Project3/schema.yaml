@@ -1859,7 +1859,7 @@ slots:
   sample_type:
     name: sample_type
     title: sample type
-    range: sample_type_option
+    range: Sample type option
     required: true
     description: Type of sampler deployed
     comments:
@@ -1907,9 +1907,7 @@ slots:
   sampling_round:
     name: sampling_round
     title: sampling round
-    any_of:
-      - range: value_option
-      - range: integer
+    range: integer
     required: true
     description: The sampling round associated with each sample for a school
     comments:
@@ -1968,7 +1966,7 @@ slots:
     name: tPCB
     title: tPCB
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: total PCBs, sum of all 209 PCB congeners
@@ -1979,7 +1977,7 @@ slots:
     name: PCB1
     title: PCB1
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 1.
@@ -1994,7 +1992,7 @@ slots:
     name: PCB2
     title: PCB2
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 2.
@@ -2009,7 +2007,7 @@ slots:
     name: PCB3
     title: PCB3
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 3.
@@ -2024,7 +2022,7 @@ slots:
     name: PCB4
     title: PCB4
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 4.
@@ -2039,7 +2037,7 @@ slots:
     name: PCB5
     title: PCB5
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 5.
@@ -2054,7 +2052,7 @@ slots:
     name: PCB6
     title: PCB6
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 6.
@@ -2069,7 +2067,7 @@ slots:
     name: PCB7
     title: PCB7
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 7.
@@ -2084,7 +2082,7 @@ slots:
     name: PCB8
     title: PCB8
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 8.
@@ -2099,7 +2097,7 @@ slots:
     name: PCB9
     title: PCB9
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 9.
@@ -2114,7 +2112,7 @@ slots:
     name: PCB10
     title: PCB10
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 10.
@@ -2129,7 +2127,7 @@ slots:
     name: PCB11
     title: PCB11
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 11.
@@ -2144,7 +2142,7 @@ slots:
     name: PCB12.13
     title: PCB12.13
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 12.13.
@@ -2159,7 +2157,7 @@ slots:
     name: PCB14
     title: PCB14
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 14.
@@ -2174,7 +2172,7 @@ slots:
     name: PCB15
     title: PCB15
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 15.
@@ -2189,7 +2187,7 @@ slots:
     name: PCB16
     title: PCB16
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 16.
@@ -2204,7 +2202,7 @@ slots:
     name: PCB17
     title: PCB17
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 17.
@@ -2219,7 +2217,7 @@ slots:
     name: PCB18.30
     title: PCB18.30
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 18.30.
@@ -2234,7 +2232,7 @@ slots:
     name: PCB19
     title: PCB19
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 19.
@@ -2249,7 +2247,7 @@ slots:
     name: PCB20.28
     title: PCB20.28
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 20.28.
@@ -2264,7 +2262,7 @@ slots:
     name: PCB21.33
     title: PCB21.33
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 21.33.
@@ -2279,7 +2277,7 @@ slots:
     name: PCB22
     title: PCB22
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 22.
@@ -2294,7 +2292,7 @@ slots:
     name: PCB23
     title: PCB23
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 23.
@@ -2309,7 +2307,7 @@ slots:
     name: PCB24
     title: PCB24
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 24.
@@ -2324,7 +2322,7 @@ slots:
     name: PCB25
     title: PCB25
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 25.
@@ -2339,7 +2337,7 @@ slots:
     name: PCB26.29
     title: PCB26.29
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 26.29.
@@ -2354,7 +2352,7 @@ slots:
     name: PCB27
     title: PCB27
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 27.
@@ -2369,7 +2367,7 @@ slots:
     name: PCB31
     title: PCB31
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 31.
@@ -2384,7 +2382,7 @@ slots:
     name: PCB32
     title: PCB32
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 32.
@@ -2399,7 +2397,7 @@ slots:
     name: PCB34
     title: PCB34
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 34.
@@ -2414,7 +2412,7 @@ slots:
     name: PCB35
     title: PCB35
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 35.
@@ -2429,7 +2427,7 @@ slots:
     name: PCB36
     title: PCB36
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 36.
@@ -2444,7 +2442,7 @@ slots:
     name: PCB37
     title: PCB37
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 37.
@@ -2459,7 +2457,7 @@ slots:
     name: PCB38
     title: PCB38
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 38.
@@ -2474,7 +2472,7 @@ slots:
     name: PCB39
     title: PCB39
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 39.
@@ -2489,7 +2487,7 @@ slots:
     name: PCB40.71
     title: PCB40.71
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 40.71.
@@ -2504,7 +2502,7 @@ slots:
     name: PCB41
     title: PCB41
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 41.
@@ -2519,7 +2517,7 @@ slots:
     name: PCB42
     title: PCB42
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 42.
@@ -2534,7 +2532,7 @@ slots:
     name: PCB43
     title: PCB43
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 43.
@@ -2549,7 +2547,7 @@ slots:
     name: PCB44.47.65
     title: PCB44.47.65
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 44.47.65.
@@ -2564,7 +2562,7 @@ slots:
     name: PCB45
     title: PCB45
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 45.
@@ -2579,7 +2577,7 @@ slots:
     name: PCB46
     title: PCB46
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 46.
@@ -2594,7 +2592,7 @@ slots:
     name: PCB48
     title: PCB48
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 48.
@@ -2609,7 +2607,7 @@ slots:
     name: PCB49.69
     title: PCB49.69
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 49.69.
@@ -2624,7 +2622,7 @@ slots:
     name: PCB50.53
     title: PCB50.53
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 50.53.
@@ -2639,7 +2637,7 @@ slots:
     name: PCB51
     title: PCB51
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 51.
@@ -2654,7 +2652,7 @@ slots:
     name: PCB52
     title: PCB52
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 52.
@@ -2669,7 +2667,7 @@ slots:
     name: PCB54
     title: PCB54
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 54.
@@ -2684,7 +2682,7 @@ slots:
     name: PCB55
     title: PCB55
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 55.
@@ -2699,7 +2697,7 @@ slots:
     name: PCB56
     title: PCB56
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 56.
@@ -2714,7 +2712,7 @@ slots:
     name: PCB57
     title: PCB57
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 57.
@@ -2729,7 +2727,7 @@ slots:
     name: PCB58
     title: PCB58
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 58.
@@ -2744,7 +2742,7 @@ slots:
     name: PCB59.62.75
     title: PCB59.62.75
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 59.62.75.
@@ -2759,7 +2757,7 @@ slots:
     name: PCB60
     title: PCB60
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 60.
@@ -2774,7 +2772,7 @@ slots:
     name: PCB61.70.74.76
     title: PCB61.70.74.76
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 61.70.74.76.
@@ -2789,7 +2787,7 @@ slots:
     name: PCB63
     title: PCB63
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 63.
@@ -2804,7 +2802,7 @@ slots:
     name: PCB64
     title: PCB64
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 64.
@@ -2819,7 +2817,7 @@ slots:
     name: PCB66
     title: PCB66
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 66.
@@ -2834,7 +2832,7 @@ slots:
     name: PCB67
     title: PCB67
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 67.
@@ -2849,7 +2847,7 @@ slots:
     name: PCB68
     title: PCB68
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 68.
@@ -2864,7 +2862,7 @@ slots:
     name: PCB72
     title: PCB72
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 72.
@@ -2879,7 +2877,7 @@ slots:
     name: PCB73
     title: PCB73
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 73.
@@ -2894,7 +2892,7 @@ slots:
     name: PCB77
     title: PCB77
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 77.
@@ -2909,7 +2907,7 @@ slots:
     name: PCB78
     title: PCB78
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 78.
@@ -2924,7 +2922,7 @@ slots:
     name: PCB79
     title: PCB79
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 79.
@@ -2939,7 +2937,7 @@ slots:
     name: PCB80
     title: PCB80
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 80.
@@ -2954,7 +2952,7 @@ slots:
     name: PCB81
     title: PCB81
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 81.
@@ -2969,7 +2967,7 @@ slots:
     name: PCB82
     title: PCB82
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 82.
@@ -2984,7 +2982,7 @@ slots:
     name: PCB83
     title: PCB83
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 83.
@@ -2999,7 +2997,7 @@ slots:
     name: PCB84
     title: PCB84
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 84.
@@ -3014,7 +3012,7 @@ slots:
     name: PCB85.116
     title: PCB85.116
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 85.116.
@@ -3029,7 +3027,7 @@ slots:
     name: PCB86.97.109.119
     title: PCB86.97.109.119
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 86.97.109.119.
@@ -3044,7 +3042,7 @@ slots:
     name: PCB87.125
     title: PCB87.125
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 87.125.
@@ -3059,7 +3057,7 @@ slots:
     name: PCB88
     title: PCB88
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 88.
@@ -3074,7 +3072,7 @@ slots:
     name: PCB89
     title: PCB89
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 89.
@@ -3089,7 +3087,7 @@ slots:
     name: PCB90.101.113
     title: PCB90.101.113
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 90.101.113.
@@ -3104,7 +3102,7 @@ slots:
     name: PCB91
     title: PCB91
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 91.
@@ -3119,7 +3117,7 @@ slots:
     name: PCB92
     title: PCB92
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 92.
@@ -3134,7 +3132,7 @@ slots:
     name: PCB93.100
     title: PCB93.100
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 93.100.
@@ -3149,7 +3147,7 @@ slots:
     name: PCB94
     title: PCB94
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 94.
@@ -3164,7 +3162,7 @@ slots:
     name: PCB95
     title: PCB95
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 95.
@@ -3179,7 +3177,7 @@ slots:
     name: PCB96
     title: PCB96
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 96.
@@ -3194,7 +3192,7 @@ slots:
     name: PCB98
     title: PCB98
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 98.
@@ -3209,7 +3207,7 @@ slots:
     name: PCB99
     title: PCB99
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 99.
@@ -3224,7 +3222,7 @@ slots:
     name: PCB102
     title: PCB102
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 102.
@@ -3239,7 +3237,7 @@ slots:
     name: PCB103
     title: PCB103
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 103.
@@ -3254,7 +3252,7 @@ slots:
     name: PCB104
     title: PCB104
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 104.
@@ -3269,7 +3267,7 @@ slots:
     name: PCB105
     title: PCB105
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 105.
@@ -3284,7 +3282,7 @@ slots:
     name: PCB106
     title: PCB106
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 106.
@@ -3299,7 +3297,7 @@ slots:
     name: PCB107
     title: PCB107
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 107.
@@ -3314,7 +3312,7 @@ slots:
     name: PCB108.124
     title: PCB108.124
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 108.124.
@@ -3329,7 +3327,7 @@ slots:
     name: PCB110
     title: PCB110
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 110.
@@ -3344,7 +3342,7 @@ slots:
     name: PCB111
     title: PCB111
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 111.
@@ -3359,7 +3357,7 @@ slots:
     name: PCB112
     title: PCB112
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 112.
@@ -3374,7 +3372,7 @@ slots:
     name: PCB114
     title: PCB114
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 114.
@@ -3389,7 +3387,7 @@ slots:
     name: PCB115
     title: PCB115
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 115.
@@ -3404,7 +3402,7 @@ slots:
     name: PCB117
     title: PCB117
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 117.
@@ -3419,7 +3417,7 @@ slots:
     name: PCB118
     title: PCB118
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 118.
@@ -3434,7 +3432,7 @@ slots:
     name: PCB120
     title: PCB120
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 120.
@@ -3449,7 +3447,7 @@ slots:
     name: PCB121
     title: PCB121
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 121.
@@ -3464,7 +3462,7 @@ slots:
     name: PCB122
     title: PCB122
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 122.
@@ -3479,7 +3477,7 @@ slots:
     name: PCB123
     title: PCB123
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 123.
@@ -3494,7 +3492,7 @@ slots:
     name: PCB126
     title: PCB126
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 126.
@@ -3509,7 +3507,7 @@ slots:
     name: PCB127
     title: PCB127
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 127.
@@ -3524,7 +3522,7 @@ slots:
     name: PCB128.166
     title: PCB128.166
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 128.166.
@@ -3539,7 +3537,7 @@ slots:
     name: PCB129.138.163
     title: PCB129.138.163
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 129.138.163.
@@ -3554,7 +3552,7 @@ slots:
     name: PCB130
     title: PCB130
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 130.
@@ -3569,7 +3567,7 @@ slots:
     name: PCB131
     title: PCB131
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 131.
@@ -3584,7 +3582,7 @@ slots:
     name: PCB132
     title: PCB132
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 132.
@@ -3599,7 +3597,7 @@ slots:
     name: PCB133
     title: PCB133
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 133.
@@ -3614,7 +3612,7 @@ slots:
     name: PCB134
     title: PCB134
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 134.
@@ -3629,7 +3627,7 @@ slots:
     name: PCB135.151
     title: PCB135.151
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 135.151.
@@ -3644,7 +3642,7 @@ slots:
     name: PCB136
     title: PCB136
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 136.
@@ -3659,7 +3657,7 @@ slots:
     name: PCB137
     title: PCB137
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 137.
@@ -3674,7 +3672,7 @@ slots:
     name: PCB139.140
     title: PCB139.140
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 139.140.
@@ -3689,7 +3687,7 @@ slots:
     name: PCB141
     title: PCB141
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 141.
@@ -3704,7 +3702,7 @@ slots:
     name: PCB142
     title: PCB142
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 142.
@@ -3719,7 +3717,7 @@ slots:
     name: PCB143
     title: PCB143
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 143.
@@ -3734,7 +3732,7 @@ slots:
     name: PCB144
     title: PCB144
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 144.
@@ -3749,7 +3747,7 @@ slots:
     name: PCB145
     title: PCB145
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 145.
@@ -3764,7 +3762,7 @@ slots:
     name: PCB146
     title: PCB146
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 146.
@@ -3779,7 +3777,7 @@ slots:
     name: PCB147.149
     title: PCB147.149
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 147.149.
@@ -3794,7 +3792,7 @@ slots:
     name: PCB148
     title: PCB148
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 148.
@@ -3809,7 +3807,7 @@ slots:
     name: PCB150
     title: PCB150
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 150.
@@ -3824,7 +3822,7 @@ slots:
     name: PCB152
     title: PCB152
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 152.
@@ -3839,7 +3837,7 @@ slots:
     name: PCB153.168
     title: PCB153.168
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 153.168.
@@ -3854,7 +3852,7 @@ slots:
     name: PCB154
     title: PCB154
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 154.
@@ -3869,7 +3867,7 @@ slots:
     name: PCB155
     title: PCB155
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 155.
@@ -3884,7 +3882,7 @@ slots:
     name: PCB156.157
     title: PCB156.157
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 156.157.
@@ -3899,7 +3897,7 @@ slots:
     name: PCB158
     title: PCB158
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 158.
@@ -3914,7 +3912,7 @@ slots:
     name: PCB159
     title: PCB159
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 159.
@@ -3929,7 +3927,7 @@ slots:
     name: PCB160
     title: PCB160
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 160.
@@ -3944,7 +3942,7 @@ slots:
     name: PCB161
     title: PCB161
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 161.
@@ -3959,7 +3957,7 @@ slots:
     name: PCB162
     title: PCB162
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 162.
@@ -3974,7 +3972,7 @@ slots:
     name: PCB164
     title: PCB164
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 164.
@@ -3989,7 +3987,7 @@ slots:
     name: PCB165
     title: PCB165
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 165.
@@ -4004,7 +4002,7 @@ slots:
     name: PCB167
     title: PCB167
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 167.
@@ -4019,7 +4017,7 @@ slots:
     name: PCB169
     title: PCB169
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 169.
@@ -4034,7 +4032,7 @@ slots:
     name: PCB170
     title: PCB170
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 170.
@@ -4049,7 +4047,7 @@ slots:
     name: PCB171.173
     title: PCB171.173
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 171.173.
@@ -4064,7 +4062,7 @@ slots:
     name: PCB172
     title: PCB172
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 172.
@@ -4079,7 +4077,7 @@ slots:
     name: PCB174
     title: PCB174
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 174.
@@ -4094,7 +4092,7 @@ slots:
     name: PCB175
     title: PCB175
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 175.
@@ -4109,7 +4107,7 @@ slots:
     name: PCB176
     title: PCB176
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 176.
@@ -4124,7 +4122,7 @@ slots:
     name: PCB177
     title: PCB177
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 177.
@@ -4139,7 +4137,7 @@ slots:
     name: PCB178
     title: PCB178
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 178.
@@ -4154,7 +4152,7 @@ slots:
     name: PCB179
     title: PCB179
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 179.
@@ -4169,7 +4167,7 @@ slots:
     name: PCB180.193
     title: PCB180.193
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 180.193.
@@ -4184,7 +4182,7 @@ slots:
     name: PCB181
     title: PCB181
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 181.
@@ -4199,7 +4197,7 @@ slots:
     name: PCB182
     title: PCB182
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 182.
@@ -4214,7 +4212,7 @@ slots:
     name: PCB183
     title: PCB183
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 183.
@@ -4229,7 +4227,7 @@ slots:
     name: PCB184
     title: PCB184
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 184.
@@ -4244,7 +4242,7 @@ slots:
     name: PCB185
     title: PCB185
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 185.
@@ -4259,7 +4257,7 @@ slots:
     name: PCB186
     title: PCB186
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 186.
@@ -4274,7 +4272,7 @@ slots:
     name: PCB187
     title: PCB187
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 187.
@@ -4289,7 +4287,7 @@ slots:
     name: PCB188
     title: PCB188
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 188.
@@ -4304,7 +4302,7 @@ slots:
     name: PCB189
     title: PCB189
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 189.
@@ -4319,7 +4317,7 @@ slots:
     name: PCB190
     title: PCB190
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 190.
@@ -4334,7 +4332,7 @@ slots:
     name: PCB191
     title: PCB191
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 191.
@@ -4349,7 +4347,7 @@ slots:
     name: PCB192
     title: PCB192
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 192.
@@ -4364,7 +4362,7 @@ slots:
     name: PCB194
     title: PCB194
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 194.
@@ -4379,7 +4377,7 @@ slots:
     name: PCB195
     title: PCB195
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 195.
@@ -4394,7 +4392,7 @@ slots:
     name: PCB196
     title: PCB196
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 196.
@@ -4409,7 +4407,7 @@ slots:
     name: PCB197
     title: PCB197
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 197.
@@ -4424,7 +4422,7 @@ slots:
     name: PCB198.199
     title: PCB198.199
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 198.199.
@@ -4439,7 +4437,7 @@ slots:
     name: PCB200
     title: PCB200
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 200.
@@ -4454,7 +4452,7 @@ slots:
     name: PCB201
     title: PCB201
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 201.
@@ -4469,7 +4467,7 @@ slots:
     name: PCB202
     title: PCB202
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 202.
@@ -4484,7 +4482,7 @@ slots:
     name: PCB203
     title: PCB203
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 203.
@@ -4499,7 +4497,7 @@ slots:
     name: PCB205
     title: PCB205
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 205.
@@ -4514,7 +4512,7 @@ slots:
     name: PCB206
     title: PCB206
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 206.
@@ -4529,7 +4527,7 @@ slots:
     name: PCB207
     title: PCB207
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 207.
@@ -4544,7 +4542,7 @@ slots:
     name: PCB208
     title: PCB208
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 208.
@@ -4559,7 +4557,7 @@ slots:
     name: PCB209
     title: PCB209
     any_of:
-      - range: null_value_option
+      - range: Null value option
       - range: float
     required: true
     description: Concentration or mass measurement for PCB congener 209.
@@ -4591,25 +4589,9 @@ enums:
         text: field blank
         title: field blank
         description: Indicates the type of sampler used for sample collection.
-  Value option:
-    name: Value option
-    title: value option
-    permissible_values:
-      '1':
-        text: '1'
-        title: '1'
-        description: The sampling round associated with each sample for a school.
-      '2':
-        text: '2'
-        title: '2'
-        description: The sampling round associated with each sample for a school.
-      '3':
-        text: '3'
-        title: '3'
-        description: The sampling round associated with each sample for a school.
   Null value option:
     name: Null value option
-    title: null value
+    title: null value option
     permissible_values:
       NA:
         text: NA

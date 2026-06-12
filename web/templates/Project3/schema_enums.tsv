@@ -5,9 +5,5 @@ sample type option	Sample type option			emission					Indicates the type of sampl
 				lab blank					Indicates the type of sampler used for sample collection.
 				field blank					Indicates the type of sampler used for sample collection.
 									
-value option	Value option			1					The sampling round associated with each sample for a school.
-				2					The sampling round associated with each sample for a school.
-				3					The sampling round associated with each sample for a school.
-									
-null value	Null value option	NA		mission value					missing value
+null value option	Null value option	NA		mission value					missing value
 		ND		limit of quantification					limit of quantification
