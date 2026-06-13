@@ -9,5 +9,5 @@ remediation option	Remediation option			before					Indicates if the sampler was 
 				after					Indicates if the sampler was deployed before or after remediation was performed on the material
 				interim					Indicates if the sampler was deployed before or after remediation was performed on the material
 									
-null value option	Null value option			NA					missing value
-				ND					limit of quantification
+null value option	Null value option	missing value		NA					missing value
+		limit of quantification		ND					limit of quantification

@@ -21639,13 +21639,13 @@
       "title": "null value option",
       "from_schema": "https://example.com/Project3",
       "permissible_values": {
-        "NA": {
-          "text": "NA",
+        "missing value": {
+          "text": "missing value",
           "description": "missing value",
           "title": "NA"
         },
-        "ND": {
-          "text": "ND",
+        "limit of quantification": {
+          "text": "limit of quantification",
           "description": "limit of quantification",
           "title": "ND"
         }

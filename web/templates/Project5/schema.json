@@ -305,33 +305,25 @@
       "title": "unit option",
       "from_schema": "https://example.org/Project5",
       "permissible_values": {
-        "ng/PUF": {
-          "text": "ng/PUF",
+        "ng per PUF": {
+          "text": "ng per PUF",
           "description": "nanograms of PCB measured per polyurethane foam (PUF) passive sampler.",
-          "comments": [
-            "ng per PUF"
-          ]
+          "title": "ng/PUF"
         },
-        "ng/cm": {
-          "text": "ng/cm",
+        "ng per cm": {
+          "text": "ng per cm",
           "description": "nanograms of PCB measured per centimeter of SPME fiber.",
-          "comments": [
-            "ng per cm"
-          ]
+          "title": "ng/cm"
         },
-        "copies/g biochar": {
-          "text": "copies/g biochar",
+        "copies per gram biochar": {
+          "text": "copies per gram biochar",
           "description": "quantitative PCR measurement expressed as gene copies per gram of biochar.",
-          "comments": [
-            "copies per gram biochar"
-          ]
+          "title": "copies/g biochar"
         },
-        "copies/g sediment": {
-          "text": "copies/g sediment",
+        "copies per gram sediment": {
+          "text": "copies per gram sediment",
           "description": "quantitative PCR measurement expressed as gene copies per gram of sediment.",
-          "comments": [
-            "copies per gram sediment"
-          ]
+          "title": "copies/g sediment"
         }
       }
     },
@@ -387,15 +379,15 @@
       "title": "null value",
       "from_schema": "https://example.org/Project5",
       "permissible_values": {
-        "NA": {
-          "text": "NA",
+        "missing value": {
+          "text": "missing value",
           "description": "missing value",
-          "title": "NA - missing value"
+          "title": "NA"
         },
-        "ND": {
-          "text": "ND",
+        "limit of quantification": {
+          "text": "limit of quantification",
           "description": "limit of quantification",
-          "title": "ND - limit of quantification"
+          "title": "ND"
         }
       }
     },

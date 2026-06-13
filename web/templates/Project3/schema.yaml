@@ -4609,12 +4609,12 @@ enums:
     name: Null value option
     title: null value option
     permissible_values:
-      NA:
-        text: NA
+      missing value:
+        text: missing value
         title: NA
         description: missing value
-      ND:
-        text: ND
+      limit of quantification:
+        text: limit of quantification
         title: ND
         description: limit of quantification
 types:
