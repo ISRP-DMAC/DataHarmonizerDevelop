@@ -1956,7 +1956,9 @@ slots:
   remediation_method:
     name: remediation_method
     title: remediation_method
-    range: WhitespaceMinimizedString
+    any_of:
+      - range: WhitespaceMinimizedString
+      - range: null_value_option
     required: true
     description: Describes how the material was remediated
     comments:
