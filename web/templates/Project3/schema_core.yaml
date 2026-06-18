@@ -57,6 +57,6 @@ types:
     base: str
     uri: xsd:token
 settings:
-  Title_Case: "(((?<=\\b)[^a-z\\W]\\w*?|[\\W])+)"
-  UPPER_CASE: "[A-Z\\W\\d_]*"
-  lower_case: "[a-z\\W\\d_]*"
+  Title_Case: (((?<=\b)[^a-z\W]\w*?|[\W])+)
+  UPPER_CASE: '[A-Z\W\d_]*'
+  lower_case: '[a-z\W\d_]*'

@@ -5579,7 +5579,7 @@ slots:
       Unique identifier for each sample.
     comments: Sample IDs should remain consistent across files. 
     range: WhitespaceMinimizedString
-    identifier: true
+    identifier: false
     required: true
     examples:
       - value: d0_1
@@ -5592,7 +5592,7 @@ slots:
     description: >-
       Type of sampling medium used for sample collection.
     comments: Type of passive sampler used to collect airborne or aqueous PCBs from microcosms.
-    range: Sample medium option
+    range: sample_medium_option
     required: true
     examples:
       - value: PUF
@@ -5603,14 +5603,17 @@ slots:
     title: units
     description: >-
       Measurement units associated with the sample result.
-    range: Units option
+    range: units_option
     required: true
-    comments: Specify the measurement unit
+    comments: Specify the measurement unit. ng/PUF indicates nanograms of PCB measured per polyurethane foam (PUF) passive sampler.
+              ng/cm indicates nanograms of PCB measured per centimeter of SPME fiber.
+              copies/g biochar indicates quantitative PCR measurement expressed as gene copies per gram of biochar.
+              copies/g sediment indicates quantitative PCR measurement expressed as gene copies per gram of sediment.
     examples:
       - value: ng/PUF
-      - value: ng/cm
-      - value: copies/g biochar
-      - value: copies/g sediment
+      - value: ng/cm 
+      - value: copies/g 
+      - value: copies/g 
 
   experiment:
     name: experiment
@@ -5622,7 +5625,7 @@ slots:
     examples:
       - value: biochar_percentage
       - value: biochar_timeseries
-    range: Experiment option
+    range: experiment_option
     required: true
 
   percent_biochar:
@@ -5664,7 +5667,7 @@ slots:
     examples:
       - value: Control
       - value: Treatment
-    range: Group option
+    range: group_option
     required: true
   
   replicate:
@@ -5678,7 +5681,7 @@ slots:
       - value: "2"
       - value: "3"
       - value: "4"
-    range: Replicate option
+    range: replicate_option
     required: true
 
 
@@ -5697,14 +5700,11 @@ slots:
     - value: NA
 
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
-    annotations:
-      unit:
-        tag: unit
-        value: ng | ng/PUF | ng/cm SPME | ng/g dry
+  
 
   LCPCB:
     name: LCPCB
@@ -5720,14 +5720,11 @@ slots:
     - value: ND
     - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
-    annotations:
-      unit:
-        tag: unit
-        value: ng | ng/PUF | ng/cm SPME | ng/g dry
+  
 
   blank_id:
     name: blank_id
@@ -5740,7 +5737,7 @@ slots:
       - value: B1
       - value: B2
       - value: B11 
-    range: Blank option
+    range: blank_option
     required: true
 
   PCB1:
@@ -5758,7 +5755,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5778,7 +5775,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5798,7 +5795,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5818,7 +5815,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5838,7 +5835,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5858,7 +5855,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5878,7 +5875,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5898,7 +5895,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5918,7 +5915,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5938,7 +5935,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5958,7 +5955,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5978,7 +5975,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -5999,7 +5996,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6019,7 +6016,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6039,7 +6036,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6059,7 +6056,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6079,7 +6076,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6099,7 +6096,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6119,7 +6116,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6139,7 +6136,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6159,7 +6156,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6179,7 +6176,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6199,7 +6196,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6219,7 +6216,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6239,7 +6236,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6259,7 +6256,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6280,7 +6277,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6300,7 +6297,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6320,7 +6317,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6340,7 +6337,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6360,7 +6357,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6380,7 +6377,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6400,7 +6397,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6420,7 +6417,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6440,7 +6437,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6460,7 +6457,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6480,7 +6477,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6500,7 +6497,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6520,7 +6517,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6540,7 +6537,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6560,7 +6557,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6580,7 +6577,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6600,7 +6597,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6620,7 +6617,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6640,7 +6637,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6660,7 +6657,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6680,7 +6677,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6700,7 +6697,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6720,7 +6717,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6740,7 +6737,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6760,7 +6757,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6780,7 +6777,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6800,7 +6797,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6820,7 +6817,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6840,7 +6837,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6860,7 +6857,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6880,7 +6877,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6900,7 +6897,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6920,7 +6917,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6940,7 +6937,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6960,7 +6957,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -6980,7 +6977,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7000,7 +6997,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7020,7 +7017,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7040,7 +7037,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7060,7 +7057,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7080,7 +7077,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7100,7 +7097,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7120,7 +7117,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7140,7 +7137,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7160,7 +7157,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7180,7 +7177,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7200,7 +7197,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7220,7 +7217,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7240,7 +7237,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7260,7 +7257,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7280,7 +7277,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7300,7 +7297,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7320,7 +7317,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7340,7 +7337,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7360,7 +7357,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7380,7 +7377,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7400,7 +7397,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7420,7 +7417,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7440,7 +7437,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7460,7 +7457,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7480,7 +7477,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7500,7 +7497,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7520,7 +7517,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7540,7 +7537,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7560,7 +7557,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7580,7 +7577,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7600,7 +7597,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7620,7 +7617,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7640,7 +7637,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7660,7 +7657,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7680,7 +7677,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7700,7 +7697,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7720,7 +7717,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7740,7 +7737,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7760,7 +7757,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7780,7 +7777,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7800,7 +7797,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7820,7 +7817,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7840,7 +7837,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7860,7 +7857,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7880,7 +7877,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7900,7 +7897,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7920,7 +7917,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7940,7 +7937,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7960,7 +7957,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -7980,7 +7977,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8000,7 +7997,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8020,7 +8017,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8040,7 +8037,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8060,7 +8057,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8080,7 +8077,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8100,7 +8097,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8120,7 +8117,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8140,7 +8137,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8160,7 +8157,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8180,7 +8177,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8200,7 +8197,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8220,7 +8217,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8240,7 +8237,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8260,7 +8257,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8280,7 +8277,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8300,7 +8297,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8320,7 +8317,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8340,7 +8337,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8360,7 +8357,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8380,7 +8377,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8400,7 +8397,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8420,7 +8417,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8440,7 +8437,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8460,7 +8457,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8480,7 +8477,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8500,7 +8497,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8520,7 +8517,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8540,7 +8537,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8560,7 +8557,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8580,7 +8577,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8600,7 +8597,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8620,7 +8617,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8640,7 +8637,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8660,7 +8657,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8680,7 +8677,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8700,7 +8697,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8720,7 +8717,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8740,7 +8737,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8760,7 +8757,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8780,7 +8777,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8800,7 +8797,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8820,7 +8817,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8840,7 +8837,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8860,7 +8857,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8880,7 +8877,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8900,7 +8897,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8920,7 +8917,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8940,7 +8937,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8960,7 +8957,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -8980,7 +8977,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9000,7 +8997,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9020,7 +9017,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9040,7 +9037,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9060,7 +9057,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9080,7 +9077,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9100,7 +9097,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9120,7 +9117,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9140,7 +9137,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9160,7 +9157,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9180,7 +9177,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9200,7 +9197,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9220,7 +9217,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9240,7 +9237,7 @@ slots:
       - value: ND
       - value: NA
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: float
     required: true
     minimum_value: 0
@@ -9295,7 +9292,7 @@ slots:
       - value: "1"
       - value: "2"
       - value: "3"
-    range: Experimental replicate option
+    range: experimental_replicate_option
     required: true
 
   technical_replicate:
@@ -9303,7 +9300,7 @@ slots:
     title: technical_replicate
     description: >-
       Denotes which technical replicate belongs to each sample.
-    range: TechnicalReplicateMenu
+    range: technical_replicate_option
     required: true
     comments: >-
       Identifies the technical replicate associated with qPCR measurement.
@@ -9323,7 +9320,7 @@ slots:
       - value: "2730.247"
       - value: "NA"
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: WhitespaceMinimizedString
     required: true
     minimum_value: 0
@@ -9339,7 +9336,7 @@ slots:
       - value: "74491397"
       - value: "1.32E+08"
     any_of:
-      - range: Null value option
+      - range: null_value_option
       - range: WhitespaceMinimizedString
     required: true
     minimum_value: 0
@@ -9349,37 +9346,29 @@ slots:
 # Enumerations
 enums:
 
-  Sample medium option:
-    name: Sample medium option
+  sample_medium_option:
+    name: sample_medium_option
     title: sample medium option
     permissible_values:
       PUF: {}
       SPME: {}
 
-  Units option:
+  units_option:
+    name: units_option
     title: unit option
     permissible_values:
-      ng per PUF : 
-         text: ng per PUF
-         title: ng/PUF
+      ng/PUF: 
          description: nanograms of PCB measured per polyurethane foam (PUF) passive sampler.   
-      ng per cm:
-          text: ng per cm
-          title: ng/cm
+      ng/cm:
           description: nanograms of PCB measured per centimeter of SPME fiber.
-          comments: 
-      copies per gram biochar:
-          text: copies per gram biochar
-          title: copies/g biochar
+      copies/g biochar:
           description: quantitative PCR measurement expressed as gene copies per gram of biochar.
-      copies per gram sediment: 
-          text: copies per gram sediment
-          title: copies/g sediment
+      copies/g sediment: 
           description: quantitative PCR measurement expressed as gene copies per gram of sediment.
   
 
-  Experiment option:
-    name: Experiment option
+  experiment_option:
+    name: experiment_option
     title: experiment option
     permissible_values:
       biochar_percentage: {}
@@ -9387,16 +9376,16 @@ enums:
 
 
 
-  Group option:
-    name: Group option
+  group_option:
+    name: group_option
     title: group option
     description: Treatment group
     permissible_values:
       control: {}
       treatment: {}
 
-  Replicate option:
-    name: Replicate option
+  replicate_option:
+    name: replicate_option
     title: replicate option
     description: Replicate numbers 1..4
     permissible_values:
@@ -9405,21 +9394,21 @@ enums:
       "3": {}
       "4": {}
 
-  Null value option:
-    name: Null value option
+  null_value_option:
+    name: null_value_option
     title: null value option
     permissible_values:
-       missing value:
-        text: missing value
+       NA:
+        text: NA
         title: NA
         description: missing value
-       limit of quantification:
-        text: limit of quantification
+       ND:
+        text: ND
         title: ND
         description: limit of quantification
 
-  Experimental replicate option:
-    name: Experimental replicate option
+  experimental_replicate_option:
+    name: experimental_replicate_option
     title: experimental replicate option
     description: Experimental replicate numbers
     permissible_values:
@@ -9427,8 +9416,8 @@ enums:
       "2": {}
       "3": {}
 
-  Technical replicate option:
-    name: Technical replicate option
+  technical_replicate_option:
+    name: technical_replicate_option
     title: technical replicate option
     description: Technical replicate numbers
     permissible_values:

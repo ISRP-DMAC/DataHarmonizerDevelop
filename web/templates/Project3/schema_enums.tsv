@@ -1,13 +1,13 @@
 title	name	text	meaning	menu_1	menu_2	menu_3	menu_4	menu_5	description
 									
-sample type option	Sample type option			emission					Indicates the type of sampler used for sample collection.
+sample type option	sample_type_option			emission					Indicates the type of sampler used for sample collection.
 				air					Indicates the type of sampler used for sample collection.
 				lab blank					Indicates the type of sampler used for sample collection.
 				field blank					Indicates the type of sampler used for sample collection.
 									
-remediation option	Remediation option			before					Indicates if the sampler was deployed before or after remediation was performed on the material
+remediation option	remediation_option			before					Indicates if the sampler was deployed before or after remediation was performed on the material
 				after					Indicates if the sampler was deployed before or after remediation was performed on the material
 				interim					Indicates if the sampler was deployed before or after remediation was performed on the material
 									
-null value option	Null value option	missing value		NA					missing value
-		limit of quantification		ND					limit of quantification
+null value option	null_value_option			NA					missing value
+				ND					limit of quantification
