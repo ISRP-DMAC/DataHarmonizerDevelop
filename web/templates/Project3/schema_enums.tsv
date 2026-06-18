@@ -11,3 +11,5 @@ remediation option	remediation_option			before					Indicates if the sampler was 
 									
 null value option	null_value_option			NA					missing value
 				ND					limit of quantification
+									
+null value	null_value			NA					missing value

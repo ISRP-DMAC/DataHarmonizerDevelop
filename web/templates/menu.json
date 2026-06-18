@@ -1,5 +1,27 @@
 {
- "Project5": {
+  "Project3": {
+    "folder": "Project3",
+    "id": "https://example.com/Project3",
+    "version": "1.0.0",
+    "templates": {
+      "Jason_emissions": {
+        "name": "Jason_emissions",
+        "display": true
+
+      },
+      "Jason_concentrations": {
+        "name": "Jason_concentrations",
+        "display": true
+
+      },
+      "Jason_sampleType": {
+        "name": "Jason_sampletype",
+        "display": true  
+      }
+    }
+  },
+  
+  "Project5": {
     "folder": "Project5",
     "id": "https://example.com/Project5",
     "version": "1.0.0",
@@ -11,21 +33,21 @@
       },
       "David_04_rawPCBmass_SPME": {
         "name": "David_04_rawPCBmass_SPME",
-        "display": true  
+        "display": true 
 
       },
       "David_05_Dataset_rawBlankmass": {
         "name": "David_05_Dataset_rawBlankmass",
-        "display": true  
+        "display": true 
       },
       "David_06_final_PCBmass_PUF": {
         "name": "David_06_final_PCBmass_PUF",
-        "display": true 
+        "display": true
       },
   
       "David_07_final_PCBmass_SPME": {
         "name": "David_07_final_PCBmass_SPME",
-        "display": true 
+        "display": true
       },
       "David_08_Dataset_NBH_SedimentPCBs": {
         "name": "David_08_Dataset_NBH_SedimentPCBs",
@@ -91,26 +113,5 @@
         "display": false  
       }
     } 
-  },
-   "Project3": {
-    "folder": "Project3",
-    "id": "https://example.com/Project3",
-    "version": "1.0.0",
-    "templates": {
-      "Jason_emissions": {
-        "name": "Jason_emissions",
-        "display": true
-
-      },
-      "Jason_concentrations": {
-        "name": "Jason_concentrations",
-        "display": true  
-
-      },
-      "Jason_sampleType": {
-        "name": "Jason_sampletype",
-        "display": true  
-      }
-    }
   }
 }
