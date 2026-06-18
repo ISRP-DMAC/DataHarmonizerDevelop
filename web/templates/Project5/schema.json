@@ -439,7 +439,7 @@
         }
       ],
       "from_schema": "https://example.org/Project5",
-      "identifier": false,
+      "identifier": true,
       "domain_of": [
         "David_03_rawPCBmass_PUF",
         "David_09_RT-qPCR_data"
@@ -8503,7 +8503,7 @@
           ],
           "from_schema": "https://example.org/Project5",
           "rank": 1,
-          "identifier": false,
+          "identifier": true,
           "alias": "sample_id",
           "owner": "David_03_rawPCBmass_PUF",
           "domain_of": [
@@ -58170,7 +58170,7 @@
           ],
           "from_schema": "https://example.org/Project5",
           "rank": 1,
-          "identifier": false,
+          "identifier": true,
           "alias": "sample_id",
           "owner": "David_09_RT-qPCR_data",
           "domain_of": [

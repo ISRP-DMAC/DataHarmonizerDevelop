@@ -5579,7 +5579,7 @@ slots:
       Unique identifier for each sample.
     comments: Sample IDs should remain consistent across files. 
     range: WhitespaceMinimizedString
-    identifier: false
+    identifier: true
     required: true
     examples:
       - value: d0_1
